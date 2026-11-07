@@ -8,7 +8,7 @@ Výuková prohlížečová hra o **řízení projektů**. Hráč vede projekt a 
 mu sedí – **prediktivní** (vodopád), **agilní**, nebo **hybridní** – a pak k němu namíchat správné
 praktiky. Univerzální recept neexistuje.
 
-▶ **[Hrát online](https://miroslavkrupa.github.io/hybridni-projekt/)**
+▶ **[Hrát online](https://miroslavkrupa.github.io/projektova-alchymie/)**
 
 ## Co je hybridní řízení projektů
 
@@ -32,7 +32,7 @@ Proto hra obsahuje i čistě prediktivní a čistě agilní projekty.
 | 🚀 Startup Zachraň jídlo | agilní | nejistý trh, **objevování hodnoty a experimenty** |
 
 **🔥 Náročná úroveň** (odemkne se po dosažení 70 bodů v kterémkoli projektu základní úrovně; pro učitele
-a testování lze odemknout adresou s parametrem `?hard`, např. `…/hybridni-projekt/?hard`):
+a testování lze odemknout adresou s parametrem `?hard`, např. `…/projektova-alchymie/?hard`):
 
 | Scénář | Typ | Co je na něm těžké |
 |---|---|---|
@@ -80,7 +80,7 @@ a odpovědi se pokaždé zamíchají. Nejlepší skóre každého scénáře se 
 
 ## Jak hrát
 
-Online na https://miroslavkrupa.github.io/hybridni-projekt/ (GitHub Pages, aktualizuje se
+Online na https://miroslavkrupa.github.io/projektova-alchymie/ (GitHub Pages, aktualizuje se
 po každém `git push` do větve `main`).
 
 Lokálně spusť server a otevři http://localhost:8765:
