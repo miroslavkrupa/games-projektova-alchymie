@@ -69,6 +69,7 @@ Pravidla, která platí **jen** pro nemožnou úroveň:
    kdo dlouho nic nedostane, ztrácí trpělivost. Když některá klesne na 12, projekt končí.
 4. **Projekt, nebo provoz?** – v rozdělení práce je třetí možnost ⚙️ Provoz a v backlogu rutina,
    kterou je třeba předat linii (tlačítko ⚙️ do provozu). Rutina řízená jako projekt ukrajuje kapacitu.
+   Předání lze vrátit jen během plánování, ve kterém se stalo; předaný Must se v projektu nedodá.
 5. **Lidé a znalosti** – pojmenovaní lidé s oblastmi znalostí a únavou. Práce v oblasti, kterou nikdo
    neumí, je o polovinu pracnější; přetížení lidé vyhoří a odejdou i se znalostmi; sdílení znalostí je šíří.
 6. **Rok poté** – po konci projektu epilog: kvalita, předání do provozu, znalosti v týmu, lidé,
@@ -100,7 +101,8 @@ python3 -m http.server 8765
    do **kotle**: barva lektvaru ukazuje poměr prediktivních, propojovacích a agilních praktik,
    hladina režii vůči rozpočtu, synergie jiskří a konflikty kouří (na nemožné úrovni bez jisker a kouře).
 3. **Realizace** – 6 období (sprintů nebo etap): plánování práce do kapacity týmu, událost
-   v každém období, milníky a kontrolní bod v polovině projektu. Podle typu projektu:
+   v každém období, milníky a kontrolní bod v polovině projektu. Položku větší než kapacita týmu
+   (celá by se nikdy nedokončila) lze tlačítkem ✂️ rozdělit na menší části. Podle typu projektu:
    - **hybridní** – backlog s MoSCoW, závislost agilní části na prediktivním milníku;
    - **prediktivní** – etapy různé délky plánované **po vlnách**: budoucí etapy jen nahrubo
      (délka, odhad v člověkodnech, milník), nejbližší etapa podrobně v **Ganttu**. Hráč klikáním

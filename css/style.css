@@ -588,6 +588,14 @@ h4 { margin: 14px 0 6px; font-size: 1rem; }
 .bl-name .area.unknown { color: var(--bad); font-weight: 600; }
 .sp.over { color: var(--bad); font-weight: 700; }
 .ops-btn { border-color: var(--muted); color: var(--muted); background: var(--bg); }
+.split-btn { border-color: var(--warn); color: var(--ink); background: var(--warn-soft); }
+.bl-name .too-big { display: block; font-size: .74rem; color: var(--bad); font-weight: 600; }
+.handed { margin-top: 14px; padding-top: 10px; border-top: 1px dashed var(--line); }
+.handed h4 { margin: 0 0 6px; font-size: .92rem; color: var(--muted); }
+.handed-row { display: flex; justify-content: space-between; align-items: center; gap: 8px; padding: 6px 8px; margin-bottom: 4px; border-radius: 8px; background: var(--bg); font-size: .9rem; }
+.handed-row > span small { display: block; font-size: .74rem; }
+.handed-row > small { color: var(--muted); white-space: nowrap; }
+.handed-row .exp-btn { padding: 4px 10px; }
 .btn.toggle.on.ops { background: var(--bg); border-color: var(--muted); font-weight: 600; }
 .team-note { margin: 4px 0; font-size: .92rem; }
 .pp-orig { font-size: .76rem; font-weight: 600; color: var(--muted); }
@@ -790,5 +798,5 @@ h4 { margin: 14px 0 6px; font-size: 1rem; }
   .brand small { display: none; }
   .stake-row { grid-template-columns: 1fr; }
   .stake small { display: none; }
-  .bl-row .ops-btn { align-self: flex-end; padding: 4px 10px; }
+  .bl-row .ops-btn, .bl-row .split-btn { align-self: flex-end; padding: 4px 10px; }
 }

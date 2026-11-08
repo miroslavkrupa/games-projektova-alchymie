@@ -150,6 +150,7 @@ function startScenario(id) {
     teamLoss: 0,
     opsOverhead: 0,
     handedOver: [],
+    splitSeq: 0,
     diag: sc.takeover ? { picks: [], result: null, symptoms: shuffle(sc.takeover.symptoms) } : null,
     extraContext: [],
     shiftsDone: [],
@@ -454,6 +455,46 @@ function capacity() {
 const itemValue = it => it.actual ?? it.value;
 const valueKnown = it => it.actual === undefined || it.done || S.verified.includes(it.id);
 
+// Must položky včetně těch předaných provozu – předaný Must v projektu dodaný nebude.
+const mustItems = () => [...S.backlog, ...S.handedOver].filter(b => b.moscow === 'M');
+
+// Položka větší než kapacita se ve sprintu nikdy nedokončí – dá se ale rozdělit na menší části.
+const tooBig = it => !it.done && itemSP(it) > capacity();
+const canSplit = it => tooBig(it) && it.sp >= 2;
+
+// Rozdělí celé číslo na n co nejrovnějších částí (větší napřed).
+function splitInt(total, n) {
+  const base = Math.floor(total / n);
+  return Array.from({ length: n }, (_, i) => base + (i < total % n ? 1 : 0));
+}
+
+const SPLIT_LESSON = 'Co se nevejde do jednoho sprintu, nedodáš nikdy celé. Velkou položku rozděl na menší části, z nichž každá jde dokončit a předvést – třeba podle kroků procesu, typů dat nebo skupin uživatelů.';
+
+function splitItem(it) {
+  const cap = capacity();
+  let n = 2;
+  while (n < it.sp && itemSP({ ...it, sp: Math.ceil(it.sp / n) }) > cap) n++;
+  const sps = splitInt(it.sp, n);
+  const vals = splitInt(it.value, n);
+  const acts = it.actual !== undefined ? splitInt(it.actual, n) : null;
+  // Poslední část si nechá původní id, aby dál platily návaznosti, milníky i předání.
+  const ids = sps.map((_, i) => (i === n - 1 ? it.id : `${it.id}~${++S.splitSeq}`));
+  const parts = sps.map((sp, i) => {
+    const part = { ...it, id: ids[i], sp, value: vals[i], name: `${it.name} (${i + 1}/${n})`, splitOf: it.splitOf || it.id };
+    if (acts) part.actual = acts[i];
+    if (i > 0) part.requires = [ids[i - 1]];
+    if (i < n - 1) { delete part.reveals; delete part.handover; }
+    return part;
+  });
+  if (S.verified.includes(it.id)) S.verified.push(...ids.slice(0, -1));
+  S.backlog.splice(S.backlog.indexOf(it), 1, ...parts);
+  S.selected = S.selected.filter(x => x !== it.id);
+  const note = `${it.name} na ${n} části`;
+  const l = S.lessons.find(x => x.key === 'split');
+  if (l) l.choice += `, ${note}`;
+  else S.lessons.push({ period: S.sprint, key: 'split', title: 'Příliš velká položka', rating: 'best', choice: `rozděleno: ${note}`, lesson: SPLIT_LESSON });
+}
+
 function itemLock(item) {
   if (item.done) return 'Hotovo';
   if (item.needsMilestone && S.sprint < S.depUnlock) {
@@ -567,7 +608,7 @@ function checkMilestone() {
   if (!ms) return null;
   let ok, text, effects = {};
   if (ms.kind === 'launch') {
-    const missing = S.backlog.filter(b => b.moscow === 'M' && !b.done);
+    const missing = mustItems().filter(b => !b.done);
     ok = missing.length === 0;
     text = ok ? ms.okText : `${ms.lateText} ${missing.map(b => b.name).join(', ')}.`;
     if (!ok) effects = { spokojenost: -4 * missing.length };
@@ -575,7 +616,7 @@ function checkMilestone() {
   } else if (ms.kind === 'integration') {
     const missing = ms.requires.filter(id => !S.backlog.find(b => b.id === id)?.done);
     ok = !missing.length;
-    text = ok ? ms.okText : `${ms.lateText} Chybí: ${missing.map(id => S.backlog.find(b => b.id === id)?.name || id).join(', ')}.`;
+    text = ok ? ms.okText : `${ms.lateText} Chybí: ${missing.map(id => [...S.backlog, ...S.handedOver].find(b => b.id === id)?.name || id).join(', ')}.`;
     if (!ok) effects = { kvalita: -8, spokojenost: -6 };
   } else if (ms.kind === 'traction') {
     ok = S.valueDelivered >= ms.target;
@@ -967,7 +1008,7 @@ function computeEpilog() {
   else if (q >= 40) add('🩹', 'Občasné výpadky', `${t.product} funguje, ale každý měsíc se něco opravuje.`, 0);
   else add('🚨', 'Série incidentů', `${t.product} padá a opravy stojí víc, než projekt ušetřil.`, -20);
 
-  const ho = S.backlog.find(b => b.handover);
+  const ho = [...S.backlog, ...S.handedOver].find(b => b.handover);
   if (ho) {
     if (ho.done) add('📦', 'Předáno do provozu', 'Provoz převzal dokumentaci a proškolené lidi. Projektový tým se může věnovat dalšímu projektu.', 15);
     else add('📭', 'Předání bez předání', 'Projekt skončil, ale provoz nedostal dokumentaci ani školení. Projektový tým je další rok „na telefonu“.', -15);
@@ -1144,9 +1185,26 @@ const ACTIONS = {
     if (!isInsane() || !it || it.done) return;
     S.backlog = S.backlog.filter(b => b !== it);
     S.selected = S.selected.filter(x => x !== id);
+    it.handedAt = S.sprint;
     S.handedOver.push(it);
     // Skutečnou projektovou práci provoz neudělá – její vlastník to nese těžce.
-    if (!it.ops && it.owner) applyStake({ [it.owner]: -6 });
+    it.stakeHit = !it.ops && it.owner ? applyStake({ [it.owner]: -6 })[it.owner] || 0 : 0;
+  },
+
+  // Předání jde vzít zpět jen během plánování, ve kterém se stalo – po spuštění sprintu už práci převzal provoz.
+  unhandover({ id }) {
+    const it = S.handedOver.find(b => b.id === id);
+    if (!it || S.screen !== 'plan' || it.handedAt !== S.sprint) return;
+    S.handedOver = S.handedOver.filter(b => b !== it);
+    if (it.stakeHit && it.owner) applyStake({ [it.owner]: -it.stakeHit });
+    delete it.handedAt;
+    delete it.stakeHit;
+    S.backlog.push(it);
+  },
+
+  split({ id }) {
+    const it = S.backlog.find(b => b.id === id);
+    if (it && canSplit(it)) splitItem(it);
   },
 
   experiment({ id }) {
@@ -1837,6 +1895,9 @@ function plan() {
       ? `<button class="exp-btn" data-action="experiment" data-id="${it.id}" ${canExperiment ? '' : 'disabled'} title="Ověřit skutečnou hodnotu levným experimentem (landing page, rozhovory)">🧪 ověřit</button>` : '';
     const ops = isInsane() && !it.done
       ? `<button class="exp-btn ops-btn" data-action="handover" data-id="${it.id}" title="Předat liniové organizaci – v projektu se dělat nebude">⚙️ do provozu</button>` : '';
+    const cut = canSplit(it)
+      ? `<button class="exp-btn split-btn" data-action="split" data-id="${it.id}" title="Položka je větší než kapacita týmu – celá se nikdy nedokončí. Rozdělí ji na menší části, které se vejdou.">✂️ rozdělit</button>` : '';
+    const big = tooBig(it) && !lock ? `<small class="too-big">Nevejde se do kapacity týmu (${capacity()} SP) – celá se nedokončí.</small>` : '';
     const sp = itemSP(it);
     const owner = it.owner && S.stake[it.owner] !== undefined ? stakeholderById(it.owner).icon : '';
     const area = it.area && S.sc.areas ? `<small class="area ${knowers(it.area).length ? '' : 'unknown'}">${areaLabel(it.area)}${knowers(it.area).length ? '' : ' – nikdo neumí'}</small>` : '';
@@ -1845,13 +1906,25 @@ function plan() {
         <button class="bl-item ${it.done ? 'done' : ''} ${lock && !it.done ? 'locked' : ''} ${sel ? 'sel' : ''}" data-action="toggle" data-id="${it.id}" ${lock ? 'disabled' : ''} title="${lock || MOSCOW[it.moscow].title}">
           <span class="check">${it.done ? '✔' : sel ? '☑' : lock ? '🔒' : '☐'}</span>
           ${itemBadge(it)}
-          <span class="bl-name">${owner ? `<span class="owner" title="${stakeholderById(it.owner).name}">${owner}</span> ` : ''}${it.name}${area}${lock && !it.done ? `<small>${lock}</small>` : ''}</span>
+          <span class="bl-name">${owner ? `<span class="owner" title="${stakeholderById(it.owner).name}">${owner}</span> ` : ''}${it.name}${area}${big}${lock && !it.done ? `<small>${lock}</small>` : ''}</span>
           <span class="sp ${sp > it.sp ? 'over' : ''}">${sp} SP</span>
           <span class="val" title="Hodnota pro uživatele">${itemValueLabel(it)}</span>
-        </button>${exp}${ops}
+        </button>${cut}${exp}${ops}
       </div>`;
   }).join('');
-  const mustLeft = S.backlog.filter(b => b.moscow === 'M' && !b.done).length;
+  const handed = S.handedOver.length ? `
+        <div class="handed">
+          <h4>⚙️ Předáno provozu</h4>
+          ${S.handedOver.map(it => `
+            <div class="handed-row">
+              <span>${itemBadge(it)} ${it.name}${it.moscow === 'M' ? '<small class="warn">Must – v projektu dodaná nebude</small>' : ''}</span>
+              ${it.handedAt === S.sprint
+                ? `<button class="exp-btn ops-btn" data-action="unhandover" data-id="${it.id}" title="Vrátit zpět do backlogu">↩️ vrátit</button>`
+                : '<small>převzal provoz</small>'}
+            </div>`).join('')}
+          <p class="hint">Vrátit jde jen během plánování, ve kterém položka odešla. Po spuštění ${per().gen} ji převzal provoz.</p>
+        </div>` : '';
+  const mustLeft = mustItems().filter(b => !b.done).length;
   const parts = [
     ['Základ', baseCapacity()],
     ['Morálka', moraleCapacity()],
@@ -1876,6 +1949,7 @@ function plan() {
         <h3>${listTitle}</h3>
         <p class="hint">${hint}</p>
         ${rows}
+        ${handed}
       </div>
       <aside class="card side">
         <h3>Kapacita týmu</h3>
@@ -2338,8 +2412,8 @@ function end() {
   }
   const newRecord = f.score > S.prevRecord;
   const [icon, title, text] = grade(f.score);
-  const mustDone = S.backlog.filter(b => b.moscow === 'M' && b.done).length;
-  const mustAll = S.backlog.filter(b => b.moscow === 'M').length;
+  const mustDone = mustItems().filter(b => b.done).length;
+  const mustAll = mustItems().length;
   const valueNote = isPhased() ? `přesah etap ${days(S.overrunTotal)} · rezerva ${days(S.buffer)}`
     : AP() === 'agile' ? `💎 ${f.value} skutečné hodnoty` : `💎 ${f.value} · Must ${mustDone}/${mustAll}`;
   const lessons = S.lessons.map(l => `
