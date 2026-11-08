@@ -141,6 +141,10 @@ na úvodu stačí kliknout na *Pokračovat*.
 - `js/data.js` – veškerý obsah hry: `SCENARIOS`, `PRACTICES`, `PRACTICE_PAIRS`, `ESSENTIALS`,
   `APPROACHES`, `PATTERNS`, `CONTEXT_TAGS`, `GENERIC_EVENTS`, `GATE_EVENT`, `GLOSSARY`
 - `js/data-insane.js` – projekty velmi obtížné úrovně (přidávají se do `SCENARIOS`)
+- `js/icons.js` – vlastní sada systémových ikon (SVG sprite: obrys v barvě textu, jedna plochá výplň
+  z palety), funkce `ic('id')` a monogramy lidí `mono(osoba, pořadí)`. Ikony nahrazují emoji
+  u ukazatelů, přístupů, hodnocení, úrovní, nálad, únavy a ovládání. Emoji v datech u událostí,
+  milníků, oblastí práce a lidí se nevykreslují. Projekty, praktiky, vzorce a kontexty mají zatím emoji.
 - `js/fx.js` – oživení rozhraní: živé ukazatele, kotel s mixem praktik, graf průběhu projektu
 - `js/game.js` – herní logika, vykreslování a ukládání rozehrané hry
 

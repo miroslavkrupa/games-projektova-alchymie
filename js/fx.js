@@ -61,7 +61,7 @@ function animateHud() {
 // výška hladiny režii vůči rozpočtu. Synergie jiskří, konflikty kouří – jen tam, kde hra radí.
 
 const WORLD_COLOR = { pred: 'var(--pred)', hybrid: 'var(--both)', agile: 'var(--agile)' };
-const WORLD_ICON = { pred: '📐', hybrid: '🔗', agile: '🔄' };
+const WORLD_ICON = { pred: ic('pred', 'sm'), hybrid: ic('hybrid', 'sm'), agile: ic('agile', 'sm') };
 const ING_SLOTS = [[14, 18], [62, 12], [38, 30], [78, 34], [24, 46], [52, 52], [8, 62], [70, 62], [42, 8], [88, 14], [30, 70], [58, 32]];
 let cauldronPrev = { owner: null, mix: [] };
 
@@ -94,13 +94,13 @@ function cauldron() {
     return `<span class="ing ${fresh.includes(p.id) ? 'drop' : ''}" style="left:${x + shift}%;bottom:${Math.min(fill - 12, y)}%;animation-delay:${fresh.includes(p.id) ? 0 : (i * 0.37) % 2}s">${p.icon}</span>`;
   }).join('');
   const label = chosen.length
-    ? `Kotel: ${chosen.length} praktik, režie ${cost} z ${budget()}. Poměr: ${worlds.map(k => `${WORLD_LABEL[k].replace(/^\S+\s/, '')} ${pct(k)} %`).join(', ')}.`
+    ? `Kotel: ${chosen.length} praktik, režie ${cost} z ${budget()}. Poměr: ${worlds.map(k => `${WORLD_LABEL[k].replace(/<svg.*?<\/svg>\s*/, '')} ${pct(k)} %`).join(', ')}.`
     : 'Prázdný kotel – zatím žádná praktika.';
 
   return `
     <div class="cauldron ${over ? 'over' : ''} ${done ? 'done' : ''} ${fresh.length ? 'splash' : ''}" role="img" aria-label="${label}">
       <div class="sparks" aria-hidden="true">
-        ${'<span class="spark">✨</span>'.repeat(Math.min(3, syn))}${'<span class="smoke">💨</span>'.repeat(Math.min(3, con))}
+        ${`<span class="spark">${ic('jiskra')}</span>`.repeat(Math.min(3, syn))}${`<span class="smoke">${ic('mlha')}</span>`.repeat(Math.min(3, con))}
       </div>
       <div class="pot" aria-hidden="true">
         ${fill ? `<div class="brew" style="height:${fill}%;background:${brew}">
@@ -111,7 +111,7 @@ function cauldron() {
       ${over ? '<div class="foam" aria-hidden="true" style="background:' + brew + '"></div>' : ''}
       <div class="rim" aria-hidden="true"></div>
       <div class="fire" aria-hidden="true"><i></i><i></i><i></i></div>
-      <small class="brew-ratio">${chosen.length ? (over ? '⚠️ přetéká' : ratio) : 'vhoď první praktiku'}</small>
+      <small class="brew-ratio">${chosen.length ? (over ? `${ic('ok', 'sm')} přetéká` : ratio) : 'vhoď první praktiku'}</small>
     </div>`;
 }
 
@@ -128,7 +128,7 @@ function progressChart() {
   const X = i => 3 + (i / n) * 94;
   const Y = v => 100 - v;
   const p = per();
-  const markIcon = r => RATING_LABEL[r].split(' ')[0];
+  const markIcon = r => RATING_ICON[r];
   const lines = METRICS.map((m, idx) => `<path class="pc-line" data-m="${m.id}" style="stroke:var(--s${idx + 1})" vector-effect="non-scaling-stroke" d="${hist.map((h, i) => `${i ? 'L' : 'M'}${X(i).toFixed(2)} ${Y(h[m.id])}`).join(' ')}"/>`).join('');
   const grid = [0, 25, 50, 75, 100].map(v => `<line class="pc-grid" vector-effect="non-scaling-stroke" x1="0" x2="100" y1="${Y(v)}" y2="${Y(v)}"/>`).join('');
   const fail = failAt() ? `<line class="pc-fail" vector-effect="non-scaling-stroke" x1="0" x2="100" y1="${Y(failAt())}" y2="${Y(failAt())}"/>` : '';
@@ -150,7 +150,7 @@ function progressChart() {
     const nPat = found.filter(f => f.type === 'pattern').length;
     const nAnti = found.length - nPat;
     const icons = [...decisions.map(l => markIcon(l.rating)),
-      ...(nPat ? [`🟢${nPat > 1 ? `×${nPat}` : ''}`] : []), ...(nAnti ? [`🔴${nAnti > 1 ? `×${nAnti}` : ''}`] : [])];
+      ...(nPat ? [`${ic('vzorec')}${nPat > 1 ? `×${nPat}` : ''}`] : []), ...(nAnti ? [`${ic('antivzorec')}${nAnti > 1 ? `×${nAnti}` : ''}`] : [])];
     tallest = Math.max(tallest, icons.length);
     marks.push(`<span class="pc-mark" style="left:${mid}%">${icons.join('<br>')}</span>`);
     const rows = METRICS.map((m, idx) => {
@@ -159,10 +159,10 @@ function progressChart() {
     }).join('');
     const failedHere = S.failed && k === n;
     chartTips.push(`
-      <b class="pc-tip-head">${failedHere ? `⛔ ${p.nom} ${k} – projekt skončil` : `${p.nom} ${k}`}</b>
+      <b class="pc-tip-head">${failedHere ? `${ic('stop', 'sm')} ${p.nom} ${k} – projekt skončil` : `${p.nom} ${k}`}</b>
       <ul class="pc-tip-vals">${rows}</ul>
       ${decisions.length ? `<ul class="pc-tip-list">${decisions.map(l => `<li>${markIcon(l.rating)} ${l.title}</li>`).join('')}</ul>` : ''}
-      ${found.length ? `<ul class="pc-tip-list">${found.map(f => `<li>${f.type === 'pattern' ? '🟢' : '🔴'} ${f.icon} ${f.name}</li>`).join('')}</ul>` : ''}`);
+      ${found.length ? `<ul class="pc-tip-list">${found.map(f => `<li>${ic(f.type === 'pattern' ? 'vzorec' : 'antivzorec', 'sm')} ${f.icon} ${f.name}</li>`).join('')}</ul>` : ''}`);
     hits.push(`<div class="pc-hit" tabindex="0" data-col="${k - 1}" data-x="${X(k)}" style="left:${X(k - 1)}%;width:${X(k) - X(k - 1)}%" aria-label="${p.nom} ${k}"></div>`);
   }
 
@@ -177,10 +177,10 @@ function progressChart() {
 
   return `
     <div class="card pchart">
-      <h3>📈 Průběh projektu</h3>
-      <p class="hint">${fogged() || isInsane() ? 'Skutečné hodnoty ukazatelů – během hry jsi je viděl(a) jen v mlze reportingu. ' : ''}Číslo na ose je konec ${p.gen}. Pod osou jsou rozhodnutí (✅ ⚠️ ❌) a odhalené vzorce (🟢 🔴) z daného období – najeď na graf pro detail.</p>
+      <h3>${ic('graf-nahoru')} Průběh projektu</h3>
+      <p class="hint">${fogged() || isInsane() ? 'Skutečné hodnoty ukazatelů – během hry jsi je viděl(a) jen v mlze reportingu. ' : ''}Číslo na ose je konec ${p.gen}. Pod osou jsou rozhodnutí (${RATING_ICON.best} ${RATING_ICON.ok} ${RATING_ICON.bad}) a odhalené vzorce (${ic('vzorec')} ${ic('antivzorec')}) z daného období – najeď na graf pro detail.</p>
       <div class="pc-legend">${METRICS.map((m, idx) => `<span class="pc-key" data-m="${m.id}"><i style="background:var(--s${idx + 1})"></i>${m.icon} ${m.label}</span>`).join('')}
-        ${failAt() ? '<span class="pc-key fail"><i></i>⛔ hranice selhání</span>' : ''}</div>
+        ${failAt() ? '<span class="pc-key fail"><i></i>hranice selhání</span>' : ''}</div>
       <div class="pc-frame">
         <div class="pc-plot">
           ${yLabels}

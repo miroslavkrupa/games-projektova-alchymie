@@ -862,6 +862,29 @@ h1 { font-size: 2.5rem; }
 .g-id, .dep { border-radius: 3px; }
 .insane-rule { border-radius: var(--radius); }
 
+/* ---------- Ikony a monogramy ---------- */
+/* Vlastní sada (js/icons.js): obrys v barvě textu, jedna plochá výplň z palety. */
+.ic { width: 1.25em; height: 1.25em; vertical-align: -.28em; flex: none; overflow: visible;
+  fill: none; stroke: var(--ink); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.ic.sm { width: 1.05em; height: 1.05em; vertical-align: -.18em; }
+.ic.lg { width: 1.7em; height: 1.7em; vertical-align: -.45em; }
+.btn .ic, .chip .ic, .tag .ic { stroke: currentColor; }
+.btn .ic { margin: -.2em 0; }
+.logo .ic { width: 1.4em; height: 1.4em; }
+.pr-icon .ic { width: 1.1em; height: 1.1em; }
+.pattern-icon .ic { width: 1.1em; height: 1.1em; }
+.level-head h3 .ic { width: 1.4em; height: 1.4em; vertical-align: -.35em; }
+.end h1 .ic { width: 1.25em; height: 1.25em; vertical-align: -.22em; }
+.mood .ic, .p-fatigue .ic { width: 1.35em; height: 1.35em; }
+.pc-mark .ic { width: 1.35em; height: 1.35em; }
+.cauldron .spark .ic, .cauldron .smoke .ic { width: 16px; height: 16px; }
+.mono { --c: var(--pred); display: inline-grid; place-items: center; flex: none;
+  width: 30px; height: 30px; border-radius: 50%; border: 2px solid var(--ink);
+  background: color-mix(in srgb, var(--c) 38%, var(--surface)); color: var(--ink);
+  font: 700 .8rem/1 var(--font-head); letter-spacing: .02em; vertical-align: middle; }
+.mono.sm { width: 24px; height: 24px; font-size: .62rem; border-width: 1.5px; vertical-align: middle; }
+.owner .mono { margin-right: 2px; }
+
 /* ---------- Mobil ---------- */
 @media (max-width: 760px) {
   h1 { font-size: 1.7rem; }
