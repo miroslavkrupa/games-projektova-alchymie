@@ -57,12 +57,11 @@ function animateHud() {
 }
 
 // ---------- Kotel s mixem praktik ----------
-// Barva lektvaru ukazuje poměr prediktivních, propojovacích a agilních praktik (váženo režií),
-// výška hladiny režii vůči rozpočtu. Synergie jiskří, konflikty kouří – jen tam, kde hra radí.
+// Kotel je prázdný, plný, nebo přetéká (režie nad rozpočet). Barva lektvaru ukazuje poměr
+// prediktivních, propojovacích a agilních praktik (váženo režií). Synergie jiskří, konflikty kouří – jen tam, kde hra radí.
 
 const WORLD_COLOR = { pred: 'var(--pred)', hybrid: 'var(--both)', agile: 'var(--agile)' };
 const WORLD_ICON = { pred: ic('pred', 'sm'), hybrid: ic('hybrid', 'sm'), agile: ic('agile', 'sm') };
-const ING_SLOTS = [[14, 18], [62, 12], [38, 30], [78, 34], [24, 46], [52, 52], [8, 62], [70, 62], [42, 8], [88, 14], [30, 70], [58, 32]];
 let cauldronPrev = { owner: null, mix: [] };
 
 function cauldron() {
@@ -88,11 +87,6 @@ function cauldron() {
   const pct = k => Math.round(w[k] / total * 100);
   const ratio = `${worlds.map(k => `${WORLD_ICON[k]}\u2009${pct(k)}`).join(' ')}\u00a0%`;
 
-  const ings = chosen.map((p, i) => {
-    const x = 10 + ((i * 37) % 81);
-    const lift = (i % 3) * 7 + Math.floor(i / 6) * 4;
-    return `<span class="ing ${fresh.includes(p.id) ? 'drop' : ''}" style="left:${x}%;bottom:${lift}px;animation-delay:${fresh.includes(p.id) ? 0 : (i * 0.37) % 2}s">${p.icon}</span>`;
-  }).join('');
   const label = chosen.length
     ? `Kotel: ${chosen.length} praktik, režie ${cost} z ${budget()}. Poměr: ${worlds.map(k => `${WORLD_LABEL[k].replace(/<svg.*?<\/svg>\s*/, '')} ${pct(k)} %`).join(', ')}.`
     : 'Prázdný kotel – zatím žádná praktika.';
@@ -105,7 +99,6 @@ function cauldron() {
       </div>
       ${KOTEL_SVG}
       ${fill ? `<div class="brew" aria-hidden="true" style="background:${brew}">${[22, 50, 74, 38].slice(0, bubbles).map((l, i) => `<i class="bubble" style="left:${l}%;animation-delay:${i * 0.6}s"></i>`).join('')}</div>` : ''}
-      <div class="ings" aria-hidden="true">${ings}</div>
       ${over ? `<div class="foam" aria-hidden="true" style="background:${brew}"></div>` : ''}
       <small class="brew-ratio">${chosen.length ? (over ? `${ic('ok', 'sm')} přetéká` : ratio) : 'vhoď první praktiku'}</small>
     </div>`;
