@@ -135,7 +135,9 @@ na úvodu stačí kliknout na *Pokračovat*.
 
 - `index.html` – vstupní stránka
 - `img/` – úvodní ilustrace a ikona hry
-- `css/style.css` – vzhled (světlý i tmavý režim, mobil)
+- `css/style.css` – vzhled „Stavební deník“ (teplý papír, okr, rez, tyrkysová a výstražná žlutá, obrysy
+  a tvrdé stíny jako komiksová políčka; tmavý režim „soumrak termínu“, mobil). Písma Zilla Slab
+  a Source Sans 3 z Google Fonts.
 - `js/data.js` – veškerý obsah hry: `SCENARIOS`, `PRACTICES`, `PRACTICE_PAIRS`, `ESSENTIALS`,
   `APPROACHES`, `PATTERNS`, `CONTEXT_TAGS`, `GENERIC_EVENTS`, `GATE_EVENT`, `GLOSSARY`
 - `js/data-insane.js` – projekty velmi obtížné úrovně (přidávají se do `SCENARIOS`)
