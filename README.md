@@ -2,7 +2,7 @@
 
 *Namíchej správné řízení pro každý projekt.*
 
-![Postava v zástěře míchá v kotli projektovou metodiku](img/alchymie.webp)
+![Ruda Gantt a Bára Backlogová míchají kotel praktik](img/alchymie.webp)
 
 Výuková prohlížečová hra o **řízení projektů**. Hráč vede projekt a musí nejdřív poznat, jaký přístup
 mu sedí – **prediktivní** (vodopád), **agilní**, nebo **hybridní** – a pak k němu namíchat správné

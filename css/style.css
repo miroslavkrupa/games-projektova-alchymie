@@ -147,7 +147,7 @@ small { color: var(--muted); }
 /* ---------- Úvod ---------- */
 .hero { text-align: center; padding: 32px; }
 .hero-emoji { font-size: 3.5rem; margin-bottom: 8px; }
-.hero-art { display: block; width: 100%; max-width: 540px; height: auto; margin: 0 auto 16px; border-radius: var(--radius); box-shadow: 0 10px 30px rgba(20, 16, 40, .25); }
+.hero-art { display: block; width: 100%; max-width: 640px; height: auto; margin: 0 auto 8px; }
 .tagline { font-size: 1.15rem; font-weight: 600; color: var(--primary); margin-top: -4px; }
 .lead { font-size: 1.15rem; }
 .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 16px 0; text-align: left; }
@@ -821,7 +821,7 @@ h1 { font-size: 2.5rem; }
 .bar i { border-radius: 0; }
 .fbar { border-radius: 0; }
 
-.hero-art { border: 3px solid var(--edge); border-radius: var(--radius); box-shadow: 6px 6px 0 var(--edge); }
+/* Úvodní obrázek má průhledné pozadí: postavy stojí přímo na kartě, bez rámečku. */
 .tagline { color: var(--primary); font-family: var(--font-head); font-size: 1.3rem; }
 .tile-num { border-radius: 4px; background: var(--caution); color: var(--caution-ink); border: 2px solid var(--edge); }
 .tile-btn:hover { border-color: var(--edge); transform: translate(-1px, -1px); box-shadow: 5px 5px 0 var(--edge); }

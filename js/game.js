@@ -1573,7 +1573,7 @@ function intro() {
   ];
   return `
     <div class="hero card intro-hero">
-      <img class="hero-art" src="img/alchymie.webp" alt="Postava v zástěře míchá v kotli projektovou metodiku, z páry stoupají Ganttův diagram, zelená fajfka a šipky iterace" width="1536" height="1024">
+      <img class="hero-art" src="img/alchymie.webp?v=2" alt="Ruda Gantt s deskami s Ganttovým diagramem míchá kotel praktik a Bára Backlogová s tabletem do něj přihazuje lístečky. Z páry stoupá na jedné straně harmonogram s milníky, na druhé šipky iterací a nahoře se spojí do zelené fajfky." width="1536" height="1024">
       <h1>Projektová alchymie</h1>
       <p class="tagline">Namíchej správné řízení pro každý projekt</p>
       <p class="lead">Některé projekty se dají naplánovat dopředu, jiné se musí objevovat za pochodu a některé kombinují obojí. Univerzální recept neexistuje.</p>
