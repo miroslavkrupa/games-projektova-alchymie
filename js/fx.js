@@ -89,31 +89,60 @@ function cauldron() {
   const ratio = `${worlds.map(k => `${WORLD_ICON[k]}\u2009${pct(k)}`).join(' ')}\u00a0%`;
 
   const ings = chosen.map((p, i) => {
-    const [x, y] = ING_SLOTS[i % ING_SLOTS.length];
-    const shift = Math.floor(i / ING_SLOTS.length) * 6;
-    return `<span class="ing ${fresh.includes(p.id) ? 'drop' : ''}" style="left:${x + shift}%;bottom:${Math.min(fill - 12, y)}%;animation-delay:${fresh.includes(p.id) ? 0 : (i * 0.37) % 2}s">${p.icon}</span>`;
+    const x = 10 + ((i * 37) % 81);
+    const lift = (i % 3) * 7 + Math.floor(i / 6) * 4;
+    return `<span class="ing ${fresh.includes(p.id) ? 'drop' : ''}" style="left:${x}%;bottom:${lift}px;animation-delay:${fresh.includes(p.id) ? 0 : (i * 0.37) % 2}s">${p.icon}</span>`;
   }).join('');
   const label = chosen.length
     ? `Kotel: ${chosen.length} praktik, režie ${cost} z ${budget()}. Poměr: ${worlds.map(k => `${WORLD_LABEL[k].replace(/<svg.*?<\/svg>\s*/, '')} ${pct(k)} %`).join(', ')}.`
     : 'Prázdný kotel – zatím žádná praktika.';
+  const bubbles = fill ? Math.min(4, 1 + Math.round(fill / 30)) : 0;
 
   return `
     <div class="cauldron ${over ? 'over' : ''} ${done ? 'done' : ''} ${fresh.length ? 'splash' : ''}" role="img" aria-label="${label}">
       <div class="sparks" aria-hidden="true">
         ${`<span class="spark">${ic('jiskra')}</span>`.repeat(Math.min(3, syn))}${`<span class="smoke">${ic('mlha')}</span>`.repeat(Math.min(3, con))}
       </div>
-      <div class="pot" aria-hidden="true">
-        ${fill ? `<div class="brew" style="height:${fill}%;background:${brew}">
-          <i class="bubble" style="left:20%"></i><i class="bubble" style="left:55%;animation-delay:.8s"></i><i class="bubble" style="left:78%;animation-delay:1.6s"></i>
-        </div>` : ''}
-      </div>
+      ${KOTEL_SVG}
+      ${fill ? `<div class="brew" aria-hidden="true" style="background:${brew}">${[22, 50, 74, 38].slice(0, bubbles).map((l, i) => `<i class="bubble" style="left:${l}%;animation-delay:${i * 0.6}s"></i>`).join('')}</div>` : ''}
       <div class="ings" aria-hidden="true">${ings}</div>
-      ${over ? '<div class="foam" aria-hidden="true" style="background:' + brew + '"></div>' : ''}
-      <div class="rim" aria-hidden="true"></div>
-      <div class="fire" aria-hidden="true"><i></i><i></i><i></i></div>
+      ${over ? `<div class="foam" aria-hidden="true" style="background:${brew}"></div>` : ''}
       <small class="brew-ratio">${chosen.length ? (over ? `${ic('ok', 'sm')} přetéká` : ratio) : 'vhoď první praktiku'}</small>
     </div>`;
 }
+
+// Litinový kotel ve stylu úvodního obrázku: rezavé tělo, výstražná páska, kruhy, nožky a oheň.
+// Barvy jsou pevné (je to ilustrace), obrys tmavě hnědý v obou režimech.
+const KOTEL_TELO = 'M18 33C6 50 10 72 38 79Q64 85 90 79C118 72 122 50 110 33Z';
+const KOTEL_SVG = `
+  <svg class="pot" viewBox="0 0 128 100" width="128" height="100" aria-hidden="true">
+    <defs>
+      <clipPath id="kotel-telo"><path d="${KOTEL_TELO}"/></clipPath>
+      <pattern id="kotel-paska" width="9" height="9" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+        <rect width="9" height="9" fill="#e8b827"/><rect width="4.5" height="9" fill="#2b2118"/>
+      </pattern>
+    </defs>
+    <g class="fire">
+      <path class="fl" d="M64 97c-9 0-13-4-12-10 1-4 4-6 5-10 2 3 3 5 3 7 1-3 3-6 3-10 5 3 10 9 10 13 0 6-3 10-9 10z" fill="#f08a24" stroke="#2b2118" stroke-width="2" stroke-linejoin="round"/>
+      <path class="fl fl2" d="M64 97c-4 0-6-2.4-5.5-5.6.5-2.6 2.6-4 3.4-6.6 2.4 1.8 5.4 4 5.4 7 0 3.4-1.5 5.2-3.3 5.2z" fill="#ffd166"/>
+    </g>
+    <g fill="#8a7a6a" stroke="#2b2118" stroke-width="2"><ellipse cx="47" cy="96" rx="7" ry="3"/><ellipse cx="81" cy="96" rx="7" ry="3"/></g>
+    <g fill="#4a3022" stroke="#2b2118" stroke-width="2.5" stroke-linejoin="round"><path d="M34 74 27 94h9l6-17z"/><path d="M94 74l7 20h-9l-6-17z"/></g>
+    <g stroke-linecap="round" fill="none"><circle cx="11" cy="50" r="7" stroke="#2b2118" stroke-width="7"/><circle cx="11" cy="50" r="7" stroke="#6b4a36" stroke-width="3"/>
+      <circle cx="117" cy="50" r="7" stroke="#2b2118" stroke-width="7"/><circle cx="117" cy="50" r="7" stroke="#6b4a36" stroke-width="3"/></g>
+    <path d="${KOTEL_TELO}" fill="#7a4a30"/>
+    <g clip-path="url(#kotel-telo)" fill="none">
+      <path d="M26 50c-4 9-2 18 5 25" stroke="#b07a52" stroke-width="3.5" stroke-linecap="round" opacity=".85"/>
+      <path d="M0 62Q64 92 128 62V100H0z" fill="#5c3623" stroke="none"/>
+      <g fill="#5a3524" stroke="none"><circle cx="72" cy="60" r="1.6"/><circle cx="54" cy="66" r="1.2"/><circle cx="92" cy="58" r="1.4"/><circle cx="84" cy="70" r="1.1"/><circle cx="44" cy="56" r="1"/><circle cx="62" cy="76" r="1.3"/></g>
+      <g fill="#a2694a" stroke="none"><circle cx="78" cy="56" r="1.1"/><circle cx="58" cy="58" r=".9"/><circle cx="98" cy="64" r=".9"/></g>
+      <rect x="0" y="39" width="128" height="9" fill="url(#kotel-paska)"/>
+      <path d="M0 39h128M0 48h128" stroke="#2b2118" stroke-width="2"/>
+    </g>
+    <path d="${KOTEL_TELO}" fill="none" stroke="#2b2118" stroke-width="3" stroke-linejoin="round"/>
+    <ellipse cx="64" cy="31" rx="50" ry="8" fill="#4a3022" stroke="#2b2118" stroke-width="3"/>
+    <ellipse cx="64" cy="30" rx="42" ry="5" fill="#1c130e"/>
+  </svg>`;
 
 // ---------- Graf průběhu projektu ----------
 // Pět ukazatelů v čase: bod 0 je start projektu, bod k konec k-tého období.

@@ -32,8 +32,6 @@
   --s3: #1baf7a;
   --s4: #eda100;
   --s5: #e87ba4;
-  --pot: #3a3229;
-  --pot-rim: #4b4034;
   --radius: 6px;
   --shadow: 4px 4px 0 var(--edge);
   --shadow-sm: 2px 2px 0 var(--edge);
@@ -71,8 +69,6 @@
     --s3: #199e70;
     --s4: #c98500;
     --s5: #d55181;
-    --pot: #120f1c;
-    --pot-rim: #2c2640;
   }
 }
 
@@ -554,6 +550,8 @@ h4 { margin: 14px 0 6px; font-size: 1rem; }
 .kfmd li span { font-size: .72rem; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; color: var(--muted); }
 .pattern-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; align-items: start; }
 .pattern-grid .pattern { margin: 0; }
+.pattern-grid + h3 { margin-top: 28px; }
+.card.result > .btn, .card.result > .actions { margin-top: 18px; }
 .pattern-grid .kfmd li { grid-template-columns: 1fr; gap: 0; }
 .modal { max-width: 900px; }
 
@@ -668,56 +666,48 @@ h4 { margin: 14px 0 6px; font-size: 1rem; }
 /* ---------- Kotel s mixem praktik ---------- */
 .mix-bar { grid-template-columns: auto 180px 1fr auto; }
 .cauldron { position: relative; width: 128px; padding-top: 20px; text-align: center; }
-.cauldron .pot {
-  position: relative; height: 74px; margin: 0 6px;
-  background: var(--pot); overflow: hidden;
-  border-radius: 10px 10px 46px 46px / 10px 10px 34px 34px;
-  box-shadow: inset 0 -6px 0 rgba(0, 0, 0, .25);
-}
-.cauldron .rim { position: absolute; top: 15px; left: 0; right: 0; height: 9px; background: var(--pot-rim); border-radius: 6px; z-index: 2; }
+.cauldron .pot { display: block; width: 128px; height: 100px; overflow: visible; }
 .cauldron .brew {
-  position: absolute; left: 0; right: 0; bottom: 0;
-  transition: height .6s ease;
-  background-size: 160% 100% !important;
+  position: absolute; left: 24px; top: 46px; width: 80px; height: 8px; border-radius: 50%;
+  background-size: 160% 100% !important; z-index: 2;
+  box-shadow: inset 0 -2px 0 rgba(0, 0, 0, .25), inset 0 2px 0 rgba(255, 255, 255, .3);
   animation: swirl 5s ease-in-out infinite alternate;
 }
-.cauldron .brew::before { content: ''; position: absolute; left: 0; right: 0; top: 0; height: 4px; background: rgba(255, 255, 255, .35); }
 @keyframes swirl { from { background-position: 0% 0; } to { background-position: 100% 0; } }
 .cauldron.splash .brew { animation: splash .5s ease, swirl 5s ease-in-out .5s infinite alternate; }
-@keyframes splash { 40% { transform: scaleY(1.12); filter: brightness(1.25); } }
+@keyframes splash { 40% { transform: scale(1.12, 1.6); filter: brightness(1.25); } }
+.cauldron.done .brew { box-shadow: 0 0 14px 4px var(--both-soft); }
 .cauldron .bubble {
-  position: absolute; bottom: 4px; width: 7px; height: 7px; border-radius: 50%;
-  background: rgba(255, 255, 255, .6); animation: rise 2.4s ease-in infinite;
+  position: absolute; bottom: 2px; width: 7px; height: 7px; border-radius: 50%;
+  background: rgba(255, 255, 255, .7); border: 1.5px solid rgba(43, 33, 24, .6); animation: rise 2.4s ease-in infinite;
 }
 @keyframes rise {
-  0% { transform: translateY(0) scale(.5); opacity: 0; }
-  20% { opacity: .9; }
-  100% { transform: translateY(-46px) scale(1.1); opacity: 0; }
+  0% { transform: translateY(0) scale(.4); opacity: 0; }
+  30% { opacity: 1; }
+  100% { transform: translateY(-16px) scale(1.1); opacity: 0; }
 }
-.cauldron .ings { position: absolute; left: 6px; right: 6px; top: 20px; height: 74px; pointer-events: none; z-index: 3; }
-.cauldron .ing { position: absolute; font-size: 17px; line-height: 1; transform: translateX(-50%); animation: bob 3s ease-in-out infinite; }
+.cauldron .ings { position: absolute; left: 24px; right: 24px; top: 16px; height: 34px; pointer-events: none; z-index: 3; }
+.cauldron .ing { position: absolute; line-height: 1; transform: translateX(-50%); animation: bob 3s ease-in-out infinite; }
 .cauldron .ing.drop { animation: drop .7s cubic-bezier(.5, 0, .75, 0), bob 3s ease-in-out .7s infinite; }
 @keyframes bob { 50% { margin-bottom: 3px; } }
 @keyframes drop {
-  from { transform: translate(-50%, -70px) rotate(-40deg); opacity: .3; }
+  from { transform: translate(-50%, -50px) rotate(-40deg); opacity: .3; }
   to { transform: translateX(-50%); opacity: 1; }
 }
-.cauldron .sparks { position: absolute; top: 0; left: 0; right: 0; height: 22px; display: flex; justify-content: center; gap: 4px; pointer-events: none; }
-.cauldron .spark { animation: twinkle 1.6s ease-in-out infinite; font-size: 14px; }
+.cauldron .sparks { position: absolute; top: 0; left: 0; right: 0; height: 20px; display: flex; justify-content: center; gap: 4px; pointer-events: none; }
+.cauldron .spark { animation: twinkle 1.6s ease-in-out infinite; }
 .cauldron .spark:nth-child(2) { animation-delay: .5s; }
 .cauldron .spark:nth-child(3) { animation-delay: 1s; }
-.cauldron .smoke { animation: puff 2.2s ease-out infinite; font-size: 14px; }
+.cauldron .smoke { animation: puff 2.2s ease-out infinite; }
 @keyframes twinkle { 50% { transform: scale(1.35) rotate(15deg); opacity: .5; } }
 @keyframes puff { 0% { opacity: 0; transform: translateY(8px) scale(.6); } 40% { opacity: .9; } 100% { opacity: 0; transform: translateY(-10px) scale(1.3); } }
-.cauldron .foam { position: absolute; top: 9px; left: 2px; right: 2px; height: 14px; border-radius: 10px; z-index: 1; animation: foam 1.2s ease-in-out infinite alternate; background-size: 160% 100% !important; }
+.cauldron .foam { position: absolute; top: 40px; left: 16px; right: 16px; height: 16px; border-radius: 10px; z-index: 4; border: 2px solid #2b2118; animation: foam 1.2s ease-in-out infinite alternate; background-size: 160% 100% !important; }
 @keyframes foam { to { transform: scaleX(1.08) translateY(-2px); } }
-.cauldron .fire { display: flex; justify-content: center; gap: 10px; height: 10px; margin-top: -2px; }
-.cauldron .fire i { width: 10px; height: 12px; border-radius: 50% 50% 50% 50% / 70% 70% 30% 30%; background: linear-gradient(#ffd166, #e8590c); animation: flicker .35s ease-in-out infinite alternate; }
-.cauldron .fire i:nth-child(2) { animation-delay: .15s; height: 14px; }
-@keyframes flicker { to { transform: scaleY(.75) translateY(2px); opacity: .8; } }
-.cauldron .brew-ratio { display: block; margin-top: 4px; font-size: .7rem; line-height: 1.2; color: var(--muted); }
+.cauldron .fl { transform-box: fill-box; transform-origin: 50% 100%; animation: flicker .4s ease-in-out infinite alternate; }
+.cauldron .fl2 { animation-delay: .2s; }
+@keyframes flicker { to { transform: scaleY(.8) scaleX(1.06); } }
+.cauldron .brew-ratio { display: block; margin-top: 2px; font-size: .7rem; line-height: 1.2; color: var(--muted); }
 .cauldron.over .brew-ratio { color: var(--bad); font-weight: 700; }
-.cauldron.done .pot { box-shadow: inset 0 -6px 0 rgba(0, 0, 0, .25), 0 0 18px 2px var(--both-soft); }
 .mix-result-head { display: flex; align-items: center; gap: 16px; margin-bottom: 8px; }
 .mix-result-head h3 { margin: 0; }
 
@@ -872,8 +862,7 @@ h1 { font-size: 2.5rem; }
 .btn .ic { margin: -.2em 0; }
 .logo .ic { width: 1.4em; height: 1.4em; }
 .hero-emoji .ic { width: 1.15em; height: 1.15em; }
-.cauldron .ing .ic { width: 20px; height: 20px; }
-.mix-bar .cauldron .ing .ic { width: 14px; height: 14px; }
+.cauldron .ing .ic { width: 18px; height: 18px; }
 .pr-icon .ic { width: 1.1em; height: 1.1em; }
 .pattern-icon .ic { width: 1.1em; height: 1.1em; }
 .level-head h3 .ic { width: 1.4em; height: 1.4em; vertical-align: -.35em; }
@@ -905,12 +894,7 @@ h1 { font-size: 2.5rem; }
   .two-col, .ws-grid, .plan-grid, .score-grid, .pgrid, .pattern-grid, .mix-bar { grid-template-columns: 1fr; }
   .sg-cols { grid-template-columns: 1fr; }
   .mix-bar { grid-template-columns: auto 1fr auto; gap: 8px; padding: 10px 12px; bottom: 4px; }
-  .mix-bar .cauldron { width: 76px; padding-top: 12px; }
-  .mix-bar .cauldron .pot { height: 44px; }
-  .mix-bar .cauldron .rim { top: 8px; }
-  .mix-bar .cauldron .ings { top: 12px; height: 44px; }
-  .mix-bar .cauldron .ing { font-size: 11px; }
-  .mix-bar .cauldron .sparks { height: 14px; }
+  .mix-bar .cauldron { zoom: .62; }
   .mix-bar .cauldron .brew-ratio { display: none; }
   .resume-card { grid-template-columns: 36px 1fr; }
   .resume-btns { grid-column: 1 / -1; }
