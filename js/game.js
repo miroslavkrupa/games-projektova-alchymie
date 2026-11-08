@@ -36,6 +36,7 @@ const TRACK_LABEL = { pred: '📐 prediktivně řízené prvky', agile: '🔄 ag
 const PATTERN_TYPE = { pattern: '🟢 Vzorec', anti: '🔴 Antivzorec' };
 const ALL_APPROACHES = ['hybrid', 'pred', 'agile'];
 const RECORD_KEY = 'hybridni-projekt-rekord-';
+const STARS_KEY = 'projektova-alchymie-hvezdy-';
 const ATLAS_KEY = 'hybridni-projekt-atlas';
 
 // Tvary slov pro období projektu (sprint v agilním a hybridním, etapa v prediktivním).
@@ -101,6 +102,14 @@ function getRecord(id) {
 
 function setRecord(id, score) {
   try { localStorage.setItem(RECORD_KEY + id, String(score)); } catch { /* bez úložiště se rekord neuloží */ }
+}
+
+function getStars(id) {
+  try { const v = localStorage.getItem(STARS_KEY + id); return v === null ? null : +v; } catch { return null; }
+}
+
+function setStars(id, stars) {
+  try { localStorage.setItem(STARS_KEY + id, String(stars)); } catch { /* bez úložiště se hvězdy neuloží */ }
 }
 
 function getAtlas() {
@@ -202,6 +211,7 @@ function startScenario(id) {
     gateDone: false,
     failed: null,
     prevRecord: null,
+    prevStars: null,
     modal: null,
   };
   // Převzatý projekt už nějaký mix praktik má.
@@ -1533,12 +1543,13 @@ function intro() {
   const insaneOpen = insaneUnlocked();
   const row = sc => {
     const rec = getRecord(sc.id);
+    const stars = getStars(sc.id);
     const locked = !levelUnlocked(sc.level);
     return `
       <button class="project-row ${sc.level || ''} ${locked ? 'locked' : ''}" data-action="pickScenario" data-id="${sc.id}" ${locked ? 'disabled' : ''}>
         <span class="pr-icon">${locked ? '🔒' : sc.icon}</span>
         <span class="pr-main"><b>${sc.name}</b><small>${sc.tagline}</small></span>
-        <span class="pr-meta">${locked ? 'Zamčeno' : rec ? `🏅 ${rec} bodů` : 'Zatím nehráno'}</span>
+        <span class="pr-meta">${locked ? 'Zamčeno' : stars !== null ? `${starRow(stars, 'sm')} <small>${rec} b.</small>` : rec ? `🏅 ${rec} bodů` : 'Zatím nehráno'}</span>
         <span class="pr-go" aria-hidden="true">${locked ? '' : '▶'}</span>
       </button>`;
   };
@@ -1596,6 +1607,8 @@ function brief() {
       <div class="ctx-row">${sc.takeover ? approachChip() : ''}${contextChips()}</div>
       ${sc.stakeholders ? `<p><b>Stakeholdeři:</b></p><ul class="people-list">${sc.stakeholders.filter(x => !x.joins).map(x => `<li>${x.icon} <b>${x.name}</b> – ${x.wants}</li>`).join('')}</ul>` : ''}
       ${S.team.length ? `<p><b>Tým:</b></p><ul class="people-list">${S.team.map(p => `<li>${p.icon} <b>${p.name}</b> – ${p.role} <span class="knows">${p.knows.map(areaLabel).join(' · ')}</span></li>`).join('')}</ul>` : ''}
+      <p><b>Cíle projektu:</b></p>
+      ${starGoals(null)}
       <p class="hint">${sc.takeover ? 'Projekt přebíráš rozjetý. Nejdřív zjisti, co se v něm děje, pak zasáhni.' : 'Jak projekt řídit, je na tobě – přijdeš na to v první fázi.'} Sleduj pět ukazatelů projektu; když některý spadne ${failAt() ? `na ${failAt()}` : 'na nulu'}, projekt končí.</p>
       <div class="actions">
         <button class="btn primary big" data-action="start">${sc.takeover ? 'Začít diagnózou ▶' : 'Převzít projekt ▶'}</button>
@@ -2395,12 +2408,59 @@ function finalScore() {
   return { avgMetrics: health, value, valuePct, insightPct, sustain, score: Math.round(score) };
 }
 
-function grade(score) {
-  if (score >= 85) return ['🏆', 'Mistr řízení projektů', 'Projekt jsi řídil(a) přesně tak, jak jeho povaha vyžadovala.'];
-  if (score >= 70) return ['🥇', 'Zkušený projektový manažer', 'Velmi dobrá práce. Pár rozhodnutí šlo udělat lépe – mrkni na poučení níže.'];
-  if (score >= 55) return ['🥈', 'Slibný projektový manažer', 'Projekt dopadl slušně. Zkus si ještě jednou projít, co tomuto typu projektu sedí.'];
-  if (score >= 40) return ['🥉', 'Začínající PM', 'Projekt doběhl do cíle, ale se šrámy. Zkus hru znovu – události budou jiné.'];
-  return ['🔥', 'Projekt v krizi', 'Tohle se nepovedlo. Přečti si poučení a zkus to znovu!'];
+// ---------- Hvězdy: 0–3 podle bodů, KO podmínek a podmínek pro ★★★ (pro každý projekt jinak) ----------
+
+function starCheck(c) {
+  if (c.ms) return S.milestones[c.ms] === 'ok';
+  if (c.allMs) return S.sc.milestones.every(m => S.milestones[m.id] === 'ok');
+  if (c.metric) return S.metrics[c.metric] >= c.min;
+  if (c.buffer !== undefined) return S.buffer >= c.buffer;
+  if (c.sustain) return (S.epilog?.sustain ?? 0) >= c.sustain;
+  if (c.stake) return (stakeMin() ?? 100) >= c.stake;
+  return true;
+}
+
+function starResult(score) {
+  const r = S.sc.stars;
+  const ko = r.ko.map(c => ({ text: c.text, ok: starCheck(c) }));
+  const top = r.top.map(c => ({ text: c.text, ok: starCheck(c) }));
+  const byScore = r.at.filter(t => score >= t).length;
+  let stars = byScore;
+  let why = null;
+  if (S.failed) { stars = 0; why = 'failed'; }
+  else if (ko.some(c => !c.ok)) { stars = 0; why = 'ko'; }
+  else if (byScore === 0) why = 'low';
+  else if (byScore === 3 && top.some(c => !c.ok)) { stars = 2; why = 'top'; }
+  return { stars, why, at: r.at, ko, top, missing: byScore < 3 ? r.at[byScore] - score : 0 };
+}
+
+const starRow = (n, cls = '') => `<span class="stars ${cls}" role="img" aria-label="${n} ze 3 hvězd">${[0, 1, 2].map(i => `<i class="${i < n ? 'on' : ''}">★</i>`).join('')}</span>`;
+
+// Slovní hodnocení se řídí hvězdami, ne body – hranice hvězd jsou pro každý projekt jiné.
+function grade(res) {
+  if (res.why === 'failed') return ['🔥', 'Projekt v krizi', 'Projekt skončil předčasně. Přečti si poučení a zkus to znovu!'];
+  if (res.why === 'ko') return ['⛔', 'Nesplněno', `Projekt doběhl, ale nesplnil zásadní podmínku: ${res.ko.filter(c => !c.ok).map(c => c.text.toLowerCase()).join('; ')}.`];
+  if (res.stars === 0) return ['🌧️', 'Nesplněno', `Projekt doběhl, ale na první hvězdu chybí ${res.missing} bodů. Zkus hru znovu – události budou jiné.`];
+  if (res.stars === 1) return ['🥉', 'Začínající PM', 'Projekt doběhl do cíle, ale se šrámy. Mrkni na poučení níže a zkus to znovu.'];
+  if (res.stars === 2) return ['🥇', 'Zkušený projektový manažer', res.why === 'top'
+    ? 'Body máš na tři hvězdy, chybí ale podmínka pro mistrovství – viz níže.'
+    : 'Velmi dobrá práce. Pár rozhodnutí šlo udělat lépe – mrkni na poučení níže.'];
+  return ['🏆', 'Mistr řízení projektů', 'Projekt jsi řídil(a) přesně tak, jak jeho povaha vyžadovala.'];
+}
+
+// Cíle projektu: hranice hvězd a podmínky (v zadání bez stavu, na konci se splněním).
+function starGoals(res) {
+  const r = S.sc.stars;
+  const mark = c => (res ? (c.ok ? '✅' : '❌') : '•');
+  const list = (title, items) => `<div class="sg-col"><b>${title}</b><ul>${items.map(c => `<li class="${res ? (c.ok ? 'ok' : 'no') : ''}">${mark(c)} ${c.text}</li>`).join('')}</ul></div>`;
+  return `
+    <div class="star-goals ${res ? 'result' : ''}">
+      <div class="sg-at">${r.at.map((t, i) => `<span class="${res && res.stars > i ? 'got' : ''}">${starRow(i + 1, 'sm')} ${t} b.</span>`).join('')}</div>
+      <div class="sg-cols">
+        ${list('Musí platit, jinak 0 ★', res ? res.ko : r.ko)}
+        ${list('Navíc pro ★★★', res ? res.top : r.top)}
+      </div>
+    </div>`;
 }
 
 function end() {
@@ -2410,8 +2470,14 @@ function end() {
     S.prevRecord = getRecord(S.sc.id);
     if (f.score > S.prevRecord) setRecord(S.sc.id, f.score);
   }
+  const res = starResult(f.score);
+  if (S.prevStars == null) {
+    S.prevStars = getStars(S.sc.id) ?? -1;
+    if (res.stars > S.prevStars) setStars(S.sc.id, res.stars);
+  }
   const newRecord = f.score > S.prevRecord;
-  const [icon, title, text] = grade(f.score);
+  const newStars = res.stars > S.prevStars && S.prevStars >= 0;
+  const [icon, title, text] = grade(res);
   const mustDone = mustItems().filter(b => b.done).length;
   const mustAll = mustItems().length;
   const valueNote = isPhased() ? `přesah etap ${days(S.overrunTotal)} · rezerva ${days(S.buffer)}`
@@ -2427,11 +2493,12 @@ function end() {
   return `
     <div class="card hero end">
       ${S.failed ? `<div class="failed">⛔ ${S.failed}</div>` : ''}
-      <div class="hero-emoji">${icon}</div>
-      <h1>${title}</h1>
+      ${starRow(res.stars, 'big')}
+      <h1>${icon} ${title}</h1>
       <div class="score">${f.score}<small>/100 bodů</small></div>
-      <p class="record">${newRecord ? '🎉 Nový osobní rekord v tomto projektu!' : `🏅 Tvůj rekord v tomto projektu: ${S.prevRecord} bodů`}</p>
+      <p class="record">${newStars ? `🎉 Nově ${starRow(res.stars, 'sm')} v tomto projektu!` : newRecord ? '🎉 Nový osobní rekord v tomto projektu!' : `🏅 Tvůj rekord v tomto projektu: ${S.prevRecord} bodů${S.prevStars > 0 ? ` · nejvíc ${starRow(S.prevStars, 'sm')}` : ''}`}</p>
       <p class="lead">${text}</p>
+      ${starGoals(res)}
       <div class="score-grid">
         <div><span>Zdraví projektu</span><b>${Math.round(f.avgMetrics)}%</b><small>${stakeMin() === null ? 'průměr 5 ukazatelů' : 'ukazatele a stakeholdeři'}</small></div>
         <div><span>${isPhased() ? 'Dodání v termínu' : 'Dodaná hodnota'}</span><b>${Math.round(f.valuePct)}%</b><small>${valueNote}</small></div>

@@ -120,6 +120,12 @@ python3 -m http.server 8765
    a **Atlas vzorců**, který se plní napříč hrami (ukládá se v prohlížeči). **Graf průběhu projektu**
    ukáže všech 5 ukazatelů v čase a pod osou rozhodnutí a odhalené vzorce z každého období
    (najetím se zobrazí detail, k dispozici je i tabulka hodnot).
+6. **Hvězdy** – každý projekt se hodnotí 0–3 ★. Hranice bodů pro ★/★★/★★★ jsou pro každý projekt
+   jiné a hráč je vidí už v zadání. **KO podmínky** (např. otevření se všemi Must, certifikace CE,
+   schválení regulátorem) musí platit, jinak je výsledek 0 ★ – stejně jako při předčasném konci.
+   Pro ★★★ musí platit i **podmínky navíc** (např. všechny milníky, rok poté aspoň 50 %).
+   Slovní hodnocení se řídí hvězdami: 0 ★ nesplněno, ★ Začínající PM, ★★ Zkušený projektový manažer,
+   ★★★ Mistr řízení projektů. Nejlepší počet hvězd se ukáže v seznamu projektů.
 
 Ukazatele nahoře reagují živě: pruh dojede na novou hodnotu a vedle vyletí změna (v mlze reportingu
 jen pruh). **Rozehraná hra se ukládá** po každém kroku – po zavření karty nebo obnovení stránky
@@ -153,6 +159,9 @@ na úvodu stačí kliknout na *Pokračovat*.
   - agilní: `approachText`, `targetValue`, položky s `value` (odhad) a `actual` (skutečnost),
     `reveals` + `discoveries` pro nové podněty, milníky `traction` s `target`, vlastní `gate`;
   - volitelně `baseCapacity` (kapacita týmu za období).
+  - `stars`: `at` (body na ★, ★★, ★★★), `ko` a `top` – seznamy podmínek s `text` a jedním z typů
+    `ms` (milník splněn), `allMs`, `metric` + `min`, `buffer` (rezerva aspoň), `sustain` (rok poté aspoň),
+    `stake` (nejméně spokojený stakeholder aspoň).
   - náročná úroveň: `level: 'hard'`, `hiddenContext`, `gateAfter`, `shift` (změna kontextu: `text`, `needs` –
     praktiky, které adaptaci splní, `penalty`, volitelně `devalue`, `addItems`, `capacityLoss`,
     `delayIfNot`) a `followups` (navazující události, na které odkazuje volba

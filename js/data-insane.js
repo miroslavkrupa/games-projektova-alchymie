@@ -14,6 +14,12 @@
 const INSANE_SCENARIOS = [
   {
     id: 'zachrana',
+    // Hvězdy: body na ★/★★/★★★, KO podmínky (nesplněná = 0 ★) a podmínky navíc pro ★★★.
+    stars: {
+      at: [35, 50, 65],
+      ko: [{ ms: 'm3', text: 'Ostrá migrace proběhne' }],
+      top: [{ sustain: 50, text: 'Rok poté aspoň 50 %' }],
+    },
     level: 'insane',
     name: 'Záchrana projektu v krizi',
     icon: '🚑',
@@ -277,6 +283,12 @@ const INSANE_SCENARIOS = [
 
   {
     id: 'fuze',
+    // Hvězdy: body na ★/★★/★★★, KO podmínky (nesplněná = 0 ★) a podmínky navíc pro ★★★.
+    stars: {
+      at: [35, 50, 68],
+      ko: [{ ms: 'm3', text: 'Regulátor schválí společnou aplikaci' }, { ms: 'm4', text: 'Aplikace se spustí se všemi Must položkami' }],
+      top: [{ sustain: 50, text: 'Rok poté aspoň 50 %' }, { stake: 40, text: 'Žádný stakeholder pod 40' }],
+    },
     level: 'insane',
     name: 'Fúze dvou firem',
     icon: '🔀',
@@ -595,6 +607,12 @@ const INSANE_SCENARIOS = [
 
   {
     id: 'promena',
+    // Hvězdy: body na ★/★★/★★★, KO podmínky (nesplněná = 0 ★) a podmínky navíc pro ★★★.
+    stars: {
+      at: [35, 48, 63],
+      ko: [{ ms: 'm3', text: 'Řešení dosáhne cíle Zájem trhu' }],
+      top: [{ sustain: 50, text: 'Rok poté aspoň 50 %' }, { ms: 'm2', text: 'Pilot v kraji proběhl' }],
+    },
     level: 'insane',
     name: 'Projekt, který mění tvář',
     icon: '🦎',

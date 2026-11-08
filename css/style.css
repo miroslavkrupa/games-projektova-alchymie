@@ -755,12 +755,31 @@ h4 { margin: 14px 0 6px; font-size: 1rem; }
   .cauldron *, .float-delta, .meter, .stake { animation: none !important; transition: none !important; }
 }
 
+/* ---------- Hvězdy ---------- */
+.stars { display: inline-flex; gap: 2px; line-height: 1; vertical-align: -0.1em; }
+.stars i { font-style: normal; color: var(--line); }
+.stars i.on { color: var(--warn); }
+.stars.big { font-size: 3rem; gap: 6px; margin: 4px 0 6px; }
+.stars.sm { font-size: 1em; }
+.pr-meta .stars { font-size: 1.15rem; }
+.pr-meta small { color: var(--muted); margin-left: 4px; }
+.star-goals { text-align: left; background: var(--bg); border-radius: 12px; padding: 12px 14px; margin: 14px 0 4px; }
+.sg-at { display: flex; flex-wrap: wrap; gap: 6px 16px; font-weight: 600; margin-bottom: 8px; }
+.star-goals.result .sg-at > span { opacity: .5; }
+.star-goals.result .sg-at > span.got { opacity: 1; }
+.sg-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.sg-col b { font-size: .85rem; color: var(--muted); }
+.sg-col ul { list-style: none; margin: 4px 0 0; padding: 0; font-size: .9rem; }
+.sg-col li { margin: 3px 0; }
+.sg-col li.no { color: var(--bad); }
+
 /* ---------- Mobil ---------- */
 @media (max-width: 760px) {
   h1 { font-size: 1.7rem; }
   .hud { grid-template-columns: repeat(3, 1fr); }
   .meter-head span { font-size: .75rem; }
   .two-col, .ws-grid, .plan-grid, .score-grid, .pgrid, .pattern-grid, .mix-bar { grid-template-columns: 1fr; }
+  .sg-cols { grid-template-columns: 1fr; }
   .mix-bar { grid-template-columns: auto 1fr auto; gap: 8px; padding: 10px 12px; bottom: 4px; }
   .mix-bar .cauldron { width: 76px; padding-top: 12px; }
   .mix-bar .cauldron .pot { height: 44px; }

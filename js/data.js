@@ -719,6 +719,12 @@ const GENERIC_EVENTS = [
 const SCENARIOS = [
   {
     id: 'knihovna',
+    // Hvězdy: body na ★/★★/★★★, KO podmínky (nesplněná = 0 ★) a podmínky navíc pro ★★★.
+    stars: {
+      at: [50, 70, 85],
+      ko: [{ ms: 'm3', text: 'Knihovna se otevře se všemi Must funkcemi' }],
+      top: [{ allMs: true, text: 'Všechny milníky splněné' }],
+    },
     name: 'Projekt Knihovna',
     icon: '🏛️',
     tagline: 'Rekonstrukce budovy + mobilní aplikace',
@@ -901,6 +907,12 @@ const SCENARIOS = [
 
   {
     id: 'festival',
+    // Hvězdy: body na ★/★★/★★★, KO podmínky (nesplněná = 0 ★) a podmínky navíc pro ★★★.
+    stars: {
+      at: [50, 70, 85],
+      ko: [{ ms: 'm3', text: 'Festival začne se všemi Must položkami' }, { metric: 'kvalita', min: 30, text: 'Kvalita aspoň 30 – bezpečnost návštěvníků nejde ošidit' }],
+      top: [{ allMs: true, text: 'Všechny milníky splněné' }],
+    },
     name: 'Festival Soutok',
     icon: '🎸',
     tagline: 'Pódia a povolení + aplikace a kampaň',
@@ -1070,6 +1082,12 @@ const SCENARIOS = [
 
   {
     id: 'tovarna',
+    // Hvězdy: body na ★/★★/★★★, KO podmínky (nesplněná = 0 ★) a podmínky navíc pro ★★★.
+    stars: {
+      at: [50, 70, 85],
+      ko: [{ ms: 'm3', text: 'Výroba se spustí se všemi Must položkami' }, { ms: 'm2', text: 'Linka získá certifikaci CE – bez ní nesmí vyrábět' }],
+      top: [{ allMs: true, text: 'Všechny milníky splněné' }],
+    },
     name: 'Linka na elektrokola',
     icon: '🏭',
     tagline: 'Instalace strojů + software pro výrobu',
@@ -1226,6 +1244,12 @@ const SCENARIOS = [
 
   {
     id: 'elektrarna',
+    // Hvězdy: body na ★/★★/★★★, KO podmínky (nesplněná = 0 ★) a podmínky navíc pro ★★★.
+    stars: {
+      at: [45, 60, 75],
+      ko: [{ buffer: -3, text: 'Odstávka nepřetáhne o víc než 3 dny – síť s elektrárnou počítá' }],
+      top: [{ buffer: 0, text: 'Rezerva neskončí v mínusu' }],
+    },
     name: 'Odstávka elektrárny',
     icon: '⚡',
     tagline: 'Generální oprava bloku v pevném okně',
@@ -1455,6 +1479,12 @@ const SCENARIOS = [
 
   {
     id: 'startup',
+    // Hvězdy: body na ★/★★/★★★, KO podmínky (nesplněná = 0 ★) a podmínky navíc pro ★★★.
+    stars: {
+      at: [50, 70, 85],
+      ko: [{ ms: 'm3', text: 'Veřejné spuštění dosáhne cíle trakce' }],
+      top: [{ allMs: true, text: 'Všechny tři cíle trakce splněné' }],
+    },
     name: 'Startup Zachraň jídlo',
     icon: '🚀',
     tagline: 'Aplikace proti plýtvání jídlem',
@@ -1635,6 +1665,12 @@ const SCENARIOS = [
   // ================= ÚROVEŇ HARD =================
   {
     id: 'druzice',
+    // Hvězdy: body na ★/★★/★★★, KO podmínky (nesplněná = 0 ★) a podmínky navíc pro ★★★.
+    stars: {
+      at: [40, 55, 70],
+      ko: [{ metric: 'kvalita', min: 25, text: 'Kvalita aspoň 25 – jinak družice na oběžné dráze selže' }],
+      top: [{ ms: 'm2', text: 'Prošla zkouška ve vakuové komoře' }, { ms: 'm3', text: 'Prošla vibrační zkouška' }],
+    },
     level: 'hard',
     name: 'Studentská družice',
     icon: '🛰️',
@@ -1901,6 +1937,12 @@ const SCENARIOS = [
 
   {
     id: 'nemocnice',
+    // Hvězdy: body na ★/★★/★★★, KO podmínky (nesplněná = 0 ★) a podmínky navíc pro ★★★.
+    stars: {
+      at: [45, 60, 75],
+      ko: [{ ms: 'm3', text: 'Urgent se otevře se všemi Must položkami' }, { ms: 'm2', text: 'Stavba projde kolaudací' }],
+      top: [{ allMs: true, text: 'Všechny milníky splněné' }],
+    },
     level: 'hard',
     name: 'Urgentní příjem nemocnice',
     icon: '🏥',
@@ -2165,6 +2207,12 @@ const SCENARIOS = [
 
   {
     id: 'hra',
+    // Hvězdy: body na ★/★★/★★★, KO podmínky (nesplněná = 0 ★) a podmínky navíc pro ★★★.
+    stars: {
+      at: [45, 65, 82],
+      ko: [{ ms: 'm3', text: 'Verze 1.0 dosáhne cíle' }],
+      top: [{ allMs: true, text: 'Všechny tři cíle splněné' }],
+    },
     level: 'hard',
     name: 'Videohra v early accessu',
     icon: '🎮',
@@ -2434,6 +2482,12 @@ const SCENARIOS = [
 
   {
     id: 'most',
+    // Hvězdy: body na ★/★★/★★★, KO podmínky (nesplněná = 0 ★) a podmínky navíc pro ★★★.
+    stars: {
+      at: [35, 50, 65],
+      ko: [{ buffer: 0, text: 'Výluky nepřetáhnou za rezervu – vlaky musí znovu jet včas' }],
+      top: [{ metric: 'rozpocet', min: 30, text: 'Rozpočet na konci aspoň 30' }],
+    },
     level: 'hard',
     name: 'Výměna železničního mostu',
     icon: '🌉',
