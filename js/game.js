@@ -423,7 +423,7 @@ function applyEffects(effects = {}) {
 function recordDecision(title, choice, lesson) {
   S.insight += RATING_POINTS[choice.rating];
   S.insightMax += RATING_POINTS.best;
-  S.lessons.push({ title, rating: choice.rating, choice: choice.text, lesson });
+  S.lessons.push({ period: S.sprint, title, rating: choice.rating, choice: choice.text, lesson });
 }
 
 function checkFail() {
@@ -625,7 +625,7 @@ function evaluateMix() {
   points = Math.max(0, Math.min(MIX_INSIGHT_MAX, points));
   S.insight += points;
   S.insightMax += MIX_INSIGHT_MAX;
-  S.lessons.push({
+  S.lessons.push({ period: S.sprint,
     title: to ? 'Zásah do mixu praktik' : 'Mix praktik',
     rating: points >= 64 ? 'best' : points >= 40 ? 'ok' : 'bad',
     choice: (chosen.map(p => p.icon).join(' ') || 'žádné praktiky') + (hints() ? '' : ` · chyběly základy: ${essentials.filter(e => !e.ok).map(e => e.name.toLowerCase()).join(', ') || 'žádné'}${traps.length ? ` · pasti: ${traps.map(p => p.name).join(', ')}` : ''}`),
@@ -930,7 +930,7 @@ function evaluateDiagnosis() {
   S.insight += points;
   S.insightMax += DIAG_POINTS * truth.length;
   const names = ids => ids.map(id => PATTERNS.find(p => p.id === id).name).join(', ') || 'žádné';
-  S.lessons.push({
+  S.lessons.push({ period: S.sprint,
     title: 'Diagnóza převzatého projektu',
     rating: !wrong.length && !missed.length ? 'best' : hits.length > wrong.length ? 'ok' : 'bad',
     choice: `správně ${hits.length} z ${truth.length} · navíc: ${names(wrong)} · přehlédnuto: ${names(missed)}`,
@@ -949,7 +949,7 @@ function evaluateOps() {
   const doneOps = ops.filter(b => b.done);
   S.insightMax += OPS_POINTS * ops.length;
   S.insight += Math.max(0, OPS_POINTS * (handedOps.length - handedReal.length));
-  S.lessons.push({
+  S.lessons.push({ period: S.sprint,
     title: 'Projekt, nebo provoz?',
     rating: handedOps.length === ops.length && !handedReal.length ? 'best' : handedOps.length && handedOps.length >= handedReal.length ? 'ok' : 'bad',
     choice: `provozu předáno ${handedOps.length} z ${ops.length} rutinních úkolů${doneOps.length ? ` · v projektu se dělalo: ${doneOps.map(b => b.name).join(', ')}` : ''}${handedReal.length ? ` · omylem předáno: ${handedReal.map(b => b.name).join(', ')}` : ''}`,
@@ -1014,6 +1014,53 @@ function closeProject() {
   if (!S.failed) computeEpilog();
 }
 
+// ---------- Rozehraná hra ----------
+// Stav hry se ukládá po každém kroku, takže zavřená karta nebo obnovení stránky o hru nepřipraví.
+// Scénář se ukládá jen jako id (obsahuje funkce), ostatní stav je čistě datový.
+
+const SAVE_KEY = 'projektova-alchymie-rozehrana';
+const SAVE_VERSION = 1;
+
+function saveGame() {
+  // Úvod a zadání projektu nic nepřepisují – rozehraná hra zůstane, dokud nezačne jiná.
+  if (!S.sc || S.screen === 'brief') return;
+  if (S.screen === 'end') { clearSave(); return; }
+  const { sc, modal, ...rest } = S;
+  try { localStorage.setItem(SAVE_KEY, JSON.stringify({ v: SAVE_VERSION, sc: sc.id, at: Date.now(), S: rest })); } catch { /* bez úložiště se hra neuloží */ }
+}
+
+function loadSave() {
+  try {
+    const d = JSON.parse(localStorage.getItem(SAVE_KEY));
+    const sc = d && d.v === SAVE_VERSION && SCENARIOS.find(x => x.id === d.sc);
+    return sc ? { ...d, sc } : null;
+  } catch { return null; }
+}
+
+function clearSave() {
+  try { localStorage.removeItem(SAVE_KEY); } catch { /* nic */ }
+}
+
+function resumeCard() {
+  const d = loadSave();
+  if (!d) return '';
+  const st = d.S;
+  const pd = PERIODS[APPROACHES[st.approach].period];
+  const where = ['sort', 'toolbox', 'diagnose', 'kickoff'].includes(st.screen) ? 'příprava projektu'
+    : st.screen === 'epilog' ? 'rok poté' : `${pd.nom} ${st.sprint} z ${scPeriods(d.sc)}`;
+  const lv = { hard: '🔥 náročná', insane: '🤯 nemožná' }[d.sc.level] || '🌱 základní';
+  const when = new Date(d.at).toLocaleString('cs-CZ', { day: 'numeric', month: 'numeric', hour: '2-digit', minute: '2-digit' });
+  return `
+    <div class="card resume-card">
+      <span class="pr-icon">${d.sc.icon}</span>
+      <div class="resume-main"><b>Rozehraná hra: ${d.sc.name}</b><small>${lv} úroveň · ${where} · uloženo ${when}</small></div>
+      <div class="resume-btns">
+        <button class="btn primary" data-action="resume">Pokračovat ▶</button>
+        <button class="btn ghost" data-action="discardSave">Zahodit</button>
+      </div>
+    </div>`;
+}
+
 // ---------- Akce ----------
 
 const ACTIONS = {
@@ -1055,7 +1102,7 @@ const ACTIONS = {
     ));
     S.sortResult = { correct, wrong, deltas, opsOverhead: S.opsOverhead };
     const hasOps = S.sc.workstreams.some(w => w.answer === 'ops');
-    S.lessons.push({
+    S.lessons.push({ period: S.sprint,
       title: 'Rozdělení práce',
       rating: wrong === 0 ? 'best' : wrong <= 2 ? 'ok' : 'bad',
       choice: `${correct} z ${total} oblastí správně · ${APPROACHES[AP()].label}${hints() || !wrong ? '' : ` · chybně: ${wrongWs.map(w => w.name).join(', ')}`}`,
@@ -1247,6 +1294,13 @@ const ACTIONS = {
   closeModal() { S.modal = null; },
   replay() { startScenario(S.sc.id); },
   restart() { newGame(); },
+  resume() {
+    const d = loadSave();
+    if (!d) return;
+    S = { ...d.S, sc: d.sc, modal: null };
+    try { render(); } catch (err) { console.error('Uloženou hru nelze obnovit', err); clearSave(); newGame(); }
+  },
+  discardSave() { clearSave(); },
 };
 
 function nextSprint() {
@@ -1289,6 +1343,8 @@ function render() {
     ${S.modal === 'glossary' ? glossaryModal() : ''}
     ${S.modal === 'atlas' ? atlasModal() : ''}
   `;
+  animateHud();
+  saveGame();
 }
 
 function header() {
@@ -1317,8 +1373,8 @@ function hud() {
     const v = shown[m.id];
     const [lo, hi] = fogRange(v);
     return `
-      <div class="meter ${meterClass(v)} ${fog ? 'fog' : ''}" title="${fog ? `${m.label}: odhad ${lo}–${hi}, stav k minulému období` : `${m.label}: ${v} / 100`}">
-        <div class="meter-head"><span>${m.icon} ${m.label}</span><b>${fog ? `${lo}–${hi}` : v}</b></div>
+      <div class="meter ${meterClass(v)} ${fog ? 'fog' : ''}" data-m="${m.id}" data-v="${fog ? hi : v}" title="${fog ? `${m.label}: odhad ${lo}–${hi}, stav k minulému období` : `${m.label}: ${v} / 100`}">
+        <div class="meter-head"><span>${m.icon} ${m.label}</span><b ${fog ? '' : 'data-count'}>${fog ? `${lo}–${hi}` : v}</b></div>
         <div class="bar">${fog ? `<i style="width:${hi}%"></i>` : `<i style="width:${v}%"></i>`}</div>
       </div>`;
   }).join('');
@@ -1326,7 +1382,7 @@ function hud() {
     <div class="stake-row" aria-label="Stakeholdeři">
       ${Object.entries(S.stake).map(([id, v]) => {
         const s = stakeholderById(id);
-        return `<div class="stake ${meterClass(v)}" title="${s.name}: ${s.wants}"><span class="stake-icon">${s.icon}</span><span><b>${s.name}</b><small>${s.wants}</small></span><span class="mood">${fog ? moodIcon(v) : `${moodIcon(v)} ${v}`}</span></div>`;
+        return `<div class="stake ${meterClass(v)}" ${fog ? '' : `data-s="${id}" data-v="${v}"`} title="${s.name}: ${s.wants}"><span class="stake-icon">${s.icon}</span><span><b>${s.name}</b><small>${s.wants}</small></span><span class="mood">${fog ? moodIcon(v) : `${moodIcon(v)} <span data-count>${v}</span>`}</span></div>`;
       }).join('')}
     </div>` : '';
   return `
@@ -1441,6 +1497,7 @@ function intro() {
       <p class="tagline">Namíchej správné řízení pro každý projekt</p>
       <p class="lead">Některé projekty se dají naplánovat dopředu, jiné se musí objevovat za pochodu a některé kombinují obojí. Univerzální recept neexistuje.</p>
     </div>
+    ${resumeCard()}
     <h2 class="section-title">Co tě čeká</h2>
     <div class="tile-grid">
       ${steps.map(([t, d], i) => `<div class="tile"><span class="tile-num">${i + 1}</span><b>${t}</b><p>${d}</p></div>`).join('')}
@@ -1586,14 +1643,14 @@ function toolbox() {
   const to = S.sc.takeover;
   const summary = r && !hints() ? `
     <div class="card mix-result">
-      <h3>${to ? 'Zásah je hotový' : 'Tvůj mix je nastavený'}</h3>
+      <div class="mix-result-head">${cauldron()}<h3>${to ? 'Zásah je hotový' : 'Tvůj mix je nastavený'}</h3></div>
       ${to ? `<p>Zavedeno: ${r.fresh.map(p => `${p.icon} ${p.name}`).join(', ') || 'nic'} · zrušeno: ${r.removed.map(id => `${practiceById(id).icon} ${practiceById(id).name}`).join(', ') || 'nic'}</p>` : ''}
       <div class="chips">${deltaChips(r.deltas)}</div>
       <p class="hint">Na nemožné úrovni ti nikdo neřekne, jestli mix sedí. Poznáš to podle toho, jak se bude projekt vyvíjet – a v závěrečném hodnocení.</p>
       <button class="btn primary" data-action="toKickoff">Pokračovat ▶</button>
     </div>` : r ? `
     <div class="card mix-result">
-      <h3>Tvůj mix je nastavený</h3>
+      <div class="mix-result-head">${cauldron()}<h3>Tvůj mix je nastavený</h3></div>
       <div class="chips">${deltaChips(r.deltas)}</div>
       <div class="two-col">
         <div>
@@ -1614,6 +1671,7 @@ function toolbox() {
       <button class="btn primary" data-action="toKickoff">Pokračovat ▶</button>
     </div>` : `
     <div class="mix-bar card">
+      ${cauldron()}
       <div class="mix-cost">
         <span>Režie řízení</span>
         <b class="${over > 0 ? 'over' : ''}">${cost} / ${budget()}</b>
@@ -2307,6 +2365,7 @@ function end() {
         ${f.sustain !== null ? `<div><span>Rok poté</span><b>${f.sustain}%</b><small>udržitelnost výsledku</small></div>` : ''}
       </div>
     </div>
+    ${progressChart()}
     ${insaneReveal()}
     ${S.aftermath.length ? `
       <div class="card aftermath">

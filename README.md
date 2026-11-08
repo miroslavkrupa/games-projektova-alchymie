@@ -96,7 +96,9 @@ python3 -m http.server 8765
 2. **Mix praktik** – z 19 karet (prediktivní, propojovací a společné, agilní) složíš vlastní model
    řízení s rozpočtem režie 8 bodů. Karty mají synergie a konflikty, některé sedí na kontext projektu.
    Co je dobrá praktika, záleží na typu projektu: detailní Gantt je v prediktivním projektu správně,
-   v hybridním je to past; Scrum v odstávce elektrárny je zbytečná režie.
+   v hybridním je to past; Scrum v odstávce elektrárny je zbytečná režie. Praktiky se vhazují
+   do **kotle**: barva lektvaru ukazuje poměr prediktivních, propojovacích a agilních praktik,
+   hladina režii vůči rozpočtu, synergie jiskří a konflikty kouří (na nemožné úrovni bez jisker a kouře).
 3. **Realizace** – 6 období (sprintů nebo etap): plánování práce do kapacity týmu, událost
    v každém období, milníky a kontrolní bod v polovině projektu. Podle typu projektu:
    - **hybridní** – backlog s MoSCoW, závislost agilní části na prediktivním milníku;
@@ -113,7 +115,13 @@ python3 -m http.server 8765
    v daném kontextu vytvořil. Každý je zapsaný jako řetězec
    **kontext → forma → mechanismus → důsledek**. Mechanismus působí od začátku, odhalí se až jeho důsledek.
 5. **Vyhodnocení** – skóre (zdraví projektu, dodaná hodnota, manažerský úsudek), vzorce z této hry
-   a **Atlas vzorců**, který se plní napříč hrami (ukládá se v prohlížeči).
+   a **Atlas vzorců**, který se plní napříč hrami (ukládá se v prohlížeči). **Graf průběhu projektu**
+   ukáže všech 5 ukazatelů v čase a pod osou rozhodnutí a odhalené vzorce z každého období
+   (najetím se zobrazí detail, k dispozici je i tabulka hodnot).
+
+Ukazatele nahoře reagují živě: pruh dojede na novou hodnotu a vedle vyletí změna (v mlze reportingu
+jen pruh). **Rozehraná hra se ukládá** po každém kroku – po zavření karty nebo obnovení stránky
+na úvodu stačí kliknout na *Pokračovat*.
 
 ## Struktura
 
@@ -123,7 +131,8 @@ python3 -m http.server 8765
 - `js/data.js` – veškerý obsah hry: `SCENARIOS`, `PRACTICES`, `PRACTICE_PAIRS`, `ESSENTIALS`,
   `APPROACHES`, `PATTERNS`, `CONTEXT_TAGS`, `GENERIC_EVENTS`, `GATE_EVENT`, `GLOSSARY`
 - `js/data-insane.js` – projekty nemožné úrovně (přidávají se do `SCENARIOS`)
-- `js/game.js` – herní logika a vykreslování
+- `js/fx.js` – oživení rozhraní: živé ukazatele, kotel s mixem praktik, graf průběhu projektu
+- `js/game.js` – herní logika, vykreslování a ukládání rozehrané hry
 
 ### Jak přidat obsah
 
