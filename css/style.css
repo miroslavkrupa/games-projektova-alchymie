@@ -888,6 +888,15 @@ h1 { font-size: 2.5rem; }
 .mono.sm { width: 24px; height: 24px; font-size: .62rem; border-width: 1.5px; vertical-align: middle; }
 .owner .mono { margin-right: 2px; }
 
+/* ---------- Smazání postupu ---------- */
+.reset-box { margin: 36px auto 8px; max-width: 680px; text-align: center; }
+.reset-box .btn.ghost { color: var(--muted); font-size: .9rem; }
+.reset-box.confirm, .reset-box.done { background: var(--surface); border: 2px solid var(--bad); border-radius: var(--radius); padding: 16px 20px; text-align: left; }
+.reset-box.done { border-color: var(--good); }
+.reset-box p { margin: 0; }
+.reset-box .actions { justify-content: flex-start; margin: 14px 0 0; }
+.btn.danger { background: var(--bad); border-color: var(--bad); color: #fff; font-weight: 600; }
+
 /* ---------- Mobil ---------- */
 @media (max-width: 760px) {
   h1 { font-size: 1.7rem; }

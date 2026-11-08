@@ -68,6 +68,22 @@ const ICON_SPRITE = `<svg xmlns="http://www.w3.org/2000/svg" style="display:none
   <circle cx="12" cy="12" r="9" style="fill:var(--bad)"/>
   <path d="m8.8 8.8 6.4 6.4M15.2 8.8l-6.4 6.4" style="stroke:#fff;stroke-width:2.6"/>
 </symbol>
+<symbol id="i-box" viewBox="0 0 24 24">
+  <rect x="4" y="4" width="16" height="16" rx="3" style="fill:var(--surface)"/>
+</symbol>
+<symbol id="i-box-vybrano" viewBox="0 0 24 24">
+  <rect x="4" y="4" width="16" height="16" rx="3" style="fill:var(--caution)"/>
+  <path d="m8 12.4 2.8 2.8 5.4-6" style="stroke:#2b2118;stroke-width:2.6"/>
+</symbol>
+<symbol id="i-fajfka" viewBox="0 0 24 24">
+  <path d="m4.5 12.5 4.8 4.8L19.5 7" style="stroke:var(--good);stroke-width:3"/>
+</symbol>
+<symbol id="i-krizek" viewBox="0 0 24 24">
+  <path d="M6.5 6.5l11 11M17.5 6.5l-11 11" style="stroke:var(--bad);stroke-width:3"/>
+</symbol>
+<symbol id="i-zavrit" viewBox="0 0 24 24">
+  <path d="M6 6l12 12M18 6 6 18" style="stroke-width:2.6"/>
+</symbol>
 <symbol id="i-stop" viewBox="0 0 24 24">
   <path d="M8.3 3h7.4L21 8.3v7.4L15.7 21H8.3L3 15.7V8.3z" style="fill:var(--bad)"/>
   <path d="M7.5 12h9" style="stroke:#fff;stroke-width:2.6"/>

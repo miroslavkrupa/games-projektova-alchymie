@@ -1119,6 +1119,14 @@ function resumeCard() {
 // ---------- Akce ----------
 
 const ACTIONS = {
+  askReset() { S.confirmReset = true; S.resetDone = false; },
+  cancelReset() { S.confirmReset = false; },
+  resetProgress() {
+    for (const k of progressKeys()) { try { localStorage.removeItem(k); } catch { /* nic */ } }
+    S.confirmReset = false;
+    S.resetDone = true;
+  },
+
   pickScenario({ id }) {
     const sc = SCENARIOS.find(x => x.id === id);
     if (!levelUnlocked(sc.level)) return;
@@ -1530,7 +1538,7 @@ function timeline() {
   const ms = S.sc.milestones.map(m => {
     const st = S.milestones[m.id] || 'pending';
     return `<div class="ms ${st}" style="grid-column:${m.afterSprint}">
-      <span class="diamond">◆</span>${m.name}${st === 'late' ? lateLabel : st === 'ok' ? ' ✓' : ''}</div>`;
+      <span class="diamond">◆</span>${m.name}${st === 'late' ? lateLabel : st === 'ok' ? ' ' + ic('fajfka', 'sm') : ''}</div>`;
   }).join('');
   return `
     <section class="timeline" aria-label="Časová osa projektu">
@@ -1590,7 +1598,26 @@ function intro() {
     ${levelHead('insane', ic('velmiobtizna'), 'Velmi obtížná úroveň', insaneOpen
       ? 'Žádné nápovědy, mlha v reportech, stakeholdeři, kteří chtějí každý něco jiného, konkrétní lidé, kteří se unaví nebo odejdou, rutina převlečená za projekt – a na konci se ukáže, co z projektu zbylo po roce.'
       : `Odemkne se, až v kterémkoli projektu náročné úrovně dosáhneš alespoň ${INSANE_UNLOCK_SCORE} bodů. Bez nápověd, s mlhou v reportech, se stakeholdery, lidmi a tím, co z projektu zbude po roce.`)}
-    <div class="project-list">${SCENARIOS.filter(sc => sc.level === 'insane').map(row).join('')}</div>`;
+    <div class="project-list">${SCENARIOS.filter(sc => sc.level === 'insane').map(row).join('')}</div>
+    ${progressReset()}`;
+}
+
+// ---------- Smazání veškerého postupu (rekordy, hvězdy, atlas, rozehraná hra) ----------
+const PROGRESS_PREFIXES = [RECORD_KEY, STARS_KEY];
+const progressKeys = () => {
+  try {
+    return Object.keys(localStorage).filter(k => k === ATLAS_KEY || k === SAVE_KEY || PROGRESS_PREFIXES.some(p => k.startsWith(p)));
+  } catch { return []; }
+};
+function progressReset() {
+  if (S.resetDone) return `<div class="reset-box done"><p>${ic('fajfka')} Veškerý postup je smazaný. Můžeš začít od začátku.</p></div>`;
+  if (!progressKeys().length) return '';
+  if (S.confirmReset) return `
+    <div class="reset-box confirm" role="alertdialog" aria-label="Potvrzení smazání postupu">
+      <p>${ic('ok')} <b>Opravdu smazat veškerý postup?</b> Zmizí rekordy a hvězdy ve všech projektech, objevené vzorce v atlasu, rozehraná hra a odemčené úrovně. Vrátit to nejde.</p>
+      <div class="actions"><button class="btn danger" data-action="resetProgress">Ano, smazat vše</button><button class="btn" data-action="cancelReset">Zrušit</button></div>
+    </div>`;
+  return `<div class="reset-box"><button class="btn ghost" data-action="askReset">${ic('znovu')} Smazat veškerý postup</button></div>`;
 }
 
 function levelHead(cls, icon, title, text) {
@@ -1893,7 +1920,7 @@ function itemBadge(it) {
 }
 
 function itemValueLabel(it) {
-  if (valueKnown(it)) return `${ic('hodnota', 'sm')} ${itemValue(it)}${it.actual !== undefined ? ' ✓' : ''}`;
+  if (valueKnown(it)) return `${ic('hodnota', 'sm')} ${itemValue(it)}${it.actual !== undefined ? ' ' + ic('fajfka', 'sm') : ''}`;
   return `${ic('hodnota', 'sm')} ~${it.value}`;
 }
 
@@ -1921,7 +1948,7 @@ function plan() {
     return `
       <div class="bl-row">
         <button class="bl-item ${it.done ? 'done' : ''} ${lock && !it.done ? 'locked' : ''} ${sel ? 'sel' : ''}" data-action="toggle" data-id="${it.id}" ${lock ? 'disabled' : ''} title="${lock || MOSCOW[it.moscow].title}">
-          <span class="check">${it.done ? '✔' : sel ? '☑' : lock ? ic('zamek', 'sm') : '☐'}</span>
+          <span class="check">${ic(it.done ? 'best' : sel ? 'box-vybrano' : lock ? 'zamek' : 'box')}</span>
           ${itemBadge(it)}
           <span class="bl-name">${owner ? `<span class="owner" title="${stakeholderById(it.owner).name}">${owner}</span> ` : ''}${it.name}${area}${big}${lock && !it.done ? `<small>${lock}</small>` : ''}</span>
           <span class="sp ${sp > it.sp ? 'over' : ''}">${sp} SP</span>
@@ -2016,10 +2043,10 @@ function event() {
 }
 
 function deliveredRow(i) {
-  if (i.actual === undefined) return `<li class="ok">✔ ${i.name} <small>${i.sp} SP · ${ic('hodnota', 'sm')} ${i.value}</small></li>`;
+  if (i.actual === undefined) return `<li class="ok">${ic('fajfka', 'sm')} ${i.name} <small>${i.sp} SP · ${ic('hodnota', 'sm')} ${i.value}</small></li>`;
   const diff = i.actual - i.value;
   const mood = diff >= 3 ? ic('oslava', 'sm') : diff <= -3 ? ic('tvar-obava', 'sm') : '';
-  return `<li class="ok">✔ ${i.name} <small>${i.sp} SP · odhad ~${i.value} → skutečnost <b>${i.actual}</b> ${mood}</small></li>`;
+  return `<li class="ok">${ic('fajfka', 'sm')} ${i.name} <small>${i.sp} SP · odhad ~${i.value} → skutečnost <b>${i.actual}</b> ${mood}</small></li>`;
 }
 
 function review() {
@@ -2037,7 +2064,7 @@ function review() {
       <p>Závazek <b>${r.committed} SP</b> při kapacitě <b>${r.cap} SP</b>${r.experiments ? ` · ověřené hypotézy: ${r.experiments}` : ''}.</p>
       <ul class="delivered">
         ${r.delivered.map(deliveredRow).join('')}
-        ${r.unfinished.map(i => `<li class="ko">✖ ${i.name} <small>nedokončeno – zpět mezi nedodělané</small></li>`).join('')}
+        ${r.unfinished.map(i => `<li class="ko">${ic('krizek', 'sm')} ${i.name} <small>nedokončeno – zpět mezi nedodělané</small></li>`).join('')}
       </ul>
       ${r.notes.map(n => `<p>${n}</p>`).join('')}
       <div class="chips">${deltaChips(r.deltas)}${stakeChips(r.stakeDeltas)}</div>
@@ -2056,7 +2083,7 @@ function review() {
       </div>` : ''}
     ${m ? `
       <div class="card milestone ${m.ok ? 'ok' : 'late'}">
-        <h3>${msPrefix}: ${m.name} ${m.ok ? '✓' : '– problém'}</h3>
+        <h3>${msPrefix}: ${m.name} ${m.ok ? ic('fajfka') : '– problém'}</h3>
         <p>${m.text}</p>
         ${Object.keys(m.deltas).length ? `<div class="chips">${deltaChips(m.deltas)}</div>` : ''}
       </div>` : ''}
@@ -2077,7 +2104,7 @@ function phaseTimeline() {
   const cols = phases.map(p => `${p.days}fr`).join(' ');
   const ms = phases.map((p, i) => {
     const st = S.milestones[p.id] || 'pending';
-    return `<div class="ms ${st}" style="grid-column:${i + 1}"><span class="diamond">◆</span>${p.milestone.name}${st === 'late' ? ' (zpoždění)' : st === 'ok' ? ' ✓' : ''}</div>`;
+    return `<div class="ms ${st}" style="grid-column:${i + 1}"><span class="diamond">◆</span>${p.milestone.name}${st === 'late' ? ' (zpoždění)' : st === 'ok' ? ' ' + ic('fajfka', 'sm') : ''}</div>`;
   }).join('');
   const cells = phases.map((p, i) => {
     const n = i + 1;
@@ -2144,7 +2171,7 @@ function ganttPlan() {
     }).join('');
     const chips = tasks.filter(o => o.id !== t.id).map(o => `
       <button class="dep ${g.deps[t.id].includes(o.id) ? 'on' : ''}" data-action="ganttDep" data-task="${t.id}" data-dep="${o.id}" title="${t.id} smí začít až po skončení ${o.id}">${o.id}</button>`).join('');
-    const cpNote = cp ? (cp.critical.has(t.id) ? '<span class="crit-tag">⚑ kritická cesta</span>' : `<span class="float-tag">vůle ${days(cp.float[t.id])}</span>`) : '';
+    const cpNote = cp ? (cp.critical.has(t.id) ? '<span class="crit-tag">' + ic('cil', 'sm') + ' kritická cesta</span>' : `<span class="float-tag">vůle ${days(cp.float[t.id])}</span>`) : '';
     const sk = skillLabel(taskSkill(t));
     return `
       <div class="g-row ${conflictIds.has(t.id) ? 'has-conflict' : ''}">
@@ -2203,7 +2230,7 @@ function phaseReview() {
     const waitedHold = t.holdDay && ps < t.holdDay;
     return `
       <div class="g-row">
-        <div class="g-task"><b class="g-id ${t.carried ? 'carried' : ''}">${t.id}</b> ${t.name}<small>${a.rework ? `${ic('ok', 'sm')} přerušeno, den navíc` : waitedHold ? `${ic('lupa', 'sm')} čekal na inspekci (${t.holdDay}. den)` : a.waitedForPeople ? `${ic('tym', 'sm')} čekal na volné lidi (${days(a.waitedForPeople)})` : a.start > ps ? `čekal na předchůdce (${days(a.start - ps)})` : '✓ podle plánu'}</small></div>
+        <div class="g-task"><b class="g-id ${t.carried ? 'carried' : ''}">${t.id}</b> ${t.name}<small>${a.rework ? `${ic('ok', 'sm')} přerušeno, den navíc` : waitedHold ? `${ic('lupa', 'sm')} čekal na inspekci (${t.holdDay}. den)` : a.waitedForPeople ? `${ic('tym', 'sm')} čekal na volné lidi (${days(a.waitedForPeople)})` : a.start > ps ? `čekal na předchůdce (${days(a.start - ps)})` : `${ic('fajfka', 'sm')} podle plánu`}</small></div>
         <div class="g-deps"><small>skutečně po: <b>${truth}</b></small></div>
         <div class="g-days">${cells}</div>
       </div>`;
@@ -2243,7 +2270,7 @@ function phaseReview() {
       ${r.ongoing ? `<h4>Průběžný vliv tvého mixu</h4><p class="hint">${r.ongoing.labels.join(' · ')}</p><div class="chips">${deltaChips(r.ongoing.deltas)}</div>` : ''}
     </div>
     <div class="card milestone ${r.late ? 'late' : 'ok'}">
-      <h3>${ic('cil')} Milník: ${ph.milestone.name} ${r.late ? '– se zpožděním' : '✓'}</h3>
+      <h3>${ic('cil')} Milník: ${ph.milestone.name} ${r.late ? '– se zpožděním' : ic('fajfka')}</h3>
       <p>${msText}</p>
     </div>
     ${revealBlock(r.reveals)}
@@ -2540,7 +2567,7 @@ function modal(title, body) {
   return `
     <div class="modal-back" data-action="closeModal">
       <div class="modal card" role="dialog" aria-label="${title.replace(/<[^>]*>/g, '').trim()}">
-        <div class="modal-head"><h2>${title}</h2><button class="btn ghost" data-action="closeModal">✕</button></div>
+        <div class="modal-head"><h2>${title}</h2><button class="btn ghost" data-action="closeModal" aria-label="Zavřít">${ic('zavrit')}</button></div>
         ${body}
       </div>
     </div>`;

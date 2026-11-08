@@ -134,7 +134,8 @@ na úvodu stačí kliknout na *Pokračovat*.
 ## Struktura
 
 - `index.html` – vstupní stránka
-- `img/` – úvodní ilustrace a ikona hry
+- `img/` – úvodní ilustrace, ikona hry (`favicon.svg`, baňka na výstražně žlutém štítku) a náhled
+  pro sdílení odkazu (`og.jpg`, 1200 × 630, odkazovaný z meta značek `og:` v `index.html`)
 - `css/style.css` – vzhled „Stavební deník“ (teplý papír, okr, rez, tyrkysová a výstražná žlutá, obrysy
   a tvrdé stíny jako komiksová políčka; tmavý režim „soumrak termínu“, mobil). Písma Zilla Slab
   a Source Sans 3 z Google Fonts.
@@ -200,3 +201,9 @@ Každá volba má `rating` (`best` / `ok` / `bad`), `effects` na ukazatele a vol
 - **Nový vzorec / antivzorec** přidej do `PATTERNS`: `approaches`, podmínka `when(c)` (např.
   `c => c.has('scrum') && !c.has('po')`), okamžik odhalení `reveal` (číslo období, `'m1'`,
   `'gate'` nebo `'soften'`), účinky `perSprint` / `once`, krátký příběh `story` a texty `k`, `f`, `m`, `d`.
+
+## Postup hráče
+
+Rekordy, hvězdy, objevené vzorce v atlasu a rozehraná hra se ukládají do `localStorage` prohlížeče.
+Tlačítko **Smazat veškerý postup** dole na úvodní obrazovce (po potvrzení) smaže všechny tyto klíče,
+takže se znovu zamknou i vyšší úrovně. Jiná data v prohlížeči nechá být.
