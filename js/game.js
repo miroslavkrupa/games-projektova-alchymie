@@ -11,7 +11,7 @@ const MIX_INSIGHT_MAX = 80;
 // Náročná úroveň (Hard): menší rozpočet režie, nižší start ukazatelů, dřívější konec projektu.
 const HARD = { budget: 6, startMetric: 40, failAt: 10 };
 const HARD_UNLOCK_SCORE = 70;
-// Nemožná úroveň (Insane): pravidla bez nápověd, mlha reportingu, stakeholdeři, provoz, lidé a rok poté platí jen pro ni.
+// Velmi obtížná úroveň (Insane): pravidla bez nápověd, mlha reportingu, stakeholdeři, provoz, lidé a rok poté platí jen pro ni.
 const INSANE = { budget: 6, startMetric: 40, failAt: 12 };
 const INSANE_UNLOCK_SCORE = 70;
 const LEVELS = { normal: { budget: OVERHEAD_BUDGET, startMetric: START_METRIC, failAt: 0 }, hard: HARD, insane: INSANE };
@@ -251,7 +251,7 @@ function levelUnlocked(lv) {
   return lv === 'hard' ? hardUnlocked() : lv === 'insane' ? insaneUnlocked() : true;
 }
 
-// Pravidla nemožné úrovně: bez nápověd (1) a mlha reportingu (2), dokud v mixu není dashboard nebo EVM.
+// Pravidla velmi obtížné úrovně: bez nápověd (1) a mlha reportingu (2), dokud v mixu není dashboard nebo EVM.
 const hints = () => !isInsane();
 const fogged = () => isInsane() && !has('dashboard') && !has('evm');
 
@@ -266,7 +266,7 @@ const FOG_SIGNALS = {
 const fogSignals = () => (fogged() ? METRICS.filter(m => S.metrics[m.id] < 25).map(m => FOG_SIGNALS[m.id]) : []);
 const per = () => PERIODS[APPROACHES[AP()].period];
 
-// ---------- Nemožná úroveň: stakeholdeři (3) ----------
+// ---------- Velmi obtížná úroveň: stakeholdeři (3) ----------
 
 const stakeholderById = id => S.sc.stakeholders.find(s => s.id === id);
 
@@ -283,7 +283,7 @@ function applyStake(changes = {}) {
 
 const stakeMin = () => (Object.keys(S.stake).length ? Math.min(...Object.values(S.stake)) : null);
 
-// ---------- Nemožná úroveň: lidé a znalosti (5) ----------
+// ---------- Velmi obtížná úroveň: lidé a znalosti (5) ----------
 
 const present = () => S.team.filter(p => !p.gone);
 const knowers = area => present().filter(p => p.knows.includes(area));
@@ -960,7 +960,7 @@ function applyAftermath() {
   for (const a of S.aftermath) a.deltas = applyEffects(a.effects);
 }
 
-// ---------- Nemožná úroveň: diagnóza, provoz a rok poté ----------
+// ---------- Velmi obtížná úroveň: diagnóza, provoz a rok poté ----------
 
 // Antivzorce, které v převzatém projektu skutečně působí (podle mixu předchozího vedení).
 function takeoverTruth() {
@@ -1099,7 +1099,7 @@ function resumeCard() {
   const pd = PERIODS[APPROACHES[st.approach].period];
   const where = ['sort', 'toolbox', 'diagnose', 'kickoff'].includes(st.screen) ? 'příprava projektu'
     : st.screen === 'epilog' ? 'rok poté' : `${pd.nom} ${st.sprint} z ${scPeriods(d.sc)}`;
-  const lv = { hard: '🔥 náročná', insane: '🤯 nemožná' }[d.sc.level] || '🌱 základní';
+  const lv = { hard: '🔥 náročná', insane: '🤯 velmi obtížná' }[d.sc.level] || '🌱 základní';
   const when = new Date(d.at).toLocaleString('cs-CZ', { day: 'numeric', month: 'numeric', hour: '2-digit', minute: '2-digit' });
   return `
     <div class="card resume-card">
@@ -1504,7 +1504,7 @@ function patternCard(p, { deltas, story } = {}) {
 }
 
 function revealBlock(reveals) {
-  // Bez nápověd (nemožná úroveň): vzorce se ukážou až na konci projektu.
+  // Bez nápověd (velmi obtížná úroveň): vzorce se ukážou až na konci projektu.
   if (!reveals || !reveals.length || !hints()) return '';
   return `
     <div class="reveal">
@@ -1583,7 +1583,7 @@ function intro() {
       ? `Méně zdrojů, skrytý faktor, změna kontextu uprostřed projektu a rozhodnutí, která se vrací. Ukazatele startují na ${HARD.startMetric}, na mix praktik máš ${HARD.budget} bodů režie a projekt končí už při poklesu ukazatele na ${HARD.failAt}.`
       : `Odemkne se, až v kterémkoli projektu základní úrovně dosáhneš alespoň ${HARD_UNLOCK_SCORE} bodů. Čeká tě méně zdrojů, skrytý faktor, změna kontextu a rozhodnutí, která se vrací.`)}
     <div class="project-list">${SCENARIOS.filter(sc => sc.level === 'hard').map(row).join('')}</div>
-    ${levelHead('insane', '🤯', 'Nemožná úroveň', insaneOpen
+    ${levelHead('insane', '🤯', 'Velmi obtížná úroveň', insaneOpen
       ? 'Žádné nápovědy, mlha v reportech, stakeholdeři, kteří chtějí každý něco jiného, konkrétní lidé, kteří se unaví nebo odejdou, rutina převlečená za projekt – a na konci se ukáže, co z projektu zbylo po roce.'
       : `Odemkne se, až v kterémkoli projektu náročné úrovně dosáhneš alespoň ${INSANE_UNLOCK_SCORE} bodů. Bez nápověd, s mlhou v reportech, se stakeholdery, lidmi a tím, co z projektu zbude po roce.`)}
     <div class="project-list">${SCENARIOS.filter(sc => sc.level === 'insane').map(row).join('')}</div>`;
@@ -1600,7 +1600,7 @@ function brief() {
       <div class="hero-emoji">${sc.icon}</div>
       <h1>${sc.name}</h1>
       ${sc.level === 'hard' ? '<p class="hard-badge">🔥 Náročná úroveň</p>' : ''}
-      ${sc.level === 'insane' ? '<p class="hard-badge insane">🤯 Nemožná úroveň</p>' : ''}
+      ${sc.level === 'insane' ? '<p class="hard-badge insane">🤯 Velmi obtížná úroveň</p>' : ''}
       <p class="lead">${sc.intro}</p>
       <p><b>Co projekt zahrnuje:</b> ${sc.scope}</p>
       <p><b>Kontext projektu:</b></p>
@@ -1633,7 +1633,7 @@ function sort() {
   const r = S.sortResult;
   const ws = S.sc.workstreams;
   const allDone = ws.every(w => S.sortAnswers[w.id]);
-  // Nemožná úroveň: třetí možnost – tohle vůbec není projekt, ale provoz.
+  // Velmi obtížná úroveň: třetí možnost – tohle vůbec není projekt, ale provoz.
   const withOps = isInsane();
   const ANSWER = { pred: 'prediktivně', agile: 'agilně', ops: 'provoz – není to projekt' };
   const cards = S.sortOrder.map(w => {
@@ -1717,7 +1717,7 @@ function toolbox() {
       <div class="mix-result-head">${cauldron()}<h3>${to ? 'Zásah je hotový' : 'Tvůj mix je nastavený'}</h3></div>
       ${to ? `<p>Zavedeno: ${r.fresh.map(p => `${p.icon} ${p.name}`).join(', ') || 'nic'} · zrušeno: ${r.removed.map(id => `${practiceById(id).icon} ${practiceById(id).name}`).join(', ') || 'nic'}</p>` : ''}
       <div class="chips">${deltaChips(r.deltas)}</div>
-      <p class="hint">Na nemožné úrovni ti nikdo neřekne, jestli mix sedí. Poznáš to podle toho, jak se bude projekt vyvíjet – a v závěrečném hodnocení.</p>
+      <p class="hint">Na velmi obtížné úrovni ti nikdo neřekne, jestli mix sedí. Poznáš to podle toho, jak se bude projekt vyvíjet – a v závěrečném hodnocení.</p>
       <button class="btn primary" data-action="toKickoff">Pokračovat ▶</button>
     </div>` : r ? `
     <div class="card mix-result">
@@ -1874,7 +1874,7 @@ function insaneRules() {
   ];
   if (sc.shifts) rules.push(`<b>Projekt mění tvář:</b> během projektu se ${sc.shifts.length}× změní jeho povaha. Pokaždé můžeš přeskládat mix praktik.`);
   if (sc.takeover) rules.push('<b>Převzatý projekt:</b> na dokončení máš jen zbytek projektu – a dědíš to, co předchozí vedení rozbilo.');
-  return `<li class="hard-rule insane-rule">🤯 <b>Nemožná úroveň</b> – ukazatele končí už při poklesu na ${failAt()}, rozpočet režie je ${budget()} bodů.<ol>${rules.map(r => `<li>${r}</li>`).join('')}</ol></li>`;
+  return `<li class="hard-rule insane-rule">🤯 <b>Velmi obtížná úroveň</b> – ukazatele končí už při poklesu na ${failAt()}, rozpočet režie je ${budget()} bodů.<ol>${rules.map(r => `<li>${r}</li>`).join('')}</ol></li>`;
 }
 
 function signed(n) { return n > 0 ? `+${n}` : String(n); }
@@ -2313,7 +2313,7 @@ function shift() {
     ${result}`;
 }
 
-// ---------- Vykreslení: nemožná úroveň ----------
+// ---------- Vykreslení: velmi obtížná úroveň ----------
 
 function diagnose() {
   const to = S.sc.takeover;
@@ -2365,7 +2365,7 @@ function epilog() {
     </div>`;
 }
 
-// Na konci nemožné úrovně se ukáže, co bylo během hry skryté.
+// Na konci velmi obtížné úrovně se ukáže, co bylo během hry skryté.
 function insaneReveal() {
   if (!isInsane()) return '';
   const r = S.mixResult;
@@ -2397,7 +2397,7 @@ function finalScore() {
     ? Math.max(0, 100 - 5 * Math.min(S.overrunTotal, S.initialBuffer) - 15 * Math.max(0, -S.buffer))
     : Math.min(100, value / S.targetValue * 100);
   const insightPct = S.insightMax ? S.insight / S.insightMax * 100 : 0;
-  // Nemožná úroveň: do zdraví projektu se počítá i nejméně spokojený stakeholder a do skóre rok poté.
+  // Velmi obtížná úroveň: do zdraví projektu se počítá i nejméně spokojený stakeholder a do skóre rok poté.
   const min = stakeMin();
   const health = min === null ? avgMetrics : avgMetrics * 0.8 + min * 0.2;
   const sustain = S.epilog ? S.epilog.sustain : null;

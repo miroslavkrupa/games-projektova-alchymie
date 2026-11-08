@@ -540,7 +540,7 @@ h4 { margin: 14px 0 6px; font-size: 1rem; }
 .pattern-grid .kfmd li { grid-template-columns: 1fr; gap: 0; }
 .modal { max-width: 900px; }
 
-/* ---------- Nemožná úroveň ---------- */
+/* ---------- Velmi obtížná úroveň ---------- */
 .project-row.insane { border-left: 6px solid var(--insane); }
 .project-row.insane:hover:not(:disabled) { border-color: var(--insane); }
 .level-head.insane h3 { color: var(--insane); }

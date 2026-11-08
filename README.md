@@ -52,16 +52,16 @@ Společné mechaniky náročné úrovně:
   dopadne jako *dozvuky po projektu*;
 - **dilemata** – události, kde i nejlepší volba něco stojí.
 
-**🤯 Nemožná úroveň** (odemkne se po dosažení 70 bodů v kterémkoli projektu náročné úrovně;
+**🤯 Velmi obtížná úroveň** (odemkne se po dosažení 70 bodů v kterémkoli projektu náročné úrovně;
 pro testování adresou s parametrem `?insane`):
 
-| Scénář | Typ | Co je na něm nemožné |
+| Scénář | Typ | Co je na něm nejtěžší |
 |---|---|---|
 | 🚑 Záchrana projektu v krizi | hybridní | přebíráš rozjetý projekt se špatným mixem a aktivními antivzorci; nejdřív **diagnóza** (od příznaků k mechanismům), pak **zásah** do mixu; na dokončení jen 4 sprinty |
 | 🔀 Fúze dvou firem | hybridní | banka a fintech v jednom projektu: střet kultur, směrnic a slovníku; uprostřed odcházejí zakladatelé i s lidmi |
 | 🦎 Projekt, který mění tvář | prediktivní → hybridní → agilní | povaha projektu se **dvakrát změní** a mix je potřeba pokaždé přeskládat |
 
-Pravidla, která platí **jen** pro nemožnou úroveň:
+Pravidla, která platí **jen** pro velmi obtížnou úroveň:
 1. **Bez nápověd** – žádné hodnocení voleb, popisy mechanik praktik, synergie ani vzorce během hry; všechno se ukáže až na konci.
 2. **Mlha reportingu** – ukazatele jen v rozmezí a o období zpožděné; přesná čísla dá jen praktika
    *Transparentní dashboard* nebo *EVM*. Když je něco opravdu špatně, přijdou aspoň neformální signály.
@@ -99,7 +99,7 @@ python3 -m http.server 8765
    Co je dobrá praktika, záleží na typu projektu: detailní Gantt je v prediktivním projektu správně,
    v hybridním je to past; Scrum v odstávce elektrárny je zbytečná režie. Praktiky se vhazují
    do **kotle**: barva lektvaru ukazuje poměr prediktivních, propojovacích a agilních praktik,
-   hladina režii vůči rozpočtu, synergie jiskří a konflikty kouří (na nemožné úrovni bez jisker a kouře).
+   hladina režii vůči rozpočtu, synergie jiskří a konflikty kouří (na velmi obtížné úrovni bez jisker a kouře).
 3. **Realizace** – 6 období (sprintů nebo etap): plánování práce do kapacity týmu, událost
    v každém období, milníky a kontrolní bod v polovině projektu. Položku větší než kapacita týmu
    (celá by se nikdy nedokončila) lze tlačítkem ✂️ rozdělit na menší části. Podle typu projektu:
@@ -138,7 +138,7 @@ na úvodu stačí kliknout na *Pokračovat*.
 - `css/style.css` – vzhled (světlý i tmavý režim, mobil)
 - `js/data.js` – veškerý obsah hry: `SCENARIOS`, `PRACTICES`, `PRACTICE_PAIRS`, `ESSENTIALS`,
   `APPROACHES`, `PATTERNS`, `CONTEXT_TAGS`, `GENERIC_EVENTS`, `GATE_EVENT`, `GLOSSARY`
-- `js/data-insane.js` – projekty nemožné úrovně (přidávají se do `SCENARIOS`)
+- `js/data-insane.js` – projekty velmi obtížné úrovně (přidávají se do `SCENARIOS`)
 - `js/fx.js` – oživení rozhraní: živé ukazatele, kotel s mixem praktik, graf průběhu projektu
 - `js/game.js` – herní logika, vykreslování a ukládání rozehrané hry
 
@@ -170,7 +170,7 @@ na úvodu stačí kliknout na *Pokračovat*.
     jako výluky (`window: true`), více profesí (`crew: { obecne, svarec, jerab }`, `skill` u úkolu),
     inspekční dny (`holdDay`) a hrubé odhady (`rough`). Hybridní náročný projekt umí milníky `integration`
     (`requires`) a fatální start (`launch` s `fatal: true`).
-  - nemožná úroveň: `level: 'insane'`, `stakeholders` (`wants`, `start`, `quit`, `epilogBad`, `joins`),
+  - velmi obtížná úroveň: `level: 'insane'`, `stakeholders` (`wants`, `start`, `quit`, `epilogBad`, `joins`),
     `areas` a `team` (lidé s `knows`, `fatigue`), položky backlogu s `area`, `owner`, `ops` (rutina)
     a `handover` (předání do provozu), `eventSlots` (pro každé období seznam možných událostí),
     `workstreams` s odpovědí `ops`, `startMetrics`, `sprints`. Převzatý projekt: `takeover`

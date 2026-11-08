@@ -1,4 +1,4 @@
-// Nemožná úroveň (Insane): tři projekty, pro které platí pravidla bez nápověd, mlha reportingu,
+// Velmi obtížná úroveň (Insane): tři projekty, pro které platí pravidla bez nápověd, mlha reportingu,
 // konfliktní stakeholdeři, projekt vs. provoz, lidé a znalosti a rok poté.
 //
 // Navíc oproti ostatním scénářům:
