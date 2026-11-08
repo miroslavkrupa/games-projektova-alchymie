@@ -544,7 +544,7 @@ function applyOngoing() {
       label: isFound(p.id) ? `${p.icon} ${p.name}` : `${ic('otaznik')} neodhalený vliv`, e: p.perSprint,
     })),
   ];
-  if (S.shiftPenalty) sources.push({ label: '🧱 Strnulá metodika', e: S.shiftPenalty });
+  if (S.shiftPenalty) sources.push({ label: `${PATTERNS.find(p => p.id === 'strnula_metodika').icon} Strnulá metodika`, e: S.shiftPenalty });
   if (!sources.length) return null;
   return { labels: sources.map(x => x.label), deltas: applyEffects(addEffects(...sources.map(x => x.e))) };
 }
@@ -2539,7 +2539,7 @@ function end() {
 function modal(title, body) {
   return `
     <div class="modal-back" data-action="closeModal">
-      <div class="modal card" role="dialog" aria-label="${title}">
+      <div class="modal card" role="dialog" aria-label="${title.replace(/<[^>]*>/g, '').trim()}">
         <div class="modal-head"><h2>${title}</h2><button class="btn ghost" data-action="closeModal">✕</button></div>
         ${body}
       </div>

@@ -871,6 +871,9 @@ h1 { font-size: 2.5rem; }
 .btn .ic, .chip .ic, .tag .ic { stroke: currentColor; }
 .btn .ic { margin: -.2em 0; }
 .logo .ic { width: 1.4em; height: 1.4em; }
+.hero-emoji .ic { width: 1.15em; height: 1.15em; }
+.cauldron .ing .ic { width: 20px; height: 20px; }
+.mix-bar .cauldron .ing .ic { width: 14px; height: 14px; }
 .pr-icon .ic { width: 1.1em; height: 1.1em; }
 .pattern-icon .ic { width: 1.1em; height: 1.1em; }
 .level-head h3 .ic { width: 1.4em; height: 1.4em; vertical-align: -.35em; }
