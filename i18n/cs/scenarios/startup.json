@@ -1,0 +1,345 @@
+{
+  "id": "startup",
+  "stars": {
+    "ko": [
+      {
+        "text": "Veřejné spuštění dosáhne cíle trakce"
+      }
+    ],
+    "top": [
+      {
+        "text": "Všechny tři cíle trakce splněné"
+      }
+    ]
+  },
+  "name": "Startup Zachraň jídlo",
+  "tagline": "Aplikace proti plýtvání jídlem",
+  "scope": "Mobilní aplikace, získávání partnerských podniků, marketing, uživatelský výzkum a obchodní model. Nikdo zatím neví, co přesně bude fungovat.",
+  "approachText": "Vysoká nejistota: neví se, co uživatelé chtějí, ani jaký obchodní model bude fungovat. Celý projekt se nejlépe řídí agilně: krátké iterace, ověřování hypotéz a rozhodování podle dat. Detailní plán by stál na neověřených předpokladech.",
+  "intro": "Spoluzakládáš startup, který propojí restaurace a obchody se zbylým jídlem s lidmi v okolí. Peníze vystačí na 12 týdnů – do té doby musíš ukázat, že o aplikaci lidé stojí.",
+  "terms": {
+    "launch": "spuštění aplikace",
+    "agileShort": "celý produkt",
+    "users": "uživatelé",
+    "usersGen": "uživatelů",
+    "sponsor": "hlavní investor",
+    "poGood": "spoluzakladatelka zodpovědná za produkt",
+    "committee": "investoři"
+  },
+  "workstreams": [
+    {
+      "id": "mvp",
+      "name": "Mobilní aplikace (MVP)",
+      "why": "Co má aplikace umět, ukážou až uživatelé. Malé verze, rychlá zpětná vazba, úpravy."
+    },
+    {
+      "id": "vyzkum",
+      "name": "Uživatelský výzkum",
+      "why": "Výzkum běží průběžně a jeho otázky se mění podle toho, co se tým právě dozvěděl."
+    },
+    {
+      "id": "partneri",
+      "name": "Získávání partnerských podniků",
+      "why": "Jaký přístup podniky přesvědčí, se zjistí jen zkoušením – pilot s pár podniky, pak úprava."
+    },
+    {
+      "id": "marketing",
+      "name": "Marketing a růst",
+      "why": "Kanály a sdělení se testují v krátkých experimentech a peníze jdou tam, kde to funguje."
+    },
+    {
+      "id": "model",
+      "name": "Obchodní model a ceny",
+      "why": "Pozor, i když to zní jako plánování: kolik lidé a podniky zaplatí, dopředu nikdo neví. Ověřuje se experimenty."
+    },
+    {
+      "id": "znacka",
+      "name": "Značka a design",
+      "why": "Design se ladí s uživateli; první verze může být jednoduchá a postupně se zlepšovat."
+    },
+    {
+      "id": "data",
+      "name": "Měření a analytika",
+      "why": "Co měřit, se upřesňuje s tím, jak tým poznává svůj produkt a trh."
+    },
+    {
+      "id": "investori",
+      "name": "Jednání s investory",
+      "why": "Pitch se ladí podle reakcí investorů a podle čerstvých dat o trakci – iterativní práce."
+    }
+  ],
+  "backlog": [
+    {
+      "id": "nabidka",
+      "name": "Zveřejnění nabídky zbylého jídla"
+    },
+    {
+      "id": "registrace",
+      "name": "Registrace uživatele"
+    },
+    {
+      "id": "mapa",
+      "name": "Mapa nabídek v okolí"
+    },
+    {
+      "id": "rezervace",
+      "name": "Rezervace a vyzvednutí jídla"
+    },
+    {
+      "id": "platba",
+      "name": "Platba v aplikaci"
+    },
+    {
+      "id": "hodnoceni",
+      "name": "Hodnocení podniků"
+    },
+    {
+      "id": "chat",
+      "name": "Chat s podnikem"
+    },
+    {
+      "id": "vernost",
+      "name": "Věrnostní program"
+    },
+    {
+      "id": "uspory",
+      "name": "Počítadlo zachráněného jídla a CO₂"
+    },
+    {
+      "id": "ai",
+      "name": "AI doporučení jídel"
+    },
+    {
+      "id": "tmavy",
+      "name": "Tmavý režim"
+    },
+    {
+      "id": "firmy",
+      "name": "Balíčky pro firemní kantýny"
+    },
+    {
+      "id": "socialni",
+      "name": "Přihlášení přes sociální sítě"
+    },
+    {
+      "id": "web",
+      "name": "Webová verze aplikace"
+    },
+    {
+      "id": "oblibene",
+      "name": "Oblíbené podniky"
+    },
+    {
+      "id": "podniky",
+      "name": "Statistiky prodeje pro podniky"
+    },
+    {
+      "id": "recepty",
+      "name": "Recepty ze zbytků"
+    },
+    {
+      "id": "odznaky",
+      "name": "Odznaky a žebříčky zachránců"
+    },
+    {
+      "id": "pripominka",
+      "name": "Připomínka vyzvednutí"
+    },
+    {
+      "id": "charita",
+      "name": "Darování neprodaného jídla charitě"
+    }
+  ],
+  "discoveries": [
+    {
+      "id": "notifikace",
+      "name": "Upozornění na jídlo v okolí",
+      "why": "Po spuštění rezervací uživatelé píšou: „Dejte mi vědět, když se v okolí něco objeví!“"
+    },
+    {
+      "id": "sdileni",
+      "name": "Sdílení úspor na sociálních sítích",
+      "why": "Uživatelé si počítadlo úspor fotí a sdílejí. Chtějí to umět přímo z aplikace."
+    }
+  ],
+  "milestones": [
+    {
+      "id": "m1",
+      "name": "První uživatelé",
+      "okText": "První uživatelé aplikaci používají a vracejí se.",
+      "lateText": "Aplikace zatím uživatelům nepřináší dost hodnoty."
+    },
+    {
+      "id": "m2",
+      "name": "Demo day",
+      "okText": "Na demo day můžeš ukázat rostoucí čísla.",
+      "lateText": "Na demo day nejsou čísla, která by investory přesvědčila."
+    },
+    {
+      "id": "m3",
+      "name": "Veřejné spuštění",
+      "okText": "Aplikace má trakci: lidé ji používají a doporučují dál!",
+      "lateText": "Aplikace je venku, ale trakce je slabá."
+    }
+  ],
+  "gate": {
+    "id": "gate",
+    "title": "Demo day: další peníze?",
+    "text": "Investoři rozhodují, jestli startup dostane peníze na dalších 6 měsíců. Co jim ukážeš?",
+    "lesson": "V agilním projektu je nejlepším podkladem pro rozhodnutí fungující produkt a data o tom, co se tým naučil – včetně neúspěchů.",
+    "choices": [
+      {
+        "text": "Živý produkt, metriky trakce a co jsme se naučili (i co nefungovalo)",
+        "feedback": "Investory zaujalo, jak rychle se tým učí. Peníze na další období jsou jisté."
+      },
+      {
+        "text": "Slajdy s velkou vizí a odhady trhu, bez dat",
+        "feedback": "„Hezká vize. A kolik lidí to dnes používá?“ Ticho."
+      },
+      {
+        "text": "Demo odložit, až bude hotové všechno",
+        "feedback": "Investoři odložili rozhodnutí a peníze se tenčí."
+      }
+    ]
+  },
+  "events": [
+    {
+      "id": "jinak",
+      "title": "Uživatelé to používají jinak",
+      "text": "Data ukazují, že lidé aplikaci otevírají hlavně v pátek odpoledne – kvůli pečivu z pekáren, ne kvůli restauracím.",
+      "lesson": "Data o chování uživatelů jsou cennější než původní vize. Zjištění se ověří a promítnou do backlogu.",
+      "choices": [
+        {
+          "text": "Ověřit to rozhovory s uživateli a upravit backlog",
+          "addItems": [
+            {
+              "id": "pekarny",
+              "name": "Páteční nabídka pekáren"
+            }
+          ],
+          "feedback": "Rozhovory to potvrdily. Do backlogu přibyla páteční nabídka pekáren."
+        },
+        {
+          "text": "Držet se původní vize: restaurace",
+          "feedback": "Uživatelé dál chodí pro pečivo – jen to aplikace nijak nepodporuje."
+        },
+        {
+          "text": "Okamžitě všechno přestavět na pekárny",
+          "addItems": [
+            {
+              "id": "pekarny",
+              "name": "Páteční nabídka pekáren"
+            }
+          ],
+          "feedback": "Možná správný směr, ale bez ověření a s rozhozeným sprintem."
+        }
+      ]
+    },
+    {
+      "id": "konkurence",
+      "title": "Velká konkurence",
+      "text": "Velká rozvozová firma oznámila podobnou funkci ve své aplikaci.",
+      "lesson": "Proti velkým hráčům vyhrává startup rychlostí učení a zaměřením, ne kopírováním.",
+      "choices": [
+        {
+          "text": "Zaměřit se na to, v čem jsme jiní (lokální podniky, komunita), a otestovat to",
+          "feedback": "Lokální podniky oceňují, že je startup zná osobně. Test potvrdil zájem."
+        },
+        {
+          "text": "Okopírovat všechny jejich funkce",
+          "feedback": "Tým dohání obra v jeho hře. Nemá šanci."
+        },
+        {
+          "text": "Ignorovat to",
+          "feedback": "Nic se nezměnilo – ale tým neví, jak se odlišit."
+        }
+      ]
+    },
+    {
+      "id": "pivot",
+      "title": "Firmy se ozývají",
+      "text": "Tři firmy se ozvaly, že by přes aplikaci chtěly nabízet zbylé jídlo z kantýn zaměstnancům. Je to úplně jiný segment.",
+      "lesson": "Pivot je změna strategie na základě ověřeného učení – ne panická reakce, ani tvrdohlavé lpění na původní vizi.",
+      "choices": [
+        {
+          "text": "Ověřit hypotézu levným experimentem (landing page + 5 rozhovorů), pak rozhodnout",
+          "feedback": "Experiment ukázal velký zájem. Hodnota položky „Balíčky pro firemní kantýny“ je teď ověřená."
+        },
+        {
+          "text": "Okamžitě pivotovat na firmy a zahodit zbytek",
+          "feedback": "Odvážné, ale bez ověření. Tým zahodil i rozpracované nápady."
+        },
+        {
+          "text": "Odmítnout – to není naše vize",
+          "feedback": "Příležitost odešla jinam."
+        }
+      ]
+    },
+    {
+      "id": "runway",
+      "title": "Docházejí peníze",
+      "text": "Peníze vystačí sotva na zbytek plánovaného období. Investor chce vidět, že produkt má smysl.",
+      "lesson": "Při omezených zdrojích se zaměř na metriku, která ukazuje skutečnou hodnotu, a škrtni vše, co k ní nevede.",
+      "choices": [
+        {
+          "text": "Soustředit se na opakované rezervace a škrtnout „Could“ funkce",
+          "feedback": "Tým dělá jen to, co zvedá opakované používání. Peníze vydrží."
+        },
+        {
+          "text": "Utratit zbytek za reklamu, ať jsou čísla",
+          "feedback": "Stažení vyskočila, ale lidé se nevracejí. A peníze jsou pryč."
+        },
+        {
+          "text": "Zmrazit vývoj a šetřit",
+          "feedback": "Peníze vydrží déle, ale produkt se nehýbe."
+        }
+      ]
+    },
+    {
+      "id": "vypadek",
+      "title": "Výpadek v pátek večer",
+      "text": "Aplikace spadla v pátek večer – přesně ve chvíli největšího provozu.",
+      "lesson": "Incident je příležitost zlepšit proces. Hledá se příčina v systému, ne viník.",
+      "choices": [
+        {
+          "text": "Opravit, pak retrospektiva bez hledání viníka + monitoring a testy do Definition of Done",
+          "feedback": "Příčina nalezena, monitoring teď upozorní dřív, než si všimnou uživatelé."
+        },
+        {
+          "text": "Zjistit, kdo to pokazil",
+          "feedback": "Tým je vystrašený a chyby se začnou zametat pod koberec."
+        },
+        {
+          "text": "Zaplatit silnější servery a dál to neřešit",
+          "feedback": "Pomohlo to, ale skutečná příčina zůstala."
+        }
+      ]
+    },
+    {
+      "id": "sms",
+      "title": "Podniky nechtějí další tablet",
+      "text": "Partnerské restaurace odmítají instalovat aplikaci pro podniky. „Pošlete nám SMS, my odpovíme.“",
+      "lesson": "Nejjednodušší řešení, které uživatelům funguje, je často to nejlepší MVP.",
+      "choices": [
+        {
+          "text": "Udělat nejjednodušší verzi přes SMS a otestovat ji se třemi podniky",
+          "addItems": [
+            {
+              "id": "sms",
+              "name": "Zadávání nabídky přes SMS"
+            }
+          ],
+          "feedback": "Podniky jsou nadšené. Za dva dny bylo nových nabídek víc než za celý měsíc."
+        },
+        {
+          "text": "Trvat na aplikaci pro podniky",
+          "feedback": "Dva podniky spolupráci ukončily."
+        },
+        {
+          "text": "Najmout obchodníky, kteří je přesvědčí",
+          "feedback": "Pár podniků přesvědčili, ale drahou cestou."
+        }
+      ]
+    }
+  ]
+}

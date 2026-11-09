@@ -707,7 +707,7 @@ for (const k of Object.keys(APPROACHES)) APPROACHES[k].icon = ic(k === 'hybrid' 
 
 // ---------- Monogramy lidí (stakeholdeři a tým) ----------
 const MONO_COLORS = ['pred', 'agile', 'primary', 'both', 'insane', 'good'];
-const MONO_SKIP = new Set(['a', 'i', 'v', 'z', 's', 'na', 'pro', 'obou', 'do']);
+const MONO_SKIP = new Set(['a', 'i', 'v', 'z', 's', 'na', 'pro', 'obou', 'do', 'of', 'the', 'and', 'for', 'both', 'from']);
 function initials(name) {
   const words = name.split(/\s+/).filter(w => w && !MONO_SKIP.has(w.toLowerCase()));
   if (/^[A-ZÁ-Ž]{2,3}$/.test(words[0])) return words[0];
@@ -718,9 +718,8 @@ function initials(name) {
 const mono = (person, idx = 0, cls = '') =>
   `<span class="mono ${cls}" style="--c:var(--${MONO_COLORS[idx % MONO_COLORS.length]})" aria-hidden="true">${initials(person.name)}</span>`;
 
-WORLD_LABEL.pred = `${ic('pred')} Prediktivní praktiky`;
-WORLD_LABEL.hybrid = `${ic('hybrid')} Propojovací a společné praktiky`;
-WORLD_LABEL.agile = `${ic('agile')} Agilní praktiky`;
+// Text popisku zůstává z dat (i přeložený), jen se emoji na začátku nahradí ikonou.
+for (const k of ['pred', 'hybrid', 'agile']) WORLD_LABEL[k] = `${ic(k)} ${WORLD_LABEL[k].replace(/^\S+\s/, '')}`;
 
 // ---------- Ikony obsahu: projekty, kontexty, praktiky, vzorce ----------
 // Vzorce, které přímo vznikají z jedné praktiky, sdílejí její ikonu.

@@ -1,0 +1,1160 @@
+{
+  "METRICS": [
+    {
+      "id": "rozpocet",
+      "label": "Budget"
+    },
+    {
+      "id": "harmonogram",
+      "label": "Schedule"
+    },
+    {
+      "id": "kvalita",
+      "label": "Quality"
+    },
+    {
+      "id": "spokojenost",
+      "label": "Satisfaction"
+    },
+    {
+      "id": "moralka",
+      "label": "Team morale"
+    }
+  ],
+  "MOSCOW": {
+    "M": {
+      "label": "Must",
+      "title": "Must have – no launch without it"
+    },
+    "S": {
+      "label": "Should",
+      "title": "Should have – important, but not critical"
+    },
+    "C": {
+      "label": "Could",
+      "title": "Could have – if time allows"
+    },
+    "W": {
+      "label": "Won't",
+      "title": "Won't have this time – deliberately postponed"
+    }
+  },
+  "CONTEXT_TAGS": {
+    "zavislost": {
+      "label": "Strong dependencies between parts"
+    },
+    "regulace": {
+      "label": "Regulation and audits"
+    },
+    "verejny": {
+      "label": "Public money – transparency matters"
+    },
+    "pevny_termin": {
+      "label": "A deadline that can't move"
+    },
+    "nejistota_trhu": {
+      "label": "Uncertain user response"
+    },
+    "bezpecnost": {
+      "label": "Safety and certification"
+    },
+    "zmena_u_lidi": {
+      "label": "Changing people's ingrained habits"
+    },
+    "pevne_okno": {
+      "label": "A time window that can't move"
+    },
+    "jasne_zadani": {
+      "label": "Clear, stable requirements"
+    },
+    "omezene_zdroje": {
+      "label": "Money for just a few months"
+    },
+    "rychla_zpetna_vazba": {
+      "label": "Users available for quick feedback"
+    },
+    "komunita": {
+      "label": "A vocal player community"
+    }
+  },
+  "PRACTICES": [
+    {
+      "id": "plan",
+      "name": "Schedule with milestones",
+      "desc": "A Gantt chart with dependencies, dates and milestones for work that can be planned.",
+      "mech": "Schedules tasks in the Gantt as early as dependencies allow. In a hybrid, milestones are met at 📅 ≥ 45 (without a plan only at ≥ 55). +5 📅"
+    },
+    {
+      "id": "ccb",
+      "name": "Formal change control",
+      "desc": "The steering committee reviews changes to scope, contracts and plan by their impact on time, cost and risk.",
+      "mech": "Guards against uncontrolled extra work. +4 💰 +3 📅"
+    },
+    {
+      "id": "risk",
+      "name": "Risk register and contingency reserve",
+      "desc": "Risks with response plans, plus a reserve of money and time set aside.",
+      "mech": "Event losses of 💰 and 📅 are 40% smaller. Unlocks “use the reserve” choices. −5 💰 for the reserve."
+    },
+    {
+      "id": "detailgantt",
+      "name": "Detailed Gantt for the whole project",
+      "desc": "Every app feature gets a fixed date in the plan. The committee loves certainty.",
+      "mech": "The committee is thrilled. +6 😊 +3 📅. Also works as the scheduling tool."
+    },
+    {
+      "id": "ccball",
+      "name": "One change board for everything",
+      "desc": "Every change – even in the backlog – is approved by a monthly board. Same rules for everyone.",
+      "mech": "Tight cost control. +5 💰, team capacity −1."
+    },
+    {
+      "id": "cpm",
+      "name": "Critical path and project buffer",
+      "desc": "Analysis shows which activities must not slip and keeps a shared time buffer at the end of the project.",
+      "mech": "Shows the critical path and task float in the Gantt. +2 days of project buffer. +3 📅"
+    },
+    {
+      "id": "evm",
+      "name": "Earned Value Management (EVM)",
+      "desc": "Measures work actually done against plan and cost (SPI, CPI). Assumes fixed scope.",
+      "mech": "Management sees the exact project status. +5 😊 +3 💰"
+    },
+    {
+      "id": "sync",
+      "name": "Weekly sync of both approaches",
+      "desc": "The leads of the predictively and agilely managed work meet weekly to go over dependencies and risks.",
+      "mech": "Negative impacts of events at the interface of both approaches (🔗) are 30% smaller. +3 ⭐"
+    },
+    {
+      "id": "integrace",
+      "name": "Shared integration milestones",
+      "desc": "The plan has points where outputs of predictively and agilely managed work must meet and be tested together.",
+      "mech": "+4 📅. Together with the sync, lowers the bar for meeting milestones by 10."
+    },
+    {
+      "id": "dashboard",
+      "name": "Transparent committee dashboard",
+      "desc": "Milestones, budget, risks and work actually delivered (increments, burn-up) on a single page.",
+      "mech": "+6 😊. The committee sees the real project status."
+    },
+    {
+      "id": "gate",
+      "name": "Stage gate with a live demo",
+      "desc": "At checkpoints the committee reviews both milestones and increments that actually work.",
+      "mech": "An extra +5 😊 at the stage gate."
+    },
+    {
+      "id": "znalosti",
+      "name": "Knowledge sharing",
+      "desc": "Pair work, lightweight documentation and handover meetings across both parts.",
+      "mech": "+3 ⭐. Protects the project when a key person drops out."
+    },
+    {
+      "id": "prescasy",
+      "name": "Overtime as a capacity reserve",
+      "desc": "When things catch fire, the team stays late. It costs nothing.",
+      "mech": "Team capacity +2 each period. Morale −4 each period."
+    },
+    {
+      "id": "scrum",
+      "name": "Scrum in two-week sprints",
+      "desc": "Planning, daily, review and retrospective; a finished increment every 2 weeks.",
+      "mech": "At the review, users see the value: delivered value raises 😊 in full. +3 ⭐"
+    },
+    {
+      "id": "kanban",
+      "name": "Kanban with WIP limits",
+      "desc": "A smooth flow of work with a cap on tasks in progress.",
+      "mech": "Overloading a sprint hurts less (💪 −3 instead of −8). Delivered value raises 😊 in full."
+    },
+    {
+      "id": "po",
+      "name": "Product Owner with mandate and time",
+      "desc": "Someone from the user side decides the backlog order and is available to the team.",
+      "mech": "+6 😊 +3 ⭐. Without a PO, satisfaction drops every sprint."
+    },
+    {
+      "id": "retro",
+      "name": "Retrospectives",
+      "desc": "After each sprint the team reviews what to improve in how it works.",
+      "mech": "Morale +2 each sprint."
+    },
+    {
+      "id": "dod",
+      "name": "Strict Definition of Done",
+      "desc": "Done = tested, documented and compliant with the rules (security, GDPR).",
+      "mech": "Quality +2 each sprint."
+    },
+    {
+      "id": "lean",
+      "name": "Hypotheses and experiments",
+      "desc": "Build–Measure–Learn: before building a feature, the team cheaply checks whether users actually want it.",
+      "mech": "During planning you can cheaply verify the real value of up to 2 uncertain items per sprint. +2 ⭐"
+    }
+  ],
+  "WORLD_LABEL": {
+    "pred": "📐 Predictive practices",
+    "hybrid": "🔗 Bridging and shared practices",
+    "agile": "🔄 Agile practices"
+  },
+  "PRACTICE_PAIRS": [
+    {
+      "text": "Sprints with retrospectives: the team learns every two weeks."
+    },
+    {
+      "text": "Smooth flow with regular improvement."
+    },
+    {
+      "text": "Increments are truly done, not “almost done.”"
+    },
+    {
+      "text": "Integration milestones that predictively and agilely managed work prepare for continuously."
+    },
+    {
+      "text": "The committee reviews expensive changes, the PO decides cheap ones."
+    },
+    {
+      "text": "The committee decides based on the real status."
+    },
+    {
+      "text": "A plan that accounts for risks."
+    },
+    {
+      "text": "Sprints inside a plan where everything is set in advance."
+    },
+    {
+      "text": "Smooth flow vs. a fixed date for every feature."
+    },
+    {
+      "text": "The PO can't decide when a board approves everything."
+    },
+    {
+      "text": "Sprint feedback waits a month for approval."
+    },
+    {
+      "text": "Double planning – pointless overhead."
+    },
+    {
+      "text": "Two change control processes for the same thing."
+    },
+    {
+      "text": "Retrospectives keep exposing fatigue, but nothing changes."
+    },
+    {
+      "text": "WIP limits and overtime work against each other."
+    },
+    {
+      "text": "A plan that shows what must not slip."
+    },
+    {
+      "text": "Risks are watched mainly on the critical path."
+    },
+    {
+      "text": "Exact project status figures in one place."
+    },
+    {
+      "text": "The Product Owner decides based on validated data."
+    },
+    {
+      "text": "Every sprint is also an experiment."
+    },
+    {
+      "text": "EVM assumes fixed scope; sprints change it."
+    },
+    {
+      "text": "Experiments vs. a preset date for every feature."
+    }
+  ],
+  "ESSENTIALS": {
+    "hybrid": [
+      {
+        "name": "Iterative framework for agilely managed parts"
+      },
+      {
+        "name": "Product Owner role"
+      },
+      {
+        "name": "Plan for predictively managed parts"
+      },
+      {
+        "name": "Bridging both approaches"
+      },
+      {
+        "name": "Risk management"
+      },
+      {
+        "name": "Transparent reporting"
+      }
+    ],
+    "pred": [
+      {
+        "name": "Detailed plan"
+      },
+      {
+        "name": "Critical path and buffer"
+      },
+      {
+        "name": "Change management"
+      },
+      {
+        "name": "Risk management"
+      },
+      {
+        "name": "Measuring status against the plan"
+      }
+    ],
+    "agile": [
+      {
+        "name": "Iterative framework"
+      },
+      {
+        "name": "Product Owner role"
+      },
+      {
+        "name": "Validating hypotheses"
+      },
+      {
+        "name": "Continuous improvement"
+      },
+      {
+        "name": "Increment quality"
+      }
+    ]
+  },
+  "APPROACHES": {
+    "hybrid": {
+      "label": "Hybrid project"
+    },
+    "pred": {
+      "label": "Predictive project"
+    },
+    "agile": {
+      "label": "Agile project"
+    }
+  },
+  "PATTERNS": [
+    {
+      "id": "integracni_milnik",
+      "name": "Integration milestone",
+      "story": "At the integration milestone, the outputs of both parts turned out to fit together. Two minor mismatches were fixed on the spot.",
+      "k": "The agile part depends on output from the predictive part (equipment delivery, approved layout, machines).",
+      "f": "Shared integration milestones in the plan + a weekly sync of the leads of both parts.",
+      "m": "Interface problems surface early, while fixing them is cheap. Both parts know when they're waiting on each other.",
+      "d": "Smoother integration and lower risk of missed milestones."
+    },
+    {
+      "id": "ucici_se_tym",
+      "name": "Learning team",
+      "story": "At the retrospective, the team proposed shorter dailies and testing in pairs. It works.",
+      "k": "A new team, a new domain and requirements still taking shape.",
+      "f": "Short iterations ending with a retrospective.",
+      "m": "Every two weeks the team reviews how it works and introduces one improvement.",
+      "d": "Quality and morale rise steadily."
+    },
+    {
+      "id": "dvourychlostni",
+      "name": "Two-speed governance",
+      "story": "Users wanted three features tweaked – the PO added them to the backlog within a day. Meanwhile, a change in the predictive part went through a proper review.",
+      "k": "One project has both expensive changes (construction, contracts) and cheap ones (software).",
+      "f": "Formal change control only for the predictive part; the Product Owner decides the backlog.",
+      "m": "Expensive changes get careful review; cheap ones are decided fast and close to users.",
+      "d": "A stable plan for the predictive part alongside flexible development."
+    },
+    {
+      "id": "transparentni_gate",
+      "name": "Transparent stage gate",
+      "story": "The committee looked at the dashboard and tried the finished features themselves. The decision took 20 minutes.",
+      "k": "The steering committee decides whether the project continues and needs credible input.",
+      "f": "A stage gate with a hybrid dashboard and a live demo of finished features.",
+      "m": "The committee judges the real status, not the promised one; problems are handled openly.",
+      "d": "A fast, informed decision and growing sponsor trust."
+    },
+    {
+      "id": "pripravena_rezerva",
+      "name": "Reserve at the ready",
+      "story": "The risk hit, but the response plan and the reserve were ready.",
+      "k": "A predictive part with foreseeable risks (deliveries, construction surprises, weather).",
+      "f": "A risk register with response plans and a dedicated contingency reserve.",
+      "m": "When a risk hits, you draw on the reserve per the prepared plan instead of crisis replanning.",
+      "d": "Smaller event impacts on budget and schedule."
+    },
+    {
+      "id": "hotovo_je_hotovo",
+      "name": "Done means done",
+      "story": "The quality check found no hidden loose ends in the delivered increments.",
+      "k": "A regulated or safety-critical environment plus pressure for speed.",
+      "f": "A strict Definition of Done, including tests and compliance.",
+      "m": "Quality is built into every item continuously, not bolted on at the end.",
+      "d": "Fewer hidden defects, smoother audits."
+    },
+    {
+      "id": "sdilene_knowhow",
+      "name": "Shared know-how",
+      "story": "In sprint 5 a key person fell ill. Thanks to shared knowledge, colleagues covered for them with no trouble.",
+      "k": "A temporary project team where key knowledge sits with a few people.",
+      "f": "Pair work, lightweight documentation and handover meetings.",
+      "m": "Knowledge spreads through the team and doesn't hinge on individuals.",
+      "d": "Losing a person doesn't endanger the project, and the results can be maintained afterward."
+    },
+    {
+      "id": "water_scrum_fall",
+      "name": "Sprints set in concrete",
+      "story": "The team asks: “Why do we hold reviews when every feature's date is fixed in advance anyway?”",
+      "k": "An organization used to detailed planning introduces an agile team.",
+      "f": "Sprints inside a detailed plan where every feature has a fixed date.",
+      "m": "Sprint feedback can't change the plan; the team delivers the schedule “in chunks” and keeps rewriting the Gantt.",
+      "d": "Agile rituals without agile benefits, a frustrated team, declining quality."
+    },
+    {
+      "id": "zamrzly_backlog",
+      "name": "Frozen backlog",
+      "story": "After the review, users wanted a small tweak. The board will discuss it in a month.",
+      "k": "A push for uniform rules and tight cost control.",
+      "f": "One monthly change board also approves changes in the agile part's backlog.",
+      "m": "Small tweaks wait weeks for approval; the team builds to outdated requirements.",
+      "d": "Lower capacity and falling user satisfaction."
+    },
+    {
+      "id": "byrokraticky_hybrid",
+      "name": "Bureaucratic hybrid",
+      "story": "The team worked out that meetings, reports and approvals eat up almost a third of its time.",
+      "k": "An urge to take “the best of both worlds” and leave nothing out.",
+      "f": "Lots of practices from both approaches at once – more than the project can carry.",
+      "m": "Management overhead eats into time for real work.",
+      "d": "Team capacity drops by each point of overhead over budget."
+    },
+    {
+      "id": "chaos",
+      "name": "Management without rules",
+      "story": "Two people did the same work, and everyone forgot about one important dependency.",
+      "k": "Pressure for a quick start and a belief that “management slows us down.”",
+      "f": "Minimal rules, roles and coordination.",
+      "m": "Nobody knows who decides; nobody watches dependencies and risks.",
+      "d": "Mistakes and slippage every sprint."
+    },
+    {
+      "id": "bez_vlastnika",
+      "name": "Ownerless backlog",
+      "story": "The team delivered a feature no user cared about. The important one never made it in.",
+      "k": "An agile team without a clear user representative.",
+      "f": "The backlog is prioritized by the team or whoever is loudest at the moment.",
+      "m": "Priorities follow volume and technical appeal, not value.",
+      "d": "Less important things get delivered, satisfaction drops."
+    },
+    {
+      "id": "bez_zpetne_vazby",
+      "name": "Building blind",
+      "story": "Users haven't seen anything yet – and nobody knows whether the team is building the right thing.",
+      "k": "Uncertain user requirements.",
+      "f": "An agile part with no iterative framework – no sprints, reviews or smooth flow.",
+      "m": "Users see the result only at the end; mistakes are discovered late.",
+      "d": "Delivered value raises satisfaction only halfway, and quality drops."
+    },
+    {
+      "id": "slepy_plan",
+      "name": "Predictive part without a plan",
+      "story": "At the first milestone it turned out the orders went out late – nobody was tracking lead times.",
+      "k": "Predictive work with long lead times and fixed dependencies.",
+      "f": "No schedule for the predictive part – “we'll figure it out as we go.”",
+      "m": "Nobody tracks dependencies and lead times; orders are placed late.",
+      "d": "Milestones demand a much better schedule and are often missed."
+    },
+    {
+      "id": "melounovy_reporting",
+      "name": "Watermelon reporting",
+      "story": "Reports were green for months. At the stage gate, the committee saw the real status for the first time.",
+      "k": "The committee wants to see “green numbers” and the project lacks transparent reporting.",
+      "f": "Reporting percent complete against the plan, with no demos of finished work.",
+      "m": "Problems stay hidden until they can't be – green outside, red inside.",
+      "d": "A sudden loss of trust at the stage gate."
+    },
+    {
+      "id": "hrdinske_tempo",
+      "name": "Heroic pace",
+      "story": "The team is running flat out. The two most experienced people are thinking of leaving.",
+      "k": "A fixed deadline and growing slippage.",
+      "f": "Overtime and overloaded sprints as a permanent capacity reserve.",
+      "m": "More work in the short term; fatigue, mistakes and departures in the long term.",
+      "d": "Falling morale and quality."
+    },
+    {
+      "id": "ostrov_znalosti",
+      "name": "Knowledge island",
+      "story": "In sprint 5, the only person who understood a key part of the solution fell ill. Work stalled for a week.",
+      "k": "A temporary team where key know-how sits with individuals.",
+      "f": "No systematic knowledge sharing.",
+      "m": "When a key person drops out, work stops and nobody knows how things work.",
+      "d": "A quality slump at the end of the project – and a risk the results can't be maintained long term."
+    },
+    {
+      "id": "agilni_divadlo",
+      "name": "Agile theater",
+      "story": "At the “sprint review,” fitters show off a half-dismantled turbine. Nobody knows what users are supposed to comment on.",
+      "k": "A project with clear requirements, prescribed procedures and expensive changes.",
+      "f": "Sprints, a backlog, a Product Owner or experiments for work with a set procedure.",
+      "m": "The ceremonies expect change that never comes; there's nothing to iterate on.",
+      "d": "Overhead with no benefit and a frustrated team."
+    },
+    {
+      "id": "bduf",
+      "name": "Big plan, uncertain brief",
+      "story": "The team builds features per the plan from week one, even though the data already shows users want something else.",
+      "k": "An uncertain market – nobody knows what users really want.",
+      "f": "A detailed plan, critical path or fixed scope up front (Big Design Up Front).",
+      "m": "The plan rests on unvalidated assumptions; the team sticks to the plan instead of the data.",
+      "d": "Things get built that nobody wants, and satisfaction drops."
+    },
+    {
+      "id": "hybrid_za_kazdou_cenu",
+      "name": "Hybrid at any cost",
+      "story": "A weekly “sync of both approaches” – except the project only has one. The meeting lasts five minutes and everyone wonders why they're there.",
+      "k": "A project with a single character (fully predictive or fully agile).",
+      "f": "Hybrid bridging practices even when there's nothing to bridge.",
+      "m": "Coordinating an interface that doesn't exist just burns time.",
+      "d": "Pointless overhead. Hybrid isn't automatically better – it's a tool for projects with two faces."
+    },
+    {
+      "id": "vodopad_kde_sedi",
+      "name": "Waterfall where it fits",
+      "story": "The unit was shut down exactly to plan. Every crew knows when it's up, and nobody waits on anybody.",
+      "k": "Clear, stable requirements, prescribed procedures, a fixed window and expensive changes.",
+      "f": "A detailed plan with a critical path and formal change management.",
+      "m": "Everyone knows what to do and when; expensive changes are reviewed before they're made.",
+      "d": "The project fits in the window and isn't caught off guard by what could be foreseen."
+    },
+    {
+      "id": "kriticka_cesta",
+      "name": "Managed critical path",
+      "story": "When one task ran late, the team knew right away whether it pushed back the project end or had float.",
+      "k": "A project with many dependencies and a fixed end date.",
+      "f": "Critical path analysis and a shared project buffer (instead of padding hidden in every activity).",
+      "m": "Attention and people go where delays push back the project end; the buffer is used deliberately.",
+      "d": "Delays to individual tasks needn't threaten the deadline."
+    },
+    {
+      "id": "build_measure_learn",
+      "name": "Build–Measure–Learn",
+      "story": "A landing page and five interviews in one afternoon saved a week of building a feature nobody wanted.",
+      "k": "High uncertainty and limited money.",
+      "f": "Hypotheses and cheap experiments before building features.",
+      "m": "The team learns before spending time and money; the backlog follows validated value.",
+      "d": "More real value for the same work."
+    },
+    {
+      "id": "tovarna_na_funkce",
+      "name": "Feature factory",
+      "story": "The team shipped five features in three sprints. Users use two.",
+      "k": "A startup under pressure to show progress.",
+      "f": "Success is measured by features shipped; hypotheses go untested.",
+      "m": "Building follows guesses and wishes, not validated user interest.",
+      "d": "Much of the work brings no value, and the money runs out."
+    },
+    {
+      "id": "adaptivni_rizeni",
+      "name": "Adaptive management",
+      "story": "When the situation changed, the team adjusted how it manages before the problem could grow.",
+      "k": "A project whose conditions change midway (regulation, market, deadline).",
+      "f": "Regular review of the methodology and a willingness to reshuffle practices on the fly.",
+      "m": "Practices match the current context, not the one from the project kickoff.",
+      "d": "The project handles the change without lasting damage."
+    },
+    {
+      "id": "strnula_metodika",
+      "name": "Rigid methodology",
+      "story": "The context changed, but the team carries on “by the book.” Problems pile up every period.",
+      "k": "A project whose conditions have changed.",
+      "f": "A methodology set at the start and never changed afterward.",
+      "m": "Practices solve yesterday's problems; nobody systematically handles new demands.",
+      "d": "Losses of quality and trust every period."
+    },
+    {
+      "id": "zametene_pod_koberec",
+      "name": "Swept under the rug",
+      "story": "A problem once “solved” by postponing it or patching it up came back – bigger.",
+      "k": "Pressure for speed and an unpleasant problem mid-project.",
+      "f": "Postponing, hushing up or a cheap stopgap instead of fixing the root cause.",
+      "m": "The problem grows in the meantime and returns at the worst possible moment.",
+      "d": "A costlier fix later and a loss of trust."
+    },
+    {
+      "id": "investice_se_vraci",
+      "name": "An investment that pays off",
+      "story": "A decision that cost something back then has now paid off.",
+      "k": "A decision with an immediate cost and a later benefit.",
+      "f": "A willingness to pay today for prevention, quality or relationships.",
+      "m": "Investing in prevention shrinks future problems and opens up opportunities.",
+      "d": "Fewer crises and new opportunities later."
+    }
+  ],
+  "GATE_EVENT": {
+    "id": "gate",
+    "title": "Stage Gate: halfway through",
+    "text": "You're halfway through the project. The steering committee ({committee}) decides whether to let the project into its final phase. How will you prepare the materials?",
+    "lesson": "A stage gate in a hybrid project assesses predictive milestones (contracts, handovers) as well as the value actually delivered by the agile part – ideally through a live demo.",
+    "choices": [
+      {
+        "text": "A 100-page document with a detailed plan for every remaining feature",
+        "feedback": "Writing it took the team a week, and the committee didn't read it anyway."
+      },
+      {
+        "text": "Milestone and budget status + a live demo of finished features + a scope forecast",
+        "feedback": "Committee members tried the finished features themselves. Project approved with enthusiasm."
+      },
+      {
+        "text": "Ask for a postponement until the agile part is entirely done",
+        "feedback": "Postponing the gate means uncertainty for everyone. And the agile part will never be “entirely done.”"
+      }
+    ]
+  },
+  "GENERIC_EVENTS": [
+    {
+      "id": "pretizeni",
+      "title": "The team is overloaded",
+      "text": "Two agile team members are sick and the rest are running flat out. The Product Owner still pushes for more features.",
+      "lesson": "A sustainable pace is the foundation of agility. And beware Brooks's law: adding people to a late project slows it down even more in the short term.",
+      "choices": [
+        {
+          "text": "Lower the commitment next sprint and let people catch their breath",
+          "feedback": "The next sprint will be smaller, but the team comes back at full strength and without fatigue-induced mistakes."
+        },
+        {
+          "text": "Order overtime",
+          "feedback": "Looks good in the short term, but fatigue = mistakes and frustration."
+        },
+        {
+          "text": "Hire two contractors right away",
+          "feedback": "New people need onboarding and take up the veterans' time. Help arrives only later."
+        }
+      ]
+    },
+    {
+      "id": "datum",
+      "title": "“When will EVERYTHING be done?”",
+      "text": "A steering committee member wants an exact date when absolutely every feature in the backlog will be done.",
+      "lesson": "Hybrid projects often fix time and budget and keep the agile part's scope flexible. A burn-up forecast is more honest than a promise.",
+      "choices": [
+        {
+          "text": "Promise that absolutely everything will be done by launch day",
+          "feedback": "The committee is happy – for now. The team is under pressure from an impossible promise."
+        },
+        {
+          "text": "Show a burn-up chart: Must features for sure, Should likely, Could maybe",
+          "feedback": "The committee appreciated the honesty and understood it will get the most important things by the fixed date."
+        },
+        {
+          "text": "“We're agile, we don't do deadlines.”",
+          "feedback": "Agility is no excuse for opacity. The committee is losing trust."
+        }
+      ]
+    },
+    {
+      "id": "po",
+      "title": "The Product Owner has no time",
+      "text": "The Product Owner is swamped with day-to-day work and answers the team's questions by email days later.",
+      "lesson": "Product Owner availability is critical. Without quick decisions, the team either waits or builds the wrong things.",
+      "choices": [
+        {
+          "text": "Agree with the sponsor on dedicated time for the PO (and a deputy)",
+          "feedback": "The PO now has two mornings a week just for the team. Decisions are fast."
+        },
+        {
+          "text": "The team will decide on its own",
+          "feedback": "The team guesses what {users} would want – and sometimes misses."
+        },
+        {
+          "text": "The project manager takes over the PO role",
+          "feedback": "It works, but the PM no longer keeps up with managing the predictive part and doesn't know the needs of {usersGen} as well."
+        }
+      ]
+    },
+    {
+      "id": "gantt",
+      "title": "A Gantt for the agile part too?",
+      "text": "A new steering committee member is used to Gantt charts. They want one for the agile part too, with a date for every feature.",
+      "lesson": "A hybrid PM “translates” between worlds: agile progress can be shown in the language of milestones (releases, increments) without micro-planning every feature.",
+      "choices": [
+        {
+          "text": "Draw a Gantt with a date for every user story",
+          "feedback": "The plan is outdated after the first sprint and the team keeps rewriting it."
+        },
+        {
+          "text": "A Gantt with release milestones (v1 at launch) + a list of delivered increments",
+          "feedback": "The new committee member got an overview in a form they understand, and the team can keep working agilely."
+        },
+        {
+          "text": "Ignore the request",
+          "feedback": "The committee member starts distrusting the project."
+        }
+      ]
+    },
+    {
+      "id": "drobnost",
+      "title": "“Just one tiny thing…”",
+      "text": "The project sponsor ({sponsor}) comes straight to team members every week with “tiny” requests. The team handles them on the side and sprint goals fall apart.",
+      "lesson": "All requests for the agile part go through the Product Owner and the backlog. Work “on the side” destroys transparency and planning.",
+      "choices": [
+        {
+          "text": "Politely redirect them to the Product Owner – requests go into the backlog",
+          "feedback": "The sponsor grumbled for a while, but at the review they see their ideas in the backlog, ordered by value. The team has a clear sprint goal again."
+        },
+        {
+          "text": "The team keeps handling the tiny things – it's the sponsor, after all",
+          "feedback": "Hidden work outside the backlog: the sprint plan is void and nobody knows where capacity goes."
+        },
+        {
+          "text": "Forbid the sponsor from talking to the team",
+          "feedback": "The team gets peace, but the sponsor feels shut out. Communication should flow – just through the right role."
+        }
+      ]
+    },
+    {
+      "id": "dluh",
+      "title": "Technical debt is growing",
+      "text": "The team warns that it cut corners in the rush. The solution is fragile and every new feature takes longer.",
+      "lesson": "Technical debt needs to be paid down continuously. It's an investment in a sustainable pace, not “wasted time.”",
+      "choices": [
+        {
+          "text": "Reserve a slice of capacity in every sprint for paying down debt",
+          "feedback": "The next sprint is a bit smaller, but the pace stabilizes over time."
+        },
+        {
+          "text": "Deal with the debt after launch",
+          "feedback": "Debt accrues interest: bugs pile up and fixing them after launch will cost more."
+        },
+        {
+          "text": "Spend the whole next sprint on cleanup",
+          "feedback": "The solution is cleaner, but stakeholders see no new value for a whole sprint."
+        }
+      ]
+    },
+    {
+      "id": "smlouva",
+      "title": "Contract with an external vendor",
+      "text": "An outside firm handles part of the development. Procurement wants a fixed-price contract with a detailed scope for the whole project.",
+      "lesson": "Agile work with contractors is covered by agile contracts: fixed time and budget, variable scope (or pay-per-sprint with an exit option).",
+      "choices": [
+        {
+          "text": "Fixed price + fixed scope written down right now",
+          "feedback": "Every backlog change now means a contract amendment and negotiation. Agility is tied up."
+        },
+        {
+          "text": "Framework contract: fixed budget and deadline, scope prioritized via the backlog",
+          "feedback": "Procurement gets price certainty, the Product Owner gets freedom over priorities. A classic agile contract."
+        },
+        {
+          "text": "Pay for hours worked, with no cap",
+          "feedback": "Flexible, but without a ceiling you're gambling with the budget."
+        }
+      ]
+    },
+    {
+      "id": "hodiny",
+      "title": "Estimates in hours",
+      "text": "The CFO wants an hour estimate for every backlog item and will check who “went over” by how much.",
+      "lesson": "Story points and velocity give a more reliable forecast than detailed hour estimates. Measure the team, not individuals.",
+      "choices": [
+        {
+          "text": "Explain relative estimates and show a forecast based on team velocity",
+          "feedback": "A forecast from real data is more accurate than adding up hours. The team doesn't waste time on timesheets."
+        },
+        {
+          "text": "Break everything down into hours and report variances",
+          "feedback": "The team spends hours estimating and reporting. And the estimates are still inaccurate."
+        },
+        {
+          "text": "Ignore the request",
+          "feedback": "The CFO now sees the project as a black hole for money."
+        }
+      ]
+    },
+    {
+      "id": "spor",
+      "title": "Fight over a shared environment",
+      "text": "The predictive part's lead and the Scrum Master are arguing: both need the only test environment and the same technicians in the same week.",
+      "lesson": "A hybrid PM resolves conflicts over shared resources transparently – by dependencies and impact on goals, not by who's louder.",
+      "choices": [
+        {
+          "text": "Meet, lay out the dependencies and agree on an order by impact on milestones",
+          "feedback": "Both left with an agreement they understand. Next time they'll sort it out at the sync."
+        },
+        {
+          "text": "Rule in favor of the predictive part – it has a fixed plan, after all",
+          "feedback": "The agile team feels like the “minor league.” Testing keeps getting postponed."
+        },
+        {
+          "text": "Escalate straight to the steering committee",
+          "feedback": "The committee sorted it out, but a week later. And it asks why the project couldn't handle it alone."
+        }
+      ]
+    },
+    {
+      "id": "nefunguje",
+      "title": "Done, but broken",
+      "text": "At the sprint review it turns out a feature marked “done” doesn't work in the real environment. It ran fine on the developer's machine.",
+      "lesson": "A clear Definition of Done and a “blameless” approach to mistakes: look for the cause in the process, not a culprit.",
+      "choices": [
+        {
+          "text": "Tighten the Definition of Done: done = tested in a production-like environment",
+          "feedback": "A few items now take a hair longer, but “done” means done again."
+        },
+        {
+          "text": "Find out who broke it",
+          "feedback": "The team starts hiding mistakes. Blame never helps improve the process."
+        },
+        {
+          "text": "Fix it and carry on unchanged",
+          "feedback": "This bug is gone, but the cause remains – it'll happen again."
+        }
+      ]
+    },
+    {
+      "id": "daily",
+      "title": "Sponsor at the daily scrum",
+      "text": "The sponsor ({sponsor}) has started attending every daily scrum, grilling individuals and handing out tasks.",
+      "lesson": "The daily scrum is the team's planning meeting, not a report to the boss. Stakeholders have their place at the sprint review.",
+      "choices": [
+        {
+          "text": "Explain the point of the daily and invite them to the sprint review to see results",
+          "feedback": "At the review the sponsor eagerly tries out finished features, and the daily belongs to the team again."
+        },
+        {
+          "text": "Let it be, they're the boss",
+          "feedback": "The team stopped talking about problems at the daily. All they report is “everything's fine.”"
+        },
+        {
+          "text": "Better cancel the daily",
+          "feedback": "The problem is gone – and so is the team's daily coordination."
+        }
+      ]
+    },
+    {
+      "id": "velocity",
+      "title": "Velocity contest",
+      "text": "Management proposes: the team with the highest velocity gets a bonus. Velocity will also be compared across teams.",
+      "lesson": "Velocity is the team's planning tool, not a performance metric. Once it becomes a target, it stops working (Goodhart's law).",
+      "choices": [
+        {
+          "text": "Decline and propose measuring delivered value and user satisfaction",
+          "feedback": "Management adopted different metrics. The team focuses on outcomes, not numbers."
+        },
+        {
+          "text": "Agree – motivation is good",
+          "feedback": "Estimates mysteriously start to “grow.” Velocity goes up, value doesn't."
+        },
+        {
+          "text": "Agree, but compare only with the team's own past",
+          "feedback": "The lesser evil, but the team still starts inflating estimates."
+        }
+      ]
+    },
+    {
+      "id": "rizika",
+      "title": "Dusty risk register",
+      "text": "You find that nobody has opened the risk register since the initial phase. The agile part isn't in it at all.",
+      "lesson": "Risk management is an ongoing activity. In a hybrid, track the risks of both parts and their interface – ideally as part of the regular sync.",
+      "choices": [
+        {
+          "text": "Add a short risk review of both parts to the weekly sync",
+          "feedback": "The very first review surfaced two new interface risks. Now they have response plans."
+        },
+        {
+          "text": "Nobody reads the register anyway – scrap it",
+          "feedback": "Without an overview of risks, the next problem will catch you unprepared."
+        },
+        {
+          "text": "Update it once in a big workshop and then forget about it",
+          "feedback": "It's current for a while; in a month it'll be dusty again."
+        }
+      ]
+    },
+    {
+      "id": "pilot",
+      "title": "A pilot run?",
+      "text": "The Product Owner proposes releasing some finished features to a small group of users before the full launch.",
+      "lesson": "Delivering value early and in small steps reduces risk. A pilot run is a typical bridge between agile development and a fixed launch date.",
+      "choices": [
+        {
+          "text": "Yes – a pilot with a small group and regular feedback collection",
+          "feedback": "Pilot users found three unclear spots that would otherwise have hit hundreds of people at once."
+        },
+        {
+          "text": "No, everything gets revealed at once at launch",
+          "feedback": "Big bang: bugs and misunderstood features surface only when everyone hits them at once."
+        },
+        {
+          "text": "Pilot yes, but we'll process the feedback after launch",
+          "feedback": "Users are glad to see something, but their input is gathering dust for now."
+        }
+      ]
+    },
+    {
+      "id": "komise",
+      "title": "One change board for everything",
+      "text": "The quality manager proposes unifying the rules: every change, even in the agile part's backlog, must go through a change board that meets once a month.",
+      "lesson": "Hybrid governance runs at several speeds: formal change control where changes are expensive, quick PO decisions where they're cheap.",
+      "choices": [
+        {
+          "text": "Two levels: the board for predictive-part changes, the Product Owner runs the backlog",
+          "feedback": "The quality manager is happy to have expensive changes under control, and the agile team stays fast."
+        },
+        {
+          "text": "Agree – uniform rules are fair",
+          "feedback": "The agile team now waits a month to get a small tweak approved. Agility is gone."
+        },
+        {
+          "text": "Scrap change control entirely – agility everywhere",
+          "feedback": "In the predictive part, anyone can now change the requirements. Extra work and chaos."
+        }
+      ]
+    },
+    {
+      "id": "specialista",
+      "title": "One specialist for both approaches",
+      "text": "The only security specialist is supposed to work for the predictive and agile parts at the same time and can't keep up.",
+      "lesson": "Shared resources are a typical bottleneck in hybrid projects. Plan them centrally around critical milestones and pass the knowledge on.",
+      "choices": [
+        {
+          "text": "Schedule their time around milestones and gradually pass knowledge to the team",
+          "feedback": "The specialist knows when they're needed where, and the team learns from them. The bottleneck shrinks."
+        },
+        {
+          "text": "Let the teams ask for them – first come, first served",
+          "feedback": "The specialist rushes between teams and finishes nothing. Both teams wait."
+        },
+        {
+          "text": "Hire a second full-time specialist",
+          "feedback": "It helps, but it's expensive and the new person is still getting up to speed."
+        }
+      ]
+    },
+    {
+      "id": "agile_hype",
+      "title": "Agile fever",
+      "text": "A new head of innovation convinced management that “everything is done agile these days.” They want this project to run in sprints too, with a backlog and a Product Owner.",
+      "lesson": "Agile isn't universally better. Where requirements are clear and change is expensive, the plan wins. Individual agile practices can be borrowed if they add something.",
+      "choices": [
+        {
+          "text": "Explain why a critical-path plan fits here; borrow only the useful bits (short daily meetings, retrospectives)",
+          "feedback": "The head of innovation got that agility is a tool, not a goal. The team likes the daily meetings at the board."
+        },
+        {
+          "text": "Switch to sprints and a backlog",
+          "feedback": "A fixed assembly sequence now gets “prioritized” every two weeks. Dependencies fall apart."
+        },
+        {
+          "text": "Comply on paper only – rename stages to sprints",
+          "feedback": "Nothing changed but the names. The team laughs about it, management is happy – for now."
+        }
+      ]
+    },
+    {
+      "id": "plan_na_rok",
+      "title": "A year-ahead feature plan",
+      "text": "A potential investor wants a detailed plan of every app feature for the year ahead, with dates.",
+      "lesson": "In an uncertain environment you plan goals and hypotheses, not features. A year-long feature plan is a guess built on unvalidated assumptions.",
+      "choices": [
+        {
+          "text": "Show a roadmap of goals and hypotheses, traction metrics and how we make data-driven decisions",
+          "feedback": "The investor appreciated that the team knows what it measures and why. No feature plan needed."
+        },
+        {
+          "text": "Write a detailed feature plan for the whole year",
+          "feedback": "Writing it took a week, and the plan was outdated after the first user test."
+        },
+        {
+          "text": "Just give them the launch date",
+          "feedback": "The investor is uneasy – they don't know what the team bases decisions on."
+        }
+      ]
+    }
+  ],
+  "SKILLS": {
+    "lide": {
+      "label": "People"
+    },
+    "obecne": {
+      "label": "Workers"
+    },
+    "svarec": {
+      "label": "Welders"
+    },
+    "jerab": {
+      "label": "Crane"
+    }
+  },
+  "GLOSSARY": [
+    [
+      "Hybrid project management",
+      "An approach to project management that combines elements of traditional and agile project management to gain the advantages and suppress the drawbacks of both, thereby increasing project success. It balances flexibility, efficiency, productivity and control over the project. The ability to tailor the mix to specific needs makes it suitable for managing projects in many different contexts."
+    ],
+    [
+      "Continuum of approaches",
+      "From purely agile, through tailored and combined agile methods, hybrid management, combined and tailored traditional methods, to purely traditional. Hybrid sits in the middle: it combines elements of both the traditional and the agile approach in a single project."
+    ],
+    [
+      "What hybrid management is not",
+      "It's not tailoring an agile or traditional approach, it's not combining practices within one of them, and it's not a temporary mix of practices during a transition from one approach to the other."
+    ],
+    [
+      "Predictive approach (waterfall)",
+      "Scope, time and cost are planned up front; phases follow one another. Suits clear, stable requirements (construction, procurement)."
+    ],
+    [
+      "Agile approach",
+      "Working in short iterations with frequent feedback. Suits requirements that are uncertain or evolving (software, design)."
+    ],
+    [
+      "Scrum",
+      "An agile framework: sprints, roles (Product Owner, Scrum Master, developers) and events (planning, daily, review, retrospective)."
+    ],
+    [
+      "Sprint",
+      "A time-boxed iteration (typically 2 weeks) that ends with a finished, usable product increment."
+    ],
+    [
+      "Daily Scrum",
+      "A short daily team meeting to plan work for the next day. It's not a report to the boss."
+    ],
+    [
+      "Product Backlog",
+      "An ordered list of everything the product might contain. Managed by the Product Owner."
+    ],
+    [
+      "Product Owner (PO)",
+      "The person accountable for maximizing product value; decides the order of backlog items."
+    ],
+    [
+      "Story point (SP)",
+      "A relative estimate of an item's effort. The team compares items with each other, not in hours."
+    ],
+    [
+      "Capacity / velocity",
+      "How many story points the team can handle per sprint. Used for planning, not for performance reviews."
+    ],
+    [
+      "MoSCoW",
+      "Prioritization: Must (must have), Should (should have), Could (could have), Won't (not this time)."
+    ],
+    [
+      "MVP",
+      "Minimum Viable Product – the smallest version of a product that already delivers value and lets you gather feedback."
+    ],
+    [
+      "Milestone",
+      "A significant point in time (e.g., contract signing, building handover), often with a fixed date."
+    ],
+    [
+      "Stage gate (phase gate)",
+      "A checkpoint between phases where the steering committee decides whether the project continues."
+    ],
+    [
+      "Change control",
+      "A formal process for assessing and approving changes in the predictive part (impact on time, cost, risk)."
+    ],
+    [
+      "Definition of Done (DoD)",
+      "A shared agreement on when an item is truly done (tested, documented, compliant…)."
+    ],
+    [
+      "Burn-up chart",
+      "A chart of work delivered over time vs. total scope. Shows a forecast of what will get done."
+    ],
+    [
+      "Risk register",
+      "A list of identified risks with probability, impact and response plan. Should be updated continuously."
+    ],
+    [
+      "Technical debt",
+      "The consequences of shortcuts and quick fixes. If it isn't paid down, every further change costs more."
+    ],
+    [
+      "Agile contract",
+      "A contract with fixed time and budget but variable scope driven by the backlog."
+    ],
+    [
+      "Blameless approach",
+      "When mistakes happen, look for the cause in the process, not a culprit. Then people don't hide mistakes."
+    ],
+    [
+      "Pilot run",
+      "Rolling out part of the solution to a small group of users before the full launch, to get feedback and reduce risk."
+    ],
+    [
+      "Iron triangle",
+      "The relationship of scope, time and cost. Changing one affects the others; quality shouldn't be the “victim.”"
+    ],
+    [
+      "Brooks's law",
+      "“Adding manpower to a late software project makes it later.” New people need onboarding."
+    ],
+    [
+      "Projectification",
+      "The growing share of work organized as projects. It can bring flexibility as well as dysfunction (overload, loss of knowledge)."
+    ],
+    [
+      "Pattern / anti-pattern",
+      "A recurring solution that creates value (pattern) or dysfunction (anti-pattern) in a given context. In the game it's described by the chain context → form → mechanism → consequence."
+    ],
+    [
+      "Management overhead",
+      "The time and energy spent on meetings, reports and approvals. Every practice brings something, but it also costs something."
+    ],
+    [
+      "WIP (work-in-progress) limit",
+      "A Kanban cap on the number of tasks in progress. Prevents overload and speeds up finishing."
+    ],
+    [
+      "Water-Scrum-Fall",
+      "A hybrid model with the TAT pattern: traditional phases at the start (requirements, plan, contract), agile sprints in the middle and traditional phases at the end (testing, acceptance). One of the best-known hybrid models."
+    ],
+    [
+      "Sprints set in concrete",
+      "Anti-pattern: sprints inside a plan where every feature has a fixed date in advance. The rituals stay, the benefits of agility vanish. Not to be confused with Water-Scrum-Fall – that phases the whole life cycle but keeps agile development inside it flexible."
+    ],
+    [
+      "Gantt chart",
+      "A schedule of tasks as bars on a timeline of days, including the dependencies between them. A core tool of predictive planning."
+    ],
+    [
+      "Person-day (PD)",
+      "A unit of effort: one person's work for one day. A 3-day task for 2 people = 6 PD. In predictive projects it replaces story points."
+    ],
+    [
+      "Rolling wave planning",
+      "The nearest stage is planned in detail, later ones only roughly (milestones, effort estimates), and they are refined step by step."
+    ],
+    [
+      "Resource leveling",
+      "Adjusting the schedule so that no day needs more people than the team has."
+    ],
+    [
+      "Critical path (CPM)",
+      "The longest chain of dependent activities. A delay in any of them pushes back the project end; other activities have float."
+    ],
+    [
+      "Project buffer",
+      "A shared time buffer at the end of the project that covers delays on the critical path."
+    ],
+    [
+      "Earned Value Management (EVM)",
+      "A method of measuring project status: compares planned work, work actually done and costs (SPI, CPI)."
+    ],
+    [
+      "Build–Measure–Learn",
+      "The Lean Startup cycle: build the smallest possible experiment, measure how users react and learn before you invest more."
+    ],
+    [
+      "Pivot",
+      "A fundamental change in product strategy based on validated learning."
+    ],
+    [
+      "Big Design Up Front (BDUF)",
+      "Trying to design and plan everything in detail up front. Fine with clear requirements, harmful under high uncertainty."
+    ],
+    [
+      "Goodhart's law",
+      "“When a measure becomes a target, it ceases to be a good measure.” Typically velocity as a bonus metric."
+    ]
+  ]
+}

@@ -1,0 +1,435 @@
+{
+  "id": "nemocnice",
+  "stars": {
+    "ko": [
+      {
+        "text": "The ED opens with all Must items"
+      },
+      {
+        "text": "The building passes occupancy approval"
+      }
+    ],
+    "top": [
+      {
+        "text": "All milestones met"
+      }
+    ]
+  },
+  "name": "Hospital Emergency Department",
+  "tagline": "An extension built during full operation, plus triage software",
+  "scope": "Building a new emergency department extension while the hospital runs at full capacity, plus medical equipment and patient triage software connected to the hospital information system.",
+  "intro": "You're running construction of a new emergency department. Meanwhile the hospital runs at full tilt – doctors have no time, patients mustn't suffer, and the region watches every penny.",
+  "predWorld": "Construction during operation, medical equipment from public tenders, occupancy approval and hygiene standards.",
+  "agileWorld": "Patient triage software and a dispatch screen, tuned with doctors and nurses on simulated shifts.",
+  "terms": {
+    "launch": "the ED opening",
+    "predShort": "construction, equipment, occupancy approval",
+    "agileShort": "patient triage software",
+    "users": "doctors and nurses",
+    "usersGen": "doctors and nurses",
+    "sponsor": "hospital director",
+    "poGood": "ED head nurse",
+    "committee": "hospital management and the region"
+  },
+  "dependency": {
+    "lock": "Waiting for the network and equipment in the extension to go live (milestone)",
+    "hint": "<b>Pilot operation in the new premises</b> waits for a predictive milestone – the network and equipment going live."
+  },
+  "workstreams": [
+    {
+      "id": "pristavba",
+      "name": "Extension built during hospital operation",
+      "why": "Building permit, stages set around hospital operations, and fixed dependencies."
+    },
+    {
+      "id": "technika",
+      "name": "Medical equipment via public tender",
+      "why": "Procurement law prescribes the procedure and deadlines; the specification must be done up front."
+    },
+    {
+      "id": "kolaudace",
+      "name": "Occupancy approval and hygiene standards",
+      "why": "Requirements are set by regulations and checked formally."
+    },
+    {
+      "id": "rozhrani",
+      "name": "Interface to the hospital information system",
+      "why": "Careful, even though it's software: the interface is defined by a standard and a contract with the system vendor, and it's tested formally."
+    },
+    {
+      "id": "trideni",
+      "name": "Patient triage software",
+      "why": "How triage should work in real operation only shows up on simulated shifts with doctors and nurses."
+    },
+    {
+      "id": "dispecink",
+      "name": "ED dispatch screen",
+      "why": "What the screen needs is tuned with staff bit by bit."
+    },
+    {
+      "id": "skoleni",
+      "name": "Staff training on new procedures",
+      "why": "Training is tuned in simulations based on where staff make mistakes – iteratively."
+    },
+    {
+      "id": "pacienti",
+      "name": "Wait time info for patients",
+      "why": "A small service you can launch early and improve based on reactions."
+    }
+  ],
+  "backlog": [
+    {
+      "id": "formular",
+      "name": "Triage form"
+    },
+    {
+      "id": "fronta",
+      "name": "Patient queue by urgency"
+    },
+    {
+      "id": "napojeni",
+      "name": "Hospital system integration"
+    },
+    {
+      "id": "dispecink",
+      "name": "Dispatch screen"
+    },
+    {
+      "id": "pilot",
+      "name": "Pilot operation in the new premises"
+    },
+    {
+      "id": "zhorseni",
+      "name": "Deterioration alerts"
+    },
+    {
+      "id": "statistiky",
+      "name": "Wait time statistics"
+    },
+    {
+      "id": "web",
+      "name": "Wait times on the website"
+    },
+    {
+      "id": "diktovani",
+      "name": "Voice dictation"
+    },
+    {
+      "id": "zachranka",
+      "name": "Mobile version for ambulances"
+    },
+    {
+      "id": "tmavy",
+      "name": "Screen night mode"
+    },
+    {
+      "id": "ai",
+      "name": "AI diagnosis suggestions"
+    }
+  ],
+  "milestones": [
+    {
+      "id": "m1",
+      "name": "Network and equipment",
+      "okText": "The network and equipment in the extension are up. Pilot operation can be prepared from sprint 3.",
+      "lateText": "Construction slipped. Pilot operation can't be prepared until sprint 4."
+    },
+    {
+      "id": "m2",
+      "name": "Occupancy approval",
+      "okText": "The extension has passed occupancy approval.",
+      "lateText": "Occupancy approval is postponed. The region is unhappy."
+    },
+    {
+      "id": "m3",
+      "name": "ED opening",
+      "okText": "The new emergency department is open and the software is triaging its first patients.",
+      "lateText": "The ED opened, but without key features:"
+    }
+  ],
+  "shift": {
+    "title": "Software is a medical device",
+    "text": "The State Institute for Drug Control has ruled: software that ranks patients by urgency is a medical device. It can't be used without technical documentation, risk analysis and change control. Revealed factor: regulation and audits.",
+    "addItems": [
+      {
+        "id": "dokumentace",
+        "name": "Technical documentation and risk analysis"
+      },
+      {
+        "id": "validace",
+        "name": "Clinical validation with staff"
+      }
+    ],
+    "lesson": "When part of the agile work becomes a regulated product, formal elements must enter the agile part: a strict Definition of Done with documentation, and change control. Still agile, but with rules."
+  },
+  "gate": {
+    "id": "gate",
+    "title": "Regional review",
+    "text": "The region, as the hospital's founder, checks whether the project is on plan and on budget. What do you present?",
+    "lesson": "A public founder needs transparency: the state of construction and budget, plus proof that the software really works in operation.",
+    "choices": [
+      {
+        "text": "Construction and budget status + video of a simulated shift with the software",
+        "feedback": "The region sees where the money goes and that the software helps doctors."
+      },
+      {
+        "text": "Only construction figures; the software once it's done",
+        "feedback": "The region asks why it's paying for software nobody has seen."
+      },
+      {
+        "text": "Postpone the review – too busy",
+        "feedback": "The region sends its own inspector."
+      }
+    ]
+  },
+  "events": [
+    {
+      "id": "hluk",
+      "title": "Construction disturbs patients",
+      "text": "Construction noise is disturbing ICU patients. The head physician demands an immediate stop.",
+      "lesson": "Building during operation means planning work around operations – and talking to people before they complain upstairs.",
+      "choices": [
+        {
+          "text": "Noisy work only outside surgeries and quiet hours; offer patients other rooms",
+          "feedback": "The head physician agrees. Construction is slower, but conflict-free."
+        },
+        {
+          "text": "Continue as planned",
+          "feedback": "Construction rolls on. So do the complaints."
+        },
+        {
+          "text": "Stop noisy work for two weeks",
+          "feedback": "Peace in the ICU, but construction slips."
+        }
+      ]
+    },
+    {
+      "id": "lekari",
+      "title": "Doctors have no time to test",
+      "text": "Doctors and nurses are fully booked on shifts. There's no time left to test software.",
+      "lesson": "Without real users, agile development loses its point. Their time must be negotiated and paid for.",
+      "choices": [
+        {
+          "text": "Negotiate paid hours for simulated shifts with management",
+          "feedback": "Staff test on simulated shifts. It's expensive, but you see real use."
+        },
+        {
+          "text": "Test without them, just in IT",
+          "feedback": "Tests pass. On paper."
+        },
+        {
+          "text": "Test with one willing doctor",
+          "feedback": "Better than nothing, but one view isn't enough."
+        }
+      ]
+    },
+    {
+      "id": "nis",
+      "title": "System vendor stalls the interface",
+      "text": "The hospital system vendor wants double for the interface and won't deliver it for eight weeks.",
+      "lesson": "Dependency on an external system is handled by contract and technically (a simulator). Bending the rules with medical data is a gamble.",
+      "choices": [
+        {
+          "text": "Lock the interface by contract per the standard; develop against a simulator meanwhile",
+          "feedback": "The interface is pricey but certain. Development doesn't stop."
+        },
+        {
+          "text": "Bypass the interface with direct database access",
+          "feedback": "Works right away, for free. For now."
+        },
+        {
+          "text": "Wait eight weeks",
+          "feedback": "Safe, but slow."
+        }
+      ]
+    },
+    {
+      "id": "epidemie",
+      "title": "Flu epidemic",
+      "text": "The hospital is overcrowded and wants to use the finished part of the extension as a temporary ward.",
+      "lesson": "A crisis request goes through change control: what can be safely handed over now and what gets replanned.",
+      "choices": [
+        {
+          "text": "Hand over the finished part temporarily per the crisis plan; replan the rest",
+          "feedback": "The hospital handled the surge and construction continues in a new order."
+        },
+        {
+          "text": "Refuse – construction has its plan",
+          "feedback": "Hospital management is furious. Patients lie in the corridors."
+        },
+        {
+          "text": "Hand over the whole unfinished extension",
+          "feedback": "Help arrived instantly. Builders now work among patients."
+        }
+      ]
+    },
+    {
+      "id": "tendr",
+      "title": "Tender challenged",
+      "text": "A losing bidder challenged the medical equipment tender at the competition authority.",
+      "lesson": "Public procurement risks belong in the risk register with a ready plan B. Ignoring the authority doesn't pay.",
+      "choices": [
+        {
+          "text": "Activate plan B from the risk register: rent equipment temporarily",
+          "feedback": "Rented equipment bridges the wait for the authority's ruling."
+        },
+        {
+          "text": "Wait for the authority's ruling",
+          "feedback": "The authority will rule in two months."
+        },
+        {
+          "text": "Sign the contract anyway",
+          "feedback": "The equipment is ordered. The authority hasn't ruled yet."
+        }
+      ]
+    },
+    {
+      "id": "tablety",
+      "title": "Nurses want bedside tablets",
+      "text": "Nurses want the software to work on bedside tablets too. It wasn't in the brief.",
+      "lesson": "A new user request goes into the backlog and the Product Owner orders it. Building it on the side, off-plan, breaks the sprint.",
+      "choices": [
+        {
+          "text": "Into the backlog; the head nurse orders it and tests it on one shift",
+          "feedback": "One shift showed a simplified view is enough. Small effort, big payoff."
+        },
+        {
+          "text": "Build it now, off-plan",
+          "feedback": "The sprint fell apart and the tablet version is half-baked."
+        },
+        {
+          "text": "Refuse – it's not in the brief",
+          "feedback": "Nurses feel nobody listens to them."
+        }
+      ]
+    }
+  ],
+  "followups": {
+    "stiznost": {
+      "id": "stiznost",
+      "title": "Complaint to the region",
+      "text": "Patients and the head physician complain to the regional authority. The region has announced a construction inspection.",
+      "lesson": "An ignored stakeholder conflict comes back through their bosses – and worse.",
+      "unresolvedText": "Complaints about the construction hurt the hospital's reputation.",
+      "choices": [
+        {
+          "text": "Admit the mistake, adjust the noisy-work schedule and inform patients",
+          "feedback": "The inspection went calmly. Relations are slowly mending."
+        },
+        {
+          "text": "Argue that construction complies with the permit",
+          "feedback": "Formally true, but the region won't forget."
+        },
+        {
+          "text": "Stop noisy work entirely",
+          "feedback": "Quiet, but a big slip."
+        }
+      ]
+    },
+    "odmitnuti": {
+      "id": "odmitnuti",
+      "title": "Nurses reject the software",
+      "text": "During the pilot, nurses refuse to use the software: it doesn't fit real operations and slows them down.",
+      "lesson": "Software tested without real users fails in operation. Feedback is cheaper early on.",
+      "unresolvedText": "Staff work around the software and keep paper lists.",
+      "choices": [
+        {
+          "text": "Stop the pilot, run simulated shifts with nurses and rework key screens",
+          "feedback": "After two iterations, nurses say: “Now this works.”"
+        },
+        {
+          "text": "Order them to use it",
+          "feedback": "Nurses fill in the software for show; the real queue is on paper."
+        },
+        {
+          "text": "Keep the pilot running and collect feedback",
+          "feedback": "There are a hundred comments. Some contradict each other."
+        }
+      ]
+    },
+    "simulace_bonus": {
+      "id": "simulace_bonus",
+      "title": "Nurses want more",
+      "text": "Simulated shifts paid off. Nurses come up with ideas on their own and want the software launched sooner.",
+      "lesson": "User involvement is an investment: people who co-create a solution then champion it themselves.",
+      "unresolvedText": "Staff recommend the software to other departments on their own.",
+      "choices": [
+        {
+          "text": "Make the most active nurses ambassadors for other shifts",
+          "feedback": "Training the other shifts almost runs itself."
+        },
+        {
+          "text": "Launch the whole software now, unfinished",
+          "feedback": "The enthusiasm faded fast."
+        },
+        {
+          "text": "Say thanks and continue as planned",
+          "feedback": "A somewhat missed opportunity."
+        }
+      ]
+    },
+    "unik": {
+      "id": "unik",
+      "title": "Unauthorized access to patient data",
+      "text": "A security audit found direct access to the patient database outside the approved interface.",
+      "lesson": "Bending the rules on sensitive data is a project's most expensive “saving”. Incidents get reported and handled openly.",
+      "unresolvedText": "Unauthorized access to patient data came to light only after the opening.",
+      "choices": [
+        {
+          "text": "Block the access immediately, report the incident and build the interface properly",
+          "feedback": "Painful but honest. The authority appreciated the quick response."
+        },
+        {
+          "text": "Keep quiet and remove the access on the sly",
+          "feedback": "The audit logged it anyway. Now it's a cover-up too."
+        },
+        {
+          "text": "Block it and wait for the official interface",
+          "feedback": "Safe, but the software now has no data for weeks."
+        }
+      ]
+    },
+    "dodelavky": {
+      "id": "dodelavky",
+      "title": "Finishing work among patients",
+      "text": "Finishing work in the temporarily used extension clashes with operations: hygiene inspectors threaten a fine.",
+      "lesson": "Handing over unfinished work without a punch-list plan means the problems move into operations.",
+      "unresolvedText": "Unfinished work in the extension dragged on for months after the opening.",
+      "choices": [
+        {
+          "text": "Draw up a punch-list plan with operations and work section by section",
+          "feedback": "Slower, but no clash with the hygiene inspectors."
+        },
+        {
+          "text": "Finish it fast over a weekend",
+          "feedback": "Sloppy work and exhausted tradespeople."
+        },
+        {
+          "text": "Pay the fine and carry on",
+          "feedback": "The problem remains, just pricier."
+        }
+      ]
+    },
+    "zruseni": {
+      "id": "zruseni",
+      "title": "Authority voids the contract",
+      "text": "The competition authority canceled the tender. The ordered equipment must be returned and re-tendered.",
+      "lesson": "Getting ahead of the authority's ruling is a bet. Plan B from the risk register would have saved months here.",
+      "unresolvedText": "The ED opened with temporary equipment.",
+      "choices": [
+        {
+          "text": "Rent equipment temporarily and re-run the tender properly",
+          "feedback": "Expensive, but the ED opens on time."
+        },
+        {
+          "text": "Sue the authority",
+          "feedback": "The lawsuit will outlast the whole project."
+        },
+        {
+          "text": "Open without the new equipment",
+          "feedback": "The ED works only halfway."
+        }
+      ]
+    }
+  }
+}

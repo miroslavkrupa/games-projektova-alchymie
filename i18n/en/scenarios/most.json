@@ -1,0 +1,518 @@
+{
+  "id": "most",
+  "stars": {
+    "ko": [
+      {
+        "text": "Track closures don't overrun the buffer – trains must run on time again"
+      }
+    ],
+    "top": [
+      {
+        "text": "Budget at least 30 at the end"
+      }
+    ]
+  },
+  "name": "Railway Bridge Replacement",
+  "tagline": "A new structure built during weekend track closures",
+  "scope": "Dismantling the old bridge and erecting a new steel structure during four track closures, when no trains run. Between closures, traffic runs and no work is allowed on the bridge.",
+  "approachText": "Fixed closure windows, prescribed construction methods, rail authority oversight and a huge cost for every delay. Run purely predictively: a plan by closure, a detailed Gantt chart with a critical path, scheduling of specialists, change control and risk management.",
+  "intro": "You're managing a railway bridge replacement on a main line. You get just four track closures – whatever isn't done in one has to wait for the next. And in between, trains run.",
+  "terms": {
+    "launch": "the bridge reopening",
+    "predShort": "the whole project",
+    "usersGen": "rail operators",
+    "sponsor": "construction director",
+    "poGood": "line operations manager",
+    "committee": "railway administration"
+  },
+  "workstreams": [
+    {
+      "id": "vyluky",
+      "name": "Closure plan and coordination with rail operators",
+      "why": "Closures are negotiated months ahead and their dates are fixed."
+    },
+    {
+      "id": "demontaz",
+      "name": "Dismantling the old structure",
+      "why": "The method is set by the design and the structural engineer, step by step."
+    },
+    {
+      "id": "montaz",
+      "name": "Fabricating and erecting the new structure",
+      "why": "The structure is fabricated to drawings in a steel shop and erected per an approved method."
+    },
+    {
+      "id": "svary",
+      "name": "Welding and weld inspection",
+      "why": "Welding procedures and inspections are prescribed by standards and inspector sign-off."
+    },
+    {
+      "id": "koleje",
+      "name": "Track and overhead lines",
+      "why": "Follows the finished structure and must be done by the end of the last closure."
+    },
+    {
+      "id": "informovani",
+      "name": "Informing passengers about closures",
+      "why": "Careful: communication sounds flexible, but closure dates are fixed and notices go out within prescribed lead times."
+    },
+    {
+      "id": "zabezpeceni",
+      "name": "Signaling software update",
+      "why": "Careful, software: but it's a safety system approved by the rail authority. It's deployed once, verified and approved."
+    },
+    {
+      "id": "zkouska",
+      "name": "Load test and handover",
+      "why": "The test has a standard procedure, a booked test lab date and a formal report."
+    }
+  ],
+  "phases": [
+    {
+      "id": "p1",
+      "name": "Closure 1: Dismantling",
+      "goal": "Cut power to the line, remove the track and lift out the old bridge span.",
+      "milestone": {
+        "name": "Old bridge gone"
+      },
+      "tasks": [
+        {
+          "id": "A",
+          "name": "Overhead line power-off",
+          "note": "No work on the bridge until the power is off."
+        },
+        {
+          "id": "B",
+          "name": "Removing track on the bridge",
+          "note": "Work happens right under the overhead line."
+        },
+        {
+          "id": "C",
+          "name": "Cutting up the old structure",
+          "note": "Cutting a structure that still has track on it? Not allowed."
+        },
+        {
+          "id": "D",
+          "name": "Lifting out spans by crane",
+          "note": "The crane lifts the cut-up pieces."
+        },
+        {
+          "id": "E",
+          "name": "Preparing bearings on the piers",
+          "note": "Work on the piers below the bridge can start as soon as the closure begins."
+        },
+        {
+          "id": "F",
+          "name": "Hauling away scrap",
+          "note": "Hauls away what the crane removed."
+        }
+      ]
+    },
+    {
+      "id": "p2",
+      "name": "Closure 2: Substructure",
+      "goal": "Repair the piers, set new bearings and prepare drainage.",
+      "milestone": {
+        "name": "Piers ready"
+      },
+      "tasks": [
+        {
+          "id": "A",
+          "name": "Repairing bearing seats",
+          "note": "Concrete seats the bearings will rest on."
+        },
+        {
+          "id": "B",
+          "name": "Setting new bearings",
+          "note": "Bearings go on the repaired seats."
+        },
+        {
+          "id": "C",
+          "name": "Welding anchor elements",
+          "note": "Anchors the set bearings."
+        },
+        {
+          "id": "D",
+          "name": "Pier drainage",
+          "note": "Independent work at the foot of the piers."
+        },
+        {
+          "id": "E",
+          "name": "Survey measurement",
+          "note": "Surveys the anchored bearings."
+        }
+      ]
+    },
+    {
+      "id": "p3",
+      "name": "Closure 3: Erecting the structure",
+      "goal": "Slide in the new spans, weld the joints and get them signed off by the inspector.",
+      "milestone": {
+        "name": "Structure standing"
+      },
+      "tasks": [
+        {
+          "id": "A",
+          "name": "Sliding in new span 1",
+          "note": "There's only one big crane on site."
+        },
+        {
+          "id": "B",
+          "name": "Sliding in new span 2",
+          "note": "Same crane as for span 1."
+        },
+        {
+          "id": "C",
+          "name": "Welding the span 1 joint",
+          "note": "Welds the placed span 1."
+        },
+        {
+          "id": "D",
+          "name": "Welding the span 2 joint",
+          "note": "Welds the placed span 2."
+        },
+        {
+          "id": "E",
+          "name": "Inspector weld sign-off",
+          "note": "The inspector checks all welds and arrives on day eight of the closure at the earliest."
+        },
+        {
+          "id": "F",
+          "name": "Installing railings and inspection walkways",
+          "note": "Installed on both placed spans."
+        }
+      ]
+    },
+    {
+      "id": "p4",
+      "name": "Closure 4: Track and testing",
+      "goal": "Lay the track, restore the overhead line, run the load test and hand over the bridge.",
+      "milestone": {
+        "name": "Bridge in service"
+      },
+      "tasks": [
+        {
+          "id": "A",
+          "name": "Track laying",
+          "note": "Track goes on the finished structure."
+        },
+        {
+          "id": "B",
+          "name": "Rail welding",
+          "note": "Welds the laid rails."
+        },
+        {
+          "id": "C",
+          "name": "Overhead line installation",
+          "note": "Overhead line above the bridge, independent of the track."
+        },
+        {
+          "id": "D",
+          "name": "Load test",
+          "note": "Tests the finished track and overhead line. The test lab arrives on day five of the closure."
+        },
+        {
+          "id": "E",
+          "name": "Rail authority acceptance",
+          "note": "The bridge is accepted after a successful test."
+        }
+      ]
+    }
+  ],
+  "shift": {
+    "title": "Rail authority tightens oversight",
+    "text": "After an accident on another site, the rail authority ordered: every weld in the load-bearing structure must be signed off by an inspector, and the bridge needs full quality documentation. Revealed factor: regulation and audits.",
+    "lesson": "When regulation increases, practices must cover it: a strict Definition of Done with quality documentation for every weld. Otherwise the inspector sends work back and closures drag on."
+  },
+  "gate": {
+    "id": "gate",
+    "title": "Checkpoint review after two closures",
+    "text": "The railway administration assesses whether the project can make it through the remaining closures. How do you prepare?",
+    "lesson": "A checkpoint in a predictive project is about exact status against the plan: what got done in the closures, what was moved, and the risks for the next closures.",
+    "choices": [
+      {
+        "text": "Status vs. the closure plan, moved work, risks and a site visit",
+        "feedback": "The railway administration sees the exact status and approved extra crew for the next closure."
+      },
+      {
+        "text": "A presentation saying everything is on plan",
+        "feedback": "The inspector asked about the moved work. The presentation said nothing about it."
+      },
+      {
+        "text": "Cancel the checkpoint review to prepare the next closure",
+        "feedback": "The railway administration sent its own inspector."
+      }
+    ]
+  },
+  "events": [
+    {
+      "id": "koroze",
+      "title": "Corroded pier",
+      "text": "Once exposed, the pier turned out to be more corroded than the survey said.",
+      "lesson": "In a predictive project, an unexpected finding goes through change control – even if it hurts. Quick fixes come back to bite.",
+      "choices": [
+        {
+          "text": "Change control: plan the pier repair, even at the cost of a tighter closure",
+          "feedback": "The repair is planned. The closure will be tight, but the bridge will last a hundred years."
+        },
+        {
+          "text": "Just paint the pier and carry on",
+          "feedback": "The paint looks good. For now."
+        },
+        {
+          "text": "Stop and wait for a new assessment",
+          "feedback": "The assessment arrived, but the closure lost three days."
+        }
+      ]
+    },
+    {
+      "id": "jerab",
+      "title": "Which crane for erection?",
+      "text": "The crane for erecting the structure must be ordered now. A big one is pricey; a smaller one is cheaper but at the limit of its capacity.",
+      "lesson": "For critical resources, spare capacity pays off. Skimping on them risks the whole closure.",
+      "choices": [
+        {
+          "text": "Order the big crane with spare capacity",
+          "feedback": "Expensive, but erection is a safe bet."
+        },
+        {
+          "text": "Order the smaller crane",
+          "feedback": "Savings. The crane is at its limit."
+        },
+        {
+          "text": "Decide right before the closure",
+          "feedback": "The decision can wait. The cranes can't."
+        }
+      ]
+    },
+    {
+      "id": "svarec",
+      "title": "Welders out sick",
+      "text": "Two certified welders fell ill right before the closure.",
+      "lesson": "Backup capacity for critical trades belongs in the risk register. Overloading the rest leads to defects.",
+      "choices": [
+        {
+          "text": "Call in the backup crew from the risk register",
+          "feedback": "The backup crew was vetted and arrived on time."
+        },
+        {
+          "text": "Reshuffle work: weld only critical joints",
+          "feedback": "Critical joints done, the rest will wait."
+        },
+        {
+          "text": "Weld with one welder on overtime",
+          "feedback": "The welder is working sixteen-hour days."
+        }
+      ]
+    },
+    {
+      "id": "dopravce",
+      "title": "Rail operator wants a shorter closure",
+      "text": "A rail operator wants the closure cut by a day for a special train.",
+      "lesson": "A conflict over a fixed window is solved by negotiating with data and compensation. Refusing without talks comes back.",
+      "choices": [
+        {
+          "text": "Negotiate a detour for the special train and offer compensation",
+          "feedback": "The train takes a detour; the closure stays intact."
+        },
+        {
+          "text": "Agree and shorten the closure",
+          "feedback": "The operator is happy; the closure plan is a day shorter."
+        },
+        {
+          "text": "Refuse without discussion",
+          "feedback": "The operator left angry."
+        }
+      ]
+    },
+    {
+      "id": "dest",
+      "title": "Rain during the closure",
+      "text": "Heavy rain is forecast for the closure. Structural welds can't be done in the rain.",
+      "lesson": "Weather is a known risk of outdoor work. A response plan (cover, reshuffled work) turns it into routine.",
+      "choices": [
+        {
+          "text": "Put up a tent over the welding area from the contingency reserve",
+          "feedback": "Under the tent, welding goes on even in the rain."
+        },
+        {
+          "text": "Reshuffle work: do other tasks in the rain",
+          "feedback": "Some work moved; the closure is tight."
+        },
+        {
+          "text": "Weld in the rain anyway",
+          "feedback": "The welds are done. The ultrasound test is still to come."
+        }
+      ]
+    },
+    {
+      "id": "ministr",
+      "title": "Minister wants an earlier opening",
+      "text": "The construction director wants to invite the minister to the grand opening – a week earlier than the plan allows.",
+      "lesson": "Dates promised publicly must come from the plan. A political promise without a plan comes back at the worst moment.",
+      "choices": [
+        {
+          "text": "Show the closure plan and set the ceremony for the real date",
+          "feedback": "The director isn't thrilled, but the date is realistic."
+        },
+        {
+          "text": "Promise the earlier date",
+          "feedback": "The director is thrilled. Invitations go out."
+        },
+        {
+          "text": "Refuse without explanation",
+          "feedback": "The director is offended."
+        }
+      ]
+    }
+  ],
+  "followups": {
+    "koroze_navrat": {
+      "id": "koroze_navrat",
+      "title": "Inspector finds corrosion",
+      "text": "During a check, the rail authority inspector found unrepaired pier corrosion under fresh paint.",
+      "lesson": "A hidden problem costs more than an admitted one. And lost trust gets added to the repair bill.",
+      "unresolvedText": "The pier corrosion showed up at the first inspection after reopening.",
+      "choices": [
+        {
+          "text": "Admit the mistake and repair it immediately",
+          "feedback": "Painful but honest. The inspector approved continuing."
+        },
+        {
+          "text": "Claim the pier was fine",
+          "feedback": "The inspector halted work and ordered a structural assessment."
+        },
+        {
+          "text": "Negotiate a temporary train speed limit",
+          "feedback": "The bridge opens, but trains will crawl across it."
+        }
+      ]
+    },
+    "jerab_volno": {
+      "id": "jerab_volno",
+      "title": "Big crane has capacity to spare",
+      "text": "The big crane handles erection with room to spare. A neighboring site asks to borrow it for a day.",
+      "lesson": "Investing in a critical resource pays back: in certainty, and sometimes in money.",
+      "unresolvedText": "The big crane proved itself on later projects too.",
+      "choices": [
+        {
+          "text": "Rent it out for a fee on days we don't need it",
+          "feedback": "Part of the crane's cost came back."
+        },
+        {
+          "text": "Lend it even on a day we need it",
+          "feedback": "The money came in, but erection stalled."
+        },
+        {
+          "text": "Refuse",
+          "feedback": "No risk, no bonus."
+        }
+      ]
+    },
+    "vitr": {
+      "id": "vitr",
+      "title": "Small crane can't handle the wind",
+      "text": "A crosswind picks up while a span is being slid in. The small crane is at its limit and the operator refuses to lift.",
+      "lesson": "Skimping on a critical resource costs you exactly when time is shortest.",
+      "unresolvedText": "Wind pushed erection past the end of the closure.",
+      "choices": [
+        {
+          "text": "Wait for calm and reshuffle the work around it",
+          "feedback": "Safe, but the closure is now very tight."
+        },
+        {
+          "text": "Risk the lift",
+          "feedback": "The span swung and damaged a pier. Nobody was hurt – this time."
+        },
+        {
+          "text": "Rush in a big crane",
+          "feedback": "The big crane arrived the next day. At double the price."
+        }
+      ]
+    },
+    "jerab_pozde": {
+      "id": "jerab_pozde",
+      "title": "Cranes are all booked",
+      "text": "No big cranes are available for the closure. The postponed decision backfired.",
+      "lesson": "Long-lead resource decisions can't be put off. Not deciding is also a decision.",
+      "unresolvedText": "Erection without a suitable crane dragged on.",
+      "choices": [
+        {
+          "text": "Rent two smaller cranes and adjust the erection method",
+          "feedback": "Trickier erection, but it works."
+        },
+        {
+          "text": "Pay double for a crane from abroad",
+          "feedback": "The crane arrived. The budget weeps."
+        },
+        {
+          "text": "Postpone erection to the next closure",
+          "feedback": "The whole closure is practically lost."
+        }
+      ]
+    },
+    "vady": {
+      "id": "vady",
+      "title": "Ultrasound finds weld defects",
+      "text": "Ultrasonic testing revealed defects in welds from the last closure.",
+      "lesson": "Quality can't be made up with overtime or by defying the weather. Weld defects get fixed before the inspector signs off.",
+      "unresolvedText": "Defective welds showed up at the bridge's first inspection.",
+      "choices": [
+        {
+          "text": "Grind out and re-weld right away",
+          "feedback": "The welds are fine now. The closure is two days shorter."
+        },
+        {
+          "text": "Hide the defect under paint",
+          "feedback": "The inspector noticed. An extraordinary inspection of the whole site follows."
+        },
+        {
+          "text": "Request an extra closure for repairs",
+          "feedback": "Rail operators are furious, but the welds get fixed properly."
+        }
+      ]
+    },
+    "dopravce_odveta": {
+      "id": "dopravce_odveta",
+      "title": "Rail operator demands an audit",
+      "text": "At a public hearing, the rail operator criticizes the project and demands an independent schedule audit.",
+      "lesson": "A stakeholder nobody negotiated with finds a way – through the public and the bosses.",
+      "unresolvedText": "The dispute with the rail operator dragged on after reopening.",
+      "choices": [
+        {
+          "text": "Openly show the closure plan and offer regular updates",
+          "feedback": "The operator calmed down. The relationship is slowly mending."
+        },
+        {
+          "text": "Ignore it",
+          "feedback": "The criticism made it into the media."
+        },
+        {
+          "text": "Let the audit happen",
+          "feedback": "The audit confirmed the plan, but cost time and money."
+        }
+      ]
+    },
+    "ministr_prijel": {
+      "id": "ministr_prijel",
+      "title": "Minister arrives, bridge isn't done",
+      "text": "The minister showed up for the promised opening. The bridge isn't finished.",
+      "lesson": "A promise without a plan comes back in public. Owning up and offering an alternative program beats cutting tests short.",
+      "unresolvedText": "Photos of the minister on an unfinished site went all over the media.",
+      "choices": [
+        {
+          "text": "Hold a site tour instead of the opening and explain the plan",
+          "feedback": "The minister liked the tour more than ribbons and scissors."
+        },
+        {
+          "text": "Cut the tests short to open in time",
+          "feedback": "The bridge is open without a proper test. The rail authority is furious."
+        },
+        {
+          "text": "Cancel the event at the last minute",
+          "feedback": "The minister found out from the papers."
+        }
+      ]
+    }
+  }
+}

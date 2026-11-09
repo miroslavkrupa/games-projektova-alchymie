@@ -1,0 +1,518 @@
+{
+  "id": "most",
+  "stars": {
+    "ko": [
+      {
+        "text": "Výluky nepřetáhnou za rezervu – vlaky musí znovu jet včas"
+      }
+    ],
+    "top": [
+      {
+        "text": "Rozpočet na konci aspoň 30"
+      }
+    ]
+  },
+  "name": "Výměna železničního mostu",
+  "tagline": "Nová konstrukce během víkendových výluk",
+  "scope": "Demontáž starého mostu a montáž nové ocelové konstrukce během čtyř výluk, kdy neprojíždějí vlaky. Mezi výlukami provoz běží a na mostě se pracovat nesmí.",
+  "approachText": "Pevná okna výluk, předepsané technologické postupy, dozor drážního úřadu a obrovská cena každého zdržení. Řídí se čistě prediktivně: plán po výlukách, podrobný Gantt s kritickou cestou, hlídání specialistů, řízení změn a rizik.",
+  "intro": "Řídíš výměnu železničního mostu na hlavní trati. Na práci máš jen čtyři výluky – co se v jedné nestihne, musí počkat na další. A mezi tím jezdí vlaky.",
+  "terms": {
+    "launch": "zprovoznění mostu",
+    "predShort": "celý projekt",
+    "usersGen": "dopravců",
+    "sponsor": "ředitel stavby",
+    "poGood": "vedoucí provozu tratě",
+    "committee": "správa železnic"
+  },
+  "workstreams": [
+    {
+      "id": "vyluky",
+      "name": "Plán výluk a koordinace s dopravci",
+      "why": "Výluky se vyjednávají měsíce dopředu a jejich termíny jsou pevné."
+    },
+    {
+      "id": "demontaz",
+      "name": "Demontáž staré konstrukce",
+      "why": "Technologický postup je daný projektem a statikem, krok za krokem."
+    },
+    {
+      "id": "montaz",
+      "name": "Výroba a montáž nové konstrukce",
+      "why": "Konstrukce se vyrábí podle výkresů v mostárně a montuje podle schváleného postupu."
+    },
+    {
+      "id": "svary",
+      "name": "Svařování a kontrola svarů",
+      "why": "Svařovací postupy a kontroly jsou předepsané normou a převzetím inspektora."
+    },
+    {
+      "id": "koleje",
+      "name": "Kolejiště a trakční vedení",
+      "why": "Navazuje na hotovou konstrukci a musí být hotové do konce poslední výluky."
+    },
+    {
+      "id": "informovani",
+      "name": "Informování cestujících o výlukách",
+      "why": "Pozor: komunikace zní pružně, ale termíny výluk jsou dané a informace se vydávají v předepsaných lhůtách předem."
+    },
+    {
+      "id": "zabezpeceni",
+      "name": "Úprava softwaru zabezpečovacího zařízení",
+      "why": "Pozor, software: jde ale o bezpečnostní systém, který schvaluje drážní úřad. Nasazuje se jednou, ověřený a schválený."
+    },
+    {
+      "id": "zkouska",
+      "name": "Zatěžovací zkouška a převzetí",
+      "why": "Zkouška má normou daný postup, termín zkušebny a formální protokol."
+    }
+  ],
+  "phases": [
+    {
+      "id": "p1",
+      "name": "Výluka 1: Demontáž",
+      "goal": "Vypnout trať, rozebrat koleje a vyjmout staré pole mostu.",
+      "milestone": {
+        "name": "Starý most pryč"
+      },
+      "tasks": [
+        {
+          "id": "A",
+          "name": "Vypnutí trakčního vedení",
+          "note": "Bez vypnutého proudu se na mostě nesmí pracovat."
+        },
+        {
+          "id": "B",
+          "name": "Demontáž kolejí na mostě",
+          "note": "Pracuje se přímo pod trolejí."
+        },
+        {
+          "id": "C",
+          "name": "Rozřezání staré konstrukce",
+          "note": "Řeže se konstrukce, na které ještě leží koleje? Nesmí."
+        },
+        {
+          "id": "D",
+          "name": "Vyjmutí polí jeřábem",
+          "note": "Jeřáb zvedá rozřezané díly."
+        },
+        {
+          "id": "E",
+          "name": "Příprava ložisek na pilířích",
+          "note": "Na pilířích pod mostem se dá pracovat od začátku výluky."
+        },
+        {
+          "id": "F",
+          "name": "Odvoz šrotu",
+          "note": "Odváží se to, co jeřáb vyjmul."
+        }
+      ]
+    },
+    {
+      "id": "p2",
+      "name": "Výluka 2: Spodní stavba",
+      "goal": "Opravit pilíře, osadit nová ložiska a připravit odvodnění.",
+      "milestone": {
+        "name": "Pilíře připravené"
+      },
+      "tasks": [
+        {
+          "id": "A",
+          "name": "Oprava úložných prahů",
+          "note": "Betonové prahy, na kterých budou ležet ložiska."
+        },
+        {
+          "id": "B",
+          "name": "Osazení nových ložisek",
+          "note": "Ložiska se kladou na opravené prahy."
+        },
+        {
+          "id": "C",
+          "name": "Svaření kotevních prvků",
+          "note": "Kotví se osazená ložiska."
+        },
+        {
+          "id": "D",
+          "name": "Odvodnění pilířů",
+          "note": "Nezávislá práce na patě pilířů."
+        },
+        {
+          "id": "E",
+          "name": "Geodetické zaměření",
+          "note": "Zaměřují se ukotvená ložiska."
+        }
+      ]
+    },
+    {
+      "id": "p3",
+      "name": "Výluka 3: Montáž konstrukce",
+      "goal": "Vysunout nová pole, svařit styky a nechat je převzít inspektorem.",
+      "milestone": {
+        "name": "Konstrukce stojí"
+      },
+      "tasks": [
+        {
+          "id": "A",
+          "name": "Vysunutí nového pole 1",
+          "note": "Na místě je jediný velký jeřáb."
+        },
+        {
+          "id": "B",
+          "name": "Vysunutí nového pole 2",
+          "note": "Stejný jeřáb jako u pole 1."
+        },
+        {
+          "id": "C",
+          "name": "Svaření styku pole 1",
+          "note": "Svařuje se osazené pole 1."
+        },
+        {
+          "id": "D",
+          "name": "Svaření styku pole 2",
+          "note": "Svařuje se osazené pole 2."
+        },
+        {
+          "id": "E",
+          "name": "Převzetí svarů inspektorem",
+          "note": "Inspektor kontroluje všechny svary a přijede nejdřív osmý den výluky."
+        },
+        {
+          "id": "F",
+          "name": "Montáž zábradlí a revizních lávek",
+          "note": "Montuje se na obě osazená pole."
+        }
+      ]
+    },
+    {
+      "id": "p4",
+      "name": "Výluka 4: Koleje a zkouška",
+      "goal": "Položit koleje, obnovit trolej, provést zatěžovací zkoušku a předat most.",
+      "milestone": {
+        "name": "Most v provozu"
+      },
+      "tasks": [
+        {
+          "id": "A",
+          "name": "Pokládka kolejí",
+          "note": "Koleje se kladou na hotovou konstrukci."
+        },
+        {
+          "id": "B",
+          "name": "Svaření kolejnic",
+          "note": "Svařují se položené kolejnice."
+        },
+        {
+          "id": "C",
+          "name": "Montáž trakčního vedení",
+          "note": "Trolej nad mostem, nezávisle na kolejích."
+        },
+        {
+          "id": "D",
+          "name": "Zatěžovací zkouška",
+          "note": "Zkouší se hotová trať i trolej. Zkušebna přijede pátý den výluky."
+        },
+        {
+          "id": "E",
+          "name": "Převzetí drážním úřadem",
+          "note": "Přebírá se most po úspěšné zkoušce."
+        }
+      ]
+    }
+  ],
+  "shift": {
+    "title": "Drážní úřad zpřísňuje dozor",
+    "text": "Po nehodě na jiné stavbě drážní úřad nařídil: každý svar nosné konstrukce musí převzít inspektor a k mostu je potřeba úplná dokumentace jakosti. Odhalený faktor: regulace a audity.",
+    "lesson": "Když přibude regulace, musí ji pokrýt praktiky: přísná definice hotové práce (Definition of Done) s dokumentací jakosti u každého svaru. Jinak inspektor vrací práci a výluky se natahují."
+  },
+  "gate": {
+    "id": "gate",
+    "title": "Kontrolní den po dvou výlukách",
+    "text": "Správa železnic posuzuje, jestli stavba stihne zbývající výluky. Jak připravíš podklady?",
+    "lesson": "Kontrolní bod v prediktivním projektu je o přesném stavu vůči plánu: co se ve výlukách stihlo, co se přesunulo a jaká jsou rizika dalších výluk.",
+    "choices": [
+      {
+        "text": "Stav proti plánu výluk, přesunuté práce, rizika a prohlídka na místě",
+        "feedback": "Správa železnic vidí přesný stav a schválila posílení týmu na další výluku."
+      },
+      {
+        "text": "Prezentace, že všechno je podle plánu",
+        "feedback": "Inspektor se zeptal na přesunuté práce. Prezentace o nich mlčela."
+      },
+      {
+        "text": "Kontrolní den zrušit kvůli přípravě další výluky",
+        "feedback": "Správa železnic poslala vlastního kontrolora."
+      }
+    ]
+  },
+  "events": [
+    {
+      "id": "koroze",
+      "title": "Zkorodovaný pilíř",
+      "text": "Po odkrytí se ukázalo, že pilíř je zkorodovaný víc, než říkal průzkum.",
+      "lesson": "Nečekaný nález se v prediktivním projektu zapracuje změnovým řízením – i když to bolí. Provizorium se vrátí.",
+      "choices": [
+        {
+          "text": "Změnové řízení: sanace pilíře v plánu, i za cenu napjatější výluky",
+          "feedback": "Sanace je naplánovaná. Výluka bude napjatá, ale most vydrží sto let."
+        },
+        {
+          "text": "Pilíř jen natřít a pokračovat",
+          "feedback": "Nátěr vypadá dobře. Zatím."
+        },
+        {
+          "text": "Zastavit a čekat na nový posudek",
+          "feedback": "Posudek dorazil, ale výluka se zkrátila o tři dny."
+        }
+      ]
+    },
+    {
+      "id": "jerab",
+      "title": "Jaký jeřáb na montáž?",
+      "text": "Jeřáb na montáž konstrukce je potřeba objednat teď. Velký je drahý, menší levnější, ale na hraně výkonu.",
+      "lesson": "U kritických zdrojů se vyplatí rezerva výkonu. Šetřit na nich znamená riskovat celou výluku.",
+      "choices": [
+        {
+          "text": "Objednat velký jeřáb s rezervou výkonu",
+          "feedback": "Drahé, ale montáž má jistotu."
+        },
+        {
+          "text": "Objednat menší jeřáb",
+          "feedback": "Úspora. Jeřáb je na hraně výkonu."
+        },
+        {
+          "text": "Rozhodnout až těsně před výlukou",
+          "feedback": "Rozhodnutí počká. Jeřáby nepočkají."
+        }
+      ]
+    },
+    {
+      "id": "svarec",
+      "title": "Svářeči nemocní",
+      "text": "Dva certifikovaní svářeči onemocněli těsně před výlukou.",
+      "lesson": "Záložní kapacita kritických profesí patří do registru rizik. Přetěžování zbytku vede k vadám.",
+      "choices": [
+        {
+          "text": "Povolat záložní tým z registru rizik",
+          "feedback": "Záložní tým byl prověřený a přijel včas."
+        },
+        {
+          "text": "Přeskládat práce: svařovat jen kritické spoje",
+          "feedback": "Kritické spoje hotové, ostatní počkají."
+        },
+        {
+          "text": "Svařovat s jedním svářečem přesčas",
+          "feedback": "Svářeč pracuje šestnáct hodin denně."
+        }
+      ]
+    },
+    {
+      "id": "dopravce",
+      "title": "Dopravce chce kratší výluku",
+      "text": "Dopravce chce výluku zkrátit o den kvůli mimořádnému vlaku.",
+      "lesson": "Konflikt o pevné okno se řeší vyjednáváním s daty a kompenzací. Odmítnutí bez jednání se vrací.",
+      "choices": [
+        {
+          "text": "Vyjednat objízdnou trasu pro mimořádný vlak a nabídnout kompenzaci",
+          "feedback": "Vlak pojede objízdnou trasou, výluka zůstává celá."
+        },
+        {
+          "text": "Souhlasit a výluku zkrátit",
+          "feedback": "Dopravce je spokojený, plán výluky je o den kratší."
+        },
+        {
+          "text": "Odmítnout bez jednání",
+          "feedback": "Dopravce odešel naštvaný."
+        }
+      ]
+    },
+    {
+      "id": "dest",
+      "title": "Déšť během výluky",
+      "text": "Předpověď hlásí na výluku silný déšť. V dešti se nosné svary dělat nesmí.",
+      "lesson": "Počasí je známé riziko venkovních prací. Plán reakce (zastřešení, přeskládání prací) z něj dělá rutinu.",
+      "choices": [
+        {
+          "text": "Postavit stan nad místem svařování z rizikové rezervy",
+          "feedback": "Pod stanem se svařuje i v dešti."
+        },
+        {
+          "text": "Přeskládat práce: v dešti dělat jiné",
+          "feedback": "Část práce se posunula, výluka je napjatá."
+        },
+        {
+          "text": "Svařovat i v dešti",
+          "feedback": "Svary jsou hotové. Ultrazvuk teprve přijde."
+        }
+      ]
+    },
+    {
+      "id": "ministr",
+      "title": "Ministr chce otevírat dřív",
+      "text": "Ředitel stavby chce pozvat ministra na slavnostní otevření – o týden dřív, než počítá plán.",
+      "lesson": "Termíny slibované navenek musí vycházet z plánu. Politický slib bez plánu se vrací v nejhorší chvíli.",
+      "choices": [
+        {
+          "text": "Ukázat plán výluk a domluvit slavnostní akt na skutečný termín",
+          "feedback": "Ředitel nadšený není, ale termín je reálný."
+        },
+        {
+          "text": "Slíbit dřívější termín",
+          "feedback": "Ředitel je nadšený. Pozvánky odcházejí."
+        },
+        {
+          "text": "Odmítnout bez vysvětlení",
+          "feedback": "Ředitel je uražený."
+        }
+      ]
+    }
+  ],
+  "followups": {
+    "koroze_navrat": {
+      "id": "koroze_navrat",
+      "title": "Inspektor našel korozi",
+      "text": "Inspektor drážního úřadu při kontrole odhalil neopravenou korozi pilíře pod čerstvým nátěrem.",
+      "lesson": "Zamaskovaný problém je dražší než přiznaný. A k ceně opravy se přidá ztracená důvěra.",
+      "unresolvedText": "Koroze pilíře se objevila při první prohlídce po zprovoznění.",
+      "choices": [
+        {
+          "text": "Přiznat chybu a zajistit sanaci okamžitě",
+          "feedback": "Bolestivé, ale poctivé. Inspektor dal souhlas k pokračování."
+        },
+        {
+          "text": "Tvrdit, že pilíř byl v pořádku",
+          "feedback": "Inspektor zastavil práce a nařídil statický posudek."
+        },
+        {
+          "text": "Vyjednat dočasné omezení rychlosti vlaků",
+          "feedback": "Most se otevře, ale vlaky po něm pojedou pomalu."
+        }
+      ]
+    },
+    "jerab_volno": {
+      "id": "jerab_volno",
+      "title": "Velký jeřáb má rezervu",
+      "text": "Velký jeřáb zvládá montáž s rezervou. Sousední stavba se ptá, jestli by si ho mohla na den půjčit.",
+      "lesson": "Investice do kritického zdroje se vrací: jistotou a někdy i penězi.",
+      "unresolvedText": "Velký jeřáb se osvědčil i při dalších stavbách.",
+      "choices": [
+        {
+          "text": "Půjčit ho ve dnech, kdy ho nepotřebujeme, za úplatu",
+          "feedback": "Část ceny jeřábu se vrátila."
+        },
+        {
+          "text": "Půjčit ho, i když ho ten den potřebujeme",
+          "feedback": "Peníze přišly, ale montáž stála."
+        },
+        {
+          "text": "Odmítnout",
+          "feedback": "Žádné riziko, žádný bonus."
+        }
+      ]
+    },
+    "vitr": {
+      "id": "vitr",
+      "title": "Malý jeřáb nestačí na vítr",
+      "text": "Při vysouvání pole fouká boční vítr. Malý jeřáb je na hraně a jeřábník odmítá zvedat.",
+      "lesson": "Úspora na kritickém zdroji se platí ve chvíli, kdy je nejméně času.",
+      "unresolvedText": "Montáž se kvůli větru protáhla až za konec výluky.",
+      "choices": [
+        {
+          "text": "Počkat na bezvětří a přeskládat práce kolem",
+          "feedback": "Bezpečné, ale výluka je teď velmi napjatá."
+        },
+        {
+          "text": "Riskovat zvedání",
+          "feedback": "Pole se rozhoupalo a poškodilo pilíř. Nikdo nebyl zraněn – tentokrát."
+        },
+        {
+          "text": "Narychlo sehnat velký jeřáb",
+          "feedback": "Velký jeřáb přijel druhý den. Za dvojnásobek."
+        }
+      ]
+    },
+    "jerab_pozde": {
+      "id": "jerab_pozde",
+      "title": "Jeřáby jsou rozebrané",
+      "text": "Na výluku nejsou volné žádné velké jeřáby. Odložené rozhodnutí se vymstilo.",
+      "lesson": "Rozhodnutí o zdrojích s dlouhou lhůtou se nedá odkládat. Odložit rozhodnutí je také rozhodnutí.",
+      "unresolvedText": "Montáž bez vhodného jeřábu se táhla.",
+      "choices": [
+        {
+          "text": "Pronajmout dva menší jeřáby a upravit postup montáže",
+          "feedback": "Složitější montáž, ale jde to."
+        },
+        {
+          "text": "Zaplatit dvojnásobek za jeřáb ze zahraničí",
+          "feedback": "Jeřáb přijel. Rozpočet pláče."
+        },
+        {
+          "text": "Montáž odložit na další výluku",
+          "feedback": "Celá výluka je prakticky ztracená."
+        }
+      ]
+    },
+    "vady": {
+      "id": "vady",
+      "title": "Ultrazvuk našel vady svarů",
+      "text": "Ultrazvuková kontrola odhalila vady ve svarech z minulé výluky.",
+      "lesson": "Kvalita se nedá dohnat přesčasy ani počasím navzdory. Vady svarů se opravují dřív, než je převezme inspektor.",
+      "unresolvedText": "Vadné svary se objevily při první revizi mostu.",
+      "choices": [
+        {
+          "text": "Svary vybrousit a znovu svařit hned",
+          "feedback": "Svary jsou teď v pořádku. Výluka je o dva dny kratší."
+        },
+        {
+          "text": "Vadu zamaskovat nátěrem",
+          "feedback": "Inspektor to poznal. Následuje mimořádná kontrola celé stavby."
+        },
+        {
+          "text": "Požádat o mimořádnou výluku na opravu",
+          "feedback": "Dopravci zuří, ale svary se opraví pořádně."
+        }
+      ]
+    },
+    "dopravce_odveta": {
+      "id": "dopravce_odveta",
+      "title": "Dopravce žádá audit",
+      "text": "Dopravce na veřejném jednání kritizuje stavbu a žádá nezávislý audit harmonogramu.",
+      "lesson": "Stakeholder, se kterým se nejednalo, si cestu najde – přes veřejnost a nadřízené.",
+      "unresolvedText": "Spor s dopravcem se táhl ještě po zprovoznění.",
+      "choices": [
+        {
+          "text": "Otevřeně ukázat plán výluk a nabídnout pravidelné informování",
+          "feedback": "Dopravce se uklidnil. Vztah se pomalu spravuje."
+        },
+        {
+          "text": "Ignorovat to",
+          "feedback": "Kritika se dostala do médií."
+        },
+        {
+          "text": "Nechat udělat audit",
+          "feedback": "Audit potvrdil plán, ale stál čas i peníze."
+        }
+      ]
+    },
+    "ministr_prijel": {
+      "id": "ministr_prijel",
+      "title": "Ministr přijel, most není hotový",
+      "text": "Ministr dorazil na slíbené otevření. Most hotový není.",
+      "lesson": "Slib bez plánu se vrací veřejně. Přiznání a náhradní program je lepší než zkracování zkoušek.",
+      "unresolvedText": "Fotky ministra na nedokončené stavbě obletěly média.",
+      "choices": [
+        {
+          "text": "Uspořádat prohlídku stavby místo otevření a vysvětlit plán",
+          "feedback": "Ministrovi se prohlídka líbila víc než pásky a nůžky."
+        },
+        {
+          "text": "Zkrátit zkoušky, aby se stihlo otevřít",
+          "feedback": "Most je otevřený bez řádné zkoušky. Drážní úřad zuří."
+        },
+        {
+          "text": "Akci zrušit na poslední chvíli",
+          "feedback": "Ministr se to dozvěděl z novin."
+        }
+      ]
+    }
+  }
+}

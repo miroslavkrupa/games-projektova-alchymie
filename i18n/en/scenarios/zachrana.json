@@ -1,0 +1,455 @@
+{
+  "id": "zachrana",
+  "stars": {
+    "ko": [
+      {
+        "text": "The go-live migration happens"
+      }
+    ],
+    "top": [
+      {
+        "text": "A year later at least 50 %"
+      }
+    ]
+  },
+  "name": "Rescuing a Project in Crisis",
+  "tagline": "You take over a running project that is falling apart",
+  "scope": "A new insurance claims system: migrating data from the old system by a fixed date, a new app for claims adjusters and new hardware at the branches.",
+  "intro": "Three months ago an insurance company launched a project for a new claims system. The previous project manager has left and the project is now yours. Four sprints remain until the go-live migration – then the old system is switched off and the contract with its vendor ends.",
+  "predWorld": "Data migration by a fixed date, new branch hardware, the contract with the old system's vendor.",
+  "agileWorld": "The claims adjusters' app, tuned to how people actually work with it.",
+  "terms": {
+    "launch": "the go-live migration",
+    "predShort": "data migration and branch hardware",
+    "agileShort": "the claims adjusters' app",
+    "users": "claims adjusters",
+    "usersGen": "claims adjusters",
+    "sponsor": "CEO",
+    "committee": "board of directors",
+    "product": "The new claims system"
+  },
+  "stakeholders": [
+    {
+      "id": "reditel",
+      "name": "CEO",
+      "wants": "the migration date and costs",
+      "quit": "lost patience and stopped the project.",
+      "epilogBad": "called the project an expensive mistake a year later and refused to fund further development."
+    },
+    {
+      "id": "likvidatori",
+      "name": "Claims adjusters",
+      "wants": "an app they can actually work with",
+      "quit": "refused to use the new system – the project lost its point.",
+      "epilogBad": "went back to spreadsheets and avoid the new system."
+    },
+    {
+      "id": "it",
+      "name": "IT operations",
+      "wants": "stability, monitoring and a proper handover",
+      "quit": "refused to take the system over into operations.",
+      "epilogBad": "took the system over only on paper – every incident now bounces back to the project team."
+    }
+  ],
+  "areas": {
+    "data": {
+      "label": "Data migration"
+    },
+    "app": {
+      "label": "App"
+    },
+    "backend": {
+      "label": "Backend and integration"
+    },
+    "pobocky": {
+      "label": "Branch hardware"
+    }
+  },
+  "team": [
+    {
+      "id": "karel",
+      "name": "Karel",
+      "role": "data specialist"
+    },
+    {
+      "id": "jana",
+      "name": "Jana",
+      "role": "app developer"
+    },
+    {
+      "id": "ondrej",
+      "name": "Ondřej",
+      "role": "backend and integration"
+    },
+    {
+      "id": "lucie",
+      "name": "Lucie",
+      "role": "tester who knows claims handling"
+    },
+    {
+      "id": "petr",
+      "name": "Petr",
+      "role": "branch technician"
+    }
+  ],
+  "takeover": {
+    "situation": "This is the state the project was handed to you in. You have one week to find out what is going on – then you must act.",
+    "symptoms": [
+      "Every app feature has a fixed date in the Gantt chart. Sprint reviews happen, but nothing changes because of them – “the plan is the plan”.",
+      "In March the claims adjusters asked to move one field on a form. The monthly board put it on the agenda in May.",
+      "Work order is set by whoever pushes hardest – sales on Monday, the CEO on Wednesday, IT on Friday.",
+      "The status report for the board of directors has been green for three months. Nobody on the team believes the migration date.",
+      "The team works late nights and weekends. Two people have already been on sick leave from exhaustion.",
+      "Only Karel understands the data migration. When he was sick for a week, the migration stood still."
+    ],
+    "diagLesson": "Rescuing a project starts with a diagnosis: from the symptoms (consequences) you trace back to the mechanisms and the form of management causing them. Treating only the symptoms – more overtime, more reports – makes the problem worse.",
+    "lesson": "Adding “more management” won't rescue a project. You need to drop the practices that do harm (a detailed Gantt chart for agile work, one board for everything, overtime) and add what is missing: a backlog owner, transparent reporting, knowledge sharing and a plan only for what can be planned."
+  },
+  "backlog": [
+    {
+      "id": "hlaseni",
+      "name": "Fix the claim report form"
+    },
+    {
+      "id": "migrace_test",
+      "name": "Trial data migration"
+    },
+    {
+      "id": "migrace",
+      "name": "Go-live data migration"
+    },
+    {
+      "id": "schvalovani",
+      "name": "Payout approval"
+    },
+    {
+      "id": "pobocky",
+      "name": "Hardware at the remaining branches"
+    },
+    {
+      "id": "monitoring",
+      "name": "Monitoring and alerts"
+    },
+    {
+      "id": "predani",
+      "name": "Handover to operations: documentation and training"
+    },
+    {
+      "id": "fotky",
+      "name": "Photo upload from mobile"
+    },
+    {
+      "id": "chatbot",
+      "name": "Customer chatbot (the CEO's wish)"
+    },
+    {
+      "id": "reporty",
+      "name": "Monthly reports for sales"
+    },
+    {
+      "id": "hotline",
+      "name": "Branch hotline"
+    },
+    {
+      "id": "skoleni_novacku",
+      "name": "Regular training for new branch staff"
+    }
+  ],
+  "milestones": [
+    {
+      "id": "m1",
+      "name": "Migration dress rehearsal",
+      "okText": "The trial migration went through and claims adjusters filed the first claims in the new app on migrated data.",
+      "lateText": "The migration dress rehearsal failed."
+    },
+    {
+      "id": "m2",
+      "name": "Branches ready",
+      "okText": "All branches have the new hardware.",
+      "lateText": "Some branches are not ready for the migration."
+    },
+    {
+      "id": "m3",
+      "name": "Go-live migration",
+      "okText": "The go-live migration is done, the old system is off and claims adjusters work in the new one.",
+      "lateText": "The go-live migration only half happened – missing:"
+    }
+  ],
+  "gate": {
+    "id": "gate",
+    "title": "The board considers stopping the project",
+    "text": "The board of directors wants to know whether it still makes sense to invest in the project. What do you present?",
+    "lesson": "When rescuing a project, a true picture of its state is the first step to rebuilding trust. Another “green” report would destroy it for good.",
+    "choices": [
+      {
+        "text": "The real state, what you changed, and a realistic migration plan",
+        "feedback": "The board was taken aback but valued the honesty. The project got a chance."
+      },
+      {
+        "text": "A green report as before – surely we'll make it now",
+        "feedback": "A board member asked about one number and the report fell apart."
+      },
+      {
+        "text": "Ask to postpone the migration by two months",
+        "feedback": "The delay was approved. But extending the old system costs money."
+      }
+    ]
+  },
+  "eventSlots": [
+    [
+      {
+        "id": "karel",
+        "title": "Karel is at the edge",
+        "text": "After a meeting Karel, the only one who understands the data migration, tells you he can't keep up this pace much longer.",
+        "lesson": "When a critical part of the project rests on one exhausted person, lighten their load and spread their knowledge – don't motivate them to more overtime.",
+        "choices": [
+          {
+            "text": "Free Karel from everything but the migration and pair him with Lucie so she learns it",
+            "feedback": "Karel breathed a sigh of relief. Lucie asks about everything and takes notes."
+          },
+          {
+            "text": "Promise him a bonus if he pulls it off – overtime is necessary now",
+            "feedback": "Karel nodded. He didn't look thrilled."
+          },
+          {
+            "text": "Hire an external data specialist",
+            "team": {
+              "join": [
+                {
+                  "id": "viktor",
+                  "name": "Viktor",
+                  "role": "external data specialist"
+                }
+              ]
+            },
+            "feedback": "Viktor is expensive, but he understands migrations."
+          }
+        ]
+      },
+      {
+        "id": "chatbot",
+        "title": "The CEO wants a chatbot",
+        "text": "The CEO saw a chatbot at a competitor and wants one before the migration. “It's just a small feature.”",
+        "lesson": "Stakeholders have different interests. The PM's job is not to please the strongest one, but to explain the impacts and protect what the project really needs.",
+        "choices": [
+          {
+            "text": "Explain that the chatbot doesn't belong before the migration and offer it as the first enhancement after",
+            "feedback": "The CEO frowned but understood. The claims adjusters appreciated someone thinking of them."
+          },
+          {
+            "text": "Add the chatbot right away – the CEO pays",
+            "feedback": "The CEO is happy. The rest of the project, less so."
+          },
+          {
+            "text": "Build a simple chatbot mock-up for the demo",
+            "feedback": "The mock-up pleased the CEO and cost two days of work."
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "id": "ztracena_data",
+        "title": "The trial migration lost data",
+        "text": "During the trial migration 3 % of insurance claims vanished. Two sprints remain until the go-live migration.",
+        "lesson": "A data migration error is fixed at its cause (the mapping), not by filling in numbers by hand. Otherwise it comes back in live operations.",
+        "choices": [
+          {
+            "text": "Stop, find the cause in the data mapping and repeat the trial",
+            "feedback": "The bug was in converting data from 2009. The second trial passed."
+          },
+          {
+            "text": "Fill in the missing 3 % by hand and move on",
+            "feedback": "The numbers add up. Why they were missing, nobody knows."
+          },
+          {
+            "text": "Postpone the go-live migration by a sprint",
+            "feedback": "There's time for the fix. But the CEO is furious."
+          }
+        ]
+      },
+      {
+        "id": "bojkot",
+        "title": "Claims adjusters refuse to test",
+        "text": "The claims adjusters stopped showing up for testing. “Nobody listens to us anyway.”",
+        "lesson": "Users nobody listens to stop cooperating. It helps to pull them right into the team and show that their feedback changes things.",
+        "choices": [
+          {
+            "text": "Invite two claims adjusters into the team for every review",
+            "feedback": "At the first review an adjuster moved the form field herself. The next day the fix was done."
+          },
+          {
+            "text": "Order testing through the CEO",
+            "feedback": "The adjusters show up. They stay silent and tick off tests."
+          },
+          {
+            "text": "Hold a one-off workshop",
+            "feedback": "The workshop was pleasant. Then everything went back to the old ways."
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "id": "it_odmita",
+        "title": "IT operations won't take over the system",
+        "text": "The head of IT operations announces they won't take the system into operations without monitoring and documentation.",
+        "lesson": "A project ends with a handover. Conditions for the handover to operations belong in the project from the start – otherwise the project team “runs” the system for a year after the end.",
+        "choices": [
+          {
+            "text": "Agree handover conditions with IT and put them into the plan",
+            "feedback": "For the first time IT feels like a partner, not an obstacle."
+          },
+          {
+            "text": "Escalate to the CEO to order them",
+            "feedback": "The CEO ordered it. IT will remember."
+          },
+          {
+            "text": "Promise the project team will support the system on its own for six months",
+            "feedback": "IT agrees. The team knows what that means for its summer."
+          }
+        ]
+      },
+      {
+        "id": "dodavatel",
+        "title": "The old system's vendor",
+        "text": "The old system's vendor reminds you the contract ends in three weeks. An extension won't come cheap.",
+        "lesson": "Insurance against a failed migration (the option to go back to the old system) is classic risk management. Refusing it to save money is a gamble.",
+        "choices": [
+          {
+            "text": "Per the risk register, negotiate a one-month extension as insurance",
+            "feedback": "The insurance is pricey, but cheaper than claims handling going down."
+          },
+          {
+            "text": "Pay for a three-month extension",
+            "feedback": "Extended. The budget feels it."
+          },
+          {
+            "text": "Refuse – the migration will make it",
+            "feedback": "The CEO appreciated the savings."
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "id": "vikend",
+        "title": "The last week before migration",
+        "text": "One week to the go-live migration. The CEO suggests the whole team work over the weekend “just to be safe”.",
+        "lesson": "Before a critical operation you need a rested team and a verified procedure (dress rehearsal, checklist), not exhausted people making mistakes.",
+        "choices": [
+          {
+            "text": "Dress rehearsal on Friday, weekend off, go-live migration on Monday by the checklist",
+            "feedback": "The team came in rested on Monday. The checklist caught two forgotten steps."
+          },
+          {
+            "text": "The whole team over the weekend, so we have a buffer",
+            "feedback": "On Monday morning nobody knew which version of the script was the right one."
+          },
+          {
+            "text": "Half the team on call, half resting",
+            "feedback": "A compromise. The on-call crew was needed twice."
+          }
+        ]
+      },
+      {
+        "id": "novinar",
+        "title": "A journalist calls",
+        "text": "A journalist heard the insurer's project is in trouble and wants a statement.",
+        "lesson": "Crisis communication rests on short, truthful information through the right channel. Denial comes back to bite.",
+        "choices": [
+          {
+            "text": "Refer them to the press office with a short, truthful statement",
+            "feedback": "The article came out short and factual."
+          },
+          {
+            "text": "Say everything is fine",
+            "feedback": "The journalist had an internal email saying the opposite."
+          },
+          {
+            "text": "No comment",
+            "feedback": "The article ran under the headline “Insurer Stays Silent”."
+          }
+        ]
+      }
+    ]
+  ],
+  "followups": {
+    "karel_odchazi": {
+      "id": "karel_odchazi",
+      "title": "Karel handed in his notice",
+      "text": "Karel is joining a competitor. He wants to spend most of his notice period on vacation.",
+      "lesson": "Paying an exhausted person to do more overtime doesn't work. A knowledge island shows up exactly when time is shortest.",
+      "unresolvedText": "Karel left after the migration and nobody knows why some data look odd.",
+      "choices": [
+        {
+          "text": "Karel writes up the migration procedure before leaving and Lucie takes it over",
+          "team": {
+            "reason": "leaves for a competitor after the handover"
+          },
+          "feedback": "The documentation is brief, but Lucie understands the migration."
+        },
+        {
+          "text": "Talk him into staying until the migration",
+          "feedback": "Karel stayed. He works, but his mind is elsewhere."
+        },
+        {
+          "text": "Hire an external specialist and let Karel go",
+          "team": {
+            "reason": "leaves for a competitor",
+            "join": [
+              {
+                "id": "viktor",
+                "name": "Viktor",
+                "role": "external data specialist"
+              }
+            ]
+          },
+          "feedback": "Viktor is learning from the code. Slowly."
+        }
+      ]
+    },
+    "chybejici_data": {
+      "id": "chybejici_data",
+      "title": "Customers are looking for their claims",
+      "text": "Customers' open insurance claims have vanished. The call center is swamped.",
+      "lesson": "Filling in by hand covered up the bug but didn't remove it. A problem swept under the rug comes back bigger.",
+      "unresolvedText": "A year after the migration, lost insurance claims keep turning up.",
+      "choices": [
+        {
+          "text": "Find the cause, fix the mapping and migrate the affected data again",
+          "feedback": "Cause found. It hurt, but it's behind us."
+        },
+        {
+          "text": "Handle complaints one by one",
+          "feedback": "Complaints pile up faster than they get resolved."
+        },
+        {
+          "text": "Set up a team to track them down by hand",
+          "feedback": "Tracked down. The cause remains."
+        }
+      ]
+    },
+    "vypnuti": {
+      "id": "vypnuti",
+      "title": "The vendor switches off the old system",
+      "text": "The contract ended and the vendor switched the old system off. The go-live migration isn't verified yet.",
+      "lesson": "Without insurance, every migration delay is a crisis. Risk management means preparing a way back before you need it.",
+      "unresolvedText": "The old system's vendor charged double for the forced extension.",
+      "choices": [
+        {
+          "text": "Pay for an express extension",
+          "feedback": "The system is running again. At a price that hurts."
+        },
+        {
+          "text": "Migrate immediately without a dress rehearsal",
+          "feedback": "The migration happened. What broke along the way remains to be seen."
+        },
+        {
+          "text": "Work on paper without a system for two weeks",
+          "feedback": "The claims adjusters hauled binders up from the basement."
+        }
+      ]
+    }
+  }
+}

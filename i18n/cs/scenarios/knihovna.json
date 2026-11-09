@@ -1,0 +1,329 @@
+{
+  "id": "knihovna",
+  "stars": {
+    "ko": [
+      {
+        "text": "Knihovna se otevře se všemi Must funkcemi"
+      }
+    ],
+    "top": [
+      {
+        "text": "Všechny milníky splněné"
+      }
+    ]
+  },
+  "name": "Projekt Knihovna",
+  "tagline": "Rekonstrukce budovy + mobilní aplikace",
+  "scope": "Rekonstrukce budovy, nové samoobslužné kiosky, kabeláž, mobilní aplikace a online katalog pro čtenáře.",
+  "intro": "Právě jsi převzal(a) řízení projektu modernizace městské knihovny. Za 12 týdnů se má slavnostně otevírat.",
+  "predWorld": "Rekonstrukce budovy, nákup kiosků, kabeláž. Pevné smlouvy, termíny a povolení. Vládne Ganttův diagram.",
+  "agileWorld": "Mobilní aplikace a online katalog. Požadavky se vyvíjejí, tým pracuje ve sprintech a sbírá zpětnou vazbu.",
+  "terms": {
+    "launch": "otevření knihovny",
+    "predShort": "stavba, kiosky, kabeláž",
+    "agileShort": "aplikace a katalog",
+    "users": "čtenáři",
+    "usersGen": "čtenářů",
+    "sponsor": "ředitel knihovny",
+    "poGood": "vedoucí výpůjčního oddělení",
+    "committee": "zástupci města"
+  },
+  "dependency": {
+    "lock": "Čeká na dodávku kiosků (prediktivní milník)",
+    "hint": "<b>Napojení kiosku na katalog</b> čeká na prediktivní milník – dodávku kiosků."
+  },
+  "workstreams": [
+    {
+      "id": "stavba",
+      "name": "Rekonstrukce budovy knihovny",
+      "why": "Stavba má stavební povolení, pevný rozpočet a přísné návaznosti (nejdřív statika, pak omítky). Změna uprostřed je extrémně drahá, proto se plánuje předem."
+    },
+    {
+      "id": "kiosky",
+      "name": "Nákup samoobslužných kiosků",
+      "why": "Veřejná zakázka: specifikace, výběrové řízení, smlouva a dodací lhůta. Požadavky jsou jasné a proces je daný zákonem."
+    },
+    {
+      "id": "sit",
+      "name": "Kabeláž a síťová infrastruktura",
+      "why": "Kabely se natahují do zdí v přesně dané fázi stavby. Je to závislé na stavebním harmonogramu a později se to už nemění."
+    },
+    {
+      "id": "gdpr",
+      "name": "Soulad s GDPR a bezpečnostní audit",
+      "why": "Regulatorní požadavky jsou dané zákonem, vyžadují formální dokumentaci a schválení v pevném termínu."
+    },
+    {
+      "id": "appka",
+      "name": "Mobilní aplikace pro čtenáře",
+      "why": "Nikdo dopředu přesně neví, co čtenáři ocení. Krátké iterace a zpětná vazba od skutečných uživatelů vedou k lepšímu produktu."
+    },
+    {
+      "id": "katalog",
+      "name": "Online katalog a rezervace",
+      "why": "Software se dá dodávat po kouscích a průběžně vylepšovat. Funkce se prioritizují podle hodnoty pro čtenáře."
+    },
+    {
+      "id": "ux",
+      "name": "Návrh rozhraní kiosku",
+      "why": "Design se nejlépe ladí přes prototypy a testování se skutečnými návštěvníky – a to je iterativní práce."
+    },
+    {
+      "id": "ai",
+      "name": "Experiment: doporučování knih pomocí AI",
+      "why": "Vysoká nejistota: nevíme, jestli to bude fungovat. Experimenty v krátkých cyklech umožní rychle se poučit (nebo včas skončit)."
+    }
+  ],
+  "backlog": [
+    {
+      "id": "login",
+      "name": "Přihlášení čtenáře"
+    },
+    {
+      "id": "search",
+      "name": "Vyhledávání v katalogu"
+    },
+    {
+      "id": "reserve",
+      "name": "Rezervace knihy"
+    },
+    {
+      "id": "renew",
+      "name": "Prodloužení výpůjčky"
+    },
+    {
+      "id": "kiosk",
+      "name": "Napojení kiosku na katalog"
+    },
+    {
+      "id": "notify",
+      "name": "Upozornění na konec výpůjčky"
+    },
+    {
+      "id": "history",
+      "name": "Historie výpůjček"
+    },
+    {
+      "id": "pay",
+      "name": "Online platba poplatků"
+    },
+    {
+      "id": "a11y",
+      "name": "Přístupnost (WCAG)"
+    },
+    {
+      "id": "qr",
+      "name": "Čtenářská průkazka v mobilu (QR)"
+    },
+    {
+      "id": "events",
+      "name": "Kalendář akcí knihovny"
+    },
+    {
+      "id": "rating",
+      "name": "Hodnocení knih"
+    },
+    {
+      "id": "dark",
+      "name": "Tmavý režim"
+    },
+    {
+      "id": "recommend",
+      "name": "AI doporučení knih"
+    },
+    {
+      "id": "challenge",
+      "name": "Čtenářská výzva (gamifikace)"
+    },
+    {
+      "id": "ebooks",
+      "name": "Půjčování e-knih od třetí strany"
+    }
+  ],
+  "milestones": [
+    {
+      "id": "m1",
+      "name": "Smlouva na kiosky",
+      "okText": "Výběrové řízení proběhlo včas, smlouva je podepsaná. Kiosky dorazí ve sprintu 3 a tým může začít integraci.",
+      "lateText": "Výběrové řízení se protáhlo. Kiosky dorazí až ve sprintu 4 – agilní tým musí přeplánovat."
+    },
+    {
+      "id": "m2",
+      "name": "Předání budovy",
+      "okText": "Stavba je předána v termínu. Knihovna se může začít vybavovat.",
+      "lateText": "Stavba se zpozdila. Smluvní penále a nespokojený výbor."
+    },
+    {
+      "id": "m3",
+      "name": "Slavnostní otevření",
+      "okText": "Knihovna se otevírá a všechny funkce „Must“ fungují. Čtenáři si rezervují knihy z mobilu i z kiosků!",
+      "lateText": "Otevření proběhlo, ale chybí klíčové funkce:"
+    }
+  ],
+  "events": [
+    {
+      "id": "kavarna",
+      "title": "Ředitel chce kavárnu",
+      "text": "Uprostřed rekonstrukce přijde ředitel s nápadem: „V přízemí by měla být kavárna!“ Stavební projekt s tím vůbec nepočítá.",
+      "lesson": "V prediktivní části se změny řídí formálním změnovým řízením (change control): posoudit dopad na čas, náklady a rizika, pak rozhodnout.",
+      "choices": [
+        {
+          "text": "Hned to stavbařům nařídit – ředitel je šéf",
+          "feedback": "Ředitel má radost, ale vícepráce, nové povolení a přestavba rozvodů stojí čas i peníze."
+        },
+        {
+          "text": "Spustit změnové řízení: analýza dopadu a rozhodnutí řídicího výboru",
+          "feedback": "Výbor po analýze rozhodl, že kavárna přijde až ve druhé etapě. Ředitel to chápe, protože viděl čísla."
+        },
+        {
+          "text": "Rovnou odmítnout – rozsah je zmrazený",
+          "feedback": "Plán je ochráněn, ale ředitel se cítí přehlížen. Změny nejde odmítat bez posouzení."
+        }
+      ]
+    },
+    {
+      "id": "demo",
+      "title": "Knihovníci po demu chtějí změnu",
+      "text": "Na sprint review knihovníci zjistí, že rezervace by měla umět i „rezervaci pro celou třídu“ – pro učitele. Tohle nikdo nečekal.",
+      "lesson": "V agilní části je změna vítaná. Nový požadavek jde do backlogu a Product Owner ho prioritizuje vůči ostatním.",
+      "choices": [
+        {
+          "text": "Přidat do backlogu, Product Owner ho seřadí podle hodnoty",
+          "feedback": "Knihovníci vidí, že je tým poslouchá. Přesně kvůli takovým zjištěním děláme review."
+        },
+        {
+          "text": "Zamítnout – zadání bylo jasné",
+          "feedback": "Agilní přístup jsme zvolili právě proto, abychom na zjištění mohli reagovat. Teď jsme to zahodili."
+        },
+        {
+          "text": "Přerušit sprint a předělat to hned",
+          "feedback": "Rozpracovaná práce přišla vniveč a tým je frustrovaný. Rozumná změna může počkat do příštího plánování."
+        }
+      ]
+    },
+    {
+      "id": "dodavatel",
+      "title": "Kiosky se zpozdí",
+      "text": "Dodavatel kiosků hlásí: výroba se zpozdí o 3 týdny. Agilní tým plánoval integraci s kiosky.",
+      "lesson": "Závislosti mezi prediktivní a agilní částí patří do registru rizik. Agilní tým může zpoždění pružně obejít (simulátor, přeplánování backlogu).",
+      "choices": [
+        {
+          "text": "Čerpat časovou rezervu a tým zatím vyvíjí proti simulátoru kiosku",
+          "feedback": "Zpoždění se vstřebalo. Simulátor navíc odhalil dvě chyby dřív, než kiosky vůbec dorazily."
+        },
+        {
+          "text": "Pohrozit dodavateli penále a nic neměnit",
+          "feedback": "Penále něco vrátí, ale kiosky stejně dorazí pozdě a tým na ně čeká."
+        },
+        {
+          "text": "Kiosky zrušit, stačí aplikace",
+          "feedback": "Kiosky byly klíčovým požadavkem města. Řídicí výbor je nepříjemně překvapen."
+        }
+      ]
+    },
+    {
+      "id": "retro",
+      "title": "Retrospektiva odhalila díru",
+      "text": "Na retrospektivě vyjde najevo, že vývojáři nevědí, kdy bude v budově hotová síť – a nemohou testovat kiosky na místě.",
+      "lesson": "Rozhraní mezi prediktivní a agilní částí potřebuje společný plán závislostí a pravidelnou komunikaci.",
+      "choices": [
+        {
+          "text": "Zavést společnou mapu závislostí a týdenní sync se stavbyvedoucím",
+          "feedback": "Oba týmy teď vidí, kdy na sebe čekají. Testování na místě je naplánované."
+        },
+        {
+          "text": "Ať si to vývojáři zjistí sami",
+          "feedback": "Informace se ztrácejí a integrace se odkládá."
+        },
+        {
+          "text": "Stavbaři budou chodit na každý daily scrum",
+          "feedback": "Informace tečou, ale stavbaře to zdržuje a daily se natahuje."
+        }
+      ]
+    },
+    {
+      "id": "skrt",
+      "title": "Škrt v rozpočtu",
+      "text": "Město oznamuje: rozpočet projektu se snižuje o 10 %. Někde musíš ušetřit.",
+      "lesson": "Trojimperativ (čas–náklady–rozsah): v hybridním projektu se nejčastěji obětuje rozsah agilní části (Could funkce), ne kvalita ani bezpečnost.",
+      "choices": [
+        {
+          "text": "Vyřadit „Could“ funkce aplikace a odložit je do další etapy",
+          "feedback": "Úspora bez dopadu na klíčové funkce. MoSCoW se vyplatil."
+        },
+        {
+          "text": "Ušetřit na testování",
+          "feedback": "Peníze ušetřené dnes zaplatíš mnohonásobně na chybách po spuštění."
+        },
+        {
+          "text": "Zlevnit stavbu levnějšími materiály",
+          "feedback": "Změna materiálů vyžaduje nové posouzení a přepracování projektové dokumentace."
+        }
+      ]
+    },
+    {
+      "id": "gdpr",
+      "title": "Audit GDPR",
+      "text": "Pověřenec pro ochranu osobních údajů chce doložit, jak aplikace zpracovává data čtenářů. Bez schválení se nesmí spustit.",
+      "lesson": "Požadavky compliance se v agilní části nejlépe zajistí jejich zařazením do Definition of Done – každá funkce je pak „hotová“ včetně dokumentace.",
+      "choices": [
+        {
+          "text": "Doplnit GDPR požadavky do Definition of Done",
+          "feedback": "Každá nová funkce teď vzniká rovnou v souladu s pravidly. Audit proběhne hladce."
+        },
+        {
+          "text": "Vyřešíme to až na konci projektu",
+          "feedback": "Zpětné dokumentování a úpravy na poslední chvíli jsou drahé a riskantní."
+        },
+        {
+          "text": "Zastavit vývoj na celý sprint a vše zdokumentovat",
+          "feedback": "Audit je splněný, ale za cenu ztraceného sprintu."
+        }
+      ]
+    },
+    {
+      "id": "odchod",
+      "title": "Klíčová vývojářka odchází",
+      "text": "Jediná vývojářka, která rozumí napojení na starý knihovní systém, dala výpověď. Zbývá jí měsíc.",
+      "lesson": "Nízký „bus factor“ je riziko. Sdílení znalostí (párové programování, dokumentace) snižuje závislost na jednotlivcích.",
+      "choices": [
+        {
+          "text": "Párové programování a předání znalostí + zahájit nábor",
+          "feedback": "Příští sprint jde pomaleji, ale znalost už nezmizí s jedním člověkem."
+        },
+        {
+          "text": "Nic neměnit, nějak to dopadne",
+          "feedback": "Po jejím odchodu nikdo neví, jak napojení funguje. Chyby se hromadí."
+        },
+        {
+          "text": "Nabídnout jí vyšší plat, ať zůstane",
+          "feedback": "Zůstala, ale riziko trvá – příště může odejít znovu."
+        }
+      ]
+    },
+    {
+      "id": "azbest",
+      "title": "Stavbaři našli azbest",
+      "text": "Při bourání příčky se našel azbest. Sanace potrvá a stojí peníze. Tohle riziko bylo v registru rizik.",
+      "lesson": "Identifikovaná rizika mají mít připravenou reakci a rezervu. Dobře oddělené části projektu umožní, aby agilní tým pokračoval i při potížích na stavbě.",
+      "choices": [
+        {
+          "text": "Aktivovat rizikovou rezervu, upravit harmonogram stavby; vývoj pokračuje",
+          "feedback": "Plán reakce na riziko zafungoval. Výbor oceňuje, že projekt byl připravený."
+        },
+        {
+          "text": "Zastavit celý projekt včetně vývoje, dokud se to nevyřeší",
+          "feedback": "Vývoj aplikace s azbestem nijak nesouvisí. Zbytečně ztracený čas."
+        },
+        {
+          "text": "Zamlčet to a pokračovat",
+          "feedback": "Hygiena stavbu zastavila a případ se dostal do novin. Velká ztráta důvěry."
+        },
+        {
+          "text": "Vyjednat se sponzorem mimořádné peníze a přeplánovat",
+          "feedback": "Bez připravené rezervy se musí shánět peníze a schvalovat nový plán. Stojí to čas i důvěru."
+        }
+      ]
+    }
+  ]
+}

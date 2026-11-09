@@ -1,0 +1,436 @@
+{
+  "id": "druzice",
+  "stars": {
+    "ko": [
+      {
+        "text": "Kvalita aspoň 25 – jinak družice na oběžné dráze selže"
+      }
+    ],
+    "top": [
+      {
+        "text": "Prošla zkouška ve vakuové komoře"
+      },
+      {
+        "text": "Prošla vibrační zkouška"
+      }
+    ]
+  },
+  "name": "Studentská družice",
+  "tagline": "Malý satelit a startovní okno, které nepočká",
+  "scope": "Malá výzkumná družice: konstrukce, elektronika, solární panely, palubní software, pozemní stanice a testy ve vakuové komoře. Start na raketě je domluvený na konkrétní den.",
+  "intro": "Vedeš studentský tým, který staví malou výzkumnou družici. Místo na raketě je zarezervované – kdo nestihne start, poletí až za rok, a to by grant nepřežil.",
+  "predWorld": "Konstrukce, elektronika, nákup komponent s dlouhou dodací lhůtou, vibrační a vakuové zkoušky, certifikace pro start.",
+  "agileWorld": "Palubní software, pozemní stanice a zpracování dat. Ladí se iterativně proti simulátoru a pak proti skutečnému hardwaru.",
+  "terms": {
+    "launch": "start rakety",
+    "predShort": "konstrukce, elektronika, zkoušky",
+    "agileShort": "palubní a pozemní software",
+    "users": "vědci",
+    "usersGen": "vědců",
+    "sponsor": "vedoucí katedry",
+    "poGood": "vědkyně, která bude data využívat",
+    "committee": "grantová agentura"
+  },
+  "dependency": {
+    "lock": "Čeká na dodání letového hardwaru (milník)",
+    "hint": "<b>Test softwaru na letovém hardwaru</b> čeká na prediktivní milník – dodání hardwaru."
+  },
+  "workstreams": [
+    {
+      "id": "konstrukce",
+      "name": "Mechanická konstrukce družice",
+      "why": "Rozměry a hmotnost určuje raketa, výkresy se schvalují a vyrábí se jednou."
+    },
+    {
+      "id": "nakup",
+      "name": "Nákup letových komponent",
+      "why": "Certifikované díly pro vesmír mají měsíční dodací lhůty a pevné specifikace."
+    },
+    {
+      "id": "zkousky",
+      "name": "Vibrační a vakuové zkoušky",
+      "why": "Zkušebny se rezervují dopředu a postup zkoušek předepisuje provozovatel rakety."
+    },
+    {
+      "id": "firmware",
+      "name": "Firmware řízení napájení",
+      "why": "Pozor: je to software, ale bezpečnostně kritický. Specifikuje se předem, testuje s hardwarem a zmrazí se – žádné iterace na poslední chvíli."
+    },
+    {
+      "id": "palubni",
+      "name": "Palubní software pro vědecká měření",
+      "why": "Co vědci potřebují, se upřesňuje průběžně; vyvíjí se iterativně proti simulátoru."
+    },
+    {
+      "id": "stanice",
+      "name": "Pozemní stanice a příjem dat",
+      "why": "Software se dá stavět po částech a vylepšovat i po startu."
+    },
+    {
+      "id": "data",
+      "name": "Zpracování a vizualizace dat",
+      "why": "Jak data zpracovat, ukážou až první snímky – typicky iterativní práce."
+    },
+    {
+      "id": "skoly",
+      "name": "Výukový program pro školy",
+      "why": "Obsah se ladí podle reakcí učitelů a žáků, verze po verzi."
+    }
+  ],
+  "backlog": [
+    {
+      "id": "orientace",
+      "name": "Řízení orientace (proti simulátoru)"
+    },
+    {
+      "id": "komunikace",
+      "name": "Komunikace se Zemí"
+    },
+    {
+      "id": "data",
+      "name": "Ukládání vědeckých dat"
+    },
+    {
+      "id": "safe",
+      "name": "Nouzový režim (safe mode)"
+    },
+    {
+      "id": "test_hw",
+      "name": "Test softwaru na letovém hardwaru"
+    },
+    {
+      "id": "prijem",
+      "name": "Pozemní stanice: příjem dat"
+    },
+    {
+      "id": "planovani",
+      "name": "Automatické plánování snímků"
+    },
+    {
+      "id": "komprese",
+      "name": "Komprese dat"
+    },
+    {
+      "id": "aktualizace",
+      "name": "Vzdálená aktualizace softwaru"
+    },
+    {
+      "id": "mapa",
+      "name": "Webová mapa přeletů"
+    },
+    {
+      "id": "bot",
+      "name": "Družice na sociálních sítích"
+    },
+    {
+      "id": "mraky",
+      "name": "AI rozpoznávání mraků"
+    },
+    {
+      "id": "kamera2",
+      "name": "Druhá kamera"
+    }
+  ],
+  "milestones": [
+    {
+      "id": "m1",
+      "name": "Letový hardware",
+      "okText": "Letový hardware je dodaný. Od sprintu 3 lze testovat software na skutečné desce.",
+      "lateText": "Dodávka hardwaru se zpozdila. Testy na letové desce půjdou až od sprintu 4."
+    },
+    {
+      "id": "m2",
+      "name": "Vakuová komora",
+      "okText": "Integrační test ve vakuové komoře prošel: software i hardware spolu fungují.",
+      "lateText": "Integrační test ve vakuové komoře neprošel."
+    },
+    {
+      "id": "m3",
+      "name": "Vibrační zkouška",
+      "okText": "Družice prošla vibrační zkouškou.",
+      "lateText": "Vibrační zkouška se zpozdila a musí se opakovat."
+    },
+    {
+      "id": "m4",
+      "name": "Start rakety",
+      "failText": "Družice nebyla na start připravená. Raketa odletěla bez ní – projekt propadl.",
+      "okText": "Družice je na raketě a startuje! Z oběžné dráhy přichází první signál.",
+      "lateText": "Družice není kompletní – chybí:"
+    }
+  ],
+  "shift": {
+    "title": "Start se posouvá dřív",
+    "text": "Hlavní náklad rakety je hotový dřív – start se posouvá o dva týdny dopředu. Do startu zbývá méně práce, než tým plánoval, a posunout ho nejde. Odhalený faktor: neposunutelné časové okno.",
+    "lesson": "Když se zkrátí čas a termín je absolutní, je potřeba zmrazit konfiguraci a každou další změnu pustit jen přes formální změnové řízení – a vědomě škrtat rozsah. Jinak poslední úpravy rozbijí, co už bylo ověřené."
+  },
+  "gate": {
+    "id": "gate",
+    "title": "Kritická revize návrhu (CDR)",
+    "text": "Odborníci z agentury posuzují, jestli je návrh družice zralý pro výrobu letového modelu. Co jim předložíš?",
+    "lesson": "Revize návrhu v hybridním projektu hodnotí hardware podle dokumentace a zkoušek, software podle toho, co skutečně funguje na simulátoru.",
+    "choices": [
+      {
+        "text": "Dokumentaci hardwaru, výsledky zkoušek a živé demo softwaru na simulátoru",
+        "feedback": "Revize prošla. Odborníci ocenili, že software neukazujete jen na slidech."
+      },
+      {
+        "text": "Jen dokumentaci – software ukážeme až hotový",
+        "feedback": "Revize prošla s výhradou: „Software je velké riziko.“ Dostali jste mimořádnou kontrolu."
+      },
+      {
+        "text": "Požádat o odklad revize",
+        "feedback": "Odklad revize posouvá výrobu letového modelu. Start ale čekat nebude."
+      }
+    ]
+  },
+  "events": [
+    {
+      "id": "freeze",
+      "title": "Kdy zmrazit software?",
+      "text": "Před integrací je potřeba rozhodnout, kdy palubní software „zmrazit“. Po zmrazení jdou změny jen přes formální změnové řízení.",
+      "lesson": "U systémů, které se po startu těžko opravují, se jádro zmrazí včas a zbytek se navrhne tak, aby šel aktualizovat. Ladění do poslední chvíle je hazard.",
+      "choices": [
+        {
+          "text": "Zmrazit jádro (orientace, komunikace, safe mode), zbytek vyvíjet dál s možností vzdálené aktualizace",
+          "feedback": "Jádro je stabilní a otestované. Vědecké funkce se můžou ladit i po startu."
+        },
+        {
+          "text": "Nezmrazovat nic a ladit až do poslední chvíle",
+          "feedback": "Tým má volnost – zatím."
+        },
+        {
+          "text": "Zmrazit hned úplně všechno",
+          "feedback": "Stabilní, ale vědci jsou zklamaní: polovina jejich požadavků se nestihla."
+        }
+      ]
+    },
+    {
+      "id": "baterie",
+      "title": "Baterie se zpozdí",
+      "text": "Dodavatel certifikovaných baterií hlásí zpoždění o tři týdny.",
+      "lesson": "U vesmírných projektů se náhradní dodavatelé a plány reakce připravují předem. Zkratky v certifikaci se nevyplácí.",
+      "choices": [
+        {
+          "text": "Podle registru rizik povolat záložního certifikovaného dodavatele",
+          "feedback": "Záložní dodavatel byl prověřený. Baterie dorazily jen s týdenním skluzem."
+        },
+        {
+          "text": "Počkat a zkrátit tepelné zkoušky",
+          "feedback": "Harmonogram drží, zkoušky jsou kratší."
+        },
+        {
+          "text": "Koupit levnější necertifikované baterie",
+          "feedback": "Baterie dorazily hned. Papíry k nim ne."
+        }
+      ]
+    },
+    {
+      "id": "kamera",
+      "title": "Vědci chtějí jinou kameru",
+      "text": "Vědci po demu prohlásí, že bez lepší kamery nemá mise smysl. Jenže kamera je hardware a návrh je skoro hotový.",
+      "lesson": "Změna, která se týká hardwaru, prochází změnovým řízením s analýzou dopadu. Část potřeby se často dá splnit softwarem.",
+      "choices": [
+        {
+          "text": "Analyzovat dopad změnovým řízením a nabídnout zlepšení obrazu softwarem",
+          "feedback": "Analýza ukázala, že nová kamera by překročila hmotnost. Softwarové zostření vědce uspokojilo."
+        },
+        {
+          "text": "Vyhovět – kameru vyměnit",
+          "feedback": "Vědci jsou nadšení. Konstruktéři méně."
+        },
+        {
+          "text": "Odmítnout bez diskuse",
+          "feedback": "Návrh je chráněný, ale vědci ztrácejí motivaci spolupracovat."
+        }
+      ]
+    },
+    {
+      "id": "student",
+      "title": "Hlavní programátor odjíždí",
+      "text": "Student, který napsal komunikační protokol, odjíždí na semestr do zahraničí.",
+      "lesson": "V dočasných týmech je sdílení znalostí pojistka. Bez něj se projekt stane závislým na jednom člověku.",
+      "choices": [
+        {
+          "text": "Teď párové programování a dokumentace, pak vzdálená spolupráce",
+          "feedback": "Sprint je pomalejší, ale protokolu teď rozumí tři lidé."
+        },
+        {
+          "text": "Nechat to být, nějak to půjde",
+          "feedback": "Student odjel. Kód zůstal."
+        },
+        {
+          "text": "Zaplatit mu, ať odjede až po startu",
+          "feedback": "Zůstal, ale znalost je pořád jen v jedné hlavě."
+        }
+      ]
+    },
+    {
+      "id": "sroub",
+      "title": "Uvolněný šroub",
+      "text": "Při předběžné vibrační zkoušce se uvolnil šroub držáku antény.",
+      "lesson": "U chyb hardwaru se hledá příčina v postupu, ne jen ten jeden šroub. Jinak se chyba zopakuje jinde.",
+      "choices": [
+        {
+          "text": "Prošetřit postup montáže a zkontrolovat všechny podobné spoje",
+          "feedback": "Našly se další dva špatně utažené šrouby. Postup montáže je opravený."
+        },
+        {
+          "text": "Utáhnout ten jeden šroub a jet dál",
+          "feedback": "Šroub je utažený. Ostatní nikdo nekontroloval."
+        },
+        {
+          "text": "Zopakovat celou vibrační zkoušku",
+          "feedback": "Zkouška prošla, ale příčinu nikdo nehledal."
+        }
+      ]
+    },
+    {
+      "id": "zprava",
+      "title": "Zpráva pro grantovou agenturu",
+      "text": "Grantová agentura chce průběžnou zprávu s detailním Ganttem – i pro software.",
+      "lesson": "Hybridní reporting „překládá“: Gantt a milníky pro hardware, dodané přírůstky a prognóza pro software.",
+      "choices": [
+        {
+          "text": "Gantt a milníky pro hardware + přehled dodaných přírůstků softwaru",
+          "feedback": "Agentura dostala přehled, kterému rozumí, a tým nemusí plánovat každou funkci."
+        },
+        {
+          "text": "Detailní Gantt pro každou softwarovou funkci",
+          "feedback": "Plán je zastaralý po prvním sprintu."
+        },
+        {
+          "text": "Poslat jen slovní zprávu",
+          "feedback": "Agentura si vyžádala doplnění."
+        }
+      ]
+    }
+  ],
+  "followups": {
+    "freeze_chaos": {
+      "id": "freeze_chaos",
+      "title": "Poslední změna rozbila komunikaci",
+      "text": "Týden před integrací poslední „drobná úprava“ softwaru rozbila komunikaci se Zemí.",
+      "lesson": "Bez zmrazené konfigurace může jakákoli změna rozbít ověřený celek. Bezpečné je vrátit se k poslední otestované verzi.",
+      "unresolvedText": "Na oběžné dráze se ukázala chyba z poslední nezmrazené změny.",
+      "choices": [
+        {
+          "text": "Vrátit se k poslední otestované verzi a změnu přidat přes změnové řízení",
+          "feedback": "Komunikace zase funguje. Nová funkce počká."
+        },
+        {
+          "text": "Opravovat za běhu až do integrace",
+          "feedback": "Oprava rozbila další dvě věci."
+        },
+        {
+          "text": "Odložit integrační test",
+          "feedback": "Čas na opravu je, ale start se nepřiblížil."
+        }
+      ]
+    },
+    "prehrivani": {
+      "id": "prehrivani",
+      "title": "Elektronika se přehřívá",
+      "text": "Zkrácený tepelný test přehlédl problém: ve vakuu se deska přehřívá.",
+      "lesson": "Zkrácené zkoušky šetří čas jen zdánlivě. Vadu najdou později – za vyšší cenu.",
+      "unresolvedText": "Družice se na oběžné dráze přehřívá a musí běžet v omezeném režimu.",
+      "choices": [
+        {
+          "text": "Přidat chladič a zopakovat tepelnou zkoušku celou",
+          "feedback": "Problém vyřešen, zkouška tentokrát kompletní."
+        },
+        {
+          "text": "Omezit výkon softwarem a doufat",
+          "feedback": "Vědci přijdou o polovinu měření."
+        },
+        {
+          "text": "Vyměnit desku za jiný typ",
+          "feedback": "Drahé, ale funguje."
+        }
+      ]
+    },
+    "certifikace": {
+      "id": "certifikace",
+      "title": "Certifikace zamítla baterie",
+      "text": "Provozovatel rakety zamítl necertifikované baterie. Bez náhrady družice nepoletí.",
+      "lesson": "Úspora na certifikaci se vrací s úroky. Pravidla provozovatele rakety nejsou předmětem vyjednávání.",
+      "unresolvedText": "Necertifikované baterie se ukázaly až při závěrečné kontrole.",
+      "choices": [
+        {
+          "text": "Okamžitě objednat certifikované s expresní dodávkou",
+          "feedback": "Bolestivé, ale družice poletí."
+        },
+        {
+          "text": "Upravit dokumentaci, aby to prošlo",
+          "feedback": "Podvod se provalil. Agentura zvažuje vrácení grantu."
+        },
+        {
+          "text": "Požádat o výjimku",
+          "feedback": "Výjimka trvá týdny a nemusí projít."
+        }
+      ]
+    },
+    "hmotnost": {
+      "id": "hmotnost",
+      "title": "Družice je příliš těžká",
+      "text": "Nová kamera je o 200 gramů těžší. Družice překračuje hmotnostní limit rakety.",
+      "lesson": "Změna hardwaru bez analýzy dopadu má řetězové následky. Proto u ní je změnové řízení.",
+      "unresolvedText": "Překročená hmotnost se řešila na poslední chvíli odebráním vybavení.",
+      "choices": [
+        {
+          "text": "Vrátit původní kameru a vědcům to vysvětlit",
+          "feedback": "Bolí to, ale družice poletí."
+        },
+        {
+          "text": "Odebrat záložní baterii",
+          "feedback": "Hmotnost sedí, ale družice teď nemá rezervu energie."
+        },
+        {
+          "text": "Zaplatit za větší místo na raketě",
+          "feedback": "Grant to unese – sotva."
+        }
+      ]
+    },
+    "protokol": {
+      "id": "protokol",
+      "title": "Nikdo nerozumí protokolu",
+      "text": "V komunikačním protokolu je chyba a jediný, kdo mu rozumí, je v zahraničí a nereaguje.",
+      "lesson": "Ostrov znalostí se projeví ve chvíli, kdy je nejméně času. Sdílení znalostí je levnější předem.",
+      "unresolvedText": "Chyba v protokolu, které nikdo nerozuměl, omezila příjem dat.",
+      "choices": [
+        {
+          "text": "Dva lidé protokol nastudují a zdokumentují, i když to zdrží sprint",
+          "feedback": "Chyba nalezena a protokolu teď rozumí víc lidí."
+        },
+        {
+          "text": "Napsat protokol znovu od nuly",
+          "feedback": "Nový protokol má nové chyby."
+        },
+        {
+          "text": "Najmout externího odborníka",
+          "feedback": "Odborník chybu našel. Znalost odešla s ním."
+        }
+      ]
+    },
+    "antena": {
+      "id": "antena",
+      "title": "Anténa se neotevřela",
+      "text": "Při závěrečné zkoušce se rozkládací anténa neotevřela – jiný šroub se uvolnil úplně stejně.",
+      "lesson": "Oprava symptomu místo příčiny jen odkládá problém. Stejná chyba se objeví jinde.",
+      "unresolvedText": "Anténa se po startu otevřela jen napůl.",
+      "choices": [
+        {
+          "text": "Teď už prošetřit celý postup montáže a opravit všechny spoje",
+          "feedback": "Postup je opravený. Pozdě, ale přece."
+        },
+        {
+          "text": "Utáhnout i tenhle šroub",
+          "feedback": "Kolik dalších šroubů ještě čeká?"
+        },
+        {
+          "text": "Vyměnit anténu za pevnou",
+          "feedback": "Spolehlivější, ale s horším signálem."
+        }
+      ]
+    }
+  }
+}

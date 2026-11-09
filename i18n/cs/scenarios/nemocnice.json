@@ -1,0 +1,435 @@
+{
+  "id": "nemocnice",
+  "stars": {
+    "ko": [
+      {
+        "text": "Urgent se otevře se všemi Must položkami"
+      },
+      {
+        "text": "Stavba projde kolaudací"
+      }
+    ],
+    "top": [
+      {
+        "text": "Všechny milníky splněné"
+      }
+    ]
+  },
+  "name": "Urgentní příjem nemocnice",
+  "tagline": "Přístavba za provozu a software pro třídění pacientů",
+  "scope": "Přístavba nového urgentního příjmu za plného provozu nemocnice, zdravotnická technika a software pro třídění pacientů napojený na nemocniční systém.",
+  "intro": "Řídíš výstavbu nového urgentního příjmu. Nemocnice přitom běží naplno – lékaři nemají čas, pacienti nesmějí trpět a kraj sleduje každou korunu.",
+  "predWorld": "Přístavba za provozu, zdravotnická technika z veřejných zakázek, kolaudace a hygienické normy.",
+  "agileWorld": "Software pro třídění pacientů a dispečerská obrazovka. Ladí se s lékaři a sestrami na simulovaných směnách.",
+  "terms": {
+    "launch": "otevření urgentu",
+    "predShort": "stavba, technika, kolaudace",
+    "agileShort": "software pro třídění pacientů",
+    "users": "lékaři a sestry",
+    "usersGen": "lékařů a sester",
+    "sponsor": "ředitel nemocnice",
+    "poGood": "vrchní sestra urgentu",
+    "committee": "vedení nemocnice a kraj"
+  },
+  "dependency": {
+    "lock": "Čeká na zprovoznění sítě a techniky v přístavbě (milník)",
+    "hint": "<b>Pilotní provoz v nových prostorách</b> čeká na prediktivní milník – zprovoznění sítě a techniky."
+  },
+  "workstreams": [
+    {
+      "id": "pristavba",
+      "name": "Přístavba za provozu nemocnice",
+      "why": "Stavební povolení, etapy podle provozu nemocnice a pevné návaznosti."
+    },
+    {
+      "id": "technika",
+      "name": "Zdravotnická technika z veřejné zakázky",
+      "why": "Zákon o zadávání zakázek předepisuje postup a lhůty; specifikace musí být hotová předem."
+    },
+    {
+      "id": "kolaudace",
+      "name": "Kolaudace a hygienické normy",
+      "why": "Požadavky jsou dané předpisy a kontrolují se formálně."
+    },
+    {
+      "id": "rozhrani",
+      "name": "Rozhraní na nemocniční informační systém",
+      "why": "Pozor, i když je to software: rozhraní je dané standardem a smlouvou s dodavatelem systému a testuje se formálně."
+    },
+    {
+      "id": "trideni",
+      "name": "Software pro třídění pacientů",
+      "why": "Jak má třídění fungovat v reálném provozu, ukážou až simulované směny s lékaři a sestrami."
+    },
+    {
+      "id": "dispecink",
+      "name": "Dispečerská obrazovka urgentu",
+      "why": "Co je na obrazovce potřeba, se ladí s personálem po kouscích."
+    },
+    {
+      "id": "skoleni",
+      "name": "Zaškolení personálu na nové postupy",
+      "why": "Školení se ladí na simulacích podle toho, kde personál chybuje – iterativně."
+    },
+    {
+      "id": "pacienti",
+      "name": "Informace o čekací době pro pacienty",
+      "why": "Malá služba, kterou jde spustit brzy a vylepšovat podle reakcí."
+    }
+  ],
+  "backlog": [
+    {
+      "id": "formular",
+      "name": "Formulář třídění pacientů"
+    },
+    {
+      "id": "fronta",
+      "name": "Fronta pacientů podle naléhavosti"
+    },
+    {
+      "id": "napojeni",
+      "name": "Napojení na nemocniční systém"
+    },
+    {
+      "id": "dispecink",
+      "name": "Dispečerská obrazovka"
+    },
+    {
+      "id": "pilot",
+      "name": "Pilotní provoz v nových prostorách"
+    },
+    {
+      "id": "zhorseni",
+      "name": "Upozornění na zhoršení stavu"
+    },
+    {
+      "id": "statistiky",
+      "name": "Statistiky čekacích dob"
+    },
+    {
+      "id": "web",
+      "name": "Čekací doba na webu"
+    },
+    {
+      "id": "diktovani",
+      "name": "Diktování hlasem"
+    },
+    {
+      "id": "zachranka",
+      "name": "Mobilní verze pro záchranku"
+    },
+    {
+      "id": "tmavy",
+      "name": "Noční režim obrazovky"
+    },
+    {
+      "id": "ai",
+      "name": "AI návrh diagnózy"
+    }
+  ],
+  "milestones": [
+    {
+      "id": "m1",
+      "name": "Síť a technika",
+      "okText": "Síť a technika v přístavbě běží. Od sprintu 3 lze chystat pilotní provoz.",
+      "lateText": "Stavba nabrala skluz. Pilotní provoz půjde připravit až od sprintu 4."
+    },
+    {
+      "id": "m2",
+      "name": "Kolaudace",
+      "okText": "Přístavba je zkolaudovaná.",
+      "lateText": "Kolaudace se odkládá. Kraj je nespokojený."
+    },
+    {
+      "id": "m3",
+      "name": "Otevření urgentu",
+      "okText": "Nový urgentní příjem je otevřený a software třídí první pacienty.",
+      "lateText": "Urgent se otevřel, ale bez klíčových funkcí:"
+    }
+  ],
+  "shift": {
+    "title": "Software je zdravotnický prostředek",
+    "text": "Státní ústav pro kontrolu léčiv rozhodl: software, který řadí pacienty podle naléhavosti, je zdravotnický prostředek. Bez technické dokumentace, analýzy rizik a řízení změn se nesmí používat. Odhalený faktor: regulace a audity.",
+    "addItems": [
+      {
+        "id": "dokumentace",
+        "name": "Technická dokumentace a analýza rizik"
+      },
+      {
+        "id": "validace",
+        "name": "Klinická validace s personálem"
+      }
+    ],
+    "lesson": "Když se z části agilní práce stane regulovaný produkt, musí se do agilní části dostat formální prvky: přísná Definition of Done s dokumentací a řízení změn. Agilita zůstává, ale s pravidly."
+  },
+  "gate": {
+    "id": "gate",
+    "title": "Kontrola kraje",
+    "text": "Kraj jako zřizovatel posuzuje, jestli projekt pokračuje podle plánu a za plánované peníze. Co mu předložíš?",
+    "lesson": "Veřejný zřizovatel potřebuje transparentnost: stav stavby a rozpočtu i důkaz, že software opravdu funguje v provozu.",
+    "choices": [
+      {
+        "text": "Stav stavby a rozpočtu + video ze simulované směny se softwarem",
+        "feedback": "Kraj vidí, kam jdou peníze, i že software lékařům pomáhá."
+      },
+      {
+        "text": "Jen čísla ze stavby, software až bude hotový",
+        "feedback": "Kraj se ptá, proč platí za software, který nikdo neviděl."
+      },
+      {
+        "text": "Kontrolu odložit kvůli vytížení",
+        "feedback": "Kraj pošle vlastního kontrolora."
+      }
+    ]
+  },
+  "events": [
+    {
+      "id": "hluk",
+      "title": "Stavba ruší pacienty",
+      "text": "Hluk ze stavby ruší pacienty na JIP. Primář žádá okamžité zastavení prací.",
+      "lesson": "Stavba za provozu vyžaduje plánovat práce kolem provozu – a jednat s lidmi dřív, než si stěžují nahoru.",
+      "choices": [
+        {
+          "text": "Hlučné práce jen mimo operace a klid, pacientům nabídnout jiné pokoje",
+          "feedback": "Primář souhlasí. Stavba jede pomaleji, ale bez konfliktu."
+        },
+        {
+          "text": "Pokračovat podle plánu",
+          "feedback": "Stavba jede. Stížnosti taky."
+        },
+        {
+          "text": "Zastavit hlučné práce na dva týdny",
+          "feedback": "Klid na JIP, ale skluz stavby."
+        }
+      ]
+    },
+    {
+      "id": "lekari",
+      "title": "Lékaři nemají čas testovat",
+      "text": "Lékaři a sestry mají plné služby. Na testování softwaru jim nezbývá čas.",
+      "lesson": "Bez skutečných uživatelů agilní vývoj ztrácí smysl. Jejich čas je potřeba vyjednat a zaplatit.",
+      "choices": [
+        {
+          "text": "Vyjednat s vedením placené hodiny na simulované směny",
+          "feedback": "Personál testuje na simulovaných směnách. Je to drahé, ale vidíte reálné použití."
+        },
+        {
+          "text": "Testovat bez nich, jen v IT",
+          "feedback": "Testy prochází. Na papíře."
+        },
+        {
+          "text": "Testovat s jednou ochotnou lékařkou",
+          "feedback": "Lepší než nic, ale jeden pohled je málo."
+        }
+      ]
+    },
+    {
+      "id": "nis",
+      "title": "Dodavatel systému zdržuje rozhraní",
+      "text": "Dodavatel nemocničního systému chce za rozhraní dvojnásobek a dodá ho až za osm týdnů.",
+      "lesson": "Závislost na externím systému se řeší smluvně a technicky (simulátor). Obcházení pravidel u zdravotnických dat je hazard.",
+      "choices": [
+        {
+          "text": "Smluvně zafixovat rozhraní podle standardu a mezitím vyvíjet proti simulátoru",
+          "feedback": "Rozhraní je drahé, ale jisté. Vývoj nestojí."
+        },
+        {
+          "text": "Obejít rozhraní přímým přístupem do databáze",
+          "feedback": "Funguje to hned a zadarmo. Zatím."
+        },
+        {
+          "text": "Počkat osm týdnů",
+          "feedback": "Bezpečné, ale pomalé."
+        }
+      ]
+    },
+    {
+      "id": "epidemie",
+      "title": "Chřipková epidemie",
+      "text": "Nemocnice je přeplněná a chce hotovou část přístavby využít jako provizorní oddělení.",
+      "lesson": "Krizový požadavek se zapracuje změnovým řízením: co lze bezpečně předat hned a co se přeplánuje.",
+      "choices": [
+        {
+          "text": "Předat hotovou část provizorně podle krizového plánu, zbytek přeplánovat",
+          "feedback": "Nemocnice zvládla nápor a stavba pokračuje v upraveném pořadí."
+        },
+        {
+          "text": "Odmítnout – stavba má svůj plán",
+          "feedback": "Vedení nemocnice zuří. Pacienti leží na chodbách."
+        },
+        {
+          "text": "Předat celou přístavbu nedokončenou",
+          "feedback": "Pomoc přišla hned. Stavbaři teď pracují mezi pacienty."
+        }
+      ]
+    },
+    {
+      "id": "tendr",
+      "title": "Napadená zakázka",
+      "text": "Neúspěšný uchazeč napadl zakázku na zdravotnickou techniku u antimonopolního úřadu.",
+      "lesson": "Rizika veřejných zakázek patří do registru rizik s připraveným plánem B. Ignorovat úřad se nevyplácí.",
+      "choices": [
+        {
+          "text": "Aktivovat plán B z registru rizik: pronájem techniky na přechodnou dobu",
+          "feedback": "Pronajatá technika překlene čekání na rozhodnutí úřadu."
+        },
+        {
+          "text": "Čekat na rozhodnutí úřadu",
+          "feedback": "Úřad rozhodne za dva měsíce."
+        },
+        {
+          "text": "Podepsat smlouvu i tak",
+          "feedback": "Technika je objednaná. Úřad ještě nerozhodl."
+        }
+      ]
+    },
+    {
+      "id": "tablety",
+      "title": "Sestry chtějí tablety u lůžka",
+      "text": "Sestry chtějí, aby software fungoval i na tabletech u lůžka. V zadání to nebylo.",
+      "lesson": "Nový požadavek uživatelů jde do backlogu a Product Owner ho seřadí. Stavět bokem mimo plán rozbíjí sprint.",
+      "choices": [
+        {
+          "text": "Do backlogu, vrchní sestra ho seřadí a ověří na jedné směně",
+          "feedback": "Na jedné směně se ukázalo, že stačí zjednodušený pohled. Malá práce, velký užitek."
+        },
+        {
+          "text": "Postavit to hned mimo plán",
+          "feedback": "Sprint se rozpadl a tabletová verze je odbytá."
+        },
+        {
+          "text": "Odmítnout – není to v zadání",
+          "feedback": "Sestry mají pocit, že je nikdo neposlouchá."
+        }
+      ]
+    }
+  ],
+  "followups": {
+    "stiznost": {
+      "id": "stiznost",
+      "title": "Stížnost u kraje",
+      "text": "Pacienti a primář si stěžují krajskému úřadu. Kraj ohlásil kontrolu stavby.",
+      "lesson": "Ignorovaný konflikt se stakeholdery se vrací přes jejich nadřízené – a hůř.",
+      "unresolvedText": "Stížnosti na stavbu poznamenaly pověst nemocnice.",
+      "choices": [
+        {
+          "text": "Uznat chybu, upravit harmonogram hlučných prací a informovat pacienty",
+          "feedback": "Kontrola proběhla v klidu. Vztahy se pomalu spravují."
+        },
+        {
+          "text": "Bránit se, že stavba je v souladu s povolením",
+          "feedback": "Formálně pravda, ale kraj si to zapamatuje."
+        },
+        {
+          "text": "Zastavit hlučné práce úplně",
+          "feedback": "Klid, ale velký skluz."
+        }
+      ]
+    },
+    "odmitnuti": {
+      "id": "odmitnuti",
+      "title": "Sestry software odmítají",
+      "text": "Při pilotu sestry odmítají software používat: nesedí na reálný provoz a zdržuje je.",
+      "lesson": "Software testovaný bez skutečných uživatelů selže v provozu. Zpětná vazba je levnější na začátku.",
+      "unresolvedText": "Personál software obchází a vede si papírové seznamy.",
+      "choices": [
+        {
+          "text": "Zastavit pilot, udělat simulované směny se sestrami a předělat klíčové obrazovky",
+          "feedback": "Po dvou iteracích sestry říkají: „Tohle už jde.“"
+        },
+        {
+          "text": "Nařídit používání",
+          "feedback": "Sestry software formálně vyplňují a skutečná fronta je na papíře."
+        },
+        {
+          "text": "Pustit pilot dál a sbírat připomínky",
+          "feedback": "Připomínek je stovka. Některé se vzájemně vylučují."
+        }
+      ]
+    },
+    "simulace_bonus": {
+      "id": "simulace_bonus",
+      "title": "Sestry chtějí víc",
+      "text": "Simulované směny se osvědčily. Sestry samy přicházejí s nápady a chtějí software spustit dřív.",
+      "lesson": "Zapojení uživatelů je investice: lidé, kteří řešení spoluvytváří, ho pak sami prosazují.",
+      "unresolvedText": "Personál software sám doporučuje dalším oddělením.",
+      "choices": [
+        {
+          "text": "Udělat z nejaktivnějších sester ambasadorky pro ostatní směny",
+          "feedback": "Zaškolení dalších směn jde skoro samo."
+        },
+        {
+          "text": "Spustit hned celý software, i nedotažený",
+          "feedback": "Nadšení rychle opadlo."
+        },
+        {
+          "text": "Poděkovat a pokračovat podle plánu",
+          "feedback": "Příležitost trochu nevyužitá."
+        }
+      ]
+    },
+    "unik": {
+      "id": "unik",
+      "title": "Neoprávněný přístup k datům pacientů",
+      "text": "Bezpečnostní audit našel přímý přístup do databáze pacientů mimo schválené rozhraní.",
+      "lesson": "Obejít pravidla u citlivých dat je nejdražší „úspora“ projektu. Incident se hlásí a řeší otevřeně.",
+      "unresolvedText": "Nepovolený přístup k datům pacientů vyšel najevo až po otevření.",
+      "choices": [
+        {
+          "text": "Přístup okamžitě zablokovat, incident ohlásit a rozhraní udělat správně",
+          "feedback": "Bolestivé, ale poctivé. Úřad ocenil rychlou reakci."
+        },
+        {
+          "text": "Zamlčet to a přístup potichu zrušit",
+          "feedback": "Audit to stejně zapsal. Teď jde i o zamlčení."
+        },
+        {
+          "text": "Zablokovat a počkat na oficiální rozhraní",
+          "feedback": "Bezpečné, ale software teď týdny nemá data."
+        }
+      ]
+    },
+    "dodelavky": {
+      "id": "dodelavky",
+      "title": "Dodělávky mezi pacienty",
+      "text": "Dodělávky v provizorně využívané přístavbě narážejí na provoz: hygiena hrozí pokutou.",
+      "lesson": "Předat nedokončené dílo bez plánu dodělávek znamená, že problémy přejdou do provozu.",
+      "unresolvedText": "Nedokončené práce v přístavbě se táhly ještě měsíce po otevření.",
+      "choices": [
+        {
+          "text": "Sepsat plán dodělávek s provozem a dělat je po sekcích",
+          "feedback": "Pomalejší, ale bez konfliktu s hygienou."
+        },
+        {
+          "text": "Dodělat to rychle o víkendu",
+          "feedback": "Odbytá práce a vyčerpaní řemeslníci."
+        },
+        {
+          "text": "Zaplatit pokutu a pokračovat",
+          "feedback": "Problém trvá, jen dražší."
+        }
+      ]
+    },
+    "zruseni": {
+      "id": "zruseni",
+      "title": "Úřad zrušil smlouvu",
+      "text": "Antimonopolní úřad zakázku zrušil. Objednaná technika se musí vrátit a soutěžit znovu.",
+      "lesson": "Předbíhat rozhodnutí úřadu je sázka. Plán B z registru rizik by tu ušetřil měsíce.",
+      "unresolvedText": "Urgent se otevřel s provizorní technikou.",
+      "choices": [
+        {
+          "text": "Pronajmout techniku na přechodnou dobu a zakázku vypsat znovu správně",
+          "feedback": "Drahé, ale urgent otevře včas."
+        },
+        {
+          "text": "Soudit se s úřadem",
+          "feedback": "Soud potrvá déle než celý projekt."
+        },
+        {
+          "text": "Otevřít bez nové techniky",
+          "feedback": "Urgent funguje jen napůl."
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,393 @@
+{
+  "id": "elektrarna",
+  "stars": {
+    "ko": [
+      {
+        "text": "Odstávka nepřetáhne o víc než 3 dny – síť s elektrárnou počítá"
+      }
+    ],
+    "top": [
+      {
+        "text": "Rezerva neskončí v mínusu"
+      }
+    ]
+  },
+  "name": "Odstávka elektrárny",
+  "tagline": "Generální oprava bloku v pevném okně",
+  "scope": "Příprava a objednávky, odstavení bloku, revize turbíny, výměna potrubí, aktualizace řídicího systému, tlakové zkoušky a opětovné najetí. Postupy předepisují normy a výrobci zařízení.",
+  "approachText": "Jasné a stabilní zadání, předepsané postupy, pevné okno a vysoká cena každé změny. Celý projekt se nejlépe řídí prediktivně: plán po etapách, podrobný Gantt s kritickou cestou, řízení změn a rizik. Agilní praktiky by tu byly hlavně režií.",
+  "intro": "Řídíš plánovanou generální opravu bloku elektrárny. Od přípravy po najetí je na všechno 46 pracovních dní – každý den navíc stojí miliony.",
+  "terms": {
+    "launch": "najetí bloku",
+    "predShort": "celý projekt",
+    "users": "provozní technici",
+    "usersGen": "provozních techniků",
+    "sponsor": "ředitel elektrárny",
+    "poGood": "vedoucí provozu",
+    "committee": "vedení elektrárny"
+  },
+  "workstreams": [
+    {
+      "id": "plan",
+      "name": "Harmonogram odstávky a koordinace dodavatelů",
+      "why": "Desítky dodavatelů se musí vystřídat v přesném pořadí. Bez plánu předem by si překáželi a okno by nestačilo."
+    },
+    {
+      "id": "turbina",
+      "name": "Revize turbíny podle předpisu výrobce",
+      "why": "Postup revize předepisuje výrobce krok za krokem. Nic se tu „neobjevuje“ – dodržuje se plán."
+    },
+    {
+      "id": "potrubi",
+      "name": "Výměna opotřebeného potrubí",
+      "why": "Rozsah je známý z měření, díly se objednávají měsíce dopředu. Klasická plánovaná práce."
+    },
+    {
+      "id": "ridici",
+      "name": "Aktualizace softwaru řídicího systému",
+      "why": "Pozor, i když je to software: jde o certifikovanou verzi od výrobce, která se nasazuje a testuje podle schváleného postupu. Neiteruje se, plánuje se."
+    },
+    {
+      "id": "bozp",
+      "name": "Bezpečnost práce a povolení na práce",
+      "why": "Pravidla jsou daná předpisy a každé povolení se vydává formálně předem."
+    },
+    {
+      "id": "logistika",
+      "name": "Logistika dílů, nářadí a lešení",
+      "why": "Co, kdy a kam musí dorazit, vyplývá přímo z harmonogramu prací."
+    },
+    {
+      "id": "skoleni",
+      "name": "Zaškolení obsluhy na nové prvky",
+      "why": "Obsah je daný změnami zařízení a termín je pevný – obsluha musí být připravená před najetím."
+    },
+    {
+      "id": "zkousky",
+      "name": "Tlakové zkoušky a najetí bloku",
+      "why": "Zkoušky mají normou daný postup a kritéria. Žádný prostor pro experimenty."
+    }
+  ],
+  "phases": [
+    {
+      "id": "p1",
+      "name": "Příprava",
+      "goal": "Plán, objednávky, smlouvy s dodavateli, lešení a školení.",
+      "milestone": {
+        "name": "Připraveno k odstávce"
+      },
+      "tasks": [
+        {
+          "id": "A",
+          "name": "Podrobný harmonogram a povolení",
+          "note": "Bez schváleného plánu se nedá nic objednat ani nasmlouvat."
+        },
+        {
+          "id": "B",
+          "name": "Objednávka dílů",
+          "note": "Co přesně objednat, vyplyne z podrobného plánu."
+        },
+        {
+          "id": "C",
+          "name": "Smlouvy s dodavateli prací",
+          "note": "Rozsah prací pro dodavatele určuje plán."
+        },
+        {
+          "id": "D",
+          "name": "Stavba lešení",
+          "note": "Staví vlastní parta podle typového projektu."
+        },
+        {
+          "id": "E",
+          "name": "Bezpečnostní školení dodavatelů",
+          "note": "Školí se lidé dodavatelů – ti už musí mít podepsanou smlouvu."
+        },
+        {
+          "id": "F",
+          "name": "Příprava dílů a nářadí",
+          "note": "Chystá se to, co bylo objednáno."
+        }
+      ]
+    },
+    {
+      "id": "p2",
+      "name": "Odstavení a demontáž",
+      "goal": "Bezpečně odstavit blok, nechat ho vychladnout a otevřít zařízení.",
+      "milestone": {
+        "name": "Blok rozebrán"
+      },
+      "tasks": [
+        {
+          "id": "A",
+          "name": "Odstavení bloku",
+          "note": "První krok celé odstávky."
+        },
+        {
+          "id": "B",
+          "name": "Vychlazení zařízení",
+          "note": "Chladnout může jen odstavený blok."
+        },
+        {
+          "id": "C",
+          "name": "Demontáž izolací",
+          "note": "Na horké potrubí se nesmí sahat."
+        },
+        {
+          "id": "D",
+          "name": "Kontrola svarů",
+          "note": "Svary jsou přístupné až bez izolace."
+        },
+        {
+          "id": "E",
+          "name": "Demontáž krytů turbíny",
+          "note": "I turbína musí nejdřív vychladnout."
+        }
+      ]
+    },
+    {
+      "id": "p3",
+      "name": "Opravy a výměny",
+      "goal": "Revize turbíny, nové potrubí, oprava kotle a řídicího systému.",
+      "milestone": {
+        "name": "Opravy hotové"
+      },
+      "tasks": [
+        {
+          "id": "A",
+          "name": "Revize turbíny",
+          "note": "Nejdelší práce etapy; turbína je od minula otevřená."
+        },
+        {
+          "id": "B",
+          "name": "Výměna potrubí",
+          "note": "Staré potrubí je odizolované a připravené k výměně."
+        },
+        {
+          "id": "C",
+          "name": "Oprava kotle",
+          "note": "Kotel je přístupný od minulé etapy."
+        },
+        {
+          "id": "D",
+          "name": "Aktualizace řídicího systému",
+          "note": "Software od výrobce, nasazuje se na odstavený blok."
+        },
+        {
+          "id": "E",
+          "name": "Svaření a kontrola nových spojů",
+          "note": "Svařují se nově osazené kusy potrubí."
+        },
+        {
+          "id": "F",
+          "name": "Montáž nových izolací",
+          "note": "Izolace se montují na hotové potrubí i opravený kotel."
+        }
+      ]
+    },
+    {
+      "id": "p4",
+      "name": "Zkoušky a najetí",
+      "goal": "Ověřit, že vše těsní a funguje, a vrátit blok do sítě.",
+      "milestone": {
+        "name": "Najetí bloku"
+      },
+      "tasks": [
+        {
+          "id": "A",
+          "name": "Tlakové zkoušky",
+          "note": "Ověří těsnost nového potrubí a kotle."
+        },
+        {
+          "id": "B",
+          "name": "Test řídicího systému",
+          "note": "Simulace provozních stavů na novém softwaru."
+        },
+        {
+          "id": "C",
+          "name": "Najetí bloku",
+          "note": "Najíždí se jen s ověřenou těsností a otestovaným řízením."
+        },
+        {
+          "id": "D",
+          "name": "Zkušební provoz",
+          "note": "Sleduje se běžící blok."
+        },
+        {
+          "id": "E",
+          "name": "Předávací dokumentace",
+          "note": "Píše se průběžně z protokolů, na zařízení nečeká."
+        }
+      ]
+    }
+  ],
+  "gate": {
+    "id": "gate",
+    "title": "Kontrolní den: polovina odstávky",
+    "text": "Vedení elektrárny posuzuje, jestli odstávka běží podle plánu a jestli blok najede včas. Jak připravíš podklady?",
+    "lesson": "Kontrolní bod v prediktivním projektu je o přesném stavu vůči plánu: kritická cesta, čerpání rezervy, rizika a skutečně dokončené práce.",
+    "choices": [
+      {
+        "text": "Stav kritické cesty, čerpání rezervy a top rizika + prohlídka hotových prací na místě",
+        "feedback": "Vedení vidí přesný stav a schválilo posílení noční směny tam, kde hrozí skluz."
+      },
+      {
+        "text": "Prezentace, že všechno je „zelené“",
+        "feedback": "Ředitel se zeptal na jednu konkrétní práci a odpověď nesouhlasila s prezentací. Důvěra je pryč."
+      },
+      {
+        "text": "Kontrolní den zrušit, nemáme na to čas",
+        "feedback": "Vedení si stav začalo zjišťovat samo – obcházením mistrů na pracovištích."
+      }
+    ]
+  },
+  "events": [
+    {
+      "id": "trhlina",
+      "title": "Trhlina v potrubí",
+      "text": "Nedestruktivní kontrola našla v jednom potrubí trhlinu, se kterou nikdo nepočítal. Oprava znamená práci navíc.",
+      "lesson": "I prediktivní projekt narazí na nečekané. Nová práce se zapracuje přes změnové řízení s posouzením dopadu na kritickou cestu.",
+      "choices": [
+        {
+          "text": "Změnové řízení: zařadit opravu do plánu a posoudit dopad na kritickou cestu",
+          "feedback": "Oprava se naplánovala mimo kritickou cestu. Etapa se protáhne nejvýš o den."
+        },
+        {
+          "text": "Zamlčet to, potrubí ještě pár let vydrží",
+          "feedback": "Inspektor trhlinu našel v protokolu kontroly. Následuje mimořádná kontrola celého projektu."
+        },
+        {
+          "text": "Opravit hned a stáhnout na to lidi z jiných prací",
+          "feedback": "Oprava běží, ale jiné práce teď stojí – i ty na kritické cestě."
+        }
+      ]
+    },
+    {
+      "id": "svarec",
+      "title": "Chybí certifikovaný svářeč",
+      "text": "Dodavatel přesunul jediného svářeče s certifikací na vysokotlaké potrubí na jinou zakázku.",
+      "lesson": "Registr rizik s připravenými reakcemi (např. záložní dodavatelé) mění krizi v rutinu.",
+      "choices": [
+        {
+          "text": "Podle registru rizik povolat záložního dodavatele",
+          "feedback": "Záložní dodavatel byl předem prověřený. Svářeč nastoupil druhý den."
+        },
+        {
+          "text": "Vyjednat svářeče od konkurence za trojnásobnou sazbu",
+          "feedback": "Funguje to, ale je to drahé a nejisté."
+        },
+        {
+          "text": "Nechat svařovat necertifikovaného pracovníka",
+          "feedback": "Svary neprošly kontrolou a musí se dělat znovu. A hrozí pokuta."
+        },
+        {
+          "text": "Počkat, až se svářeč vrátí",
+          "feedback": "Práce na potrubí stojí a navazující činnosti s ní."
+        }
+      ]
+    },
+    {
+      "id": "dily",
+      "title": "Lopatky turbíny dorazí později",
+      "text": "Výrobce hlásí, že náhradní lopatky turbíny dorazí o týden později.",
+      "lesson": "Kdo zná kritickou cestu, ví, co lze přeskládat a co ne – a zpoždění jedné dodávky nemusí posunout konec projektu.",
+      "choices": [
+        {
+          "text": "Přeskládat práce mimo kritickou cestu, aby zpoždění vstřebala vůle v plánu",
+          "feedback": "Tým přesunul práce s vůlí dopředu. Konec projektu se nehnul."
+        },
+        {
+          "text": "Zaplatit leteckou přepravu",
+          "feedback": "Lopatky dorazily včas, ale za cenu malého auta."
+        },
+        {
+          "text": "Počkat na lopatky",
+          "feedback": "Revize turbíny leží na kritické cestě – týden čekání posouvá celý projekt."
+        },
+        {
+          "text": "Použít staré lopatky a vyměnit je „někdy příště“",
+          "feedback": "Výrobce odmítl dát na turbínu záruku."
+        }
+      ]
+    },
+    {
+      "id": "navic",
+      "title": "„Když už to máme rozebrané…“",
+      "text": "Vedení chce odstávku využít a navíc vyměnit osvětlení celé haly a kamerový systém.",
+      "lesson": "V prediktivním projektu je rozsah pevný. Každý požadavek navíc prochází změnovým řízením – i ten, který „nic nestojí“.",
+      "choices": [
+        {
+          "text": "Změnové řízení: posoudit dopad a zařadit jen to, co se vejde mimo kritickou cestu",
+          "feedback": "Osvětlení se udělá v příští odstávce, kamery se vešly do vůle v plánu."
+        },
+        {
+          "text": "Přidat všechno do plánu",
+          "feedback": "Vedení má radost, ale do už tak napjatého plánu přibyla velká práce."
+        },
+        {
+          "text": "Odmítnout bez posouzení",
+          "feedback": "Plán je chráněný, ale vedení se cítí odbyté."
+        }
+      ]
+    },
+    {
+      "id": "unava",
+      "title": "Únava na směnách",
+      "text": "Směny jedou 12 hodin denně několik týdnů v kuse. Přibývá drobných chyb.",
+      "lesson": "Únava je bezpečnostní riziko. I v pevném okně se vyplatí dodržet limity směn a mít kapacitu v rezervě.",
+      "choices": [
+        {
+          "text": "Dodržet limity směn a posílit noční směnu",
+          "feedback": "Chyby ubyly a lidé mají sílu na finiš."
+        },
+        {
+          "text": "Přidat ještě víc přesčasů",
+          "feedback": "Další týden dva úrazy a jedna vážná chyba při montáži."
+        },
+        {
+          "text": "Volno dát až po najetí bloku",
+          "feedback": "Lidé to vydrží, ale chyby zatím nemizí."
+        }
+      ]
+    },
+    {
+      "id": "skoronehoda",
+      "title": "Skoronehoda na lešení",
+      "text": "Z lešení spadl klíč a minul montéra o metr. Nikomu se nic nestalo.",
+      "lesson": "Skoronehody jsou varování zdarma. Prošetří se bez hledání viníka a upraví se postup.",
+      "choices": [
+        {
+          "text": "Zastavit práce na lešení, prošetřit příčinu bez hledání viníka a upravit postup",
+          "feedback": "Na lešení přibyly sítě a úložné boxy. Lidé vidí, že bezpečnost se myslí vážně."
+        },
+        {
+          "text": "Pokračovat, nic se nestalo",
+          "feedback": "O týden později spadlo něco těžšího."
+        },
+        {
+          "text": "Potrestat montéra, kterému klíč upadl",
+          "feedback": "Další skoronehody už nikdo nehlásí."
+        }
+      ]
+    },
+    {
+      "id": "sit",
+      "title": "Síť chce blok dřív",
+      "text": "Provozovatel přenosové soustavy žádá najet blok o dva dny dřív kvůli očekávané mrazivé špičce.",
+      "lesson": "Zkrácení termínu se posuzuje na kritické cestě. Zkracovat zkoušky a kontroly kvůli rychlosti se nevyplácí.",
+      "choices": [
+        {
+          "text": "Posoudit kritickou cestu a nabídnout najetí na částečný výkon bez zkrácení zkoušek",
+          "feedback": "Provozovatel sítě dostal částečný výkon dřív a plný včas."
+        },
+        {
+          "text": "Slíbit dřívější najetí a zkrátit zkoušky",
+          "feedback": "Zkoušky se odbyly a při najetí praskl ventil."
+        },
+        {
+          "text": "Odmítnout",
+          "feedback": "Plán drží, ale vztah s provozovatelem sítě utrpěl."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,436 @@
+{
+  "id": "druzice",
+  "stars": {
+    "ko": [
+      {
+        "text": "Quality at least 25 – or the satellite fails in orbit"
+      }
+    ],
+    "top": [
+      {
+        "text": "Vacuum chamber test passed"
+      },
+      {
+        "text": "Vibration test passed"
+      }
+    ]
+  },
+  "name": "Student Satellite",
+  "tagline": "A small satellite and a launch window that won't wait",
+  "scope": "A small research satellite: structure, electronics, solar panels, onboard software, ground station and vacuum chamber tests. The rocket launch is booked for a specific day.",
+  "intro": "You lead a student team building a small research satellite. A seat on the rocket is booked – miss the launch and you fly a year later, which the grant wouldn't survive.",
+  "predWorld": "Structure, electronics, long-lead component purchasing, vibration and vacuum tests, launch certification.",
+  "agileWorld": "Onboard software, ground station and data processing. Tuned iteratively against a simulator, then against the real hardware.",
+  "terms": {
+    "launch": "the rocket launch",
+    "predShort": "structure, electronics, tests",
+    "agileShort": "onboard and ground software",
+    "users": "scientists",
+    "usersGen": "scientists",
+    "sponsor": "head of department",
+    "poGood": "scientist who will use the data",
+    "committee": "grant agency"
+  },
+  "dependency": {
+    "lock": "Waiting for flight hardware delivery (milestone)",
+    "hint": "<b>Software test on flight hardware</b> waits for a predictive milestone – hardware delivery."
+  },
+  "workstreams": [
+    {
+      "id": "konstrukce",
+      "name": "Satellite mechanical structure",
+      "why": "Size and mass are set by the rocket; drawings get approved and it's built once."
+    },
+    {
+      "id": "nakup",
+      "name": "Flight component purchasing",
+      "why": "Space-certified parts have months-long lead times and fixed specs."
+    },
+    {
+      "id": "zkousky",
+      "name": "Vibration and vacuum tests",
+      "why": "Test facilities are booked in advance and the rocket operator prescribes the test procedure."
+    },
+    {
+      "id": "firmware",
+      "name": "Power management firmware",
+      "why": "Careful: it's software, but safety-critical. It's specified upfront, tested with the hardware and frozen – no last-minute iterations."
+    },
+    {
+      "id": "palubni",
+      "name": "Onboard software for science measurements",
+      "why": "What the scientists need gets refined along the way; developed iteratively against a simulator."
+    },
+    {
+      "id": "stanice",
+      "name": "Ground station and data reception",
+      "why": "The software can be built piece by piece and improved even after launch."
+    },
+    {
+      "id": "data",
+      "name": "Data processing and visualization",
+      "why": "How to process the data only becomes clear from the first images – typical iterative work."
+    },
+    {
+      "id": "skoly",
+      "name": "Education program for schools",
+      "why": "Content is tuned to teacher and student feedback, version by version."
+    }
+  ],
+  "backlog": [
+    {
+      "id": "orientace",
+      "name": "Attitude control (against simulator)"
+    },
+    {
+      "id": "komunikace",
+      "name": "Communication with Earth"
+    },
+    {
+      "id": "data",
+      "name": "Science data storage"
+    },
+    {
+      "id": "safe",
+      "name": "Safe mode"
+    },
+    {
+      "id": "test_hw",
+      "name": "Software test on flight hardware"
+    },
+    {
+      "id": "prijem",
+      "name": "Ground station: data reception"
+    },
+    {
+      "id": "planovani",
+      "name": "Automatic image scheduling"
+    },
+    {
+      "id": "komprese",
+      "name": "Data compression"
+    },
+    {
+      "id": "aktualizace",
+      "name": "Remote software update"
+    },
+    {
+      "id": "mapa",
+      "name": "Web map of passes"
+    },
+    {
+      "id": "bot",
+      "name": "Satellite on social media"
+    },
+    {
+      "id": "mraky",
+      "name": "AI cloud detection"
+    },
+    {
+      "id": "kamera2",
+      "name": "Second camera"
+    }
+  ],
+  "milestones": [
+    {
+      "id": "m1",
+      "name": "Flight hardware",
+      "okText": "Flight hardware is delivered. From sprint 3 the software can be tested on the real board.",
+      "lateText": "Hardware delivery slipped. Tests on the flight board can't start until sprint 4."
+    },
+    {
+      "id": "m2",
+      "name": "Vacuum chamber",
+      "okText": "The vacuum chamber integration test passed: software and hardware work together.",
+      "lateText": "The vacuum chamber integration test failed."
+    },
+    {
+      "id": "m3",
+      "name": "Vibration test",
+      "okText": "The satellite passed the vibration test.",
+      "lateText": "The vibration test slipped and has to be repeated."
+    },
+    {
+      "id": "m4",
+      "name": "Rocket launch",
+      "failText": "The satellite wasn't ready for launch. The rocket left without it – the project failed.",
+      "okText": "The satellite is on the rocket and lifting off! The first signal is coming in from orbit.",
+      "lateText": "The satellite is incomplete – missing:"
+    }
+  ],
+  "shift": {
+    "title": "The launch moves up",
+    "text": "The rocket's main payload is ready early – the launch moves two weeks forward. There's less time left than the team planned, and it can't be moved. Revealed factor: an immovable time window.",
+    "lesson": "When time shrinks and the deadline is absolute, freeze the configuration, let any further change through formal change control only – and cut scope deliberately. Otherwise last-minute tweaks break what was already verified."
+  },
+  "gate": {
+    "id": "gate",
+    "title": "Critical Design Review (CDR)",
+    "text": "Agency experts assess whether the satellite design is mature enough to build the flight model. What will you present?",
+    "lesson": "A design review in a hybrid project judges hardware by documentation and tests, and software by what actually works on the simulator.",
+    "choices": [
+      {
+        "text": "Hardware documentation, test results and a live software demo on the simulator",
+        "feedback": "The review passed. The experts appreciated that you don't show software just on slides."
+      },
+      {
+        "text": "Documentation only – we'll show the software once it's done",
+        "feedback": "The review passed with a caveat: \"Software is a big risk.\" You got an extra audit."
+      },
+      {
+        "text": "Ask to postpone the review",
+        "feedback": "Postponing the review pushes back the flight model build. The launch won't wait, though."
+      }
+    ]
+  },
+  "events": [
+    {
+      "id": "freeze",
+      "title": "When to freeze the software?",
+      "text": "Before integration you must decide when to \"freeze\" the onboard software. After the freeze, changes go only through formal change control.",
+      "lesson": "For systems that are hard to fix after launch, freeze the core in time and design the rest to be updatable. Tweaking until the last minute is a gamble.",
+      "choices": [
+        {
+          "text": "Freeze the core (attitude, comms, safe mode), keep developing the rest with remote updates",
+          "feedback": "The core is stable and tested. Science features can be tuned even after launch."
+        },
+        {
+          "text": "Freeze nothing and keep tweaking until the last minute",
+          "feedback": "The team has freedom – for now."
+        },
+        {
+          "text": "Freeze absolutely everything right now",
+          "feedback": "Stable, but the scientists are disappointed: half of their requests didn't make it."
+        }
+      ]
+    },
+    {
+      "id": "baterie",
+      "title": "Batteries delayed",
+      "text": "The certified battery supplier reports a three-week delay.",
+      "lesson": "In space projects, backup suppliers and response plans are prepared in advance. Certification shortcuts don't pay off.",
+      "choices": [
+        {
+          "text": "Call in the backup certified supplier from the risk register",
+          "feedback": "The backup supplier was vetted. The batteries arrived only a week late."
+        },
+        {
+          "text": "Wait and shorten the thermal tests",
+          "feedback": "The schedule holds; the tests are shorter."
+        },
+        {
+          "text": "Buy cheaper uncertified batteries",
+          "feedback": "The batteries arrived right away. Their paperwork didn't."
+        }
+      ]
+    },
+    {
+      "id": "kamera",
+      "title": "Scientists want a different camera",
+      "text": "After the demo the scientists declare the mission pointless without a better camera. But the camera is hardware and the design is almost done.",
+      "lesson": "A change touching hardware goes through change control with an impact analysis. Part of the need can often be met with software.",
+      "choices": [
+        {
+          "text": "Analyze the impact via change control and offer software image enhancement",
+          "feedback": "The analysis showed a new camera would exceed the mass limit. Software sharpening satisfied the scientists."
+        },
+        {
+          "text": "Give in – swap the camera",
+          "feedback": "The scientists are thrilled. The engineers, less so."
+        },
+        {
+          "text": "Refuse without discussion",
+          "feedback": "The design is protected, but the scientists are losing the will to cooperate."
+        }
+      ]
+    },
+    {
+      "id": "student",
+      "title": "Lead programmer is leaving",
+      "text": "The student who wrote the communication protocol is leaving for a semester abroad.",
+      "lesson": "In temporary teams, knowledge sharing is insurance. Without it, the project depends on a single person.",
+      "choices": [
+        {
+          "text": "Pair programming and documentation now, remote collaboration later",
+          "feedback": "The sprint is slower, but three people now understand the protocol."
+        },
+        {
+          "text": "Let it be, it'll work out somehow",
+          "feedback": "The student left. The code stayed."
+        },
+        {
+          "text": "Pay them to leave only after the launch",
+          "feedback": "They stayed, but the knowledge is still in just one head."
+        }
+      ]
+    },
+    {
+      "id": "sroub",
+      "title": "Loose screw",
+      "text": "During a preliminary vibration test, a screw on the antenna mount came loose.",
+      "lesson": "With hardware defects, look for the cause in the procedure, not just that one screw. Otherwise the defect pops up elsewhere.",
+      "choices": [
+        {
+          "text": "Investigate the assembly procedure and check all similar joints",
+          "feedback": "Two more under-tightened screws turned up. The assembly procedure is fixed."
+        },
+        {
+          "text": "Tighten that one screw and move on",
+          "feedback": "The screw is tight. Nobody checked the others."
+        },
+        {
+          "text": "Repeat the whole vibration test",
+          "feedback": "The test passed, but nobody looked for the cause."
+        }
+      ]
+    },
+    {
+      "id": "zprava",
+      "title": "Report for the grant agency",
+      "text": "The grant agency wants a progress report with a detailed Gantt – software included.",
+      "lesson": "Hybrid reporting \"translates\": Gantt and milestones for hardware, delivered increments and a forecast for software.",
+      "choices": [
+        {
+          "text": "Gantt and milestones for hardware + an overview of delivered software increments",
+          "feedback": "The agency got an overview it understands, and the team doesn't have to plan every feature."
+        },
+        {
+          "text": "A detailed Gantt for every software feature",
+          "feedback": "The plan is outdated after the first sprint."
+        },
+        {
+          "text": "Send just a written narrative",
+          "feedback": "The agency asked for more details."
+        }
+      ]
+    }
+  ],
+  "followups": {
+    "freeze_chaos": {
+      "id": "freeze_chaos",
+      "title": "Last change broke the comms",
+      "text": "A week before integration, a final \"tiny tweak\" to the software broke communication with Earth.",
+      "lesson": "Without a frozen configuration, any change can break a verified whole. The safe move is to roll back to the last tested version.",
+      "unresolvedText": "A bug from the last unfrozen change showed up in orbit.",
+      "choices": [
+        {
+          "text": "Roll back to the last tested version and add the change via change control",
+          "feedback": "Comms work again. The new feature will wait."
+        },
+        {
+          "text": "Keep fixing on the fly until integration",
+          "feedback": "The fix broke two more things."
+        },
+        {
+          "text": "Postpone the integration test",
+          "feedback": "There's time for a fix, but the launch didn't get any further away."
+        }
+      ]
+    },
+    "prehrivani": {
+      "id": "prehrivani",
+      "title": "Electronics overheating",
+      "text": "The shortened thermal test missed a problem: in vacuum, the board overheats.",
+      "lesson": "Shortened tests only seem to save time. The defect is found later – at a higher price.",
+      "unresolvedText": "The satellite overheats in orbit and must run in a limited mode.",
+      "choices": [
+        {
+          "text": "Add a heat sink and redo the full thermal test",
+          "feedback": "Problem solved, and the test was complete this time."
+        },
+        {
+          "text": "Throttle performance in software and hope",
+          "feedback": "The scientists lose half their measurements."
+        },
+        {
+          "text": "Swap the board for a different type",
+          "feedback": "Expensive, but it works."
+        }
+      ]
+    },
+    "certifikace": {
+      "id": "certifikace",
+      "title": "Certification rejected the batteries",
+      "text": "The rocket operator rejected the uncertified batteries. Without replacements, the satellite won't fly.",
+      "lesson": "Skimping on certification comes back with interest. The rocket operator's rules are not up for negotiation.",
+      "unresolvedText": "The uncertified batteries surfaced only at the final inspection.",
+      "choices": [
+        {
+          "text": "Order certified ones immediately with express delivery",
+          "feedback": "Painful, but the satellite will fly."
+        },
+        {
+          "text": "Tweak the paperwork so it passes",
+          "feedback": "The fraud came out. The agency is considering clawing back the grant."
+        },
+        {
+          "text": "Request an exemption",
+          "feedback": "An exemption takes weeks and may not go through."
+        }
+      ]
+    },
+    "hmotnost": {
+      "id": "hmotnost",
+      "title": "The satellite is too heavy",
+      "text": "The new camera is 200 grams heavier. The satellite exceeds the rocket's mass limit.",
+      "lesson": "A hardware change without impact analysis has knock-on effects. That's why it goes through change control.",
+      "unresolvedText": "The excess mass was solved at the last minute by stripping equipment.",
+      "choices": [
+        {
+          "text": "Go back to the original camera and explain it to the scientists",
+          "feedback": "It hurts, but the satellite will fly."
+        },
+        {
+          "text": "Remove the backup battery",
+          "feedback": "The mass fits, but the satellite now has no energy reserve."
+        },
+        {
+          "text": "Pay for a bigger slot on the rocket",
+          "feedback": "The grant can carry it – barely."
+        }
+      ]
+    },
+    "protokol": {
+      "id": "protokol",
+      "title": "Nobody understands the protocol",
+      "text": "There's a bug in the communication protocol, and the only person who understands it is abroad and not responding.",
+      "lesson": "A knowledge island shows up exactly when time is shortest. Sharing knowledge is cheaper upfront.",
+      "unresolvedText": "A bug in the protocol nobody understood limited data reception.",
+      "choices": [
+        {
+          "text": "Two people study and document the protocol, even if it slows the sprint",
+          "feedback": "Bug found, and more people now understand the protocol."
+        },
+        {
+          "text": "Rewrite the protocol from scratch",
+          "feedback": "The new protocol has new bugs."
+        },
+        {
+          "text": "Hire an outside expert",
+          "feedback": "The expert found the bug. The knowledge left with them."
+        }
+      ]
+    },
+    "antena": {
+      "id": "antena",
+      "title": "The antenna didn't deploy",
+      "text": "During the final test the deployable antenna didn't open – a different screw came loose in exactly the same way.",
+      "lesson": "Fixing the symptom instead of the cause just postpones the problem. The same defect shows up elsewhere.",
+      "unresolvedText": "After launch the antenna only opened halfway.",
+      "choices": [
+        {
+          "text": "Now investigate the whole assembly procedure and fix all joints",
+          "feedback": "The procedure is fixed. Late, but better than never."
+        },
+        {
+          "text": "Tighten this screw too",
+          "feedback": "How many more screws are waiting?"
+        },
+        {
+          "text": "Replace the antenna with a fixed one",
+          "feedback": "More reliable, but with a weaker signal."
+        }
+      ]
+    }
+  }
+}

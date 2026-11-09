@@ -1,0 +1,455 @@
+{
+  "id": "zachrana",
+  "stars": {
+    "ko": [
+      {
+        "text": "Ostrá migrace proběhne"
+      }
+    ],
+    "top": [
+      {
+        "text": "Rok poté aspoň 50 %"
+      }
+    ]
+  },
+  "name": "Záchrana projektu v krizi",
+  "tagline": "Přebíráš rozjetý projekt, který se rozpadá",
+  "scope": "Nový systém pro likvidaci pojistných událostí: migrace dat ze starého systému k pevnému datu, nová aplikace pro likvidátory a výměna techniky na pobočkách.",
+  "intro": "Pojišťovna před třemi měsíci spustila projekt nového systému pro likvidaci škod. Předchozí projektová manažerka odešla a projekt přebíráš ty. Do ostré migrace zbývají čtyři sprinty – pak se starý systém vypne a smlouva s jeho dodavatelem končí.",
+  "predWorld": "Migrace dat k pevnému datu, výměna techniky na pobočkách, smlouva s dodavatelem starého systému.",
+  "agileWorld": "Aplikace pro likvidátory, která se ladí podle toho, jak se s ní skutečně pracuje.",
+  "terms": {
+    "launch": "ostrá migrace",
+    "predShort": "migrace dat a technika na pobočkách",
+    "agileShort": "aplikace pro likvidátory",
+    "users": "likvidátoři",
+    "usersGen": "likvidátorů",
+    "sponsor": "generální ředitel",
+    "committee": "představenstvo",
+    "product": "Nový systém likvidace"
+  },
+  "stakeholders": [
+    {
+      "id": "reditel",
+      "name": "Generální ředitel",
+      "wants": "termín migrace a náklady",
+      "quit": "ztratil trpělivost a projekt zastavil.",
+      "epilogBad": "po roce označil projekt za drahý omyl a další rozvoj nezaplatil."
+    },
+    {
+      "id": "likvidatori",
+      "name": "Likvidátoři",
+      "wants": "aplikaci, se kterou se dá pracovat",
+      "quit": "odmítli nový systém používat – projekt ztratil smysl.",
+      "epilogBad": "se vrátili k tabulkám a novému systému se vyhýbají."
+    },
+    {
+      "id": "it",
+      "name": "IT provoz",
+      "wants": "stabilitu, monitoring a řádné předání",
+      "quit": "odmítl systém převzít do provozu.",
+      "epilogBad": "převzal systém jen formálně – každý incident teď vrací projektovému týmu."
+    }
+  ],
+  "areas": {
+    "data": {
+      "label": "Migrace dat"
+    },
+    "app": {
+      "label": "Aplikace"
+    },
+    "backend": {
+      "label": "Backend a integrace"
+    },
+    "pobocky": {
+      "label": "Technika poboček"
+    }
+  },
+  "team": [
+    {
+      "id": "karel",
+      "name": "Karel",
+      "role": "datový specialista"
+    },
+    {
+      "id": "jana",
+      "name": "Jana",
+      "role": "vývojářka aplikace"
+    },
+    {
+      "id": "ondrej",
+      "name": "Ondřej",
+      "role": "backend a integrace"
+    },
+    {
+      "id": "lucie",
+      "name": "Lucie",
+      "role": "testerka, zná likvidaci"
+    },
+    {
+      "id": "petr",
+      "name": "Petr",
+      "role": "technik poboček"
+    }
+  ],
+  "takeover": {
+    "situation": "Projekt ti předali v tomhle stavu. Máš týden na to zjistit, co se v něm děje – pak musíš jednat.",
+    "symptoms": [
+      "Každá funkce aplikace má v Ganttu pevné datum. Sprint review se koná, ale nic se podle něj nemění – „plán je plán“.",
+      "Likvidátoři chtěli v březnu přesunout jedno pole ve formuláři. Měsíční komise to zařadila na program až v květnu.",
+      "Pořadí práce určuje ten, kdo zrovna nejvíc tlačí – v pondělí obchod, ve středu ředitel, v pátek IT.",
+      "Status report pro představenstvo je tři měsíce zelený. Termínu migrace přitom v týmu nikdo nevěří.",
+      "Tým pracuje do večera i o víkendech. Dva lidé už byli na neschopence z vyčerpání.",
+      "Migraci dat rozumí jen Karel. Když byl týden nemocný, migrace stála."
+    ],
+    "diagLesson": "Záchrana projektu začíná diagnózou: od příznaků (důsledků) se jde zpět k mechanismům a k formě řízení, která je způsobuje. Kdo léčí jen příznaky – víc přesčasů, víc reportů –, problém prohloubí.",
+    "lesson": "Při záchraně nepomůže přidat „víc řízení“. Je třeba zrušit praktiky, které škodí (detailní Gantt pro agilní práci, jedna komise na všechno, přesčasy), a zavést, co chybí: vlastníka backlogu, transparentní reporting, sdílení znalostí a plán jen pro to, co se plánovat dá."
+  },
+  "backlog": [
+    {
+      "id": "hlaseni",
+      "name": "Oprava formuláře hlášení škody"
+    },
+    {
+      "id": "migrace_test",
+      "name": "Zkušební migrace dat"
+    },
+    {
+      "id": "migrace",
+      "name": "Ostrá migrace dat"
+    },
+    {
+      "id": "schvalovani",
+      "name": "Schvalování plnění"
+    },
+    {
+      "id": "pobocky",
+      "name": "Technika na zbylých pobočkách"
+    },
+    {
+      "id": "monitoring",
+      "name": "Monitoring a alerty"
+    },
+    {
+      "id": "predani",
+      "name": "Předání do provozu: dokumentace a školení"
+    },
+    {
+      "id": "fotky",
+      "name": "Nahrávání fotek z mobilu"
+    },
+    {
+      "id": "chatbot",
+      "name": "Chatbot pro klienty (přání ředitele)"
+    },
+    {
+      "id": "reporty",
+      "name": "Měsíční reporty pro obchod"
+    },
+    {
+      "id": "hotline",
+      "name": "Hotline pro pobočky"
+    },
+    {
+      "id": "skoleni_novacku",
+      "name": "Pravidelné školení nováčků na pobočkách"
+    }
+  ],
+  "milestones": [
+    {
+      "id": "m1",
+      "name": "Generálka migrace",
+      "okText": "Zkušební migrace proběhla a likvidátoři v nové aplikaci založili první škody na migrovaných datech.",
+      "lateText": "Generálka migrace se nepovedla."
+    },
+    {
+      "id": "m2",
+      "name": "Pobočky připravené",
+      "okText": "Všechny pobočky mají novou techniku.",
+      "lateText": "Část poboček na migraci připravená není."
+    },
+    {
+      "id": "m3",
+      "name": "Ostrá migrace",
+      "okText": "Ostrá migrace proběhla, starý systém je vypnutý a likvidátoři pracují v novém.",
+      "lateText": "Ostrá migrace proběhla jen napůl – chybí:"
+    }
+  ],
+  "gate": {
+    "id": "gate",
+    "title": "Představenstvo zvažuje zastavení projektu",
+    "text": "Představenstvo chce vědět, jestli má smysl do projektu dál investovat. Co mu předložíš?",
+    "lesson": "Při záchraně projektu je pravdivý obraz stavu první krok k obnově důvěry. Další „zelený“ report důvěru zničí definitivně.",
+    "choices": [
+      {
+        "text": "Skutečný stav, co jsi změnil(a), a realistický plán migrace",
+        "feedback": "Představenstvo bylo zaskočené, ale ocenilo upřímnost. Projekt dostal šanci."
+      },
+      {
+        "text": "Zelený report jako dřív – teď už to přece zvládneme",
+        "feedback": "Člen představenstva se zeptal na jedno číslo a report se rozsypal."
+      },
+      {
+        "text": "Požádat o odklad migrace o dva měsíce",
+        "feedback": "Odklad prošel. Prodloužení starého systému ale něco stojí."
+      }
+    ]
+  },
+  "eventSlots": [
+    [
+      {
+        "id": "karel",
+        "title": "Karel je na hraně",
+        "text": "Karel, jediný, kdo rozumí migraci dat, ti po poradě řekne, že tohle tempo dlouho nevydrží.",
+        "lesson": "Když na jednom vyčerpaném člověku stojí kritická část projektu, je třeba ho odlehčit a jeho znalost rozšířit – ne ho motivovat k dalším přesčasům.",
+        "choices": [
+          {
+            "text": "Uvolnit Karla od všeho kromě migrace a přidat k němu Lucii, ať se to naučí",
+            "feedback": "Karel si oddechl. Lucie se ptá na všechno a zapisuje si to."
+          },
+          {
+            "text": "Slíbit mu odměnu, když to dotáhne – přesčasy jsou teď nutné",
+            "feedback": "Karel kývl. Moc nadšeně se netvářil."
+          },
+          {
+            "text": "Najmout externího datového specialistu",
+            "team": {
+              "join": [
+                {
+                  "id": "viktor",
+                  "name": "Viktor",
+                  "role": "externí datový specialista"
+                }
+              ]
+            },
+            "feedback": "Viktor je drahý, ale migraci rozumí."
+          }
+        ]
+      },
+      {
+        "id": "chatbot",
+        "title": "Ředitel chce chatbota",
+        "text": "Generální ředitel viděl chatbota u konkurence a chce ho do migrace. „To je přece jen malá funkce.“",
+        "lesson": "Stakeholdeři mají různé zájmy. Úkolem PM není vyhovět nejsilnějšímu, ale vysvětlit dopady a chránit to, co projekt opravdu potřebuje.",
+        "choices": [
+          {
+            "text": "Vysvětlit, že chatbot před migraci nepatří, a nabídnout ho jako první rozvoj po ní",
+            "feedback": "Ředitel se zamračil, ale pochopil. Likvidátoři ocenili, že na ně někdo myslí."
+          },
+          {
+            "text": "Zařadit chatbota hned – ředitel platí",
+            "feedback": "Ředitel je spokojený. Zbytek projektu méně."
+          },
+          {
+            "text": "Udělat jednoduchou ukázku chatbota na demo",
+            "feedback": "Ukázka ředitele potěšila a stála dva dny práce."
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "id": "ztracena_data",
+        "title": "Zkušební migrace ztratila data",
+        "text": "Při zkušební migraci zmizela 3 % pojistných událostí. Do ostré migrace zbývají dva sprinty.",
+        "lesson": "Chyba v migraci dat se hledá v příčině (mapování), ne v ručním dopočítání. Jinak se vrátí v ostrém provozu.",
+        "choices": [
+          {
+            "text": "Zastavit, najít příčinu v mapování dat a zkoušku zopakovat",
+            "feedback": "Chyba byla v převodu dat z roku 2009. Druhá zkouška prošla."
+          },
+          {
+            "text": "Chybějící 3 % dopočítat ručně a jet dál",
+            "feedback": "Čísla sedí. Proč chyběla, nikdo neví."
+          },
+          {
+            "text": "Odložit ostrou migraci o sprint",
+            "feedback": "Čas na opravu je. Ředitel ale zuří."
+          }
+        ]
+      },
+      {
+        "id": "bojkot",
+        "title": "Likvidátoři odmítají testovat",
+        "text": "Likvidátoři přestali chodit na testování. „Stejně nás nikdo neposlouchá.“",
+        "lesson": "Uživatelé, které nikdo neposlouchá, přestanou spolupracovat. Pomůže je vtáhnout přímo do týmu a ukázat, že jejich zpětná vazba něco mění.",
+        "choices": [
+          {
+            "text": "Pozvat dva likvidátory přímo do týmu na každé review",
+            "feedback": "Na prvním review likvidátorka sama přesunula pole ve formuláři. Další den byla oprava hotová."
+          },
+          {
+            "text": "Nařídit testování přes ředitele",
+            "feedback": "Likvidátoři chodí. Mlčí a odškrtávají testy."
+          },
+          {
+            "text": "Uspořádat jednorázový workshop",
+            "feedback": "Workshop byl příjemný. Pak se všechno vrátilo do starých kolejí."
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "id": "it_odmita",
+        "title": "IT provoz nechce systém převzít",
+        "text": "Vedoucí IT provozu oznámí, že bez monitoringu a dokumentace systém do provozu nepřevezme.",
+        "lesson": "Projekt končí předáním. Podmínky převzetí provozu patří do projektu od začátku – jinak projektový tým systém „provozuje“ ještě rok po konci.",
+        "choices": [
+          {
+            "text": "Dohodnout s IT podmínky převzetí a zařadit je do plánu",
+            "feedback": "IT poprvé cítí, že je partner, ne překážka."
+          },
+          {
+            "text": "Eskalovat na ředitele, ať jim to nařídí",
+            "feedback": "Ředitel to nařídil. IT si to zapamatovalo."
+          },
+          {
+            "text": "Slíbit, že projektový tým bude systém půl roku podporovat sám",
+            "feedback": "IT souhlasí. Tým ví, co to znamená pro jeho léto."
+          }
+        ]
+      },
+      {
+        "id": "dodavatel",
+        "title": "Dodavatel starého systému",
+        "text": "Dodavatel starého systému připomíná, že smlouva končí za tři týdny. Prodloužení si nechá dobře zaplatit.",
+        "lesson": "Pojistka proti selhání migrace (možnost vrátit se ke starému systému) je klasické řízení rizik. Odmítnout ji kvůli úspoře je sázka.",
+        "choices": [
+          {
+            "text": "Podle registru rizik vyjednat měsíční prodloužení jako pojistku",
+            "feedback": "Pojistka je drahá, ale levnější než výpadek likvidace."
+          },
+          {
+            "text": "Zaplatit prodloužení o tři měsíce",
+            "feedback": "Prodlouženo. Rozpočet to cítí."
+          },
+          {
+            "text": "Odmítnout – migrace to stihne",
+            "feedback": "Ředitel ocenil úsporu."
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "id": "vikend",
+        "title": "Poslední týden před migrací",
+        "text": "Do ostré migrace zbývá týden. Ředitel navrhuje, aby celý tým přes víkend „pro jistotu“ pracoval.",
+        "lesson": "Před kritickým zásahem je potřeba odpočatý tým a ověřený postup (generálka, checklist), ne vyčerpaní lidé, kteří dělají chyby.",
+        "choices": [
+          {
+            "text": "Generálka v pátek, víkend volno, v pondělí ostrá migrace podle checklistu",
+            "feedback": "Tým přišel v pondělí odpočatý. Checklist odhalil dva zapomenuté kroky."
+          },
+          {
+            "text": "Celý tým přes víkend, ať máme rezervu",
+            "feedback": "V pondělí ráno nikdo nevěděl, která verze skriptu je ta správná."
+          },
+          {
+            "text": "Půlka týmu v pohotovosti, půlka odpočívá",
+            "feedback": "Kompromis. Pohotovost byla potřeba dvakrát."
+          }
+        ]
+      },
+      {
+        "id": "novinar",
+        "title": "Volá novinář",
+        "text": "Novinář slyšel, že projekt pojišťovny je v problémech, a chce vyjádření.",
+        "lesson": "Krizová komunikace stojí na pravdivé a krátké informaci přes správný kanál. Zapírání se vrací.",
+        "choices": [
+          {
+            "text": "Odkázat na tiskové oddělení s pravdivou krátkou informací",
+            "feedback": "Článek vyšel věcný a krátký."
+          },
+          {
+            "text": "Říct, že je všechno v pořádku",
+            "feedback": "Novinář měl interní e-mail, který tvrdil opak."
+          },
+          {
+            "text": "Nekomentovat",
+            "feedback": "Článek vyšel s titulkem „Pojišťovna mlčí“."
+          }
+        ]
+      }
+    ]
+  ],
+  "followups": {
+    "karel_odchazi": {
+      "id": "karel_odchazi",
+      "title": "Karel podal výpověď",
+      "text": "Karel nastoupí ke konkurenci. Výpovědní lhůtu chce strávit hlavně dovolenou.",
+      "lesson": "Motivovat vyčerpaného člověka penězi k dalším přesčasům nefunguje. Ostrov znalostí se projeví ve chvíli, kdy je nejméně času.",
+      "unresolvedText": "Karel po migraci odešel a nikdo neví, proč některá data vypadají divně.",
+      "choices": [
+        {
+          "text": "Karel do odchodu sepíše postup migrace a Lucie ji převezme",
+          "team": {
+            "reason": "po předání odchází ke konkurenci"
+          },
+          "feedback": "Dokumentace je stručná, ale Lucie migraci rozumí."
+        },
+        {
+          "text": "Přemlouvat ho, ať zůstane do migrace",
+          "feedback": "Karel zůstal. Pracuje, ale myšlenkami je jinde."
+        },
+        {
+          "text": "Najmout externistu a Karla nechat jít",
+          "team": {
+            "reason": "odchází ke konkurenci",
+            "join": [
+              {
+                "id": "viktor",
+                "name": "Viktor",
+                "role": "externí datový specialista"
+              }
+            ]
+          },
+          "feedback": "Viktor se zaučuje z kódu. Pomalu."
+        }
+      ]
+    },
+    "chybejici_data": {
+      "id": "chybejici_data",
+      "title": "Klienti hledají své pojistné události",
+      "text": "Klientům zmizely rozpracované pojistné události. Call centrum je zahlcené.",
+      "lesson": "Ruční dopočítání zakrylo chybu, ale neodstranilo ji. Problém zametený pod koberec se vrací větší.",
+      "unresolvedText": "Rok po migraci se pořád objevují ztracené pojistné události.",
+      "choices": [
+        {
+          "text": "Dohledat příčinu, opravit mapování a dotčená data migrovat znovu",
+          "feedback": "Příčina nalezena. Bolelo to, ale je to za námi."
+        },
+        {
+          "text": "Vyřizovat stížnosti jednotlivě",
+          "feedback": "Stížnosti přibývají rychleji, než se vyřizují."
+        },
+        {
+          "text": "Zřídit tým na ruční dohledání",
+          "feedback": "Dohledáno. Příčina zůstala."
+        }
+      ]
+    },
+    "vypnuti": {
+      "id": "vypnuti",
+      "title": "Dodavatel vypíná starý systém",
+      "text": "Smlouva skončila a dodavatel starý systém vypnul. Ostrá migrace ještě není ověřená.",
+      "lesson": "Bez pojistky je každé zpoždění migrace krize. Řízení rizik znamená připravit si cestu zpět dřív, než je potřeba.",
+      "unresolvedText": "Dodavatel starého systému si za vynucené prodloužení řekl dvojnásobek.",
+      "choices": [
+        {
+          "text": "Zaplatit expresní prodloužení",
+          "feedback": "Systém zase běží. Za cenu, která bolí."
+        },
+        {
+          "text": "Migrovat okamžitě bez generálky",
+          "feedback": "Migrace proběhla. Co všechno se při ní pokazilo, se ukáže."
+        },
+        {
+          "text": "Dva týdny pracovat bez systému na papíře",
+          "feedback": "Likvidátoři vytáhli šanony ze sklepa."
+        }
+      ]
+    }
+  }
+}

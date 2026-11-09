@@ -1,0 +1,581 @@
+{
+  "id": "promena",
+  "stars": {
+    "ko": [
+      {
+        "text": "Řešení dosáhne cíle Zájem trhu"
+      }
+    ],
+    "top": [
+      {
+        "text": "Rok poté aspoň 50 %"
+      },
+      {
+        "text": "Pilot v kraji proběhl"
+      }
+    ]
+  },
+  "name": "Projekt, který mění tvář",
+  "tagline": "Obědy pro jednu školu, pak pro celý kraj, nakonec pro trh",
+  "scope": "Systém pro objednávání školních obědů: objednávky a odhlášky, platby, export pro účetní a jídelníček. Co bude dál, zatím nikdo neví.",
+  "intro": "Malá softwarová firma vyhrála zakázku: systém pro objednávání obědů pro jedno gymnázium. Zadávací dokumentace je podrobná, cena pevná, termín 1. září. Vedeš projekt. Jen ještě nevíš, že tenhle projekt nezůstane tím, čím začal.",
+  "approachText": "Zadání je jasné a stabilní, cena i termín pevné a zákazník přesně ví, co chce. To je prediktivní projekt. Zatím.",
+  "terms": {
+    "launch": "1. září",
+    "contract": "podle smlouvy s gymnáziem",
+    "predShort": "napojení na krajské účetnictví",
+    "agileShort": "pravidla jídelen a pilot",
+    "users": "strávníci",
+    "usersGen": "strávníků",
+    "sponsor": "ředitelka gymnázia",
+    "committee": "vedení firmy",
+    "product": "Systém obědů"
+  },
+  "stakeholders": [
+    {
+      "id": "skola",
+      "name": "Ředitelka gymnázia",
+      "wants": "co je ve smlouvě, v termínu a bez komplikací",
+      "quit": "odstoupila od smlouvy.",
+      "epilogBad": "po roce přešla k jinému dodavateli – „pro jednu školu je to teď zbytečně složité“."
+    },
+    {
+      "id": "rodice",
+      "name": "Rodiče a žáci",
+      "wants": "jednoduché objednávání z mobilu",
+      "quit": "se vrátili k papírovým lístkům a projekt ztratil smysl.",
+      "epilogBad": "aplikaci používají jen z donucení."
+    },
+    {
+      "id": "kraj",
+      "name": "Krajský úřad",
+      "wants": "jeden systém pro 40 škol a napojení na krajské účetnictví",
+      "quit": "vypsal na systém nový tendr.",
+      "epilogBad": "po roce zvažuje, jestli systém nenahradit."
+    }
+  ],
+  "areas": {
+    "web": {
+      "label": "Web a aplikace"
+    },
+    "platby": {
+      "label": "Platby"
+    },
+    "integrace": {
+      "label": "Integrace"
+    },
+    "analyza": {
+      "label": "Analýza a pravidla"
+    },
+    "ux": {
+      "label": "Výzkum uživatelů"
+    }
+  },
+  "team": [
+    {
+      "id": "ivana",
+      "name": "Ivana",
+      "role": "backend a platby"
+    },
+    {
+      "id": "marek",
+      "name": "Marek"
+    },
+    {
+      "id": "olga",
+      "name": "Olga",
+      "role": "analytička, zná smlouvu i jídelnu"
+    },
+    {
+      "id": "filip",
+      "name": "Filip"
+    }
+  ],
+  "workstreams": [
+    {
+      "id": "objednavky",
+      "name": "Objednávky a odhlášky podle zadání",
+      "why": "Školní řád a smlouva přesně popisují, jak se obědy objednávají a odhlašují."
+    },
+    {
+      "id": "platby",
+      "name": "Platby převodem a párování",
+      "why": "Pravidla plateb jsou daná a změna by byla drahá."
+    },
+    {
+      "id": "export",
+      "name": "Export pro účetní školy",
+      "why": "Formát exportu určuje účetní software školy."
+    },
+    {
+      "id": "jidelnicek",
+      "name": "Jídelníček s alergeny",
+      "why": "Rozsah daný vyhláškou o alergenech je ve smlouvě přesně popsaný."
+    },
+    {
+      "id": "skoleni",
+      "name": "Školení jídelny před spuštěním",
+      "why": "Jednorázová součást předání – patří do projektu a plánuje se k termínu spuštění."
+    },
+    {
+      "id": "vkladani",
+      "name": "Denní vkládání jídelníčku",
+      "why": "Každý den to dělá vedoucí jídelny. To je provoz – projekt jí jen dá nástroj."
+    },
+    {
+      "id": "ucty",
+      "name": "Zakládání účtů nových žáků každé září",
+      "why": "Opakuje se každý rok. Po spuštění to dělá škola, ne projektový tým."
+    }
+  ],
+  "backlog": [
+    {
+      "id": "objednavky",
+      "name": "Objednávání a odhlašování obědů"
+    },
+    {
+      "id": "platby",
+      "name": "Platby převodem a párování"
+    },
+    {
+      "id": "export",
+      "name": "Export pro účetní školy"
+    },
+    {
+      "id": "jidelnicek",
+      "name": "Jídelníček s alergeny"
+    },
+    {
+      "id": "predani",
+      "name": "Návod a školení pro jídelnu"
+    },
+    {
+      "id": "ucty",
+      "name": "Ruční zakládání účtů žáků (každé září)"
+    },
+    {
+      "id": "vkladani",
+      "name": "Vkládání denního jídelníčku"
+    }
+  ],
+  "milestones": [
+    {
+      "id": "m1",
+      "name": "Spuštění na gymnáziu",
+      "okText": "Systém běží na gymnáziu od 1. září.",
+      "lateText": "Spuštění se zpozdilo – první týden se obědy objednávaly na papír."
+    },
+    {
+      "id": "m2",
+      "name": "Pilot v kraji",
+      "okText": "Pilot běží na třech školách kraje a data tečou do krajského účetnictví.",
+      "lateText": "Pilot v kraji se nerozběhl."
+    },
+    {
+      "id": "m3",
+      "name": "Zájem trhu",
+      "okText": "Soukromé školy a školky se hlásí samy.",
+      "lateText": "Zájem trhu je vlažný."
+    }
+  ],
+  "shifts": [
+    {
+      "title": "Kraj chce systém pro všechny školy",
+      "text": "Krajský úřad viděl systém na gymnáziu a chce ho pro všech 40 škol kraje – každá má trochu jinou jídelnu, dotace a ceny. Napojení na krajské účetnictví musí projít schválením, pravidla jednotlivých jídelen se teprve budou zjišťovat.",
+      "addItems": [
+        {
+          "id": "vice_skol",
+          "name": "Správa více škol a jídelen"
+        },
+        {
+          "id": "ucetnictvi",
+          "name": "Napojení na krajské účetnictví"
+        },
+        {
+          "id": "pravidla",
+          "name": "Různá pravidla jídelen (dotace, ceny)"
+        },
+        {
+          "id": "pilot",
+          "name": "Pilot na třech školách"
+        }
+      ],
+      "lesson": "Když do jasně zadaného projektu přibude část s nejistými požadavky (pravidla 40 jídelen), nestačí dál plánovat vodopádem. Napojení na účetnictví kraje se dál řídí plánem, pravidla jídelen iterativně – a obě části se propojí synchronizací a integračními milníky."
+    },
+    {
+      "title": "Z projektu se stává produkt",
+      "text": "Aplikaci si oblíbili rodiče. Firma ji chce nabídnout soukromým školám a školkám po celé republice – jako produkt na trhu. Nikdo neví, o které funkce bude zájem. Smlouva s pevným rozsahem končí, začíná hledání hodnoty.",
+      "team": {
+        "join": [
+          {
+            "id": "dana",
+            "name": "Dana",
+            "role": "výzkum uživatelů"
+          }
+        ]
+      },
+      "addItems": [
+        {
+          "id": "mobil",
+          "name": "Mobilní aplikace pro rodiče"
+        },
+        {
+          "id": "notifikace",
+          "name": "Upozornění na neodhlášený oběd"
+        },
+        {
+          "id": "hodnoceni",
+          "name": "Hodnocení obědů žáky"
+        },
+        {
+          "id": "predplatne",
+          "name": "Online předplatné pro soukromé školy"
+        },
+        {
+          "id": "skolky",
+          "name": "Verze pro mateřské školy"
+        }
+      ],
+      "lesson": "Na trhu s nejistou poptávkou už nerozhoduje smlouva ani plán, ale ověřená hodnota. Je potřeba Product Owner, který určuje pořadí, a experimenty, které ověří zájem dřív, než se funkce postaví. Detailní plán nebo EVM teď spíš brzdí."
+    }
+  ],
+  "gate": {
+    "id": "gate",
+    "title": "Krajská rada rozhoduje o rozšíření",
+    "text": "Krajská rada rozhoduje, jestli systém rozšíří na všechny školy. Co jí předložíš?",
+    "lesson": "V hybridním projektu se slibuje jinak: pevně to, co se dá naplánovat (napojení na účetnictví), a otevřeně to, co se teprve zjišťuje (pravidla jídelen).",
+    "choices": [
+      {
+        "text": "Data z pilotu, plán napojení na účetnictví a otevřeně, co se o pravidlech jídelen teprve zjišťuje",
+        "feedback": "Rada ocenila, že jí nikdo neslibuje nemožné. Rozšíření schváleno."
+      },
+      {
+        "text": "Slíbit pevný termín a cenu pro všech 40 škol",
+        "feedback": "Rada je nadšená. Zatím."
+      },
+      {
+        "text": "Požádat o další analýzu před rozhodnutím",
+        "feedback": "Rada odložila rozhodnutí o měsíc."
+      }
+    ]
+  },
+  "eventSlots": [
+    [
+      {
+        "id": "zmena",
+        "title": "Ředitelka chce „drobnou“ změnu",
+        "text": "Ředitelka gymnázia by ráda přidala dietní jídelníčky. Ve smlouvě nejsou.",
+        "lesson": "V prediktivním projektu s pevnou cenou je změna rozsahu změnou smlouvy: posoudit dopad, ocenit a domluvit termín. Práce zadarmo ohrozí to, co ve smlouvě je.",
+        "choices": [
+          {
+            "text": "Posoudit dopad a nabídnout to jako změnu smlouvy s cenou a termínem",
+            "feedback": "Ředitelka si změnu objednala na druhé pololetí."
+          },
+          {
+            "text": "Udělat to zadarmo, ať je spokojená",
+            "feedback": "Ředitelka je nadšená. Termín méně."
+          },
+          {
+            "text": "Odmítnout – není to ve smlouvě",
+            "feedback": "Formálně správně. Vztah utrpěl."
+          }
+        ]
+      },
+      {
+        "id": "banka",
+        "title": "Banka změnila formát výpisů",
+        "text": "Banka školy oznámila nový formát elektronických výpisů. Párování plateb přestane fungovat.",
+        "lesson": "Změny u dodavatelů a partnerů jsou typické riziko prediktivního projektu. Připravená reakce je levnější než improvizace.",
+        "choices": [
+          {
+            "text": "Podle registru rizik použít připravený převodník formátů",
+            "feedback": "Převodník byl připravený. Za dva dny hotovo."
+          },
+          {
+            "text": "Přeplánovat a přidat práci na párování",
+            "feedback": "Plán se posunul o pár dní."
+          },
+          {
+            "text": "Platby zatím párovat ručně",
+            "feedback": "Olga páruje platby každé ráno."
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "id": "olga",
+        "title": "Olga onemocněla",
+        "text": "Analytička Olga, jediná, kdo zná smlouvu i provoz jídelny do detailu, je na dva týdny nemocná.",
+        "lesson": "I v malém týmu je znalost v jedné hlavě riziko. Krátký zápis klíčových pravidel a předání kolegovi stojí málo a chrání projekt.",
+        "choices": [
+          {
+            "text": "Olga z domova krátce sepíše klíčová pravidla a Marek je převezme",
+            "feedback": "Marek teď ví, proč se oběd odhlašuje do osmi."
+          },
+          {
+            "text": "Počkat, až se vrátí",
+            "feedback": "Dva týdny se čekalo na odpovědi."
+          },
+          {
+            "text": "Ptát se ředitelky na každou nejasnost",
+            "feedback": "Ředitelka odpovídá. Čím dál stručněji."
+          }
+        ]
+      },
+      {
+        "id": "kuchyne",
+        "title": "Test s jídelnou",
+        "text": "Kuchařky si systém vyzkoušely. Splňuje smlouvu, ale obrazovka pro výdej je pro ně nepřehledná.",
+        "lesson": "Splnit smlouvu nestačí, když výsledek nebude použitelný. Připomínky se dají zpracovat řízeně jako změna v rámci projektu.",
+        "choices": [
+          {
+            "text": "Upravit výdejní obrazovku a zapsat to jako schválenou změnu",
+            "feedback": "Kuchařky si výdej pochvalují."
+          },
+          {
+            "text": "Smlouva je splněná, připomínky nebrat",
+            "feedback": "Při výdeji se tvoří fronty."
+          },
+          {
+            "text": "Udělat podrobný návod",
+            "feedback": "Návod visí v kuchyni. Nikdo ho nečte."
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "id": "pravidla_jidelen",
+        "title": "Každá jídelna je jiná",
+        "text": "První tři školy kraje mají každá jiná pravidla dotací, cen a odhlašování. Dalších 37 nikdo neviděl.",
+        "lesson": "Nejisté požadavky se zjišťují iterativně s reálnými uživateli. Úplná analýza předem by zastarala dřív, než by vznikla.",
+        "choices": [
+          {
+            "text": "Zjišťovat pravidla postupně se třemi pilotními jídelnami a doplňovat backlog",
+            "feedback": "Po třech týdnech je jasné, že 80 % jídelen má jen čtyři varianty pravidel."
+          },
+          {
+            "text": "Sepsat kompletní analýzu všech 40 jídelen před vývojem",
+            "feedback": "Analýza má 200 stran. Polovina už neplatí."
+          },
+          {
+            "text": "Jedno pravidlo pro všechny, ať si zvyknou",
+            "feedback": "Jednoduché. Rodiče na malých školách platí víc."
+          }
+        ]
+      },
+      {
+        "id": "dva_svety",
+        "title": "Účetnictví a pilot se míjejí",
+        "text": "Napojení na účetnictví kraje se staví podle schválené specifikace, pilot ve školách mění pravidla každý týden. Data do sebe přestávají pasovat.",
+        "lesson": "V hybridním projektu se prediktivně a agilně řízené části musí pravidelně potkávat. Bez synchronizace se rozjedou.",
+        "choices": [
+          {
+            "text": "Týdenní synchronizace a společný integrační milník",
+            "feedback": "Každé pondělí půl hodiny. Rozdíly se chytají v zárodku."
+          },
+          {
+            "text": "Projektový manažer obě části koordinuje sám",
+            "feedback": "Funguje to, dokud máš čas všechno hlídat."
+          },
+          {
+            "text": "Nechat části běžet nezávisle a propojit je na konci",
+            "feedback": "Obě části jedou rychle. Každá jinam."
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "id": "zarlivost",
+        "title": "Gymnázium se cítí odstrčené",
+        "text": "Ředitelka gymnázia si stěžuje, že od příchodu kraje na její školu nikdo nemá čas.",
+        "lesson": "Když přibude silnější stakeholder, původní zákazník nesmí vypadnout ze hry. Dejte mu novou roli.",
+        "choices": [
+          {
+            "text": "Udělat z gymnázia referenční školu s pravidelným review",
+            "feedback": "Ředitelka teď sama ukazuje systém ostatním školám."
+          },
+          {
+            "text": "Kraj platí víc, gymnázium musí počkat",
+            "feedback": "Ředitelka si to zapamatovala."
+          },
+          {
+            "text": "Slíbit gymnáziu přednost u oprav",
+            "feedback": "Marek opravuje chyby gymnázia i v sobotu."
+          }
+        ]
+      },
+      {
+        "id": "filip",
+        "title": "Filip táhne integraci sám",
+        "text": "Napojení na účetnictví kraje umí jen Filip. Je unavený a chyby přibývají.",
+        "lesson": "Na kritické části projektu by neměl stát jediný člověk. Střídání a sdílení znalostí je pojistka.",
+        "choices": [
+          {
+            "text": "Ivana se s Filipem na integraci střídá a naučí se ji",
+            "feedback": "Ivana už zvládne nasadit novou verzi sama."
+          },
+          {
+            "text": "Filip to dotáhne přesčasem",
+            "feedback": "Filip to dotáhne. Za jakou cenu, uvidíme."
+          },
+          {
+            "text": "Posunout termín integrace",
+            "feedback": "Filip si oddychl. Kraj méně."
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "id": "napady",
+        "title": "Deset nápadů, jeden tým",
+        "text": "Od chvíle, kdy je aplikace produkt, chodí nápady ze všech stran: obchod, rodiče, školky, vedení firmy.",
+        "lesson": "V agilním produktu o pořadí rozhoduje Product Owner podle ověřené hodnoty – ne ten, kdo je nejhlasitější.",
+        "choices": [
+          {
+            "text": "Product Owner seřadí nápady podle ověřených dat",
+            "feedback": "Polovina nápadů skončila v koši. Druhá polovina dává smysl."
+          },
+          {
+            "text": "Hlasování v týmu",
+            "feedback": "Vyhrály technicky zajímavé věci."
+          },
+          {
+            "text": "Postavit všechno, co slíbil obchod",
+            "feedback": "Obchod je spokojený. Rodiče nevědí, kde co v aplikaci najdou."
+          }
+        ]
+      },
+      {
+        "id": "roadmapa",
+        "title": "Obchod chce pevný plán funkcí",
+        "text": "Obchodník chce zákazníkům slíbit, které funkce budou kdy hotové – na rok dopředu.",
+        "lesson": "Agilní produkt komunikuje roadmapu cílů (co chceme zlepšit), ne seznam funkcí s pevnými termíny.",
+        "choices": [
+          {
+            "text": "Roadmapa s cíli na čtvrtletí místo termínů funkcí",
+            "feedback": "Zákazníci rozumí cílům víc než seznamu funkcí."
+          },
+          {
+            "text": "Detailní plán funkcí na rok dopředu",
+            "feedback": "Plán vydržel tři týdny."
+          },
+          {
+            "text": "Neslibovat zákazníkům nic",
+            "feedback": "Zákazníci nevědí, co čekat."
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "id": "vykon",
+        "title": "Ráno v 7:30 server nestíhá",
+        "text": "Ráno, když všichni odhlašují obědy, aplikace padá. Zákazníků přibývá každý týden.",
+        "lesson": "Technický dluh a výkon jsou součást hodnoty. Zastavit na sprint nové funkce a opravit základ je investice.",
+        "choices": [
+          {
+            "text": "Zastavit na sprint nové funkce a opravit výkon",
+            "feedback": "Aplikace běží i v 7:30."
+          },
+          {
+            "text": "Přidávat funkce, výkon počká",
+            "feedback": "Rodiče píšou do recenzí, že aplikace ráno nejde."
+          },
+          {
+            "text": "Koupit větší server",
+            "feedback": "Pomohlo. Na pár měsíců."
+          }
+        ]
+      },
+      {
+        "id": "konkurence",
+        "title": "Konkurence kopíruje",
+        "text": "Konkurenční firma vydala podobnou aplikaci za poloviční cenu.",
+        "lesson": "Na konkurenci se nereaguje kopírováním, ale lepším pochopením vlastních uživatelů.",
+        "choices": [
+          {
+            "text": "Rozhovory s uživateli: v čem jsme pro ně lepší?",
+            "feedback": "Rodiče oceňují upozornění na neodhlášený oběd. To konkurence nemá."
+          },
+          {
+            "text": "Snížit cenu",
+            "feedback": "Cenová válka začala."
+          },
+          {
+            "text": "Okopírovat všechny funkce konkurence",
+            "feedback": "Teď máme dvě stejné aplikace."
+          }
+        ]
+      }
+    ]
+  ],
+  "followups": {
+    "parovani": {
+      "id": "parovani",
+      "title": "Ruční párování nestíhá",
+      "text": "Plateb přibývá a Olga je každé ráno páruje ručně. Začíná se plést.",
+      "lesson": "Provizorium, které se dělá „zatím“, se rychle stane trvalou zátěží – a obvykle ji nese jeden člověk.",
+      "unresolvedText": "Ruční párování plateb zůstalo – a s ním chyby ve vyúčtování.",
+      "choices": [
+        {
+          "text": "Dodělat automatické párování",
+          "feedback": "Olga má rána zase volná."
+        },
+        {
+          "text": "Olga bude párovat i dál",
+          "feedback": "Olga páruje. Čím dál méně přesně."
+        },
+        {
+          "text": "Najmout brigádníka",
+          "feedback": "Brigádník páruje. Do konce semestru."
+        }
+      ]
+    },
+    "slib_kraji": {
+      "id": "slib_kraji",
+      "title": "Slíbená cena nevychází",
+      "text": "Ukazuje se, že pravidla jídelen jsou složitější, než se čekalo. Slíbená cena a termín pro 40 škol nevycházejí.",
+      "lesson": "Pevný slib na nejistou práci je sázka. Když nevychází, otevřené jednání o rozsahu je lepší než dodržet slib za každou cenu.",
+      "unresolvedText": "Slib kraji se splácel ještě rok po projektu.",
+      "choices": [
+        {
+          "text": "Otevřeně to přiznat a dohodnout rozšíření po etapách",
+          "feedback": "Kraj nebyl nadšený, ale etapy přijal."
+        },
+        {
+          "text": "Dodržet slib za každou cenu",
+          "feedback": "Slib platí. Tým a rozpočet to odnesou."
+        },
+        {
+          "text": "Potichu vynechat část funkcí",
+          "feedback": "Kraj si toho všiml při přejímce."
+        }
+      ]
+    },
+    "nesedi": {
+      "id": "nesedi",
+      "title": "Pilot a účetnictví do sebe nezapadají",
+      "text": "Pilot ve školách a napojení na účetnictví kraje se konečně potkaly. Data nesedí.",
+      "lesson": "Prediktivně a agilně řízené části, které se potkají až na konci, do sebe skoro nikdy nezapadnou. Integrační milník patří doprostřed projektu, ne na konec.",
+      "unresolvedText": "Data mezi školami a krajským účetnictvím se dodnes ručně opravují.",
+      "choices": [
+        {
+          "text": "Společný integrační test a oprava rozhraní",
+          "feedback": "Dva týdny práce. Teď to sedí."
+        },
+        {
+          "text": "Data do účetnictví převádět ručně",
+          "feedback": "Olga má novou práci na každý měsíc."
+        },
+        {
+          "text": "Odložit pilot",
+          "feedback": "Pilot počká. Kraj taky – nerad."
+        }
+      ]
+    }
+  }
+}

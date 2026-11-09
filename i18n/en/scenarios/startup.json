@@ -1,0 +1,345 @@
+{
+  "id": "startup",
+  "stars": {
+    "ko": [
+      {
+        "text": "The public launch hits its traction target"
+      }
+    ],
+    "top": [
+      {
+        "text": "All three traction targets met"
+      }
+    ]
+  },
+  "name": "Food Rescue Startup",
+  "tagline": "An app against food waste",
+  "scope": "Mobile app, partner business acquisition, marketing, user research and the business model. Nobody knows yet what exactly will work.",
+  "approachText": "High uncertainty: nobody knows what users want or which business model will work. The whole project is best managed in an agile way: short iterations, testing hypotheses and data-driven decisions. A detailed plan would rest on untested assumptions.",
+  "intro": "You're co-founding a startup that connects restaurants and shops with leftover food to people nearby. The money lasts 12 weeks – by then you must prove people actually want the app.",
+  "terms": {
+    "launch": "the app launch",
+    "agileShort": "the whole product",
+    "users": "users",
+    "usersGen": "users",
+    "sponsor": "lead investor",
+    "poGood": "co-founder in charge of the product",
+    "committee": "investors"
+  },
+  "workstreams": [
+    {
+      "id": "mvp",
+      "name": "Mobile app (MVP)",
+      "why": "Only users will show what the app should do. Small releases, fast feedback, adjustments."
+    },
+    {
+      "id": "vyzkum",
+      "name": "User research",
+      "why": "Research runs continuously and its questions change with whatever the team just learned."
+    },
+    {
+      "id": "partneri",
+      "name": "Partner business acquisition",
+      "why": "Which pitch wins businesses over can only be found by trying – a pilot with a few, then adjust."
+    },
+    {
+      "id": "marketing",
+      "name": "Marketing and growth",
+      "why": "Channels and messages are tested in short experiments, and money goes where it works."
+    },
+    {
+      "id": "model",
+      "name": "Business model and pricing",
+      "why": "Careful, even though it sounds like planning: nobody knows upfront how much people and businesses will pay. It's tested by experiments."
+    },
+    {
+      "id": "znacka",
+      "name": "Brand and design",
+      "why": "Design is tuned with users; the first version can be simple and improve over time."
+    },
+    {
+      "id": "data",
+      "name": "Metrics and analytics",
+      "why": "What to measure gets clearer as the team learns its product and market."
+    },
+    {
+      "id": "investori",
+      "name": "Investor talks",
+      "why": "The pitch is tuned to investor reactions and fresh traction data – iterative work."
+    }
+  ],
+  "backlog": [
+    {
+      "id": "nabidka",
+      "name": "Posting leftover food offers"
+    },
+    {
+      "id": "registrace",
+      "name": "User sign-up"
+    },
+    {
+      "id": "mapa",
+      "name": "Map of nearby offers"
+    },
+    {
+      "id": "rezervace",
+      "name": "Food reservation and pickup"
+    },
+    {
+      "id": "platba",
+      "name": "In-app payment"
+    },
+    {
+      "id": "hodnoceni",
+      "name": "Business ratings"
+    },
+    {
+      "id": "chat",
+      "name": "Chat with the business"
+    },
+    {
+      "id": "vernost",
+      "name": "Loyalty program"
+    },
+    {
+      "id": "uspory",
+      "name": "Rescued food and CO₂ counter"
+    },
+    {
+      "id": "ai",
+      "name": "AI meal recommendations"
+    },
+    {
+      "id": "tmavy",
+      "name": "Dark mode"
+    },
+    {
+      "id": "firmy",
+      "name": "Packages for corporate cafeterias"
+    },
+    {
+      "id": "socialni",
+      "name": "Social media login"
+    },
+    {
+      "id": "web",
+      "name": "Web version of the app"
+    },
+    {
+      "id": "oblibene",
+      "name": "Favorite businesses"
+    },
+    {
+      "id": "podniky",
+      "name": "Sales stats for businesses"
+    },
+    {
+      "id": "recepty",
+      "name": "Leftover recipes"
+    },
+    {
+      "id": "odznaky",
+      "name": "Rescuer badges and leaderboards"
+    },
+    {
+      "id": "pripominka",
+      "name": "Pickup reminder"
+    },
+    {
+      "id": "charita",
+      "name": "Donating unsold food to charity"
+    }
+  ],
+  "discoveries": [
+    {
+      "id": "notifikace",
+      "name": "Alerts for food nearby",
+      "why": "After reservations go live, users write: \"Let me know when something shows up nearby!\""
+    },
+    {
+      "id": "sdileni",
+      "name": "Sharing savings on social media",
+      "why": "Users screenshot the savings counter and share it. They want to do it right from the app."
+    }
+  ],
+  "milestones": [
+    {
+      "id": "m1",
+      "name": "First users",
+      "okText": "The first users are using the app and coming back.",
+      "lateText": "The app isn't giving users enough value yet."
+    },
+    {
+      "id": "m2",
+      "name": "Demo Day",
+      "okText": "At demo day you can show growing numbers.",
+      "lateText": "At demo day there are no numbers that would convince investors."
+    },
+    {
+      "id": "m3",
+      "name": "Public launch",
+      "okText": "The app has traction: people use it and recommend it!",
+      "lateText": "The app is out, but traction is weak."
+    }
+  ],
+  "gate": {
+    "id": "gate",
+    "title": "Demo day: more money?",
+    "text": "Investors are deciding whether the startup gets money for another 6 months. What will you show them?",
+    "lesson": "In an agile project the best basis for a decision is a working product and data on what the team learned – failures included.",
+    "choices": [
+      {
+        "text": "A live product, traction metrics and what we learned (including what didn't work)",
+        "feedback": "Investors were impressed by how fast the team learns. Funding for the next period is secured."
+      },
+      {
+        "text": "Slides with a big vision and market estimates, no data",
+        "feedback": "\"Nice vision. So how many people use it today?\" Silence."
+      },
+      {
+        "text": "Postpone the demo until everything is done",
+        "feedback": "Investors postponed their decision and the money is running thin."
+      }
+    ]
+  },
+  "events": [
+    {
+      "id": "jinak",
+      "title": "Users use it differently",
+      "text": "Data shows people open the app mostly on Friday afternoons – for bakery goods, not restaurants.",
+      "lesson": "Data on user behavior beats the original vision. Findings get validated and reflected in the backlog.",
+      "choices": [
+        {
+          "text": "Validate it with user interviews and update the backlog",
+          "addItems": [
+            {
+              "id": "pekarny",
+              "name": "Friday bakery deals"
+            }
+          ],
+          "feedback": "Interviews confirmed it. Friday bakery deals were added to the backlog."
+        },
+        {
+          "text": "Stick to the original vision: restaurants",
+          "feedback": "Users keep coming for bread – the app just doesn't support it in any way."
+        },
+        {
+          "text": "Rebuild everything around bakeries right now",
+          "addItems": [
+            {
+              "id": "pekarny",
+              "name": "Friday bakery deals"
+            }
+          ],
+          "feedback": "Maybe the right direction, but unvalidated and with a derailed sprint."
+        }
+      ]
+    },
+    {
+      "id": "konkurence",
+      "title": "Big competition",
+      "text": "A big delivery company announced a similar feature in its app.",
+      "lesson": "Against big players a startup wins by learning faster and staying focused, not by copying.",
+      "choices": [
+        {
+          "text": "Focus on what makes us different (local businesses, community) and test it",
+          "feedback": "Local businesses love that the startup knows them personally. The test confirmed interest."
+        },
+        {
+          "text": "Copy all their features",
+          "feedback": "The team is chasing a giant at its own game. No chance."
+        },
+        {
+          "text": "Ignore it",
+          "feedback": "Nothing changed – but the team doesn't know how to stand out."
+        }
+      ]
+    },
+    {
+      "id": "pivot",
+      "title": "Companies are calling",
+      "text": "Three companies reached out wanting to offer leftover cafeteria food to their employees through the app. It's a whole different segment.",
+      "lesson": "A pivot is a strategy change based on validated learning – not a panic move, nor stubborn clinging to the original vision.",
+      "choices": [
+        {
+          "text": "Test the hypothesis with a cheap experiment (landing page + 5 interviews), then decide",
+          "feedback": "The experiment showed strong interest. The value of \"Packages for corporate cafeterias\" is now validated."
+        },
+        {
+          "text": "Pivot to companies right away and ditch the rest",
+          "feedback": "Bold, but unvalidated. The team also threw away ideas in progress."
+        },
+        {
+          "text": "Refuse – that's not our vision",
+          "feedback": "The opportunity went elsewhere."
+        }
+      ]
+    },
+    {
+      "id": "runway",
+      "title": "Running out of money",
+      "text": "The money will barely last the rest of the planned period. The investor wants to see that the product makes sense.",
+      "lesson": "With limited resources, focus on the metric that shows real value and cut everything that doesn't lead to it.",
+      "choices": [
+        {
+          "text": "Focus on repeat reservations and cut the \"Could\" features",
+          "feedback": "The team only builds what drives repeat use. The money will last."
+        },
+        {
+          "text": "Spend the rest on ads to get the numbers up",
+          "feedback": "Downloads spiked, but people don't come back. And the money is gone."
+        },
+        {
+          "text": "Freeze development and save",
+          "feedback": "The money lasts longer, but the product isn't moving."
+        }
+      ]
+    },
+    {
+      "id": "vypadek",
+      "title": "Friday night outage",
+      "text": "The app crashed on Friday evening – right at peak traffic.",
+      "lesson": "An incident is a chance to improve the process. Look for the cause in the system, not for someone to blame.",
+      "choices": [
+        {
+          "text": "Fix it, then a blameless retrospective + monitoring and tests in the Definition of Done",
+          "feedback": "Cause found; monitoring now raises the alarm before users notice."
+        },
+        {
+          "text": "Find out who broke it",
+          "feedback": "The team is scared and bugs start getting swept under the rug."
+        },
+        {
+          "text": "Pay for beefier servers and leave it at that",
+          "feedback": "It helped, but the real cause remained."
+        }
+      ]
+    },
+    {
+      "id": "sms",
+      "title": "Businesses don't want another tablet",
+      "text": "Partner restaurants refuse to install the business app. \"Just text us, we'll reply.\"",
+      "lesson": "The simplest solution that works for users is often the best MVP.",
+      "choices": [
+        {
+          "text": "Build the simplest SMS version and test it with three businesses",
+          "addItems": [
+            {
+              "id": "sms",
+              "name": "Posting offers via SMS"
+            }
+          ],
+          "feedback": "The businesses love it. Two days brought more new offers than the whole past month."
+        },
+        {
+          "text": "Insist on the business app",
+          "feedback": "Two businesses ended the partnership."
+        },
+        {
+          "text": "Hire salespeople to win them over",
+          "feedback": "They won over a few businesses, but the expensive way."
+        }
+      ]
+    }
+  ]
+}

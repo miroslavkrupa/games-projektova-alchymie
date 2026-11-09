@@ -88,8 +88,8 @@ function cauldron() {
   const ratio = `${worlds.map(k => `${WORLD_ICON[k]}\u2009${pct(k)}`).join(' ')}\u00a0%`;
 
   const label = chosen.length
-    ? `Kotel: ${chosen.length} praktik, režie ${cost} z ${budget()}. Poměr: ${worlds.map(k => `${WORLD_LABEL[k].replace(/<svg.*?<\/svg>\s*/, '')} ${pct(k)} %`).join(', ')}.`
-    : 'Prázdný kotel – zatím žádná praktika.';
+    ? tr('Kotel: {n} praktik, režie {cost} z {budget}. Poměr: {ratio}.', { n: chosen.length, cost, budget: budget(), ratio: worlds.map(k => `${WORLD_LABEL[k].replace(/<svg.*?<\/svg>\s*/, '')} ${pct(k)} %`).join(', ') })
+    : tr('Prázdný kotel – zatím žádná praktika.');
   const bubbles = fill ? Math.min(4, 1 + Math.round(fill / 30)) : 0;
 
   return `
@@ -100,7 +100,7 @@ function cauldron() {
       ${KOTEL_SVG}
       ${fill ? `<div class="brew" aria-hidden="true" style="background:${brew}">${[22, 50, 74, 38].slice(0, bubbles).map((l, i) => `<i class="bubble" style="left:${l}%;animation-delay:${i * 0.6}s"></i>`).join('')}</div>` : ''}
       ${over ? `<div class="foam" aria-hidden="true" style="background:${brew}"></div>` : ''}
-      <small class="brew-ratio">${chosen.length ? (over ? `${ic('ok', 'sm')} přetéká` : ratio) : 'vhoď první praktiku'}</small>
+      <small class="brew-ratio">${chosen.length ? (over ? `${ic('ok', 'sm')} ${tr('přetéká')}` : ratio) : tr('vhoď první praktiku')}</small>
     </div>`;
 }
 
@@ -181,7 +181,7 @@ function progressChart() {
     }).join('');
     const failedHere = S.failed && k === n;
     chartTips.push(`
-      <b class="pc-tip-head">${failedHere ? `${ic('stop', 'sm')} ${p.nom} ${k} – projekt skončil` : `${p.nom} ${k}`}</b>
+      <b class="pc-tip-head">${failedHere ? `${ic('stop', 'sm')} ${tr('{nom} {k} – projekt skončil', { nom: p.nom, k })}` : `${p.nom} ${k}`}</b>
       <ul class="pc-tip-vals">${rows}</ul>
       ${decisions.length ? `<ul class="pc-tip-list">${decisions.map(l => `<li>${markIcon(l.rating)} ${l.title}</li>`).join('')}</ul>` : ''}
       ${found.length ? `<ul class="pc-tip-list">${found.map(f => `<li>${ic(f.type === 'pattern' ? 'vzorec' : 'antivzorec', 'sm')} ${f.icon} ${f.name}</li>`).join('')}</ul>` : ''}`);
@@ -190,19 +190,19 @@ function progressChart() {
 
   const table = `
     <details class="pc-table">
-      <summary>Tabulka hodnot</summary>
+      <summary>${tr('Tabulka hodnot')}</summary>
       <div class="table-scroll"><table>
-        <thead><tr><th>Ukazatel</th>${hist.map((_, i) => `<th>${i ? `${p.nom} ${i}` : 'Start'}</th>`).join('')}</tr></thead>
+        <thead><tr><th>${tr('Ukazatel')}</th>${hist.map((_, i) => `<th>${i ? `${p.nom} ${i}` : 'Start'}</th>`).join('')}</tr></thead>
         <tbody>${METRICS.map(m => `<tr><th>${m.icon} ${m.label}</th>${hist.map(h => `<td>${h[m.id]}</td>`).join('')}</tr>`).join('')}</tbody>
       </table></div>
     </details>`;
 
   return `
     <div class="card pchart">
-      <h3>${ic('graf-nahoru')} Průběh projektu</h3>
-      <p class="hint">${fogged() || isInsane() ? 'Skutečné hodnoty ukazatelů – během hry jsi je viděl(a) jen v mlze reportingu. ' : ''}Číslo na ose je konec ${p.gen}. Pod osou jsou rozhodnutí (${RATING_ICON.best} ${RATING_ICON.ok} ${RATING_ICON.bad}) a odhalené vzorce (${ic('vzorec')} ${ic('antivzorec')}) z daného období – najeď na graf pro detail.</p>
+      <h3>${ic('graf-nahoru')} ${tr('Průběh projektu')}</h3>
+      <p class="hint">${fogged() || isInsane() ? tr('Skutečné hodnoty ukazatelů – během hry jsi je viděl(a) jen v mlze reportingu.') + ' ' : ''}${tr('Číslo na ose je konec {gen}. Pod osou jsou rozhodnutí ({ratings}) a odhalené vzorce ({patterns}) z daného období – najeď na graf pro detail.', { gen: p.gen, ratings: `${RATING_ICON.best} ${RATING_ICON.ok} ${RATING_ICON.bad}`, patterns: `${ic('vzorec')} ${ic('antivzorec')}` })}</p>
       <div class="pc-legend">${METRICS.map((m, idx) => `<span class="pc-key" data-m="${m.id}"><i style="background:var(--s${idx + 1})"></i>${m.icon} ${m.label}</span>`).join('')}
-        ${failAt() ? '<span class="pc-key fail"><i></i>hranice selhání</span>' : ''}</div>
+        ${failAt() ? `<span class="pc-key fail"><i></i>${tr('hranice selhání')}</span>` : ''}</div>
       <div class="pc-frame">
         <div class="pc-plot">
           ${yLabels}

@@ -1,0 +1,292 @@
+{
+  "id": "tovarna",
+  "stars": {
+    "ko": [
+      {
+        "text": "Production starts with all Must items"
+      },
+      {
+        "text": "The line gets CE certification – without it, no production"
+      }
+    ],
+    "top": [
+      {
+        "text": "All milestones met"
+      }
+    ]
+  },
+  "name": "E-bike Production Line",
+  "tagline": "Machine installation + production software",
+  "scope": "Factory hall modifications, machine purchase and installation, certification, and software for production and maintenance.",
+  "intro": "An e-bike maker is building a new production line. In 12 weeks the first bike should roll off it.",
+  "predWorld": "Hall modifications, machine purchase and installation, CE certification. Long lead times and standards.",
+  "agileWorld": "Production management software, a maintenance app and digital work instructions. Tuned with operators right on the line.",
+  "terms": {
+    "launch": "the production start",
+    "predShort": "hall, machines, certification",
+    "agileShort": "production software",
+    "users": "operators",
+    "usersGen": "operators",
+    "sponsor": "production director",
+    "poGood": "experienced shift supervisor",
+    "committee": "company management"
+  },
+  "dependency": {
+    "lock": "Waiting for machine delivery (predictive milestone)",
+    "hint": "<b>Line machine integration</b> is waiting for a predictive milestone: machine delivery."
+  },
+  "workstreams": [
+    {
+      "id": "instalace",
+      "name": "Production line installation",
+      "why": "Assembly and commissioning of machines follow a fixed technical plan with strict sequencing."
+    },
+    {
+      "id": "hala",
+      "name": "Factory hall modifications",
+      "why": "Construction work with a permit and a clear specification. Changes are expensive."
+    },
+    {
+      "id": "ce",
+      "name": "Machine safety certification (CE)",
+      "why": "The standards and certification process are set. They must be met completely and on time."
+    },
+    {
+      "id": "nakup",
+      "name": "Machine and spare parts procurement",
+      "why": "Tender and contracts with long lead times. The specification is clear up front."
+    },
+    {
+      "id": "mes",
+      "name": "Manufacturing execution software (MES)",
+      "why": "Software can be built in parts and tuned based on experience from operations."
+    },
+    {
+      "id": "udrzba",
+      "name": "Mobile app for maintenance staff",
+      "why": "Maintenance needs are best learned in practice – iterate directly with users."
+    },
+    {
+      "id": "navody",
+      "name": "Digital work instructions",
+      "why": "Instructions improve based on feedback from operators right on the line."
+    },
+    {
+      "id": "ai",
+      "name": "Experiment: predictive maintenance from sensor data",
+      "why": "Uncertain outcome – you need to experiment and learn from the data."
+    }
+  ],
+  "backlog": [
+    {
+      "id": "login",
+      "name": "Operator badge sign-in"
+    },
+    {
+      "id": "order",
+      "name": "Production order view"
+    },
+    {
+      "id": "report",
+      "name": "Output reporting"
+    },
+    {
+      "id": "machines",
+      "name": "Line machine integration"
+    },
+    {
+      "id": "fault",
+      "name": "Fault reporting"
+    },
+    {
+      "id": "oee",
+      "name": "Line performance overview (OEE)"
+    },
+    {
+      "id": "guides",
+      "name": "Digital work instructions"
+    },
+    {
+      "id": "scrap",
+      "name": "Scrap tracking"
+    },
+    {
+      "id": "maint",
+      "name": "Maintenance schedule"
+    },
+    {
+      "id": "shift",
+      "name": "Shift report for the supervisor"
+    },
+    {
+      "id": "predict",
+      "name": "Predictive maintenance (AI)"
+    },
+    {
+      "id": "contest",
+      "name": "Shift competition (gamification)"
+    },
+    {
+      "id": "dark",
+      "name": "Dark mode"
+    },
+    {
+      "id": "voice",
+      "name": "Voice control"
+    },
+    {
+      "id": "photo",
+      "name": "Defect photo documentation"
+    },
+    {
+      "id": "erp",
+      "name": "Supplier system integration"
+    }
+  ],
+  "milestones": [
+    {
+      "id": "m1",
+      "name": "Machine delivery",
+      "okText": "The machines arrived on time. They can be connected to the software from sprint 3.",
+      "lateText": "Delivery was late. The machines can't be connected until sprint 4."
+    },
+    {
+      "id": "m2",
+      "name": "Installation and CE",
+      "okText": "The line is installed and certified.",
+      "lateText": "Installation ran late and certification slips. Management isn't thrilled."
+    },
+    {
+      "id": "m3",
+      "name": "Production start",
+      "okText": "The first bike rolls off the line and operators report output in the new system!",
+      "lateText": "Production is running, but key features are missing:"
+    }
+  ],
+  "events": [
+    {
+      "id": "clo",
+      "title": "Machines stuck in customs",
+      "text": "The machine shipment is stuck in customs. At least a two-week delay. The software team had planned the machine integration.",
+      "lesson": "Dependencies between the predictive and agile parts belong in the risk register. The agile team can work around a delay (simulator, backlog replanning).",
+      "choices": [
+        {
+          "text": "Draw on the schedule buffer; meanwhile the software is developed against a machine simulator",
+          "feedback": "The simulator (a simple “digital twin”) caught bugs before the machines arrived."
+        },
+        {
+          "text": "Pay for express customs clearance",
+          "feedback": "Fast, but expensive."
+        },
+        {
+          "text": "Pause the software team until the machines arrive",
+          "feedback": "The team waited two weeks, even though it could have worked on items with no dependency."
+        }
+      ]
+    },
+    {
+      "id": "tablety",
+      "title": "Operators don't want tablets",
+      "text": "At the sprint review, operators declare: “The paper job sheets were faster.” They don't want to use the new system.",
+      "lesson": "Managing change for people is part of the project. Involving users in iterations increases adoption.",
+      "choices": [
+        {
+          "text": "Involve the operators: testing on the line, changes based on their input and an “ambassador” on every shift",
+          "feedback": "After two iterations the system beats paper and operators recommend it to colleagues themselves."
+        },
+        {
+          "text": "Mandate it from the top",
+          "feedback": "Operators use the system, but enter data “blind” at the end of the shift."
+        },
+        {
+          "text": "Run paper and the system side by side until the end of the project",
+          "feedback": "Double record-keeping is slow and the data drift apart."
+        }
+      ]
+    },
+    {
+      "id": "kryt",
+      "title": "Machine safety audit",
+      "text": "The auditor finds that one station lacks an adequate safety guard. Without a fix, there's no CE certification.",
+      "lesson": "Safety and certification are fixed requirements of the predictive part – never sacrificed for speed.",
+      "choices": [
+        {
+          "text": "Start change control, order the guard and adjust the installation schedule",
+          "feedback": "The guard arrived and certification passed. The delay fit within the buffer."
+        },
+        {
+          "text": "Try to “talk your way” through certification",
+          "feedback": "The auditor didn't agree and company management is horrified."
+        },
+        {
+          "text": "Remove the station from the line and run without it",
+          "feedback": "The line runs, but at lower capacity."
+        }
+      ]
+    },
+    {
+      "id": "zakaznik",
+      "title": "Customer wants an earlier start",
+      "text": "A key customer wants the first bike delivery two weeks early. They're offering a higher price for it.",
+      "lesson": "Fixed deadlines are negotiated through scope: delivering the most important part first (MVP) is a strength of hybrid.",
+      "choices": [
+        {
+          "text": "Analyze the impact and offer a limited start: Must software features and partial line capacity",
+          "feedback": "The customer got the first bikes early and the company a higher price. Full operation stayed on plan."
+        },
+        {
+          "text": "Promise a full start two weeks early",
+          "feedback": "The customer is thrilled, both teams are in a panic."
+        },
+        {
+          "text": "Refuse",
+          "feedback": "The plan is protected, but the sales department is disappointed."
+        }
+      ]
+    },
+    {
+      "id": "sit",
+      "title": "Machines on the office network?",
+      "text": "IT security discovers the machines are supposed to be on the same network as the office computers. That's a security risk.",
+      "lesson": "Cybersecurity concerns both parts: infrastructure is planned up front, software safeguards go into the Definition of Done.",
+      "choices": [
+        {
+          "text": "Add network segmentation to the installation plan and security to the Definition of Done",
+          "feedback": "The network is safely separated and every new feature passes a security check."
+        },
+        {
+          "text": "Leave it – nobody's going to attack us",
+          "feedback": "A security risk now hangs over the whole production."
+        },
+        {
+          "text": "Disconnect the machines from the network entirely",
+          "feedback": "Safe, but the software now gets no data from the machines."
+        }
+      ]
+    },
+    {
+      "id": "podlaha",
+      "title": "The floor can't bear the press",
+      "text": "The structural engineer finds the hall floor can't bear the new press. The foundations need reinforcing. The risk was in the register.",
+      "lesson": "Identified risks should have a prepared response and a reserve. Well-separated project parts let the agile team keep going even when construction hits trouble.",
+      "choices": [
+        {
+          "text": "Activate the risk reserve and replan the installation; the software team carries on",
+          "feedback": "The response plan worked. Meanwhile, software development continues."
+        },
+        {
+          "text": "Install the press there anyway",
+          "feedback": "The engineer refused to sign off. You risk injuries and a fine."
+        },
+        {
+          "text": "Stop the whole project until it's resolved",
+          "feedback": "The software has nothing to do with the floor. Time wasted for nothing."
+        },
+        {
+          "text": "Negotiate emergency money with the sponsor and replan",
+          "feedback": "With no reserve ready, you have to find money and get a new plan approved. It costs time and trust."
+        }
+      ]
+    }
+  ]
+}

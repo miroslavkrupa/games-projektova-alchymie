@@ -1,0 +1,292 @@
+{
+  "id": "tovarna",
+  "stars": {
+    "ko": [
+      {
+        "text": "Výroba se spustí se všemi Must položkami"
+      },
+      {
+        "text": "Linka získá certifikaci CE – bez ní nesmí vyrábět"
+      }
+    ],
+    "top": [
+      {
+        "text": "Všechny milníky splněné"
+      }
+    ]
+  },
+  "name": "Linka na elektrokola",
+  "tagline": "Instalace strojů + software pro výrobu",
+  "scope": "Stavební úpravy haly, nákup a instalace strojů, certifikace a software pro řízení výroby a údržby.",
+  "intro": "Firma vyrábějící elektrokola staví novou výrobní linku. Za 12 týdnů z ní má sjet první kolo.",
+  "predWorld": "Stavební úpravy haly, nákup a instalace strojů, CE certifikace. Dlouhé dodací lhůty a normy.",
+  "agileWorld": "Software pro řízení výroby, aplikace pro údržbu a digitální návody. Ladí se s operátory přímo na lince.",
+  "terms": {
+    "launch": "spuštění výroby",
+    "predShort": "hala, stroje, certifikace",
+    "agileShort": "výrobní software",
+    "users": "operátoři",
+    "usersGen": "operátorů",
+    "sponsor": "výrobní ředitel",
+    "poGood": "zkušený mistr výroby",
+    "committee": "vedení firmy"
+  },
+  "dependency": {
+    "lock": "Čeká na dodání strojů (prediktivní milník)",
+    "hint": "<b>Napojení na stroje linky</b> čeká na prediktivní milník – dodání strojů."
+  },
+  "workstreams": [
+    {
+      "id": "instalace",
+      "name": "Instalace výrobní linky",
+      "why": "Montáž a uvedení strojů do provozu mají pevný technický plán a přísné návaznosti."
+    },
+    {
+      "id": "hala",
+      "name": "Stavební úpravy haly",
+      "why": "Stavební práce s povolením a jasnou specifikací. Změny jsou drahé."
+    },
+    {
+      "id": "ce",
+      "name": "Certifikace bezpečnosti strojů (CE)",
+      "why": "Normy a certifikační proces jsou dané. Musí se splnit úplně a v termínu."
+    },
+    {
+      "id": "nakup",
+      "name": "Nákup strojů a náhradních dílů",
+      "why": "Výběrové řízení a smlouvy s dlouhými dodacími lhůtami. Specifikace je jasná předem."
+    },
+    {
+      "id": "mes",
+      "name": "Software pro řízení výroby (MES)",
+      "why": "Software se dá stavět po částech a ladit podle zkušeností z provozu."
+    },
+    {
+      "id": "udrzba",
+      "name": "Mobilní aplikace pro údržbáře",
+      "why": "Potřeby údržby se nejlépe poznají z praxe – iterace přímo s uživateli."
+    },
+    {
+      "id": "navody",
+      "name": "Digitální pracovní návody",
+      "why": "Návody se zlepšují podle zpětné vazby operátorů přímo na lince."
+    },
+    {
+      "id": "ai",
+      "name": "Experiment: prediktivní údržba z dat senzorů",
+      "why": "Nejistý výsledek – je potřeba experimentovat a učit se z dat."
+    }
+  ],
+  "backlog": [
+    {
+      "id": "login",
+      "name": "Přihlášení operátora čipem"
+    },
+    {
+      "id": "order",
+      "name": "Zobrazení výrobní zakázky"
+    },
+    {
+      "id": "report",
+      "name": "Hlášení vyrobených kusů"
+    },
+    {
+      "id": "machines",
+      "name": "Napojení na stroje linky"
+    },
+    {
+      "id": "fault",
+      "name": "Hlášení poruchy"
+    },
+    {
+      "id": "oee",
+      "name": "Přehled výkonu linky (OEE)"
+    },
+    {
+      "id": "guides",
+      "name": "Digitální pracovní návody"
+    },
+    {
+      "id": "scrap",
+      "name": "Evidence zmetků"
+    },
+    {
+      "id": "maint",
+      "name": "Plán údržby"
+    },
+    {
+      "id": "shift",
+      "name": "Směnový report pro mistra"
+    },
+    {
+      "id": "predict",
+      "name": "Prediktivní údržba (AI)"
+    },
+    {
+      "id": "contest",
+      "name": "Soutěž směn (gamifikace)"
+    },
+    {
+      "id": "dark",
+      "name": "Tmavý režim"
+    },
+    {
+      "id": "voice",
+      "name": "Hlasové ovládání"
+    },
+    {
+      "id": "photo",
+      "name": "Fotodokumentace vad"
+    },
+    {
+      "id": "erp",
+      "name": "Napojení na systémy dodavatelů"
+    }
+  ],
+  "milestones": [
+    {
+      "id": "m1",
+      "name": "Dodání strojů",
+      "okText": "Stroje dorazily včas. Od sprintu 3 je lze napojit na software.",
+      "lateText": "Dodávka se zpozdila. Stroje půjde napojit až od sprintu 4."
+    },
+    {
+      "id": "m2",
+      "name": "Instalace a CE",
+      "okText": "Linka je nainstalovaná a certifikovaná.",
+      "lateText": "Instalace se zpozdila, certifikace se posouvá. Vedení není nadšené."
+    },
+    {
+      "id": "m3",
+      "name": "Spuštění výroby",
+      "okText": "Z linky sjíždí první kolo a operátoři hlásí výrobu v novém systému!",
+      "lateText": "Výroba se rozjela, ale chybí klíčové funkce:"
+    }
+  ],
+  "events": [
+    {
+      "id": "clo",
+      "title": "Stroje uvízly na celnici",
+      "text": "Dodávka strojů uvízla na celnici. Zpoždění minimálně dva týdny. Softwarový tým plánoval napojení na stroje.",
+      "lesson": "Závislosti mezi prediktivní a agilní částí patří do registru rizik. Agilní tým může zpoždění obejít (simulátor, přeplánování backlogu).",
+      "choices": [
+        {
+          "text": "Čerpat časovou rezervu; software se zatím vyvíjí proti simulátoru strojů",
+          "feedback": "Simulátor (jednoduché „digitální dvojče“) odhalil chyby dřív, než stroje dorazily."
+        },
+        {
+          "text": "Zaplatit expresní celní odbavení",
+          "feedback": "Rychlé, ale drahé řešení."
+        },
+        {
+          "text": "Pozastavit softwarový tým, dokud stroje nedorazí",
+          "feedback": "Tým dva týdny čekal, i když mohl pracovat na položkách bez závislosti."
+        }
+      ]
+    },
+    {
+      "id": "tablety",
+      "title": "Operátoři nechtějí tablety",
+      "text": "Na sprint review operátoři prohlásí: „Papírové průvodky byly rychlejší.“ Nový systém nechtějí používat.",
+      "lesson": "Řízení změny u lidí je součást projektu. Zapojení uživatelů do iterací zvyšuje přijetí výsledku.",
+      "choices": [
+        {
+          "text": "Zapojit operátory: testování na lince, úpravy podle nich a „ambasador“ v každé směně",
+          "feedback": "Po dvou iteracích je systém rychlejší než papír a operátoři ho sami doporučují kolegům."
+        },
+        {
+          "text": "Nařídit používání shora",
+          "feedback": "Operátoři systém používají, ale data zadávají až na konci směny „naslepo“."
+        },
+        {
+          "text": "Nechat papír i systém souběžně až do konce projektu",
+          "feedback": "Dvojí evidence je pomalá a data se rozcházejí."
+        }
+      ]
+    },
+    {
+      "id": "kryt",
+      "title": "Audit bezpečnosti strojů",
+      "text": "Auditor zjistí, že jedna stanice nemá dostatečný ochranný kryt. Bez opravy nebude CE certifikace.",
+      "lesson": "Bezpečnost a certifikace jsou pevné požadavky prediktivní části – nikdy se neobětují rychlosti.",
+      "choices": [
+        {
+          "text": "Spustit změnové řízení, objednat kryt a upravit harmonogram instalace",
+          "feedback": "Kryt dorazil, certifikace proběhla. Zpoždění se vešlo do rezervy."
+        },
+        {
+          "text": "Pokusit se certifikaci nějak „ukecat“",
+          "feedback": "Auditor nesouhlasil a vedení firmy je zděšené."
+        },
+        {
+          "text": "Stanici z linky vyřadit a jet bez ní",
+          "feedback": "Linka jede, ale s nižší kapacitou."
+        }
+      ]
+    },
+    {
+      "id": "zakaznik",
+      "title": "Zákazník chce start dřív",
+      "text": "Klíčový zákazník chce první dodávku kol o dva týdny dřív. Nabízí za to vyšší cenu.",
+      "lesson": "Pevné termíny se vyjednávají přes rozsah: co nejdřív dodat to nejdůležitější (MVP) je silná stránka hybridu.",
+      "choices": [
+        {
+          "text": "Analyzovat dopady a nabídnout omezený start: Must funkce softwaru a částečná kapacita linky",
+          "feedback": "Zákazník dostal první kola dřív a firma vyšší cenu. Plný provoz zůstal v plánu."
+        },
+        {
+          "text": "Slíbit plný start o dva týdny dřív",
+          "feedback": "Zákazník je nadšený, oba týmy v panice."
+        },
+        {
+          "text": "Odmítnout",
+          "feedback": "Plán je chráněný, ale obchodní oddělení je zklamané."
+        }
+      ]
+    },
+    {
+      "id": "sit",
+      "title": "Stroje v kancelářské síti?",
+      "text": "IT bezpečnost zjistí, že stroje mají být připojené do stejné sítě jako kancelářské počítače. To je bezpečnostní riziko.",
+      "lesson": "Kybernetická bezpečnost je téma pro obě části: infrastruktura se plánuje předem, softwarová opatření se zahrnou do Definition of Done.",
+      "choices": [
+        {
+          "text": "Zařadit oddělení sítě do plánu instalace a bezpečnost do Definition of Done",
+          "feedback": "Síť je bezpečně rozdělená a každá nová funkce prochází bezpečnostní kontrolou."
+        },
+        {
+          "text": "Nechat to tak, nikdo na nás útočit nebude",
+          "feedback": "Bezpečnostní riziko teď visí nad celou výrobou."
+        },
+        {
+          "text": "Odpojit stroje od sítě úplně",
+          "feedback": "Bezpečné, ale software teď nemá data ze strojů."
+        }
+      ]
+    },
+    {
+      "id": "podlaha",
+      "title": "Podlaha neunese lis",
+      "text": "Statik zjistí, že podlaha haly neunese nový lis. Je potřeba zpevnit základy. Riziko bylo v registru.",
+      "lesson": "Identifikovaná rizika mají mít připravenou reakci a rezervu. Dobře oddělené části projektu umožní, aby agilní tým pokračoval i při potížích na stavbě.",
+      "choices": [
+        {
+          "text": "Aktivovat rizikovou rezervu a přeplánovat instalaci; softwarový tým pokračuje",
+          "feedback": "Plán reakce zafungoval. Software se mezitím vyvíjí dál."
+        },
+        {
+          "text": "Lis tam stejně postavit",
+          "feedback": "Statik odmítl podepsat protokol. Hrozí úraz i pokuta."
+        },
+        {
+          "text": "Zastavit celý projekt, než se to vyřeší",
+          "feedback": "Software s podlahou nijak nesouvisí. Zbytečně ztracený čas."
+        },
+        {
+          "text": "Vyjednat se sponzorem mimořádné peníze a přeplánovat",
+          "feedback": "Bez připravené rezervy se musí shánět peníze a schvalovat nový plán. Stojí to čas i důvěru."
+        }
+      ]
+    }
+  ]
+}

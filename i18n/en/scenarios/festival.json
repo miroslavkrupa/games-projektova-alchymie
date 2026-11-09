@@ -1,0 +1,312 @@
+{
+  "id": "festival",
+  "stars": {
+    "ko": [
+      {
+        "text": "The festival starts with all Must items"
+      },
+      {
+        "text": "Quality at least 30 – no cutting corners on visitor safety"
+      }
+    ],
+    "top": [
+      {
+        "text": "All milestones met"
+      }
+    ]
+  },
+  "name": "Confluence Festival",
+  "tagline": "Stages and permits + app and campaign",
+  "scope": "Permits and site build, band contracts, safety, a festival app, ticketing and a campaign.",
+  "intro": "You're organizing the first Confluence music festival. In 12 weeks the gates open for 15,000 visitors.",
+  "predWorld": "Permits from the authorities, stage construction, band contracts, a safety plan. Fixed deadlines and official approvals.",
+  "agileWorld": "Festival app, ticketing, website and a social media campaign. Test, measure, adapt.",
+  "terms": {
+    "launch": "the festival opening",
+    "predShort": "permits, stages, booking",
+    "agileShort": "app and campaign",
+    "users": "visitors",
+    "usersGen": "visitors",
+    "sponsor": "festival director",
+    "poGood": "head of visitor services",
+    "committee": "festival partners"
+  },
+  "dependency": {
+    "lock": "Waiting for the approved site layout (predictive milestone)",
+    "hint": "<b>Site map</b> is waiting for a predictive milestone: approved permits and site layout."
+  },
+  "workstreams": [
+    {
+      "id": "povoleni",
+      "name": "Permits from authorities, health and fire departments",
+      "why": "Official processes have set deadlines and requirements. You can't iterate on them – they must be planned early and completely."
+    },
+    {
+      "id": "podium",
+      "name": "Stage construction and sound equipment",
+      "why": "Physical construction with a fixed date and suppliers. Last-minute changes are expensive and dangerous."
+    },
+    {
+      "id": "booking",
+      "name": "Band contracts (booking)",
+      "why": "Artist contracts are signed months ahead with fixed terms and dates."
+    },
+    {
+      "id": "bezpecnost",
+      "name": "Safety plan and event staff",
+      "why": "The plan must be approved by the police and fire department. Clear requirements, fixed approval."
+    },
+    {
+      "id": "app",
+      "name": "Festival app (lineup, tickets)",
+      "why": "Features can be delivered gradually and tuned based on tester feedback."
+    },
+    {
+      "id": "kampan",
+      "name": "Social media campaign",
+      "why": "Only data will show what works. Short experiments, measurement and adaptation."
+    },
+    {
+      "id": "web",
+      "name": "Festival website",
+      "why": "Content and features are added continuously; the first version can go live early and then improve."
+    },
+    {
+      "id": "program",
+      "name": "Side program by fan vote",
+      "why": "The program takes shape gradually based on what fans want – classic iterative work."
+    }
+  ],
+  "backlog": [
+    {
+      "id": "program",
+      "name": "Festival lineup"
+    },
+    {
+      "id": "tickets",
+      "name": "Online ticket purchase"
+    },
+    {
+      "id": "qr",
+      "name": "Mobile ticket (QR)"
+    },
+    {
+      "id": "map",
+      "name": "Site map"
+    },
+    {
+      "id": "push",
+      "name": "Lineup change notifications"
+    },
+    {
+      "id": "scan",
+      "name": "Entry check-in (QR scanning)"
+    },
+    {
+      "id": "fav",
+      "name": "My lineup (favorite shows)"
+    },
+    {
+      "id": "cashless",
+      "name": "Cashless payments on site"
+    },
+    {
+      "id": "a11y",
+      "name": "Accessibility (WCAG)"
+    },
+    {
+      "id": "transport",
+      "name": "Transport and parking"
+    },
+    {
+      "id": "carpool",
+      "name": "Festival carpooling"
+    },
+    {
+      "id": "vote",
+      "name": "Encore voting"
+    },
+    {
+      "id": "dark",
+      "name": "Dark mode"
+    },
+    {
+      "id": "ar",
+      "name": "AR site navigation"
+    },
+    {
+      "id": "game",
+      "name": "Festival prize game"
+    },
+    {
+      "id": "stream",
+      "name": "Concert livestream"
+    }
+  ],
+  "milestones": [
+    {
+      "id": "m1",
+      "name": "Permits and layout",
+      "okText": "The authorities approved the permits and the site layout. The digital team can build the map from sprint 3.",
+      "lateText": "Approvals dragged on. The final layout – and so the map – won't come until sprint 4."
+    },
+    {
+      "id": "m2",
+      "name": "Stages and equipment",
+      "okText": "The stages are up and the sound is checked. Bring on the dress rehearsal.",
+      "lateText": "Stage construction fell behind. Penalties and nervous partners."
+    },
+    {
+      "id": "m3",
+      "name": "Festival opening",
+      "okText": "The gates are open! Mobile tickets work, and so do the lineup and the map.",
+      "lateText": "The festival started, but key features are missing:"
+    }
+  ],
+  "events": [
+    {
+      "id": "bourka",
+      "title": "Forecast: thunderstorms",
+      "text": "The long-range forecast shows a high chance of thunderstorms on festival weekend. The risk is in the risk register.",
+      "lesson": "Risks with a response plan and a reserve won't catch you off guard. The predictive and agile parts can each respond in their own way – and complement each other.",
+      "choices": [
+        {
+          "text": "Activate the response plan: roofing from the risk reserve + the digital team adds weather alerts to the backlog",
+          "feedback": "Partners appreciate the preparedness and visitors will hear about the weather in time."
+        },
+        {
+          "text": "Hope the forecast is wrong",
+          "feedback": "Partners ask what the plan is. There isn't one."
+        },
+        {
+          "text": "Move the festival back a week",
+          "feedback": "Every contract (bands, stages, permits) has to be redone. Very expensive."
+        },
+        {
+          "text": "Rush-order roofing and pay for it outside the budget",
+          "feedback": "With no reserve, it's extra money – and last-minute suppliers charge more."
+        }
+      ]
+    },
+    {
+      "id": "headliner",
+      "title": "Headliner cancels",
+      "text": "Five weeks before the festival, the headliner cancels due to illness.",
+      "lesson": "The predictive part (contracts) and the agile part (communication, app) must respond to a crisis in a coordinated way. The agile team can get the change out to people within hours.",
+      "choices": [
+        {
+          "text": "Booking secures a replacement per the contract; the digital team quickly updates the lineup and campaign",
+          "feedback": "Fans heard about the change from you, replacement included. The wave of outrage quickly faded."
+        },
+        {
+          "text": "Stay silent until the replacement is signed",
+          "feedback": "The news leaked on social media before you said a word. Fans are furious."
+        },
+        {
+          "text": "Offer everyone a refund",
+          "feedback": "Fair to fans, but the budget took a heavy hit."
+        }
+      ]
+    },
+    {
+      "id": "hasici",
+      "title": "Fire department wants another exit",
+      "text": "During an inspection, the fire department demands another emergency exit. Booths and the stage have to be rearranged.",
+      "lesson": "Mandatory (regulatory) changes go through change control in the predictive part – and their impact must flow into the agile part too.",
+      "choices": [
+        {
+          "text": "Change control: adjust the layout, update the permits and hand the new map to the digital team",
+          "feedback": "The fix took a few days, but everything is approved and the app map matches reality."
+        },
+        {
+          "text": "File an appeal and change nothing",
+          "feedback": "The appeal failed and you lost two weeks."
+        },
+        {
+          "text": "Quietly adjust the layout without new approval",
+          "feedback": "It came out at the final site inspection. The event may be banned."
+        }
+      ]
+    },
+    {
+      "id": "viral",
+      "title": "A video went viral",
+      "text": "A short clip of the stage build hit a million views. The other planned campaign posts are performing terribly.",
+      "lesson": "Agile marketing: measure, learn, adapt. The plan is a hypothesis; real-world data takes priority.",
+      "choices": [
+        {
+          "text": "Adapt the campaign: more behind-the-scenes content, fewer planned ads",
+          "feedback": "Ticket sales jumped and the campaign costs less than planned."
+        },
+        {
+          "text": "Stick to the original campaign plan approved in January",
+          "feedback": "The plan is followed, but the opportunity flew by."
+        },
+        {
+          "text": "Spend the entire remaining campaign budget promoting that one video",
+          "feedback": "The reach is huge, but there's no money left for the rest of the campaign."
+        }
+      ]
+    },
+    {
+      "id": "predprodej",
+      "title": "Presale crashed",
+      "text": "When ticket presale opened, the online store crashed under the load for two hours. Fans are angry.",
+      "lesson": "An incident is a chance to improve the process. Non-functional requirements (performance, security) belong in the Definition of Done.",
+      "choices": [
+        {
+          "text": "Blameless retrospective + load tests in the Definition of Done",
+          "feedback": "Root cause found, tests in place. The second wave of presale went smoothly."
+        },
+        {
+          "text": "Replace the developer who built the store",
+          "feedback": "The team is scared and the new person doesn't know the system. The cause remains."
+        },
+        {
+          "text": "Buy bigger servers and leave it at that",
+          "feedback": "It helped this time, but nobody knows where the real limit is."
+        }
+      ]
+    },
+    {
+      "id": "partner",
+      "title": "Partner wants a tent in the middle",
+      "text": "The main partner wants its big tent right in the middle of the site. But the layout is already approved by the authorities.",
+      "lesson": "Handle changes to an approved baseline through change control. Hybrid lets you look for compensation in the agile part, where changes are cheap.",
+      "choices": [
+        {
+          "text": "Change control: assess the impact on permits and offer the partner an alternative (visibility in the app)",
+          "feedback": "The tent stayed at the edge, but the partner has its own section in the app. Everyone's happy."
+        },
+        {
+          "text": "Agree right away – the partner pays",
+          "feedback": "New layout approval and a site rebuild. An expensive favor."
+        },
+        {
+          "text": "Refuse without discussion",
+          "feedback": "The layout is protected, but the partner is wondering whether to come back next year."
+        }
+      ]
+    },
+    {
+      "id": "dobrovolnici",
+      "title": "Not enough volunteers",
+      "text": "Three weeks before the festival, half of the volunteer event staff are missing.",
+      "lesson": "Quick experiments in the agile part can help solve a predictive-part problem – with a plan B just in case.",
+      "choices": [
+        {
+          "text": "The digital team launches a recruitment campaign; production reaches out to an agency in parallel as backup",
+          "feedback": "The campaign brought in 80% of the missing people. The agency only covers the rest."
+        },
+        {
+          "text": "Wait, it'll sort itself out",
+          "feedback": "It didn't. The safety plan no longer matches reality."
+        },
+        {
+          "text": "Just hire an expensive agency for everything",
+          "feedback": "Reliable, but expensive."
+        }
+      ]
+    }
+  ]
+}

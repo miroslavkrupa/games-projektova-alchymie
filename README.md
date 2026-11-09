@@ -133,7 +133,8 @@ na úvodu stačí kliknout na *Pokračovat*.
 
 ## Struktura
 
-- `index.html` – vstupní stránka
+- `index.html` – vstupní stránka (česky, případně jazyk podle prohlížeče nebo volby hráče)
+- `en/index.html` – anglická vstupní stránka s anglickými meta značkami pro sdílení
 - `img/` – úvodní ilustrace, ikona hry (`favicon.svg`, baňka na výstražně žlutém štítku) a náhled
   pro sdílení odkazu (`og.jpg`, 1200 × 630, odkazovaný z meta značek `og:` v `index.html`)
 - `css/style.css` – vzhled „Stavební deník“ (teplý papír, okr, rez, tyrkysová a výstražná žlutá, obrysy
@@ -149,6 +150,9 @@ na úvodu stačí kliknout na *Pokračovat*.
   (vzorec vzniklý z jedné praktiky sdílí její ikonu). Při načtení přepíšou pole `icon` v datech;
   když ikona chybí, zůstane emoji. Emoji u událostí, milníků, oblastí práce a lidí se nevykreslují.
 - `js/fx.js` – oživení rozhraní: živé ukazatele, kotel s mixem praktik, graf průběhu projektu
+- `js/i18n.js` – jazyky: volba jazyka, funkce `tr()` pro texty rozhraní a sloučení přeloženého obsahu do dat
+- `js/lang/en.js` – anglický překlad, generovaný z `i18n/en/` (neupravovat ručně)
+- `i18n/`, `tools/i18n-*.mjs` – zdrojové překlady a nástroje (viz `i18n/README.md`)
 - `js/career.js` – kariéra a odznaky: hodnosti (`RANKS`), odznaky (`BADGES`), historie her a Životopis
 - `js/game.js` – herní logika, vykreslování a ukládání rozehrané hry
 
@@ -222,4 +226,21 @@ a vitrínu odznaků. Na konci hry se ukáže povýšení a nově získané odzna
   a udržitelnost a tři skryté. Odznaky s `global: true` se ověří kdykoli z uloženého postupu,
   ostatní na konci hry ze stavu hry. Každý má nápovědu, jak ho získat, a poučení.
 - **Historie** ukládá posledních 50 her (projekt, skóre, hvězdy a příznaky pro odznaky napříč hrami).
+
+## Jazyky
+
+Hra je česky a anglicky. Jazyk se volí tlačítkem **EN / CS** v horní liště. Hra si volbu zapamatuje
+a bez volby se řídí jazykem prohlížeče. Anglická verze má i vlastní adresu `/en/`, jinak jde jazyk
+vynutit parametrem `?lang=en`.
+
+- **Rozhraní:** texty v kódu procházejí funkcí `tr('český text', { parametry })`. Čeština je přímo
+  v kódu, anglické překlady jsou ve slovníku `i18n/en/ui.json`.
+- **Obsah:** projekty, praktiky, vzorce, události a slovníček se překládají v souborech `i18n/en/*.json`.
+  Ty kopírují strukturu dat a obsahují jen texty, čísla a logika zůstávají v `js/data*.js`.
+- **Postup po změně textů:**
+  1. `node tools/i18n-extract.mjs` doplní českou kostru a založí chybějící překlady.
+  2. Přeložit nové texty v `i18n/en/`.
+  3. `node tools/i18n-check.mjs en` a `node tools/i18n-ui-check.mjs` ověří úplnost.
+  4. `node tools/i18n-build.mjs en` sestaví `js/lang/en.js`.
+- Chybí-li překlad, zobrazí se český text, takže hra nikdy nespadne.
 

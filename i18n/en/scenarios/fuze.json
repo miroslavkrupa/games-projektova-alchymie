@@ -1,0 +1,561 @@
+{
+  "id": "fuze",
+  "stars": {
+    "ko": [
+      {
+        "text": "The regulator approves the joint app"
+      },
+      {
+        "text": "The app launches with all Must items"
+      }
+    ],
+    "top": [
+      {
+        "text": "A year later at least 50 %"
+      },
+      {
+        "text": "No stakeholder below 40"
+      }
+    ]
+  },
+  "name": "Merger of Two Companies",
+  "tagline": "A bank bought a fintech – now they must build one app together",
+  "scope": "A joint mobile app after a bank acquires a fintech: connection to the core banking system, single sign-on, customer migration, new features and regulatory approval.",
+  "intro": "A big bank bought a small fintech with a great mobile app. The board wants one joint app for customers of both companies within six months. The bank has a policy for everything, the fintech has a chat for everything. You lead the joint project – with people from both companies.",
+  "predWorld": "Connection to the core banking system, security audit, AML checks and regulatory approval. Bank policies apply here – and for good reason.",
+  "agileWorld": "The mobile app, onboarding and new customer features. That's the fintech's strength: try fast, measure and improve.",
+  "terms": {
+    "launch": "the launch of the joint app",
+    "predShort": "core integration, security and regulatory approval",
+    "agileShort": "the mobile app and new features",
+    "usersGen": "customers",
+    "sponsor": "bank board member",
+    "committee": "joint steering committee",
+    "product": "The joint app"
+  },
+  "stakeholders": [
+    {
+      "id": "banka",
+      "name": "Bank CIO",
+      "wants": "security, policies and a plan",
+      "quit": "blocked deployment to the bank's infrastructure.",
+      "epilogBad": "put the app into the “standard process” – new versions now ship once a quarter."
+    },
+    {
+      "id": "fintech",
+      "name": "Fintech founder",
+      "wants": "speed and his own product ideas",
+      "quit": "left, taking half of his team along.",
+      "epilogBad": "left to found a new startup and took the best people with him."
+    },
+    {
+      "id": "klienti",
+      "name": "Customers of both companies",
+      "wants": "an app that works and takes nothing away from them",
+      "quit": "started leaving for competitors in droves.",
+      "epilogBad": "rate the app two stars and are leaving for competitors."
+    }
+  ],
+  "areas": {
+    "core": {
+      "label": "Core banking"
+    },
+    "security": {
+      "label": "Security and AML"
+    },
+    "app": {
+      "label": "Mobile app"
+    },
+    "api": {
+      "label": "API and integration"
+    }
+  },
+  "team": [
+    {
+      "id": "vera",
+      "name": "Věra",
+      "role": "core banking architect (bank)"
+    },
+    {
+      "id": "milan",
+      "name": "Milan",
+      "role": "security and AML (bank)"
+    },
+    {
+      "id": "kuba",
+      "name": "Kuba",
+      "role": "mobile developer (fintech)"
+    },
+    {
+      "id": "bara",
+      "name": "Bára",
+      "role": "UX and onboarding (fintech)"
+    },
+    {
+      "id": "tadeas",
+      "name": "Tadeáš",
+      "role": "backend and API (fintech)"
+    }
+  ],
+  "workstreams": [
+    {
+      "id": "jadro",
+      "name": "Connection to the core banking system",
+      "why": "The bank's core changes once a quarter under strict rules. The interface is designed, approved and built to plan."
+    },
+    {
+      "id": "audit",
+      "name": "Security audit and AML",
+      "why": "Requirements come from regulation and the audit procedure is prescribed."
+    },
+    {
+      "id": "regulator",
+      "name": "Regulatory approval",
+      "why": "The regulator has deadlines and a list of documents. The filing date is planned."
+    },
+    {
+      "id": "aplikace",
+      "name": "Mobile app and onboarding",
+      "why": "What suits customers of both companies only shows in their behavior – you iterate."
+    },
+    {
+      "id": "funkce",
+      "name": "New customer features",
+      "why": "Ideas must be tested with customers before they're built."
+    },
+    {
+      "id": "design",
+      "name": "Unifying the design of both brands",
+      "why": "The design is tuned to user reactions, version by version."
+    },
+    {
+      "id": "mzdy",
+      "name": "Payroll and accounting of the merged company",
+      "why": "Routine work of the finance department. After the staff transfer it's done by the line organization, not the app project."
+    },
+    {
+      "id": "podpora",
+      "name": "Customer support for existing customers",
+      "why": "Support runs every day and will keep running after the project. It's operations."
+    }
+  ],
+  "backlog": [
+    {
+      "id": "login",
+      "name": "Single sign-on for customers of both companies"
+    },
+    {
+      "id": "jadro",
+      "name": "Connecting the app to the core banking system"
+    },
+    {
+      "id": "onboarding",
+      "name": "Moving bank customers into the app"
+    },
+    {
+      "id": "platby",
+      "name": "In-app payments from bank accounts"
+    },
+    {
+      "id": "aml",
+      "name": "AML checks per bank rules"
+    },
+    {
+      "id": "design",
+      "name": "Unified design for both brands"
+    },
+    {
+      "id": "pomocnik",
+      "name": "Budgeting assistant"
+    },
+    {
+      "id": "predani",
+      "name": "Handover to bank operations: runbooks and training"
+    },
+    {
+      "id": "chat",
+      "name": "Chat with a banker"
+    },
+    {
+      "id": "krypto",
+      "name": "Crypto in the app (the founder's idea)"
+    },
+    {
+      "id": "vykazy",
+      "name": "Monthly reports for bank headquarters"
+    },
+    {
+      "id": "podpora",
+      "name": "Customer support for fintech customers"
+    },
+    {
+      "id": "mzdy",
+      "name": "Moving fintech staff into the payroll system"
+    }
+  ],
+  "milestones": [
+    {
+      "id": "m1",
+      "name": "Security audit",
+      "okText": "Single sign-on passed the bank's security audit.",
+      "lateText": "There was nothing to run the security audit on."
+    },
+    {
+      "id": "m2",
+      "name": "Core integration test",
+      "okText": "The app talks to the core banking system and AML checks work.",
+      "lateText": "The core integration test failed."
+    },
+    {
+      "id": "m3",
+      "name": "Regulatory approval",
+      "okText": "The regulator approved the app.",
+      "lateText": "The application to the regulator went out late."
+    },
+    {
+      "id": "m4",
+      "name": "Joint app launch",
+      "okText": "The joint app is out. Customers of both companies log in with the same button.",
+      "lateText": "The app shipped without key features – missing:"
+    }
+  ],
+  "shift": {
+    "title": "The founders are leaving",
+    "text": "The fintech founders sold the rest of their shares to the bank and are leaving. Kuba goes with them and other fintech people are wavering – they feel the bank steamrolled them. Revealed factor: changing people's established habits.",
+    "team": {
+      "reason": "leaves with the founders"
+    },
+    "lesson": "In a merger the biggest risk is people leaving with their knowledge. What helps is knowledge sharing across companies and retrospectives where people from both cultures agree on a shared way of working – not one side's rules imposed on the other."
+  },
+  "gate": {
+    "id": "gate",
+    "title": "Joint steering committee",
+    "text": "The steering committee, with people from both the bank and the fintech, decides on the second half of the project. How do you prepare the materials?",
+    "lesson": "One project needs one picture of its state: milestones of the predictively managed parts and working increments of the agile parts in one overview. Two presentations mean two projects.",
+    "choices": [
+      {
+        "text": "A joint overview: bank milestones, a live app demo and risks in one place",
+        "feedback": "For the first time the committee sees one project, not two companies."
+      },
+      {
+        "text": "Two presentations – the bank its Gantt chart, the fintech its demo",
+        "feedback": "Half the committee only listened to “their” presentation."
+      },
+      {
+        "text": "Report using the bank's template",
+        "feedback": "The bank is happy. The founder stayed silent at the meeting."
+      }
+    ]
+  },
+  "eventSlots": [
+    [
+      {
+        "id": "hotovo",
+        "title": "What does “done” mean?",
+        "text": "For the bank a feature is done when security approves it. For the fintech, when it's in the app store. Each side claims the opposite about the “login” feature.",
+        "lesson": "Merging two cultures needs a shared vocabulary. A Definition of Done is an agreement, not one side's rules taken over.",
+        "choices": [
+          {
+            "text": "Write a joint Definition of Done: tested, security-reviewed and deployed",
+            "feedback": "The debate took two hours. Now everyone means the same thing."
+          },
+          {
+            "text": "Let each side do it its own way",
+            "feedback": "A ceasefire. For now."
+          },
+          {
+            "text": "Adopt the bank's definition",
+            "feedback": "The fintech sees it as its first defeat."
+          }
+        ]
+      },
+      {
+        "id": "smernice",
+        "title": "A policy for everything",
+        "text": "Bank policy says every new app version must go through a forty-page change request.",
+        "lesson": "Expensive changes (the bank's core) belong in formal change control; cheap ones (the app) can be decided by the Product Owner. Working around rules comes back to bite.",
+        "choices": [
+          {
+            "text": "Agree on two speeds: core changes via change control, app changes decided by the Product Owner",
+            "feedback": "Security got what it needs. The fintech can release every week."
+          },
+          {
+            "text": "Comply – every version through the bank's change control board",
+            "feedback": "The first change request took three people two days."
+          },
+          {
+            "text": "Work around the policy and release quietly",
+            "feedback": "Fast. And risky."
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "id": "vera",
+        "title": "Everything goes through Věra",
+        "text": "Only Věra understands the core banking system. Every question from the fintech ends up with her and Věra can't keep up.",
+        "lesson": "A knowledge island is doubly dangerous in a merger: the knowledge sits in one head and in one company. Pairing across companies spreads it.",
+        "choices": [
+          {
+            "text": "Pair Věra with Tadeáš on the core interface",
+            "feedback": "Tadeáš asks, Věra explains. After a week he answers half the questions himself."
+          },
+          {
+            "text": "Věra can handle it, she's experienced",
+            "feedback": "Věra is handling it. For now."
+          },
+          {
+            "text": "Bring in a consultant from the core vendor",
+            "feedback": "The consultant helped. The knowledge will leave with him."
+          }
+        ]
+      },
+      {
+        "id": "kultura",
+        "title": "Two cultures in one meeting",
+        "text": "Bank people talk about “the fintech kids”, the fintech about “the dinosaurs”. Meetings turn into tug-of-war.",
+        "lesson": "A culture clash isn't solved by separating teams, but by working together. Mixed pairs and joint retrospectives build one team.",
+        "choices": [
+          {
+            "text": "Mixed pairs on every feature and a joint retrospective",
+            "feedback": "The first week was bumpy. By the second, people were inviting each other to lunch."
+          },
+          {
+            "text": "Split teams by company so they don't fight",
+            "feedback": "Peace. Each team does its own thing."
+          },
+          {
+            "text": "Team building at a spa hotel",
+            "feedback": "It was nice. On Monday the old jokes were back."
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "id": "krypto",
+        "title": "The founder wants crypto",
+        "text": "The fintech founder wants crypto in the app. “Without it young customers won't take us seriously.”",
+        "lesson": "A powerful stakeholder's idea is a hypothesis like any other. A cheap experiment decides better than hierarchy.",
+        "choices": [
+          {
+            "text": "Test customer interest with a cheap experiment before building anything",
+            "feedback": "A landing page showed interest from 2 % of customers. The founder took it gracefully."
+          },
+          {
+            "text": "Postpone until after launch",
+            "feedback": "The founder wrote it in his notebook. In red."
+          },
+          {
+            "text": "Build it now – the founder has a vision",
+            "feedback": "The bank learned about crypto from the internal chat."
+          }
+        ]
+      },
+      {
+        "id": "regulator",
+        "title": "The regulator asks questions",
+        "text": "The regulator wants to know how the project decides on app changes and who is accountable for them.",
+        "lesson": "Agile doesn't mean undocumented decisions. In a regulated environment it must be clear who decided what – even in the backlog.",
+        "choices": [
+          {
+            "text": "Present the rules: change control for the core and a log of Product Owner decisions for the app",
+            "feedback": "The regulator closed its inquiry."
+          },
+          {
+            "text": "Answer that the fintech decides in an agile way and documentation isn't needed",
+            "feedback": "The regulator requested a full process audit."
+          },
+          {
+            "text": "Write the documentation retroactively",
+            "feedback": "Milan wrote for three evenings. It passed."
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "id": "klienti",
+        "title": "Fintech customers are worried",
+        "text": "Word is spreading on social media that after the merger fintech customers will lose their favorite features.",
+        "lesson": "Change for people needs transparency and a chance to try new things in advance. Migrating without warning destroys trust.",
+        "choices": [
+          {
+            "text": "Publish the migration plan and let customers try a beta",
+            "feedback": "Beta testers write more praise than complaints."
+          },
+          {
+            "text": "Move everyone at once without warning",
+            "feedback": "Fast. The app rating dropped to 1.9."
+          },
+          {
+            "text": "Send an FAQ email",
+            "feedback": "11 % of customers opened it."
+          }
+        ]
+      },
+      {
+        "id": "milan",
+        "title": "Milan got an offer",
+        "text": "Milan, the team's only security specialist, got an offer from a competitor.",
+        "lesson": "It's good to keep a key person – but above all, make sure their knowledge doesn't leave with them.",
+        "choices": [
+          {
+            "text": "Counteroffer, and Milan trains a colleague in AML",
+            "feedback": "Milan stayed and now two people understand security."
+          },
+          {
+            "text": "Let him go, it'll work out somehow",
+            "team": {
+              "reason": "leaves for a competitor"
+            },
+            "feedback": "Milan left on Friday. On Monday the first audit question arrived."
+          },
+          {
+            "text": "Hire an external security firm",
+            "team": {
+              "join": [
+                {
+                  "id": "auditor",
+                  "name": "External auditor",
+                  "role": "external security"
+                }
+              ]
+            },
+            "feedback": "The contractors are good. And expensive."
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "id": "vypadek",
+        "title": "A test crashed the bank's environment",
+        "text": "A fintech integration test took down the core banking test environment for a day. The bank is furious.",
+        "lesson": "A bug at the interface of two companies is a chance to learn together. Hunting for a culprit splits the team; banning tests pushes bugs into live operations.",
+        "choices": [
+          {
+            "text": "A joint blameless root-cause analysis and an updated test procedure",
+            "feedback": "Cause: a missing call limit. Procedure fixed, nobody lost face."
+          },
+          {
+            "text": "Blame the fintech",
+            "feedback": "The bank calmed down. The fintech remembered whose side you're on."
+          },
+          {
+            "text": "Ban tests on the bank's environment",
+            "feedback": "The environment is safe. Bugs will now be found in production."
+          }
+        ]
+      },
+      {
+        "id": "drive",
+        "title": "The board wants to launch earlier",
+        "text": "A competitor announced a similar app. The board wants to launch a month earlier.",
+        "lesson": "Schedule pressure can be met with a staged launch (an employee pilot), not by overloading the team.",
+        "choices": [
+          {
+            "text": "Launch early only for employees as a pilot, for customers on schedule",
+            "feedback": "Employees found 14 bugs before customers did."
+          },
+          {
+            "text": "Promise an earlier launch",
+            "feedback": "The promise is out. The team learned about it from the press release."
+          },
+          {
+            "text": "Refuse, pointing to the plan",
+            "feedback": "The board accepted it. Without enthusiasm."
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "id": "golive",
+        "title": "The night before launch",
+        "text": "Everything is ready. How do you release the app to customers?",
+        "lesson": "A staged rollout (a small percentage of customers first) limits the impact of bugs the tests missed.",
+        "choices": [
+          {
+            "text": "Gradually: 5 % of customers, watch, then more",
+            "feedback": "On day one a payments bug showed up. It hit only a few hundred customers."
+          },
+          {
+            "text": "Everyone at once at midnight",
+            "feedback": "In the morning payments didn't work. For anyone."
+          },
+          {
+            "text": "Postpone a week to be safe",
+            "feedback": "An extra week of testing. The founder is furious."
+          }
+        ]
+      }
+    ]
+  ],
+  "followups": {
+    "nehotovo": {
+      "id": "nehotovo",
+      "title": "A “done” feature failed the audit",
+      "text": "A feature the fintech reported as done failed the bank's security review.",
+      "lesson": "Without a shared definition of done, hidden unfinished work piles up. Sooner or later someone finds it – worst case, a customer.",
+      "unresolvedText": "After launch it turned out some “done” features never passed the security review.",
+      "choices": [
+        {
+          "text": "Introduce a joint Definition of Done now and finish the feature",
+          "feedback": "Late, but better than never."
+        },
+        {
+          "text": "Launch it anyway",
+          "feedback": "Bank security made a note of it."
+        },
+        {
+          "text": "Turn the feature off",
+          "feedback": "Safe. Customers lost the feature."
+        }
+      ]
+    },
+    "audit_nalez": {
+      "id": "audit_nalez",
+      "title": "Internal audit found secret releases",
+      "text": "The bank's internal audit found that the fintech shipped three app versions outside the approved process.",
+      "lesson": "Working around rules solves speed only in the short term. The sustainable fix is to change the rules to match the risk of each change.",
+      "unresolvedText": "A year later the audit found unreported app versions and the bank was fined.",
+      "choices": [
+        {
+          "text": "Admit it and agree on rules based on change risk",
+          "feedback": "Audit closed with a recommendation. The rules are more sensible."
+        },
+        {
+          "text": "Sweep it under the rug",
+          "feedback": "The auditor wasn't having it."
+        },
+        {
+          "text": "Freeze releases for a month",
+          "feedback": "Safe. Customers noticed nothing is happening."
+        }
+      ]
+    },
+    "rozhrani": {
+      "id": "rozhrani",
+      "title": "Two teams, two interfaces",
+      "text": "The bank team and the fintech team each built their own version of the interface between the app and the core. They don't fit.",
+      "lesson": "Separate teams in one project create separate solutions. An interface needs a joint team and integration tests.",
+      "unresolvedText": "The interface between the app and the core breaks with every new version.",
+      "choices": [
+        {
+          "text": "A mixed team for the interface and joint integration tests",
+          "feedback": "One interface, one team."
+        },
+        {
+          "text": "Let each team fix its own part",
+          "feedback": "Now they don't fit in a different way."
+        },
+        {
+          "text": "Hire an integrator",
+          "feedback": "The integrator glued it together."
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,439 @@
+{
+  "id": "hra",
+  "stars": {
+    "ko": [
+      {
+        "text": "Verze 1.0 dosáhne cíle"
+      }
+    ],
+    "top": [
+      {
+        "text": "Všechny tři cíle splněné"
+      }
+    ]
+  },
+  "name": "Videohra v early accessu",
+  "tagline": "Malé studio, hlasitá komunita, málo peněz",
+  "scope": "Kooperativní hra o přežití v předběžném přístupu (early access): herní mechaniky, obsah, aktualizace, komunita a marketing. Hráči hru už mají a každý týden dávají najevo, co se jim líbí.",
+  "approachText": "Extrémní nejistota: co hráče baví, ukážou až čísla a recenze. Peníze ubývají každý sprint a jen trakce přinese další. Celý projekt se řídí agilně: krátké iterace, experimenty, data od hráčů a ochota změnit směr.",
+  "intro": "Vedeš malé herní studio. Hra je v předběžném přístupu, hráči ji už hrají a peníze vystačí sotva na pár měsíců. Každý sprint stojí peníze – vydělají jen funkce, které hráče opravdu baví.",
+  "terms": {
+    "launch": "vydání verze 1.0",
+    "agileShort": "celá hra",
+    "users": "hráči",
+    "usersGen": "hráčů",
+    "poGood": "herní designérka s mandátem",
+    "committee": "vydavatel a investoři"
+  },
+  "workstreams": [
+    {
+      "id": "mechaniky",
+      "name": "Herní mechaniky",
+      "why": "Jestli je hra zábavná, ukáže až hraní. Prototyp, test s hráči, úprava."
+    },
+    {
+      "id": "obsah",
+      "name": "Nové mapy a obsah",
+      "why": "Obsah vychází po aktualizacích a směr určuje, co hráči hrají nejvíc."
+    },
+    {
+      "id": "balanc",
+      "name": "Herní ekonomika a vyváženost",
+      "why": "Ladí se podle dat z tisíců odehraných her, ne podle tabulky předem."
+    },
+    {
+      "id": "servery",
+      "name": "Servery a stabilita",
+      "why": "Průběžné nasazování a rychlé opravy podle toho, co padá – plynulý tok práce."
+    },
+    {
+      "id": "komunita",
+      "name": "Komunita a Discord",
+      "why": "Komunikace s hráči reaguje na to, co se právě děje."
+    },
+    {
+      "id": "lokalizace",
+      "name": "Lokalizace do šesti jazyků",
+      "why": "Pozor, zní to jako plánovatelná zakázka – ale texty se mění s každou aktualizací. Překládá se průběžně po dávkách."
+    },
+    {
+      "id": "marketing",
+      "name": "Spolupráce se streamery",
+      "why": "Co zabere, ukážou až čísla. Krátké pokusy a vyhodnocení."
+    },
+    {
+      "id": "zvuk",
+      "name": "Hudba a zvukové efekty",
+      "why": "Zvuk se ladí podle testů s hráči, ne podle specifikace."
+    }
+  ],
+  "backlog": [
+    {
+      "id": "coop",
+      "name": "Kooperativní mise pro 4 hráče"
+    },
+    {
+      "id": "pady",
+      "name": "Opravy pádů hry"
+    },
+    {
+      "id": "cloud",
+      "name": "Uložení postupu v cloudu"
+    },
+    {
+      "id": "zebricek",
+      "name": "Žebříček PvP soubojů"
+    },
+    {
+      "id": "arena",
+      "name": "PvP aréna"
+    },
+    {
+      "id": "tutorial",
+      "name": "Tutoriál pro nováčky"
+    },
+    {
+      "id": "skiny",
+      "name": "Kosmetické skiny za peníze"
+    },
+    {
+      "id": "crafting",
+      "name": "Výroba předmětů (crafting)"
+    },
+    {
+      "id": "battlepass",
+      "name": "Battle pass"
+    },
+    {
+      "id": "mody",
+      "name": "Podpora módů"
+    },
+    {
+      "id": "gamepad",
+      "name": "Ovládání gamepadem"
+    },
+    {
+      "id": "foto",
+      "name": "Fotorežim"
+    },
+    {
+      "id": "ranked",
+      "name": "Hodnocené PvP sezóny"
+    },
+    {
+      "id": "kampan",
+      "name": "Příběhová kampaň"
+    },
+    {
+      "id": "konzole",
+      "name": "Verze pro konzole"
+    }
+  ],
+  "discoveries": [
+    {
+      "id": "hlas",
+      "name": "Hlasový chat v týmu",
+      "why": "Po kooperativních misích hráči chtějí mluvit spolu přímo ve hře."
+    },
+    {
+      "id": "workshop",
+      "name": "Dílna pro komunitní módy",
+      "why": "Moddeři se ozvali hned po vydání nástrojů: chtějí místo, kde módy sdílet."
+    }
+  ],
+  "milestones": [
+    {
+      "id": "m1",
+      "name": "Kladné recenze",
+      "okText": "Recenze se zlepšují, hráči se vracejí.",
+      "lateText": "Recenze jsou smíšené, hráči odcházejí."
+    },
+    {
+      "id": "m2",
+      "name": "Velká aktualizace",
+      "okText": "Velká aktualizace přivedla zpět staré hráče i nové.",
+      "lateText": "Velká aktualizace zapadla."
+    },
+    {
+      "id": "m3",
+      "name": "Verze 1.0",
+      "okText": "Verze 1.0 vychází s kladnými recenzemi!",
+      "lateText": "Verze 1.0 vyšla, ale bez nadšení hráčů."
+    }
+  ],
+  "shift": {
+    "title": "Trh se otočil",
+    "text": "Vyšla velká konkurenční hra zaměřená na PvP souboje a hráči soubojů přešli k ní. Tvoje komunita teď chce hlavně spolupráci a módy – a hlasitě to dává najevo. Odhalený faktor: hlasitá komunita hráčů.",
+    "lesson": "Když se trh otočí, nestačí jen přerovnat backlog – tým potřebuje rychle ověřovat nové předpoklady. Hypotézy a experimenty jsou v takové chvíli nejdůležitější praktikou."
+  },
+  "gate": {
+    "id": "gate",
+    "title": "Schůzka s vydavatelem",
+    "text": "Vydavatel rozhoduje, jestli pošle peníze na další měsíce vývoje. Co mu ukážeš?",
+    "lesson": "Rozhodnutí o penězích v agilním projektu stojí na datech: kolik hráčů hraje, vrací se a co se tým naučil.",
+    "choices": [
+      {
+        "text": "Data o hráčích, co jsme se naučili a hratelnou novou verzi",
+        "feedback": "Vydavatel přidal peníze na další tři měsíce."
+      },
+      {
+        "text": "Trailer a velké plány na verzi 1.0",
+        "feedback": "„A kolik lidí to hraje dnes?“ Vydavatel peníze podmínil výsledky."
+      },
+      {
+        "text": "Schůzku odložit, až bude co ukázat",
+        "feedback": "Vydavatel mezitím pozastavil platby."
+      }
+    ]
+  },
+  "events": [
+    {
+      "id": "recenze",
+      "title": "Vlna negativních recenzí",
+      "text": "Hráči píšou negativní recenze kvůli pádům hry. Hodnocení klesá.",
+      "lesson": "Stabilita je základ hodnoty. Hráči odpustí málo obsahu, ale ne hru, která padá.",
+      "choices": [
+        {
+          "text": "Celý sprint věnovat stabilitě a otevřeně to komunitě oznámit",
+          "feedback": "Hráči oceňují upřímnost. Pády ubyly."
+        },
+        {
+          "text": "Pády ignorovat a dodávat nový obsah",
+          "feedback": "Nový obsah vyšel. Pády zůstaly."
+        },
+        {
+          "text": "Rozdělit tým napůl",
+          "feedback": "Trochu oprav, trochu obsahu. Nic pořádně."
+        }
+      ]
+    },
+    {
+      "id": "streamer",
+      "title": "Nabídka od streamera",
+      "text": "Velký streamer nabízí, že hru ukáže – výměnou za exkluzivní obsah.",
+      "lesson": "Sliby termínů obsahu, který ještě neexistuje, jsou v agilním projektu nebezpečné. Nabídni to, co máš.",
+      "choices": [
+        {
+          "text": "Nabídnout mu předběžný přístup k nové aktualizaci, bez slibu termínu",
+          "feedback": "Stream přivedl stovky nových hráčů."
+        },
+        {
+          "text": "Slíbit mu exkluzivní mapu do dvou týdnů",
+          "feedback": "Streamer je nadšený. Tým o mapě zatím neví."
+        },
+        {
+          "text": "Zaplatit placenou spolupráci",
+          "feedback": "Funguje to, ale drahé."
+        }
+      ]
+    },
+    {
+      "id": "vydavatel",
+      "title": "Peníze za battle pass",
+      "text": "Vydavatel nabízí peníze navíc, pokud do konce měsíce zavedete battle pass.",
+      "lesson": "Když jsou v sázce peníze a důvěra komunity, ověř hypotézu dřív, než se zavážeš.",
+      "choices": [
+        {
+          "text": "Ověřit zájem anketou a malým testem, pak rozhodnout",
+          "feedback": "Anketa jasně ukázala: komunita battle pass nechce. Hodnota položky je teď ověřená."
+        },
+        {
+          "text": "Přijmout a battle pass zavést",
+          "feedback": "Peníze přišly. Komunita se mračí."
+        },
+        {
+          "text": "Odmítnout",
+          "feedback": "Vydavatel je zklamaný, ale komunita nic neví."
+        }
+      ]
+    },
+    {
+      "id": "crunch",
+      "title": "Crunch před aktualizací",
+      "text": "Blíží se velká aktualizace a tým navrhuje měsíc crunche – práce po nocích.",
+      "lesson": "Crunch krátkodobě přidá výkon, dlouhodobě vezme lidi. Udržitelné tempo a menší rozsah jsou levnější.",
+      "choices": [
+        {
+          "text": "Zmenšit rozsah aktualizace a zachovat udržitelné tempo",
+          "feedback": "Aktualizace je menší, ale tým je v pořádku."
+        },
+        {
+          "text": "Jít do crunche",
+          "feedback": "Aktualizace bude velká. Tým je vyčerpaný."
+        },
+        {
+          "text": "Posunout aktualizaci o týden",
+          "feedback": "Hráči čekají déle, tým dýchá."
+        }
+      ]
+    },
+    {
+      "id": "cheaty",
+      "title": "Cheateři",
+      "text": "Ve hře se šíří cheaty. Poctiví hráči zuří.",
+      "lesson": "Problém, který ničí zážitek všem hráčům, má přednost před novými funkcemi.",
+      "choices": [
+        {
+          "text": "Rychlá ochrana proti cheatům a otevřená informace hráčům",
+          "feedback": "Cheaterů ubylo, komunita je klidnější."
+        },
+        {
+          "text": "Počkat s tím na verzi 1.0",
+          "feedback": "Cheateři se mezitím baví."
+        },
+        {
+          "text": "Banovat ručně",
+          "feedback": "Pomáhá to, ale tým tráví hodiny čtením nahlášení."
+        }
+      ]
+    },
+    {
+      "id": "modder",
+      "title": "Populární mód",
+      "text": "Komunitní modder vytvořil mód, který hraje víc lidí než některé oficiální mapy. Chce oficiální podporu.",
+      "lesson": "Komunita může být nejlepší zdroj hodnoty. Ověř zájem a dej jí prostor.",
+      "choices": [
+        {
+          "text": "Spolupracovat a ověřit zájem o podporu módů",
+          "feedback": "Zájem je obrovský. Hodnota podpory módů je teď ověřená."
+        },
+        {
+          "text": "Zakázat módy – kazí naši vizi",
+          "feedback": "Modder odchází a s ním tisíce hráčů."
+        },
+        {
+          "text": "Najmout ho do týmu",
+          "feedback": "Šikovný člověk navíc, ale komunitě to otevřenost nepřineslo."
+        }
+      ]
+    }
+  ],
+  "followups": {
+    "lavina": {
+      "id": "lavina",
+      "title": "Hodnocení „Spíše negativní“",
+      "text": "Hodnocení hry spadlo na „Spíše negativní“. Prodeje se propadají.",
+      "lesson": "Ignorovaná kvalita se vrací ve chvíli, kdy ji uvidí všichni. Oprava je teď dražší než před dvěma sprinty.",
+      "unresolvedText": "Špatné recenze kvůli pádům provázely i verzi 1.0.",
+      "choices": [
+        {
+          "text": "Opravný sprint, omluva a dárek hráčům",
+          "feedback": "Hráči omluvu přijali. Hodnocení se pomalu vrací."
+        },
+        {
+          "text": "Mazat kritické příspěvky na Discordu",
+          "feedback": "Screenshoty smazaných příspěvků obletěly internet."
+        },
+        {
+          "text": "Slevová akce",
+          "feedback": "Noví hráči přišli – a napsali další negativní recenze."
+        }
+      ]
+    },
+    "mapa": {
+      "id": "mapa",
+      "title": "Kde je slíbená mapa?",
+      "text": "Streamer se živě ptá, kde je slíbená exkluzivní mapa. Tým ji nestihl.",
+      "lesson": "Slib termínu bez týmu je dluh, který splácí tým. Upřímnost je levnější než nedodělek.",
+      "unresolvedText": "Streamer si na nesplněný slib stěžoval ještě dlouho.",
+      "choices": [
+        {
+          "text": "Přiznat skluz a ukázat rozpracovanou mapu živě",
+          "feedback": "Divákům se líbil pohled do zákulisí."
+        },
+        {
+          "text": "Vydat nedodělanou mapu",
+          "feedback": "Mapa je plná chyb a streamer se jim celou dobu směje."
+        },
+        {
+          "text": "Celý víkend přesčasy",
+          "feedback": "Mapa je hotová. Tým je hotový taky."
+        }
+      ]
+    },
+    "bojkot": {
+      "id": "bojkot",
+      "title": "Komunita bojkotuje battle pass",
+      "text": "Komunita battle pass bojkotuje a hromadně píše negativní recenze.",
+      "lesson": "Neověřená hypotéza se zaplatí ztrátou důvěry. Ta se vrací pomaleji než peníze.",
+      "unresolvedText": "Aféra s battle passem zůstala hráčům v paměti.",
+      "choices": [
+        {
+          "text": "Battle pass zrušit a peníze hráčům vrátit",
+          "feedback": "Bolestivé, ale komunita to ocenila."
+        },
+        {
+          "text": "Trvat na něm",
+          "feedback": "Recenze padají dál."
+        },
+        {
+          "text": "Udělat ho zdarma",
+          "feedback": "Bouře se uklidnila, peníze od vydavatele jsou pryč."
+        }
+      ]
+    },
+    "odchody": {
+      "id": "odchody",
+      "title": "Vývojáři po crunchi odcházejí",
+      "text": "Dva zkušení vývojáři po crunchi podali výpověď.",
+      "lesson": "Crunch si vybírá daň se zpožděním. Ztracení lidé stojí víc než o týden pozdější aktualizace.",
+      "unresolvedText": "Po vydání odešli další lidé, studio je oslabené.",
+      "choices": [
+        {
+          "text": "Přerozdělit práci, zmenšit plán a nabrat juniory s mentorováním",
+          "feedback": "Pomalejší start, ale tým se stabilizuje."
+        },
+        {
+          "text": "Další crunch, ať to stihneme",
+          "feedback": "Další výpovědi na stole."
+        },
+        {
+          "text": "Zmrazit nové funkce",
+          "feedback": "Hráči nedostanou nic nového."
+        }
+      ]
+    },
+    "exodus": {
+      "id": "exodus",
+      "title": "Poctiví hráči odcházejí",
+      "text": "Cheaterů je tolik, že poctiví hráči hromadně odcházejí ke konkurenci.",
+      "lesson": "Problém, který ničí zážitek, nepočká na verzi 1.0.",
+      "unresolvedText": "Pověst „hry plné cheaterů“ provázela i verzi 1.0.",
+      "choices": [
+        {
+          "text": "Okamžitě anti-cheat a amnestie pro hráče, kteří se vrátí",
+          "feedback": "Část hráčů se vrátila."
+        },
+        {
+          "text": "Tvrdit, že problém přeháníme",
+          "feedback": "Komunita to vidí jinak."
+        },
+        {
+          "text": "Zavřít PvP servery",
+          "feedback": "Cheateři nemají kde řádit. Ani poctiví hráči."
+        }
+      ]
+    },
+    "mody_bonus": {
+      "id": "mody_bonus",
+      "title": "Módy přivádějí hráče",
+      "text": "Komunitní módy přivádějí nové hráče. Moddeři se ptají, jestli by mohla vzniknout soutěž.",
+      "lesson": "Otevřenost ke komunitě je investice, která se vrací – hráči sami tvoří hodnotu.",
+      "unresolvedText": "Komunita kolem módů hru drží při životě i po verzi 1.0.",
+      "choices": [
+        {
+          "text": "Uspořádat soutěž o nejlepší mód s odměnou",
+          "feedback": "Soutěž přinesla desítky módů a vlnu nových hráčů."
+        },
+        {
+          "text": "Nejlepší módy prodávat jako placený obsah",
+          "feedback": "Moddeři se cítí okradení."
+        },
+        {
+          "text": "Poděkovat a nic dalšího",
+          "feedback": "Příležitost trochu nevyužitá."
+        }
+      ]
+    }
+  }
+}

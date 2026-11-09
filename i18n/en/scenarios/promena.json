@@ -1,0 +1,581 @@
+{
+  "id": "promena",
+  "stars": {
+    "ko": [
+      {
+        "text": "The solution reaches the Market interest goal"
+      }
+    ],
+    "top": [
+      {
+        "text": "A year later at least 50 %"
+      },
+      {
+        "text": "The regional pilot took place"
+      }
+    ]
+  },
+  "name": "The Shape-Shifting Project",
+  "tagline": "Lunches for one school, then the whole region, finally the market",
+  "scope": "A school lunch ordering system: orders and cancellations, payments, an export for accountants and a menu. What comes next, nobody knows yet.",
+  "intro": "A small software company won a contract: a lunch ordering system for one grammar school. The tender documentation is detailed, the price fixed, the deadline September 1. You lead the project. You just don't know yet that this project won't stay what it started as.",
+  "approachText": "The requirements are clear and stable, price and deadline are fixed and the customer knows exactly what they want. That's a predictive project. For now.",
+  "terms": {
+    "launch": "the September 1 launch",
+    "contract": "as set by the contract with the grammar school",
+    "predShort": "connection to regional accounting",
+    "agileShort": "cafeteria rules and the pilot",
+    "users": "diners",
+    "usersGen": "diners",
+    "sponsor": "grammar school principal",
+    "committee": "company management",
+    "product": "The lunch system"
+  },
+  "stakeholders": [
+    {
+      "id": "skola",
+      "name": "Grammar school principal",
+      "wants": "what's in the contract, on time and without complications",
+      "quit": "withdrew from the contract.",
+      "epilogBad": "switched to another vendor a year later – “for one school it's needlessly complicated now”."
+    },
+    {
+      "id": "rodice",
+      "name": "Parents and students",
+      "wants": "simple ordering from a phone",
+      "quit": "went back to paper meal tickets and the project lost its point.",
+      "epilogBad": "use the app only when they have to."
+    },
+    {
+      "id": "kraj",
+      "name": "Regional authority",
+      "wants": "one system for 40 schools and a connection to regional accounting",
+      "quit": "issued a new tender for the system.",
+      "epilogBad": "is considering replacing the system a year later."
+    }
+  ],
+  "areas": {
+    "web": {
+      "label": "Web and app"
+    },
+    "platby": {
+      "label": "Payments"
+    },
+    "integrace": {
+      "label": "Integration"
+    },
+    "analyza": {
+      "label": "Analysis and rules"
+    },
+    "ux": {
+      "label": "User research"
+    }
+  },
+  "team": [
+    {
+      "id": "ivana",
+      "name": "Ivana",
+      "role": "backend and payments"
+    },
+    {
+      "id": "marek",
+      "name": "Marek"
+    },
+    {
+      "id": "olga",
+      "name": "Olga",
+      "role": "analyst who knows the contract and the cafeteria"
+    },
+    {
+      "id": "filip",
+      "name": "Filip"
+    }
+  ],
+  "workstreams": [
+    {
+      "id": "objednavky",
+      "name": "Orders and cancellations per the spec",
+      "why": "The school rules and the contract describe exactly how lunches are ordered and canceled."
+    },
+    {
+      "id": "platby",
+      "name": "Bank transfer payments and matching",
+      "why": "The payment rules are given and changing them would be expensive."
+    },
+    {
+      "id": "export",
+      "name": "Export for the school accountant",
+      "why": "The export format is dictated by the school's accounting software."
+    },
+    {
+      "id": "jidelnicek",
+      "name": "Menu with allergens",
+      "why": "The scope set by the allergen regulation is described precisely in the contract."
+    },
+    {
+      "id": "skoleni",
+      "name": "Cafeteria training before launch",
+      "why": "A one-off part of the handover – it belongs to the project and is planned for the launch date."
+    },
+    {
+      "id": "vkladani",
+      "name": "Entering the daily menu",
+      "why": "The cafeteria manager does it every day. That's operations – the project just gives her the tool."
+    },
+    {
+      "id": "ucty",
+      "name": "Creating accounts for new students every September",
+      "why": "It repeats every year. After launch the school does it, not the project team."
+    }
+  ],
+  "backlog": [
+    {
+      "id": "objednavky",
+      "name": "Ordering and canceling lunches"
+    },
+    {
+      "id": "platby",
+      "name": "Bank transfer payments and matching"
+    },
+    {
+      "id": "export",
+      "name": "Export for the school accountant"
+    },
+    {
+      "id": "jidelnicek",
+      "name": "Menu with allergens"
+    },
+    {
+      "id": "predani",
+      "name": "Guide and training for the cafeteria"
+    },
+    {
+      "id": "ucty",
+      "name": "Manually creating student accounts (every September)"
+    },
+    {
+      "id": "vkladani",
+      "name": "Entering the daily menu"
+    }
+  ],
+  "milestones": [
+    {
+      "id": "m1",
+      "name": "Launch at the grammar school",
+      "okText": "The system has been running at the grammar school since September 1.",
+      "lateText": "The launch slipped – for the first week lunches were ordered on paper."
+    },
+    {
+      "id": "m2",
+      "name": "Regional pilot",
+      "okText": "The pilot runs at three schools in the region and data flow into regional accounting.",
+      "lateText": "The regional pilot never got going."
+    },
+    {
+      "id": "m3",
+      "name": "Market interest",
+      "okText": "Private schools and kindergartens are signing up on their own.",
+      "lateText": "Market interest is lukewarm."
+    }
+  ],
+  "shifts": [
+    {
+      "title": "The region wants the system for all schools",
+      "text": "The regional authority saw the system at the grammar school and wants it for all 40 schools in the region – each with a slightly different cafeteria, subsidies and prices. The connection to regional accounting must go through approval; the rules of individual cafeterias are yet to be discovered.",
+      "addItems": [
+        {
+          "id": "vice_skol",
+          "name": "Managing multiple schools and cafeterias"
+        },
+        {
+          "id": "ucetnictvi",
+          "name": "Connection to regional accounting"
+        },
+        {
+          "id": "pravidla",
+          "name": "Different cafeteria rules (subsidies, prices)"
+        },
+        {
+          "id": "pilot",
+          "name": "Pilot at three schools"
+        }
+      ],
+      "lesson": "When a clearly specified project gains a part with uncertain requirements (the rules of 40 cafeterias), waterfall planning alone is no longer enough. The accounting connection is still managed by plan, the cafeteria rules iteratively – and the two parts are linked by synchronization and integration milestones."
+    },
+    {
+      "title": "The project becomes a product",
+      "text": "Parents love the app. The company wants to offer it to private schools and kindergartens nationwide – as a product on the market. Nobody knows which features will be in demand. The fixed-scope contract ends; the search for value begins.",
+      "team": {
+        "join": [
+          {
+            "id": "dana",
+            "name": "Dana",
+            "role": "user research"
+          }
+        ]
+      },
+      "addItems": [
+        {
+          "id": "mobil",
+          "name": "Mobile app for parents"
+        },
+        {
+          "id": "notifikace",
+          "name": "Alert for an uncanceled lunch"
+        },
+        {
+          "id": "hodnoceni",
+          "name": "Students rating lunches"
+        },
+        {
+          "id": "predplatne",
+          "name": "Online subscription for private schools"
+        },
+        {
+          "id": "skolky",
+          "name": "Kindergarten version"
+        }
+      ],
+      "lesson": "In a market with uncertain demand, neither the contract nor the plan decides anymore – validated value does. You need a Product Owner who sets the order, and experiments that validate interest before a feature is built. A detailed plan or EVM now mostly slows you down."
+    }
+  ],
+  "gate": {
+    "id": "gate",
+    "title": "The regional council decides on expansion",
+    "text": "The regional council decides whether to roll the system out to all schools. What do you present?",
+    "lesson": "In a hybrid project you promise differently: firmly what can be planned (the accounting connection), and openly what is still being discovered (the cafeteria rules).",
+    "choices": [
+      {
+        "text": "Pilot data, the accounting connection plan, and openly what's still being learned about cafeteria rules",
+        "feedback": "The council appreciated that nobody promised the impossible. Expansion approved."
+      },
+      {
+        "text": "Promise a fixed date and price for all 40 schools",
+        "feedback": "The council is thrilled. For now."
+      },
+      {
+        "text": "Ask for more analysis before deciding",
+        "feedback": "The council postponed the decision by a month."
+      }
+    ]
+  },
+  "eventSlots": [
+    [
+      {
+        "id": "zmena",
+        "title": "The principal wants a “small” change",
+        "text": "The grammar school principal would like to add special diet menus. They're not in the contract.",
+        "lesson": "In a fixed-price predictive project, a scope change is a contract change: assess the impact, price it and agree on a date. Free work endangers what is in the contract.",
+        "choices": [
+          {
+            "text": "Assess the impact and offer it as a contract change with a price and date",
+            "feedback": "The principal ordered the change for the second semester."
+          },
+          {
+            "text": "Do it for free to keep her happy",
+            "feedback": "The principal is delighted. The schedule, less so."
+          },
+          {
+            "text": "Refuse – it's not in the contract",
+            "feedback": "Formally correct. The relationship suffered."
+          }
+        ]
+      },
+      {
+        "id": "banka",
+        "title": "The bank changed its statement format",
+        "text": "The school's bank announced a new format for electronic statements. Payment matching will stop working.",
+        "lesson": "Changes at suppliers and partners are a typical risk of a predictive project. A prepared response is cheaper than improvising.",
+        "choices": [
+          {
+            "text": "Per the risk register, use the prepared format converter",
+            "feedback": "The converter was ready. Done in two days."
+          },
+          {
+            "text": "Replan and add work on matching",
+            "feedback": "The plan slipped by a few days."
+          },
+          {
+            "text": "Match payments by hand for now",
+            "feedback": "Olga matches payments every morning."
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "id": "olga",
+        "title": "Olga fell ill",
+        "text": "Olga the analyst, the only one who knows the contract and the cafeteria's operations in detail, is out sick for two weeks.",
+        "lesson": "Even in a small team, knowledge in one head is a risk. A short write-up of key rules and a handover to a colleague cost little and protect the project.",
+        "choices": [
+          {
+            "text": "Olga briefly writes down the key rules from home and Marek takes them over",
+            "feedback": "Marek now knows why lunches must be canceled by eight."
+          },
+          {
+            "text": "Wait until she's back",
+            "feedback": "Answers took two weeks."
+          },
+          {
+            "text": "Ask the principal about every unclear point",
+            "feedback": "The principal answers. More and more tersely."
+          }
+        ]
+      },
+      {
+        "id": "kuchyne",
+        "title": "Testing with the cafeteria",
+        "text": "The cooks tried the system. It meets the contract, but the serving screen confuses them.",
+        "lesson": "Meeting the contract isn't enough if the result won't be usable. Feedback can be handled in a controlled way as a change within the project.",
+        "choices": [
+          {
+            "text": "Adjust the serving screen and log it as an approved change",
+            "feedback": "The cooks praise the serving screen."
+          },
+          {
+            "text": "The contract is met, ignore the feedback",
+            "feedback": "Lines form at the serving counter."
+          },
+          {
+            "text": "Write a detailed guide",
+            "feedback": "The guide hangs in the kitchen. Nobody reads it."
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "id": "pravidla_jidelen",
+        "title": "Every cafeteria is different",
+        "text": "The region's first three schools each have different rules for subsidies, prices and cancellations. Nobody has seen the other 37.",
+        "lesson": "Uncertain requirements are discovered iteratively with real users. A complete upfront analysis would be outdated before it was finished.",
+        "choices": [
+          {
+            "text": "Discover the rules step by step with three pilot cafeterias and grow the backlog",
+            "feedback": "After three weeks it's clear 80 % of cafeterias have just four rule variants."
+          },
+          {
+            "text": "Write a complete analysis of all 40 cafeterias before development",
+            "feedback": "The analysis runs to 200 pages. Half of it is already outdated."
+          },
+          {
+            "text": "One rule for everyone, they'll get used to it",
+            "feedback": "Simple. Parents at small schools pay more."
+          }
+        ]
+      },
+      {
+        "id": "dva_svety",
+        "title": "Accounting and the pilot drift apart",
+        "text": "The regional accounting connection is built to an approved spec, while the school pilot changes the rules every week. The data stop fitting together.",
+        "lesson": "In a hybrid project the predictively and agile managed parts must meet regularly. Without synchronization they drift apart.",
+        "choices": [
+          {
+            "text": "Weekly synchronization and a joint integration milestone",
+            "feedback": "Half an hour every Monday. Differences get caught early."
+          },
+          {
+            "text": "The project manager coordinates both parts alone",
+            "feedback": "It works as long as you have time to watch everything."
+          },
+          {
+            "text": "Let the parts run independently and connect them at the end",
+            "feedback": "Both parts move fast. In different directions."
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "id": "zarlivost",
+        "title": "The grammar school feels sidelined",
+        "text": "The grammar school principal complains that since the region arrived, nobody has time for her school.",
+        "lesson": "When a stronger stakeholder arrives, the original customer must not drop out of the game. Give them a new role.",
+        "choices": [
+          {
+            "text": "Make the grammar school a reference school with regular reviews",
+            "feedback": "The principal now shows the system to other schools herself."
+          },
+          {
+            "text": "The region pays more, the grammar school must wait",
+            "feedback": "The principal won't forget."
+          },
+          {
+            "text": "Promise the grammar school priority on fixes",
+            "feedback": "Marek fixes the grammar school's bugs even on Saturdays."
+          }
+        ]
+      },
+      {
+        "id": "filip",
+        "title": "Filip carries the integration alone",
+        "text": "Only Filip knows the regional accounting connection. He's tired and bugs are piling up.",
+        "lesson": "No critical part of a project should rest on a single person. Rotation and knowledge sharing are your insurance.",
+        "choices": [
+          {
+            "text": "Ivana takes turns with Filip on the integration and learns it",
+            "feedback": "Ivana can now deploy a new version on her own."
+          },
+          {
+            "text": "Filip pushes it through with overtime",
+            "feedback": "Filip pushes it through. At what cost, we'll see."
+          },
+          {
+            "text": "Move the integration deadline",
+            "feedback": "Filip breathed a sigh of relief. The region, less so."
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "id": "napady",
+        "title": "Ten ideas, one team",
+        "text": "Since the app became a product, ideas pour in from all sides: sales, parents, kindergartens, company management.",
+        "lesson": "In an agile product the Product Owner sets the order based on validated value – not whoever is loudest.",
+        "choices": [
+          {
+            "text": "The Product Owner ranks ideas by validated data",
+            "feedback": "Half the ideas ended up in the trash. The other half make sense."
+          },
+          {
+            "text": "A team vote",
+            "feedback": "The technically interesting stuff won."
+          },
+          {
+            "text": "Build everything sales promised",
+            "feedback": "Sales is happy. Parents can't find anything in the app."
+          }
+        ]
+      },
+      {
+        "id": "roadmapa",
+        "title": "Sales wants a fixed feature plan",
+        "text": "A salesperson wants to promise customers which features will be done when – a year ahead.",
+        "lesson": "An agile product communicates a roadmap of goals (what we want to improve), not a list of features with fixed dates.",
+        "choices": [
+          {
+            "text": "A roadmap with quarterly goals instead of feature dates",
+            "feedback": "Customers understand goals better than a feature list."
+          },
+          {
+            "text": "A detailed feature plan a year ahead",
+            "feedback": "The plan lasted three weeks."
+          },
+          {
+            "text": "Promise customers nothing",
+            "feedback": "Customers don't know what to expect."
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "id": "vykon",
+        "title": "At 7:30 a.m. the server can't keep up",
+        "text": "In the morning, when everyone cancels lunches, the app crashes. Customers grow every week.",
+        "lesson": "Technical debt and performance are part of value. Pausing new features for a sprint to fix the foundation is an investment.",
+        "choices": [
+          {
+            "text": "Pause new features for a sprint and fix performance",
+            "feedback": "The app runs even at 7:30."
+          },
+          {
+            "text": "Keep adding features, performance can wait",
+            "feedback": "Parents write in reviews that the app doesn't work in the morning."
+          },
+          {
+            "text": "Buy a bigger server",
+            "feedback": "It helped. For a few months."
+          }
+        ]
+      },
+      {
+        "id": "konkurence",
+        "title": "A competitor copies you",
+        "text": "A competing company released a similar app at half the price.",
+        "lesson": "You don't answer competition by copying, but by understanding your own users better.",
+        "choices": [
+          {
+            "text": "User interviews: where are we better for them?",
+            "feedback": "Parents love the alert for an uncanceled lunch. The competitor doesn't have it."
+          },
+          {
+            "text": "Cut the price",
+            "feedback": "The price war has begun."
+          },
+          {
+            "text": "Copy all the competitor's features",
+            "feedback": "Now there are two identical apps."
+          }
+        ]
+      }
+    ]
+  ],
+  "followups": {
+    "parovani": {
+      "id": "parovani",
+      "title": "Manual matching can't keep up",
+      "text": "Payments keep growing and Olga matches them by hand every morning. She's starting to make mistakes.",
+      "lesson": "A stopgap done “for now” quickly becomes a permanent burden – usually carried by one person.",
+      "unresolvedText": "Manual payment matching stayed – and with it, billing errors.",
+      "choices": [
+        {
+          "text": "Finish automatic matching",
+          "feedback": "Olga has her mornings free again."
+        },
+        {
+          "text": "Olga keeps matching",
+          "feedback": "Olga matches. Less and less accurately."
+        },
+        {
+          "text": "Hire a temp",
+          "feedback": "The temp matches payments. Until the semester ends."
+        }
+      ]
+    },
+    "slib_kraji": {
+      "id": "slib_kraji",
+      "title": "The promised price doesn't add up",
+      "text": "It turns out the cafeteria rules are more complex than expected. The promised price and date for 40 schools don't add up.",
+      "lesson": "A firm promise on uncertain work is a gamble. When it doesn't add up, openly renegotiating scope beats keeping the promise at any cost.",
+      "unresolvedText": "The promise to the region was still being paid off a year after the project.",
+      "choices": [
+        {
+          "text": "Admit it openly and agree on a staged rollout",
+          "feedback": "The region wasn't thrilled, but accepted the stages."
+        },
+        {
+          "text": "Keep the promise at any cost",
+          "feedback": "The promise stands. The team and the budget pay for it."
+        },
+        {
+          "text": "Quietly drop some features",
+          "feedback": "The region noticed during acceptance."
+        }
+      ]
+    },
+    "nesedi": {
+      "id": "nesedi",
+      "title": "The pilot and accounting don't fit",
+      "text": "The school pilot and the regional accounting connection finally met. The data don't match.",
+      "lesson": "Predictively and agile managed parts that meet only at the end almost never fit together. The integration milestone belongs in the middle of the project, not at the end.",
+      "unresolvedText": "Data between the schools and regional accounting are still fixed by hand to this day.",
+      "choices": [
+        {
+          "text": "A joint integration test and an interface fix",
+          "feedback": "Two weeks of work. Now it fits."
+        },
+        {
+          "text": "Transfer data to accounting by hand",
+          "feedback": "Olga has a new monthly chore."
+        },
+        {
+          "text": "Postpone the pilot",
+          "feedback": "The pilot can wait. So can the region – reluctantly."
+        }
+      ]
+    }
+  }
+}

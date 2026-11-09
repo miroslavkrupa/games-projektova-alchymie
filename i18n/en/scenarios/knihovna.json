@@ -1,0 +1,329 @@
+{
+  "id": "knihovna",
+  "stars": {
+    "ko": [
+      {
+        "text": "The library opens with all Must features"
+      }
+    ],
+    "top": [
+      {
+        "text": "All milestones met"
+      }
+    ]
+  },
+  "name": "Library Project",
+  "tagline": "Building renovation + mobile app",
+  "scope": "Building renovation, new self-service kiosks, cabling, a mobile app and an online catalog for readers.",
+  "intro": "You've just taken over the project to modernize the city library. The grand opening is in 12 weeks.",
+  "predWorld": "Building renovation, kiosk procurement, cabling. Fixed contracts, deadlines and permits. The Gantt chart rules.",
+  "agileWorld": "Mobile app and online catalog. Requirements evolve, the team works in sprints and gathers feedback.",
+  "terms": {
+    "launch": "the library opening",
+    "predShort": "construction, kiosks, cabling",
+    "agileShort": "app and catalog",
+    "users": "readers",
+    "usersGen": "readers",
+    "sponsor": "library director",
+    "poGood": "head of the lending department",
+    "committee": "city representatives"
+  },
+  "dependency": {
+    "lock": "Waiting for kiosk delivery (predictive milestone)",
+    "hint": "<b>Kiosk–catalog integration</b> is waiting for a predictive milestone: kiosk delivery."
+  },
+  "workstreams": [
+    {
+      "id": "stavba",
+      "name": "Library building renovation",
+      "why": "The construction has a building permit, a fixed budget and strict sequencing (structure first, then plaster). Changes midway are extremely expensive, so it's planned up front."
+    },
+    {
+      "id": "kiosky",
+      "name": "Self-service kiosk procurement",
+      "why": "Public tender: specification, bidding, contract and delivery time. The requirements are clear and the process is set by law."
+    },
+    {
+      "id": "sit",
+      "name": "Cabling and network infrastructure",
+      "why": "Cables go into the walls at a precise phase of construction. It depends on the construction schedule and can't change later."
+    },
+    {
+      "id": "gdpr",
+      "name": "GDPR compliance and security audit",
+      "why": "Regulatory requirements are set by law and need formal documentation and approval by a fixed date."
+    },
+    {
+      "id": "appka",
+      "name": "Mobile app for readers",
+      "why": "Nobody knows in advance exactly what readers will value. Short iterations and feedback from real users lead to a better product."
+    },
+    {
+      "id": "katalog",
+      "name": "Online catalog and reservations",
+      "why": "Software can be delivered in slices and improved continuously. Features are prioritized by value to readers."
+    },
+    {
+      "id": "ux",
+      "name": "Kiosk interface design",
+      "why": "Design is best tuned through prototypes and testing with real visitors – and that's iterative work."
+    },
+    {
+      "id": "ai",
+      "name": "Experiment: AI book recommendations",
+      "why": "High uncertainty: we don't know if it will work. Short-cycle experiments let us learn fast (or stop in time)."
+    }
+  ],
+  "backlog": [
+    {
+      "id": "login",
+      "name": "Reader sign-in"
+    },
+    {
+      "id": "search",
+      "name": "Catalog search"
+    },
+    {
+      "id": "reserve",
+      "name": "Book reservation"
+    },
+    {
+      "id": "renew",
+      "name": "Loan renewal"
+    },
+    {
+      "id": "kiosk",
+      "name": "Kiosk–catalog integration"
+    },
+    {
+      "id": "notify",
+      "name": "Due date reminders"
+    },
+    {
+      "id": "history",
+      "name": "Loan history"
+    },
+    {
+      "id": "pay",
+      "name": "Online fee payment"
+    },
+    {
+      "id": "a11y",
+      "name": "Accessibility (WCAG)"
+    },
+    {
+      "id": "qr",
+      "name": "Library card on your phone (QR)"
+    },
+    {
+      "id": "events",
+      "name": "Library events calendar"
+    },
+    {
+      "id": "rating",
+      "name": "Book ratings"
+    },
+    {
+      "id": "dark",
+      "name": "Dark mode"
+    },
+    {
+      "id": "recommend",
+      "name": "AI book recommendations"
+    },
+    {
+      "id": "challenge",
+      "name": "Reading challenge (gamification)"
+    },
+    {
+      "id": "ebooks",
+      "name": "Third-party e-book lending"
+    }
+  ],
+  "milestones": [
+    {
+      "id": "m1",
+      "name": "Kiosk contract",
+      "okText": "The tender finished on time and the contract is signed. The kiosks arrive in sprint 3 and the team can start integrating.",
+      "lateText": "The tender dragged on. The kiosks won't arrive until sprint 4 – the agile team has to replan."
+    },
+    {
+      "id": "m2",
+      "name": "Building handover",
+      "okText": "The building is handed over on schedule. The library can start moving in.",
+      "lateText": "Construction ran late. Contract penalties and an unhappy committee."
+    },
+    {
+      "id": "m3",
+      "name": "Grand opening",
+      "okText": "The library opens and every “Must” feature works. Readers reserve books from their phones and the kiosks!",
+      "lateText": "The opening happened, but key features are missing:"
+    }
+  ],
+  "events": [
+    {
+      "id": "kavarna",
+      "title": "The director wants a café",
+      "text": "Midway through the renovation the director has an idea: “There should be a café on the ground floor!” The construction project doesn't account for it at all.",
+      "lesson": "In the predictive part, changes go through formal change control: assess the impact on time, cost and risk, then decide.",
+      "choices": [
+        {
+          "text": "Order the builders to do it now – the director's the boss",
+          "feedback": "The director is delighted, but extra work, a new permit and rerouted utilities cost time and money."
+        },
+        {
+          "text": "Start change control: impact analysis and a steering committee decision",
+          "feedback": "After the analysis, the committee decided the café will come in stage two. The director understands – they saw the numbers."
+        },
+        {
+          "text": "Reject it outright – scope is frozen",
+          "feedback": "The plan is protected, but the director feels ignored. You can't reject changes without assessing them."
+        }
+      ]
+    },
+    {
+      "id": "demo",
+      "title": "Librarians want a change after the demo",
+      "text": "At the sprint review, librarians realize reservations should also support “reserve for a whole class” – for teachers. Nobody saw that coming.",
+      "lesson": "In the agile part, change is welcome. The new requirement goes into the backlog and the Product Owner prioritizes it against everything else.",
+      "choices": [
+        {
+          "text": "Add it to the backlog; the Product Owner orders it by value",
+          "feedback": "The librarians see the team is listening. Findings like this are exactly why we hold reviews."
+        },
+        {
+          "text": "Reject it – the requirements were clear",
+          "feedback": "We chose agile precisely so we could react to findings like this. And we just threw that away."
+        },
+        {
+          "text": "Stop the sprint and rework it right away",
+          "feedback": "Work in progress went to waste and the team is frustrated. A sensible change can wait for the next planning."
+        }
+      ]
+    },
+    {
+      "id": "dodavatel",
+      "title": "The kiosks are delayed",
+      "text": "The kiosk supplier reports a 3-week production delay. The agile team had planned the kiosk integration.",
+      "lesson": "Dependencies between the predictive and agile parts belong in the risk register. The agile team can work around a delay (simulator, backlog replanning).",
+      "choices": [
+        {
+          "text": "Draw on the schedule buffer; meanwhile the team develops against a kiosk simulator",
+          "feedback": "The delay was absorbed. The simulator even caught two bugs before the kiosks arrived."
+        },
+        {
+          "text": "Threaten the supplier with penalties and change nothing",
+          "feedback": "Penalties recover some money, but the kiosks still arrive late and the team waits."
+        },
+        {
+          "text": "Cancel the kiosks – the app is enough",
+          "feedback": "The kiosks were a key requirement of the city. The steering committee is unpleasantly surprised."
+        }
+      ]
+    },
+    {
+      "id": "retro",
+      "title": "The retrospective found a gap",
+      "text": "At the retrospective it turns out the developers don't know when the building network will be ready – so they can't test the kiosks on site.",
+      "lesson": "The interface between the predictive and agile parts needs a shared dependency plan and regular communication.",
+      "choices": [
+        {
+          "text": "Set up a shared dependency map and a weekly sync with the site manager",
+          "feedback": "Both teams now see when they're waiting on each other. On-site testing is scheduled."
+        },
+        {
+          "text": "Let the developers figure it out themselves",
+          "feedback": "Information gets lost and integration keeps slipping."
+        },
+        {
+          "text": "Builders will attend every daily scrum",
+          "feedback": "Information flows, but it slows the builders down and the daily drags on."
+        }
+      ]
+    },
+    {
+      "id": "skrt",
+      "title": "Budget cut",
+      "text": "The city announces: the project budget is cut by 10%. You have to save somewhere.",
+      "lesson": "The iron triangle (time–cost–scope): in a hybrid project, the usual sacrifice is the agile part's scope (Could features), not quality or safety.",
+      "choices": [
+        {
+          "text": "Drop the app's “Could” features and defer them to the next stage",
+          "feedback": "Savings with no impact on key features. MoSCoW paid off."
+        },
+        {
+          "text": "Save on testing",
+          "feedback": "Money saved today, you'll pay back many times over in post-launch bugs."
+        },
+        {
+          "text": "Cut construction costs with cheaper materials",
+          "feedback": "Changing materials requires a new assessment and reworked design documentation."
+        }
+      ]
+    },
+    {
+      "id": "gdpr",
+      "title": "GDPR audit",
+      "text": "The data protection officer wants proof of how the app processes reader data. It can't launch without approval.",
+      "lesson": "Compliance requirements in the agile part are best handled by adding them to the Definition of Done – then every feature is “done” including documentation.",
+      "choices": [
+        {
+          "text": "Add GDPR requirements to the Definition of Done",
+          "feedback": "Every new feature is now compliant from the start. The audit goes smoothly."
+        },
+        {
+          "text": "We'll deal with it at the end of the project",
+          "feedback": "Retroactive documentation and last-minute fixes are expensive and risky."
+        },
+        {
+          "text": "Halt development for a whole sprint and document everything",
+          "feedback": "The audit is passed, but at the cost of a lost sprint."
+        }
+      ]
+    },
+    {
+      "id": "odchod",
+      "title": "Key developer is leaving",
+      "text": "The only developer who understands the integration with the old library system has resigned. She has a month left.",
+      "lesson": "A low “bus factor” is a risk. Knowledge sharing (pair programming, documentation) reduces dependence on individuals.",
+      "choices": [
+        {
+          "text": "Pair programming and knowledge transfer + start hiring",
+          "feedback": "Next sprint is slower, but the knowledge no longer walks out the door with one person."
+        },
+        {
+          "text": "Change nothing, it'll work out somehow",
+          "feedback": "After she leaves, nobody knows how the integration works. Bugs pile up."
+        },
+        {
+          "text": "Offer her a raise to stay",
+          "feedback": "She stayed, but the risk remains – she may leave again next time."
+        }
+      ]
+    },
+    {
+      "id": "azbest",
+      "title": "Builders found asbestos",
+      "text": "Asbestos was found while tearing down a partition wall. Removal will take time and money. This risk was in the risk register.",
+      "lesson": "Identified risks should have a prepared response and a reserve. Well-separated project parts let the agile team keep going even when construction hits trouble.",
+      "choices": [
+        {
+          "text": "Activate the risk reserve and adjust the construction schedule; development continues",
+          "feedback": "The risk response plan worked. The committee appreciates that the project was prepared."
+        },
+        {
+          "text": "Stop the whole project, development included, until it's resolved",
+          "feedback": "App development has nothing to do with asbestos. Time wasted for nothing."
+        },
+        {
+          "text": "Keep quiet and carry on",
+          "feedback": "Health inspectors shut the site down and the story hit the news. A major loss of trust."
+        },
+        {
+          "text": "Negotiate emergency money with the sponsor and replan",
+          "feedback": "With no reserve ready, you have to find money and get a new plan approved. It costs time and trust."
+        }
+      ]
+    }
+  ]
+}

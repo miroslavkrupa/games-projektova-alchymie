@@ -1,0 +1,439 @@
+{
+  "id": "hra",
+  "stars": {
+    "ko": [
+      {
+        "text": "Version 1.0 hits its goal"
+      }
+    ],
+    "top": [
+      {
+        "text": "All three goals met"
+      }
+    ]
+  },
+  "name": "Early Access Video Game",
+  "tagline": "Small studio, loud community, little money",
+  "scope": "A co-op survival game in early access: game mechanics, content, updates, community and marketing. Players already own the game and let you know every week what they like.",
+  "approachText": "Extreme uncertainty: only numbers and reviews show what players enjoy. Money drains every sprint, and only traction brings more. The whole project runs agile: short iterations, experiments, player data and a willingness to pivot.",
+  "intro": "You run a small game studio. The game is in early access, players are already playing it, and the money barely lasts a few months. Every sprint costs money – only features players truly enjoy pay off.",
+  "terms": {
+    "launch": "the 1.0 release",
+    "agileShort": "the whole game",
+    "users": "players",
+    "usersGen": "players",
+    "poGood": "game designer with a mandate",
+    "committee": "publisher and investors"
+  },
+  "workstreams": [
+    {
+      "id": "mechaniky",
+      "name": "Game mechanics",
+      "why": "Whether the game is fun only shows when people play it. Prototype, playtest, tweak."
+    },
+    {
+      "id": "obsah",
+      "name": "New maps and content",
+      "why": "Content ships with updates, and direction follows what players play most."
+    },
+    {
+      "id": "balanc",
+      "name": "Game economy and balance",
+      "why": "Tuned from data on thousands of matches, not from a spreadsheet up front."
+    },
+    {
+      "id": "servery",
+      "name": "Servers and stability",
+      "why": "Continuous deployment and quick fixes for whatever crashes – a smooth flow of work."
+    },
+    {
+      "id": "komunita",
+      "name": "Community and Discord",
+      "why": "Talking to players means reacting to whatever is happening right now."
+    },
+    {
+      "id": "lokalizace",
+      "name": "Localization into six languages",
+      "why": "Careful, it sounds like a plannable job – but texts change with every update. Translation runs continuously, in batches."
+    },
+    {
+      "id": "marketing",
+      "name": "Streamer partnerships",
+      "why": "Only the numbers show what works. Short experiments and evaluation."
+    },
+    {
+      "id": "zvuk",
+      "name": "Music and sound effects",
+      "why": "Sound is tuned through playtests, not by a spec."
+    }
+  ],
+  "backlog": [
+    {
+      "id": "coop",
+      "name": "4-player co-op missions"
+    },
+    {
+      "id": "pady",
+      "name": "Crash fixes"
+    },
+    {
+      "id": "cloud",
+      "name": "Cloud saves"
+    },
+    {
+      "id": "zebricek",
+      "name": "PvP leaderboard"
+    },
+    {
+      "id": "arena",
+      "name": "PvP arena"
+    },
+    {
+      "id": "tutorial",
+      "name": "Tutorial for newcomers"
+    },
+    {
+      "id": "skiny",
+      "name": "Paid cosmetic skins"
+    },
+    {
+      "id": "crafting",
+      "name": "Item crafting"
+    },
+    {
+      "id": "battlepass",
+      "name": "Battle pass"
+    },
+    {
+      "id": "mody",
+      "name": "Mod support"
+    },
+    {
+      "id": "gamepad",
+      "name": "Gamepad controls"
+    },
+    {
+      "id": "foto",
+      "name": "Photo mode"
+    },
+    {
+      "id": "ranked",
+      "name": "Ranked PvP seasons"
+    },
+    {
+      "id": "kampan",
+      "name": "Story campaign"
+    },
+    {
+      "id": "konzole",
+      "name": "Console version"
+    }
+  ],
+  "discoveries": [
+    {
+      "id": "hlas",
+      "name": "In-team voice chat",
+      "why": "After co-op missions, players want to talk to each other right in the game."
+    },
+    {
+      "id": "workshop",
+      "name": "Community mod workshop",
+      "why": "Modders spoke up as soon as the tools came out: they want a place to share mods."
+    }
+  ],
+  "milestones": [
+    {
+      "id": "m1",
+      "name": "Positive reviews",
+      "okText": "Reviews are improving, players keep coming back.",
+      "lateText": "Reviews are mixed, players are leaving."
+    },
+    {
+      "id": "m2",
+      "name": "Major update",
+      "okText": "The major update brought back old players and new ones too.",
+      "lateText": "The major update sank without a trace."
+    },
+    {
+      "id": "m3",
+      "name": "Version 1.0",
+      "okText": "Version 1.0 launches to positive reviews!",
+      "lateText": "Version 1.0 is out, but players aren't excited."
+    }
+  ],
+  "shift": {
+    "title": "The market flipped",
+    "text": "A big rival game focused on PvP combat came out, and the PvP players moved over. Your community now mostly wants co-op and mods – and says so loudly. Revealed factor: a loud player community.",
+    "lesson": "When the market flips, reordering the backlog isn't enough – the team has to test new assumptions fast. Hypotheses and experiments become the key practice."
+  },
+  "gate": {
+    "id": "gate",
+    "title": "Publisher meeting",
+    "text": "The publisher decides whether to fund more months of development. What do you show?",
+    "lesson": "Funding decisions in an agile project rest on data: how many people play, how many come back, and what the team has learned.",
+    "choices": [
+      {
+        "text": "Player data, what we've learned and a playable new build",
+        "feedback": "The publisher added funding for three more months."
+      },
+      {
+        "text": "A trailer and big plans for 1.0",
+        "feedback": "“And how many people play it today?” The publisher tied the money to results."
+      },
+      {
+        "text": "Postpone the meeting until there's something to show",
+        "feedback": "Meanwhile, the publisher paused payments."
+      }
+    ]
+  },
+  "events": [
+    {
+      "id": "recenze",
+      "title": "Wave of negative reviews",
+      "text": "Players are posting negative reviews over crashes. The rating is dropping.",
+      "lesson": "Stability is the foundation of value. Players forgive thin content, not a game that crashes.",
+      "choices": [
+        {
+          "text": "Spend a whole sprint on stability and tell the community openly",
+          "feedback": "Players appreciate the honesty. Fewer crashes."
+        },
+        {
+          "text": "Ignore the crashes and ship new content",
+          "feedback": "New content shipped. The crashes stayed."
+        },
+        {
+          "text": "Split the team in half",
+          "feedback": "Some fixes, some content. Nothing done properly."
+        }
+      ]
+    },
+    {
+      "id": "streamer",
+      "title": "Offer from a streamer",
+      "text": "A big streamer offers to showcase the game – in exchange for exclusive content.",
+      "lesson": "Promising dates for content that doesn't exist yet is dangerous in an agile project. Offer what you have.",
+      "choices": [
+        {
+          "text": "Offer early access to the new update, with no date promised",
+          "feedback": "The stream brought in hundreds of new players."
+        },
+        {
+          "text": "Promise an exclusive map within two weeks",
+          "feedback": "The streamer is hyped. The team doesn't know about the map yet."
+        },
+        {
+          "text": "Pay for a sponsored collab",
+          "feedback": "It works, but it's pricey."
+        }
+      ]
+    },
+    {
+      "id": "vydavatel",
+      "title": "Money for a battle pass",
+      "text": "The publisher offers extra money if you add a battle pass by the end of the month.",
+      "lesson": "When money and community trust are at stake, test the hypothesis before you commit.",
+      "choices": [
+        {
+          "text": "Gauge interest with a poll and a small test, then decide",
+          "feedback": "The poll was clear: the community doesn't want a battle pass. The item's value is now verified."
+        },
+        {
+          "text": "Accept and add the battle pass",
+          "feedback": "The money came in. The community is frowning."
+        },
+        {
+          "text": "Decline",
+          "feedback": "The publisher is disappointed, but the community is none the wiser."
+        }
+      ]
+    },
+    {
+      "id": "crunch",
+      "title": "Crunch before the update",
+      "text": "A major update is coming and the team proposes a month of crunch – working nights.",
+      "lesson": "Crunch boosts output short term and burns people out long term. A sustainable pace and smaller scope are cheaper.",
+      "choices": [
+        {
+          "text": "Cut the update's scope and keep a sustainable pace",
+          "feedback": "The update is smaller, but the team is OK."
+        },
+        {
+          "text": "Go into crunch",
+          "feedback": "The update will be big. The team is exhausted."
+        },
+        {
+          "text": "Delay the update by a week",
+          "feedback": "Players wait longer, the team can breathe."
+        }
+      ]
+    },
+    {
+      "id": "cheaty",
+      "title": "Cheaters",
+      "text": "Cheats are spreading through the game. Honest players are furious.",
+      "lesson": "A problem that ruins the experience for all players comes before new features.",
+      "choices": [
+        {
+          "text": "A quick anti-cheat fix and open communication with players",
+          "feedback": "Fewer cheaters, a calmer community."
+        },
+        {
+          "text": "Leave it until 1.0",
+          "feedback": "Meanwhile, the cheaters are having a blast."
+        },
+        {
+          "text": "Ban manually",
+          "feedback": "It helps, but the team spends hours reading reports."
+        }
+      ]
+    },
+    {
+      "id": "modder",
+      "title": "Popular mod",
+      "text": "A community modder made a mod that more people play than some official maps. They want official support.",
+      "lesson": "The community can be your best source of value. Test the interest and give it room.",
+      "choices": [
+        {
+          "text": "Collaborate and test interest in mod support",
+          "feedback": "Interest is huge. The value of mod support is now verified."
+        },
+        {
+          "text": "Ban mods – they ruin our vision",
+          "feedback": "The modder leaves, and thousands of players with them."
+        },
+        {
+          "text": "Hire them onto the team",
+          "feedback": "One more skilled person, but the community got no more openness out of it."
+        }
+      ]
+    }
+  ],
+  "followups": {
+    "lavina": {
+      "id": "lavina",
+      "title": "“Mostly Negative” rating",
+      "text": "The game's rating dropped to “Mostly Negative”. Sales are tanking.",
+      "lesson": "Ignored quality comes back the moment everyone can see it. Fixing it now costs more than two sprints ago.",
+      "unresolvedText": "Bad reviews over crashes followed the game into version 1.0.",
+      "choices": [
+        {
+          "text": "A fix sprint, an apology and a gift for players",
+          "feedback": "Players accepted the apology. The rating is slowly recovering."
+        },
+        {
+          "text": "Delete critical posts on Discord",
+          "feedback": "Screenshots of the deleted posts went viral."
+        },
+        {
+          "text": "Run a sale",
+          "feedback": "New players came – and wrote more negative reviews."
+        }
+      ]
+    },
+    "mapa": {
+      "id": "mapa",
+      "title": "Where's the promised map?",
+      "text": "The streamer asks live where the promised exclusive map is. The team didn't make it in time.",
+      "lesson": "A deadline promised without the team is a debt the team pays off. Honesty is cheaper than a half-finished job.",
+      "unresolvedText": "The streamer kept griping about the broken promise for ages.",
+      "choices": [
+        {
+          "text": "Admit the slip and show the work-in-progress map live",
+          "feedback": "Viewers loved the behind-the-scenes look."
+        },
+        {
+          "text": "Release the unfinished map",
+          "feedback": "The map is full of bugs and the streamer laughs at them the whole time."
+        },
+        {
+          "text": "Weekend overtime",
+          "feedback": "The map is done. So is the team."
+        }
+      ]
+    },
+    "bojkot": {
+      "id": "bojkot",
+      "title": "Community boycotts the battle pass",
+      "text": "The community is boycotting the battle pass and review-bombing the game.",
+      "lesson": "An untested hypothesis gets paid for in lost trust. Trust comes back slower than money.",
+      "unresolvedText": "Players still remember the battle pass fiasco.",
+      "choices": [
+        {
+          "text": "Scrap the battle pass and refund players",
+          "feedback": "Painful, but the community appreciated it."
+        },
+        {
+          "text": "Stick with it",
+          "feedback": "Reviews keep falling."
+        },
+        {
+          "text": "Make it free",
+          "feedback": "The storm died down; the publisher's money is gone."
+        }
+      ]
+    },
+    "odchody": {
+      "id": "odchody",
+      "title": "Devs quit after the crunch",
+      "text": "Two experienced developers handed in their notice after the crunch.",
+      "lesson": "Crunch takes its toll with a delay. Losing people costs more than an update a week late.",
+      "unresolvedText": "More people left after release; the studio is weakened.",
+      "choices": [
+        {
+          "text": "Redistribute work, shrink the plan and hire juniors with mentoring",
+          "feedback": "A slower start, but the team stabilizes."
+        },
+        {
+          "text": "More crunch so we make it",
+          "feedback": "More resignations on the desk."
+        },
+        {
+          "text": "Freeze new features",
+          "feedback": "Players get nothing new."
+        }
+      ]
+    },
+    "exodus": {
+      "id": "exodus",
+      "title": "Honest players are leaving",
+      "text": "There are so many cheaters that honest players are leaving for the competition en masse.",
+      "lesson": "A problem that ruins the experience won't wait for 1.0.",
+      "unresolvedText": "The “game full of cheaters” reputation followed it into version 1.0.",
+      "choices": [
+        {
+          "text": "Anti-cheat right now, plus amnesty for players who come back",
+          "feedback": "Some players came back."
+        },
+        {
+          "text": "Claim the problem is overblown",
+          "feedback": "The community sees it differently."
+        },
+        {
+          "text": "Shut down the PvP servers",
+          "feedback": "Cheaters have nowhere to play. Neither do honest players."
+        }
+      ]
+    },
+    "mody_bonus": {
+      "id": "mody_bonus",
+      "title": "Mods bring in players",
+      "text": "Community mods are bringing in new players. Modders ask whether there could be a contest.",
+      "lesson": "Openness to the community is an investment that pays back – players create value themselves.",
+      "unresolvedText": "The modding community keeps the game alive even after version 1.0.",
+      "choices": [
+        {
+          "text": "Run a best-mod contest with a prize",
+          "feedback": "The contest brought dozens of mods and a wave of new players."
+        },
+        {
+          "text": "Sell the best mods as paid content",
+          "feedback": "Modders feel robbed."
+        },
+        {
+          "text": "Say thanks and leave it there",
+          "feedback": "A somewhat missed opportunity."
+        }
+      ]
+    }
+  }
+}

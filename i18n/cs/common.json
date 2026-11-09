@@ -1,0 +1,1160 @@
+{
+  "METRICS": [
+    {
+      "id": "rozpocet",
+      "label": "Rozpočet"
+    },
+    {
+      "id": "harmonogram",
+      "label": "Harmonogram"
+    },
+    {
+      "id": "kvalita",
+      "label": "Kvalita"
+    },
+    {
+      "id": "spokojenost",
+      "label": "Spokojenost"
+    },
+    {
+      "id": "moralka",
+      "label": "Morálka týmu"
+    }
+  ],
+  "MOSCOW": {
+    "M": {
+      "label": "Must",
+      "title": "Musí být – bez toho se nespouští"
+    },
+    "S": {
+      "label": "Should",
+      "title": "Mělo by být – důležité, ale ne kritické"
+    },
+    "C": {
+      "label": "Could",
+      "title": "Mohlo by být – pokud zbude čas"
+    },
+    "W": {
+      "label": "Won't",
+      "title": "Tentokrát ne – vědomě odloženo"
+    }
+  },
+  "CONTEXT_TAGS": {
+    "zavislost": {
+      "label": "Silné závislosti mezi částmi"
+    },
+    "regulace": {
+      "label": "Regulace a audity"
+    },
+    "verejny": {
+      "label": "Veřejné peníze – důraz na transparentnost"
+    },
+    "pevny_termin": {
+      "label": "Termín, který nejde posunout"
+    },
+    "nejistota_trhu": {
+      "label": "Nejisté reakce uživatelů"
+    },
+    "bezpecnost": {
+      "label": "Bezpečnost a certifikace"
+    },
+    "zmena_u_lidi": {
+      "label": "Změna zavedených návyků lidí"
+    },
+    "pevne_okno": {
+      "label": "Neposunutelné časové okno"
+    },
+    "jasne_zadani": {
+      "label": "Jasné a stabilní zadání"
+    },
+    "omezene_zdroje": {
+      "label": "Peníze jen na pár měsíců"
+    },
+    "rychla_zpetna_vazba": {
+      "label": "Uživatelé dostupní pro rychlou zpětnou vazbu"
+    },
+    "komunita": {
+      "label": "Hlasitá komunita hráčů"
+    }
+  },
+  "PRACTICES": [
+    {
+      "id": "plan",
+      "name": "Harmonogram s milníky",
+      "desc": "Ganttův diagram s návaznostmi, termíny a milníky pro práce, které se dají naplánovat.",
+      "mech": "V Ganttu naplánuje úkoly co nejdřív podle závislostí. V hybridu se milníky splní už při 📅 ≥ 45 (bez plánu až ≥ 55). +5 📅"
+    },
+    {
+      "id": "ccb",
+      "name": "Formální změnové řízení",
+      "desc": "Změny rozsahu, smluv a plánu posuzuje řídicí výbor podle dopadu na čas, náklady a rizika.",
+      "mech": "Chrání před neřízenými vícepracemi. +4 💰 +3 📅"
+    },
+    {
+      "id": "risk",
+      "name": "Registr rizik a riziková rezerva",
+      "desc": "Rizika s plány reakce a vyčleněná rezerva peněz i času.",
+      "mech": "Ztráty 💰 a 📅 z událostí jsou o 40 % menší. Odemyká volby „čerpat rezervu“. −5 💰 na rezervu."
+    },
+    {
+      "id": "detailgantt",
+      "name": "Detailní Gantt pro celý projekt",
+      "desc": "Každá funkce aplikace dostane v plánu pevný termín. Výbor má rád jistotu.",
+      "mech": "Výbor je nadšený. +6 😊 +3 📅. Slouží i jako nástroj pro harmonogram."
+    },
+    {
+      "id": "ccball",
+      "name": "Jedna změnová komise pro všechno",
+      "desc": "Každou změnu – i v backlogu – schvaluje měsíční komise. Jednotná pravidla pro všechny.",
+      "mech": "Pevná kontrola nákladů. +5 💰, kapacita týmu −1."
+    },
+    {
+      "id": "cpm",
+      "name": "Kritická cesta a rezerva projektu",
+      "desc": "Analýza ukáže, které činnosti nesmí sklouznout, a drží společnou časovou rezervu na konci projektu.",
+      "mech": "V Ganttu ukáže kritickou cestu a vůli úkolů. +2 dny rezervy projektu. +3 📅"
+    },
+    {
+      "id": "evm",
+      "name": "Earned Value Management",
+      "desc": "Měří skutečně odvedenou práci vůči plánu a nákladům (SPI, CPI). Předpokládá pevný rozsah.",
+      "mech": "Vedení vidí přesný stav projektu. +5 😊 +3 💰"
+    },
+    {
+      "id": "sync",
+      "name": "Týdenní synchronizace obou přístupů",
+      "desc": "Vedoucí prediktivně i agilně řízených prací se každý týden sejdou nad závislostmi a riziky.",
+      "mech": "Negativní dopady událostí na rozhraní obou přístupů (🔗) jsou o 30 % menší. +3 ⭐"
+    },
+    {
+      "id": "integrace",
+      "name": "Společné integrační milníky",
+      "desc": "V plánu jsou body, kdy se výstupy prediktivně i agilně řízených prací musí potkat a otestovat dohromady.",
+      "mech": "+4 📅. Spolu se synchronizací snižuje laťku pro splnění milníků o 10."
+    },
+    {
+      "id": "dashboard",
+      "name": "Transparentní dashboard pro výbor",
+      "desc": "Na jedné stránce milníky, rozpočet, rizika a skutečně dodaná práce (přírůstky, burn-up).",
+      "mech": "+6 😊. Výbor vidí skutečný stav projektu."
+    },
+    {
+      "id": "gate",
+      "name": "Stage gate s živým demem",
+      "desc": "Na kontrolních bodech výbor posuzuje milníky i skutečně fungující přírůstky.",
+      "mech": "Na stage gate +5 😊 navíc."
+    },
+    {
+      "id": "znalosti",
+      "name": "Sdílení znalostí",
+      "desc": "Párová práce, krátká dokumentace a předávací schůzky napříč oběma částmi.",
+      "mech": "+3 ⭐. Chrání projekt, když vypadne klíčový člověk."
+    },
+    {
+      "id": "prescasy",
+      "name": "Přesčasy jako rezerva kapacity",
+      "desc": "Když to bude hořet, tým zůstane déle. Nic to nestojí.",
+      "mech": "Kapacita týmu +2 každé období. Morálka −4 každé období."
+    },
+    {
+      "id": "scrum",
+      "name": "Scrum ve dvoutýdenních sprintech",
+      "desc": "Plánování, daily, review a retrospektiva; každé 2 týdny hotový přírůstek.",
+      "mech": "Na review uživatelé vidí hodnotu: dodaná hodnota zvyšuje 😊 naplno. +3 ⭐"
+    },
+    {
+      "id": "kanban",
+      "name": "Kanban s WIP limity",
+      "desc": "Plynulý tok práce s omezeným počtem rozpracovaných úkolů.",
+      "mech": "Přetížení sprintu bolí méně (💪 −3 místo −8). Dodaná hodnota zvyšuje 😊 naplno."
+    },
+    {
+      "id": "po",
+      "name": "Product Owner s mandátem a časem",
+      "desc": "Člověk z řad uživatelů rozhoduje o pořadí backlogu a je týmu k dispozici.",
+      "mech": "+6 😊 +3 ⭐. Bez PO spokojenost každý sprint klesá."
+    },
+    {
+      "id": "retro",
+      "name": "Retrospektivy",
+      "desc": "Po každém sprintu tým vyhodnotí, co zlepšit ve způsobu práce.",
+      "mech": "Morálka +2 každý sprint."
+    },
+    {
+      "id": "dod",
+      "name": "Přísná Definition of Done",
+      "desc": "Hotovo = otestováno, zdokumentováno a v souladu s pravidly (bezpečnost, GDPR).",
+      "mech": "Kvalita +2 každý sprint."
+    },
+    {
+      "id": "lean",
+      "name": "Hypotézy a experimenty",
+      "desc": "Build–Measure–Learn: než tým funkci postaví, levně si ověří, jestli o ni uživatelé stojí.",
+      "mech": "Při plánování můžeš levně ověřit skutečnou hodnotu až 2 nejistých položek za sprint. +2 ⭐"
+    }
+  ],
+  "WORLD_LABEL": {
+    "pred": "📐 Prediktivní praktiky",
+    "hybrid": "🔗 Propojovací a společné praktiky",
+    "agile": "🔄 Agilní praktiky"
+  },
+  "PRACTICE_PAIRS": [
+    {
+      "text": "Sprinty s retrospektivou: tým se každé dva týdny učí."
+    },
+    {
+      "text": "Plynulý tok s pravidelným zlepšováním."
+    },
+    {
+      "text": "Přírůstky jsou opravdu hotové, ne „skoro hotové“."
+    },
+    {
+      "text": "Integrační milníky, na které se prediktivně i agilně řízené práce průběžně připravují."
+    },
+    {
+      "text": "Drahé změny posuzuje výbor, levné rozhoduje PO."
+    },
+    {
+      "text": "Výbor rozhoduje podle skutečného stavu."
+    },
+    {
+      "text": "Plán, který počítá s riziky."
+    },
+    {
+      "text": "Sprinty uvnitř plánu, kde je všechno předem dané."
+    },
+    {
+      "text": "Plynulý tok vs. pevný termín každé funkce."
+    },
+    {
+      "text": "PO nemůže rozhodovat, když vše schvaluje komise."
+    },
+    {
+      "text": "Zpětná vazba ze sprintu čeká měsíc na schválení."
+    },
+    {
+      "text": "Dvojí plánování – zbytečná režie."
+    },
+    {
+      "text": "Dvě změnová řízení pro tutéž věc."
+    },
+    {
+      "text": "Retrospektivy opakovaně odhalí únavu, ale nic se nezmění."
+    },
+    {
+      "text": "WIP limity a přesčasy jdou proti sobě."
+    },
+    {
+      "text": "Plán, ve kterém je vidět, co nesmí sklouznout."
+    },
+    {
+      "text": "Rizika se hlídají hlavně na kritické cestě."
+    },
+    {
+      "text": "Přesná čísla o stavu projektu na jednom místě."
+    },
+    {
+      "text": "Product Owner rozhoduje podle ověřených dat."
+    },
+    {
+      "text": "Každý sprint je zároveň experiment."
+    },
+    {
+      "text": "EVM předpokládá pevný rozsah, sprinty ho mění."
+    },
+    {
+      "text": "Experimenty vs. předem daný termín každé funkce."
+    }
+  ],
+  "ESSENTIALS": {
+    "hybrid": [
+      {
+        "name": "Iterativní rámec pro agilně řízené prvky"
+      },
+      {
+        "name": "Product Owner"
+      },
+      {
+        "name": "Plán pro prediktivně řízené prvky"
+      },
+      {
+        "name": "Propojení obou přístupů"
+      },
+      {
+        "name": "Řízení rizik"
+      },
+      {
+        "name": "Transparentní reporting"
+      }
+    ],
+    "pred": [
+      {
+        "name": "Detailní plán"
+      },
+      {
+        "name": "Kritická cesta a rezerva"
+      },
+      {
+        "name": "Řízení změn"
+      },
+      {
+        "name": "Řízení rizik"
+      },
+      {
+        "name": "Měření stavu vůči plánu"
+      }
+    ],
+    "agile": [
+      {
+        "name": "Iterativní rámec"
+      },
+      {
+        "name": "Product Owner"
+      },
+      {
+        "name": "Ověřování hypotéz"
+      },
+      {
+        "name": "Neustálé zlepšování"
+      },
+      {
+        "name": "Kvalita přírůstků"
+      }
+    ]
+  },
+  "APPROACHES": {
+    "hybrid": {
+      "label": "Hybridní projekt"
+    },
+    "pred": {
+      "label": "Prediktivní projekt"
+    },
+    "agile": {
+      "label": "Agilní projekt"
+    }
+  },
+  "PATTERNS": [
+    {
+      "id": "integracni_milnik",
+      "name": "Integrační milník",
+      "story": "Na integračním milníku se ukázalo, že výstupy obou částí do sebe zapadají. Dvě drobné nesrovnalosti se opravily hned.",
+      "k": "Agilní část závisí na výstupu prediktivní části (dodávka zařízení, schválený layout, stroje).",
+      "f": "Společné integrační milníky v plánu + týdenní synchronizace vedoucích obou částí.",
+      "m": "Problémy na rozhraní se objeví brzy, dokud je oprava levná. Obě části vědí, kdy na sebe čekají.",
+      "d": "Hladší integrace a menší riziko zmeškaných milníků."
+    },
+    {
+      "id": "ucici_se_tym",
+      "name": "Učící se tým",
+      "story": "Na retrospektivě tým navrhl zkrátit daily a testovat ve dvojicích. Funguje to.",
+      "k": "Nový tým, nová doména a požadavky, které se teprve vyjasňují.",
+      "f": "Krátké iterace zakončené retrospektivou.",
+      "m": "Tým každé dva týdny vyhodnotí svůj způsob práce a zavede jedno zlepšení.",
+      "d": "Kvalita i morálka postupně rostou."
+    },
+    {
+      "id": "dvourychlostni",
+      "name": "Dvourychlostní governance",
+      "story": "Uživatelé chtěli upravit tři funkce – PO je zařadil do backlogu za den. Změna v prediktivní části mezitím prošla řádným posouzením.",
+      "k": "V jednom projektu jsou drahé změny (stavba, smlouvy) i levné změny (software).",
+      "f": "Formální změnové řízení jen pro prediktivní část; o backlogu rozhoduje Product Owner.",
+      "m": "Drahé změny se pečlivě posuzují, levné se rozhodují rychle a blízko uživatelů.",
+      "d": "Stabilní plán prediktivní části a zároveň pružný vývoj."
+    },
+    {
+      "id": "transparentni_gate",
+      "name": "Transparentní stage gate",
+      "story": "Výbor si prohlédl dashboard a sám vyzkoušel hotové funkce. Rozhodnutí padlo za 20 minut.",
+      "k": "Řídicí výbor rozhoduje o pokračování projektu a potřebuje důvěryhodné podklady.",
+      "f": "Stage gate s hybridním dashboardem a živou ukázkou hotových funkcí.",
+      "m": "Výbor posuzuje skutečný stav, ne slibovaný; problémy se řeší otevřeně.",
+      "d": "Rychlé a informované rozhodnutí, rostoucí důvěra sponzora."
+    },
+    {
+      "id": "pripravena_rezerva",
+      "name": "Připravená rezerva",
+      "story": "Riziko nastalo, ale plán reakce i rezerva byly připravené.",
+      "k": "Prediktivní část s předvídatelnými riziky (dodávky, stavební nálezy, počasí).",
+      "f": "Registr rizik s plány reakce a vyčleněná riziková rezerva.",
+      "m": "Když riziko nastane, sáhne se do rezervy podle připraveného plánu místo krizového přeplánování.",
+      "d": "Menší dopady událostí na rozpočet a harmonogram."
+    },
+    {
+      "id": "hotovo_je_hotovo",
+      "name": "Hotovo znamená hotovo",
+      "story": "Kontrola kvality nenašla v dodaných přírůstcích žádné skryté nedodělky.",
+      "k": "Regulované nebo bezpečnostně citlivé prostředí a tlak na rychlost.",
+      "f": "Přísná Definition of Done včetně testů a souladu s pravidly.",
+      "m": "Kvalita se zabudovává do každé položky průběžně, ne až na konci.",
+      "d": "Méně skrytých chyb, hladší audity."
+    },
+    {
+      "id": "sdilene_knowhow",
+      "name": "Sdílené know-how",
+      "story": "Ve sprintu 5 onemocněl klíčový člověk. Díky sdíleným znalostem ho kolegové bez potíží zastoupili.",
+      "k": "Dočasný projektový tým, kde klíčové znalosti drží několik lidí.",
+      "f": "Párová práce, krátká dokumentace a předávací schůzky.",
+      "m": "Znalosti se šíří týmem a nezávisí na jednotlivcích.",
+      "d": "Výpadek člověka projekt neohrozí a výsledky půjde po projektu udržovat."
+    },
+    {
+      "id": "water_scrum_fall",
+      "name": "Sprinty v betonu",
+      "story": "Tým se ptá: „Proč děláme review, když termíny všech funkcí jsou stejně předem dané?“",
+      "k": "Organizace zvyklá na detailní plánování zavádí agilní tým.",
+      "f": "Sprinty uvnitř detailního plánu, kde má každá funkce pevný termín.",
+      "m": "Zpětná vazba ze sprintů nemůže změnit plán; tým plní harmonogram „po kouscích“ a přepisuje Gantt.",
+      "d": "Agilní rituály bez agilních přínosů, frustrace týmu, klesající kvalita."
+    },
+    {
+      "id": "zamrzly_backlog",
+      "name": "Zamrzlý backlog",
+      "story": "Uživatelé po review chtěli drobnou úpravu. Komise ji projedná až za měsíc.",
+      "k": "Snaha o jednotná pravidla a pevnou kontrolu nákladů.",
+      "f": "Jedna měsíční změnová komise schvaluje i změny v backlogu agilní části.",
+      "m": "Drobné úpravy čekají týdny na schválení; tým staví podle zastaralého zadání.",
+      "d": "Nižší kapacita a klesající spokojenost uživatelů."
+    },
+    {
+      "id": "byrokraticky_hybrid",
+      "name": "Byrokratický hybrid",
+      "story": "Tým spočítal, že porady, reporty a schvalování mu zabírají skoro třetinu času.",
+      "k": "Snaha vzít „to nejlepší z obou světů“ a nic neopomenout.",
+      "f": "Mnoho praktik z obou přístupů najednou – víc, než projekt unese.",
+      "m": "Řídicí režie ukrajuje čas na skutečnou práci.",
+      "d": "Kapacita týmu klesá o každý bod režie nad rozpočet."
+    },
+    {
+      "id": "chaos",
+      "name": "Řízení bez pravidel",
+      "story": "Dva lidé udělali stejnou práci a na jednu důležitou závislost zapomněli všichni.",
+      "k": "Tlak na rychlý start a přesvědčení, že „řízení zdržuje“.",
+      "f": "Minimum pravidel, rolí a koordinace.",
+      "m": "Nikdo neví, kdo rozhoduje; závislosti a rizika nikdo nehlídá.",
+      "d": "Chyby a skluz každý sprint."
+    },
+    {
+      "id": "bez_vlastnika",
+      "name": "Backlog bez vlastníka",
+      "story": "Tým dodal funkci, o kterou nikdo z uživatelů nestál. Na tu důležitou se nedostalo.",
+      "k": "Agilní tým bez jasného zástupce uživatelů.",
+      "f": "Backlog prioritizuje tým nebo ten, kdo je zrovna nejhlasitější.",
+      "m": "Priority se řídí hlasitostí a technickou zajímavostí, ne hodnotou.",
+      "d": "Dodávají se méně podstatné věci, spokojenost klesá."
+    },
+    {
+      "id": "bez_zpetne_vazby",
+      "name": "Vývoj naslepo",
+      "story": "Uživatelé zatím nic neviděli – a nikdo neví, jestli tým staví to správné.",
+      "k": "Nejisté požadavky uživatelů.",
+      "f": "Agilní část bez iterativního rámce – žádné sprinty, review ani plynulý tok.",
+      "m": "Uživatelé uvidí výsledek až na konci; omyly se odhalí pozdě.",
+      "d": "Dodaná hodnota zvedá spokojenost jen napůl a kvalita klesá."
+    },
+    {
+      "id": "slepy_plan",
+      "name": "Prediktivní část bez plánu",
+      "story": "U prvního milníku se zjistilo, že objednávky šly ven pozdě – nikdo nehlídal lhůty.",
+      "k": "Prediktivní práce s dlouhými dodacími lhůtami a pevnými návaznostmi.",
+      "f": "Žádný harmonogram prediktivní části – „uvidíme za pochodu“.",
+      "m": "Návaznosti a lhůty nikdo nehlídá, objednávky se zadávají pozdě.",
+      "d": "Milníky vyžadují výrazně lepší harmonogram a často se zmeškají."
+    },
+    {
+      "id": "melounovy_reporting",
+      "name": "Melounový reporting",
+      "story": "Reporty byly měsíce zelené. Na stage gate výbor poprvé uviděl skutečný stav.",
+      "k": "Výbor chce vidět „zelená čísla“ a projekt nemá transparentní reporting.",
+      "f": "Reporting procent dokončení podle plánu bez ukázek hotové práce.",
+      "m": "Problémy se skrývají, dokud skrýt nejdou – zvenku zelený, uvnitř červený.",
+      "d": "Náhlá ztráta důvěry na stage gate."
+    },
+    {
+      "id": "hrdinske_tempo",
+      "name": "Hrdinské tempo",
+      "story": "Tým jede na doraz. Dva nejzkušenější lidé zvažují odchod.",
+      "k": "Pevný termín a narůstající skluz.",
+      "f": "Přesčasy a přetěžování sprintů jako trvalá rezerva kapacity.",
+      "m": "Krátkodobě víc práce, dlouhodobě únava, chyby a odchody lidí.",
+      "d": "Klesající morálka a kvalita."
+    },
+    {
+      "id": "ostrov_znalosti",
+      "name": "Ostrov znalostí",
+      "story": "Ve sprintu 5 onemocněl člověk, který jediný rozuměl klíčové části řešení. Práce týden stála.",
+      "k": "Dočasný tým, kde klíčové know-how drží jednotlivci.",
+      "f": "Žádné systematické sdílení znalostí.",
+      "m": "Když klíčový člověk vypadne, práce stojí a nikdo neví, jak věci fungují.",
+      "d": "Propad kvality v závěru projektu – a riziko, že výsledky nepůjde dlouhodobě udržet."
+    },
+    {
+      "id": "agilni_divadlo",
+      "name": "Agilní divadlo",
+      "story": "Na „sprint review“ montéři ukazují napůl rozebranou turbínu. Nikdo neví, co by na ní měli uživatelé připomínkovat.",
+      "k": "Projekt s jasným zadáním, předepsanými postupy a drahou změnou.",
+      "f": "Sprinty, backlog, Product Owner nebo experimenty pro práce, které mají daný postup.",
+      "m": "Ceremonie počítají se změnou, která tu nepřichází; iterovat se nemá co.",
+      "d": "Režie bez užitku a frustrace týmu."
+    },
+    {
+      "id": "bduf",
+      "name": "Velký plán na nejisté zadání",
+      "story": "Tým staví funkce podle plánu z prvního týdne, i když data už ukazují, že uživatelé chtějí něco jiného.",
+      "k": "Nejistý trh – nikdo neví, co uživatelé opravdu chtějí.",
+      "f": "Detailní plán, kritická cesta nebo pevný rozsah předem (Big Design Up Front).",
+      "m": "Plán stojí na neověřených předpokladech; tým se drží plánu místo dat.",
+      "d": "Staví se věci, o které nikdo nestojí, a spokojenost klesá."
+    },
+    {
+      "id": "hybrid_za_kazdou_cenu",
+      "name": "Hybrid za každou cenu",
+      "story": "Týdenní „synchronizace obou přístupů“ – jenže druhý přístup v projektu není. Porada trvá pět minut a všichni se ptají, proč tu jsou.",
+      "k": "Projekt, který má jen jeden charakter (celý prediktivní nebo celý agilní).",
+      "f": "Propojovací praktiky hybridního řízení, i když není co propojovat.",
+      "m": "Koordinace rozhraní, které neexistuje, jen spotřebovává čas.",
+      "d": "Zbytečná režie. Hybrid není automaticky lepší – je to nástroj pro projekty se dvěma tvářemi."
+    },
+    {
+      "id": "vodopad_kde_sedi",
+      "name": "Vodopád tam, kde sedí",
+      "story": "Blok se odstavil přesně podle plánu. Každá parta ví, kdy nastupuje, a nikdo na nikoho nečeká.",
+      "k": "Jasné a stabilní zadání, předepsané postupy, pevné okno a drahá změna.",
+      "f": "Detailní plán s kritickou cestou a formálním řízením změn.",
+      "m": "Každý ví, co a kdy dělat; drahé změny se posuzují dřív, než se udělají.",
+      "d": "Projekt se vejde do okna a nepřekvapí ho to, co se dalo předvídat."
+    },
+    {
+      "id": "kriticka_cesta",
+      "name": "Řízená kritická cesta",
+      "story": "Když se jedna práce zdržela, tým hned věděl, jestli to posouvá konec projektu, nebo jestli má vůli.",
+      "k": "Projekt s mnoha návaznostmi a pevným koncovým termínem.",
+      "f": "Analýza kritické cesty a společná rezerva projektu (místo rezerv schovaných v každé činnosti).",
+      "m": "Pozornost a lidé jdou tam, kde zpoždění posouvá konec projektu; rezerva se čerpá vědomě.",
+      "d": "Zpoždění jednotlivých prací nemusí ohrozit termín."
+    },
+    {
+      "id": "build_measure_learn",
+      "name": "Build–Measure–Learn",
+      "story": "Landing page a pět rozhovorů za jedno odpoledne ušetřily týden vývoje funkce, o kterou nikdo nestál.",
+      "k": "Vysoká nejistota a omezené peníze.",
+      "f": "Hypotézy a levné experimenty před stavbou funkcí.",
+      "m": "Tým se učí dřív, než utratí čas a peníze; backlog se řídí ověřenou hodnotou.",
+      "d": "Víc skutečné hodnoty za stejnou práci."
+    },
+    {
+      "id": "tovarna_na_funkce",
+      "name": "Továrna na funkce",
+      "story": "Tým dodal pět funkcí za tři sprinty. Uživatelé používají dvě.",
+      "k": "Startup pod tlakem ukázat pokrok.",
+      "f": "Úspěch se měří počtem dodaných funkcí, hypotézy se neověřují.",
+      "m": "Staví se podle odhadů a přání, ne podle ověřeného zájmu uživatelů.",
+      "d": "Velká část práce nepřinese hodnotu a peníze docházejí."
+    },
+    {
+      "id": "adaptivni_rizeni",
+      "name": "Adaptivní řízení",
+      "story": "Když se situace změnila, tým upravil způsob řízení dřív, než se problém stihl rozrůst.",
+      "k": "Projekt, ve kterém se uprostřed změní podmínky (regulace, trh, termín).",
+      "f": "Pravidelná revize metodiky a ochota přeskládat praktiky za běhu.",
+      "m": "Praktiky odpovídají aktuálnímu kontextu, ne tomu z úvodu projektu.",
+      "d": "Projekt zvládne změnu bez dlouhodobých škod."
+    },
+    {
+      "id": "strnula_metodika",
+      "name": "Strnulá metodika",
+      "story": "Kontext se změnil, ale tým jede dál „podle metodiky“. Problémy se hromadí každé období.",
+      "k": "Projekt, ve kterém se změnily podmínky.",
+      "f": "Metodika nastavená na začátku a pak už neměněná.",
+      "m": "Praktiky řeší včerejší problémy; nové požadavky nikdo systematicky nezpracovává.",
+      "d": "Každé období ztráty kvality a důvěry."
+    },
+    {
+      "id": "zametene_pod_koberec",
+      "name": "Zametené pod koberec",
+      "story": "Problém, který se kdysi „vyřešil“ odložením nebo provizoriem, se vrátil – a větší.",
+      "k": "Tlak na rychlost a nepříjemný problém v průběhu projektu.",
+      "f": "Odložení, zamlčení nebo laciné provizorium místo řešení příčiny.",
+      "m": "Problém mezitím roste a vrátí se v nejméně vhodnou chvíli.",
+      "d": "Dražší řešení později a ztráta důvěry."
+    },
+    {
+      "id": "investice_se_vraci",
+      "name": "Investice, která se vrací",
+      "story": "Rozhodnutí, které tehdy něco stálo, se teď vyplatilo.",
+      "k": "Rozhodnutí s okamžitými náklady a pozdějším přínosem.",
+      "f": "Ochota zaplatit dnes za prevenci, kvalitu nebo vztahy.",
+      "m": "Investice do prevence zmenšuje budoucí problémy a otevírá příležitosti.",
+      "d": "Méně krizí a nové příležitosti později."
+    }
+  ],
+  "GATE_EVENT": {
+    "id": "gate",
+    "title": "Stage Gate: polovina projektu",
+    "text": "Je za vámi polovina projektu. Řídicí výbor ({committee}) rozhoduje, zda projekt pustí do závěrečné fáze. Jak připravíš podklady?",
+    "lesson": "Stage gate v hybridním projektu hodnotí prediktivní milníky (smlouvy, předání) i skutečně dodanou hodnotu agilní části – ideálně živou ukázkou.",
+    "choices": [
+      {
+        "text": "100stránkový dokument s detailním plánem všech zbývajících funkcí",
+        "feedback": "Psaní zabralo týmu týden a výbor ho stejně nečetl."
+      },
+      {
+        "text": "Stav milníků a rozpočtu + živé demo hotových funkcí + prognóza rozsahu",
+        "feedback": "Členové výboru si sami vyzkoušeli hotové funkce. Projekt schválen s nadšením."
+      },
+      {
+        "text": "Požádat o odklad, dokud nebude agilní část celá hotová",
+        "feedback": "Odklad gate znamená nejistotu pro všechny. A „celá hotová“ agilní část nikdy nebude."
+      }
+    ]
+  },
+  "GENERIC_EVENTS": [
+    {
+      "id": "pretizeni",
+      "title": "Tým je přetížený",
+      "text": "Dva členové agilního týmu jsou nemocní a zbytek jede na doraz. Product Owner přesto tlačí na víc funkcí.",
+      "lesson": "Udržitelné tempo je základ agility. A pozor na Brooksův zákon: přidání lidí do zpožděného projektu ho krátkodobě ještě zpomalí.",
+      "choices": [
+        {
+          "text": "V příštím sprintu snížit závazek a dát lidem vydechnout",
+          "feedback": "Příští sprint bude menší, ale tým se vrátí v plné síle a bez chyb z únavy."
+        },
+        {
+          "text": "Nařídit přesčasy",
+          "feedback": "Krátkodobě to vypadá dobře, ale únava = chyby a frustrace."
+        },
+        {
+          "text": "Okamžitě najmout dva externisty",
+          "feedback": "Noví lidé se musí zaučit a zabírají čas zkušeným. Pomoc přijde až později."
+        }
+      ]
+    },
+    {
+      "id": "datum",
+      "title": "„Kdy bude VŠECHNO hotové?“",
+      "text": "Člen řídicího výboru chce přesné datum, kdy budou hotové úplně všechny funkce z backlogu.",
+      "lesson": "Hybridní projekty často fixují čas a rozpočet a flexibilní nechávají rozsah agilní části. Prognóza z burn-up grafu je poctivější než slib.",
+      "choices": [
+        {
+          "text": "Slíbit, že ke dni spuštění bude hotové úplně všechno",
+          "feedback": "Výbor je spokojený – zatím. Tým je pod tlakem nesplnitelného slibu."
+        },
+        {
+          "text": "Ukázat burn-up graf: Must funkce jistě, Should pravděpodobně, Could možná",
+          "feedback": "Výbor ocenil upřímnost a pochopil, že k pevnému datu dostane to nejdůležitější."
+        },
+        {
+          "text": "„Jsme agilní, termíny nedáváme.“",
+          "feedback": "Agilita není výmluva pro neprůhlednost. Výbor ztrácí důvěru."
+        }
+      ]
+    },
+    {
+      "id": "po",
+      "title": "Product Owner nemá čas",
+      "text": "Product Owner je zahlcený běžnou prací. Na otázky týmu odpovídá za několik dní e-mailem.",
+      "lesson": "Dostupnost Product Ownera je kritická. Bez rychlých rozhodnutí tým buď čeká, nebo staví špatné věci.",
+      "choices": [
+        {
+          "text": "Domluvit se sponzorem vyhrazený čas pro PO (a zástupce)",
+          "feedback": "PO má teď dvě dopoledne týdně jen pro tým. Rozhodnutí jsou rychlá."
+        },
+        {
+          "text": "Tým bude rozhodovat sám",
+          "feedback": "Tým odhaduje, co by {users} chtěli – a občas se netrefí."
+        },
+        {
+          "text": "Projektový manažer převezme roli PO",
+          "feedback": "Funguje to, ale PM teď nestíhá řídit prediktivní část a nezná tak dobře potřeby {usersGen}."
+        }
+      ]
+    },
+    {
+      "id": "gantt",
+      "title": "Gantt i pro agilní část?",
+      "text": "Nový člen řídicího výboru je zvyklý na Ganttovy diagramy. Chce jeden i pro agilní část, s termínem každé funkce.",
+      "lesson": "Hybridní PM „překládá“ mezi světy: agilní pokrok lze ukázat v řeči milníků (vydání, přírůstky) bez mikroplánování každé funkce.",
+      "choices": [
+        {
+          "text": "Nakreslit Gantt s termínem každé user story",
+          "feedback": "Plán je zastaralý po prvním sprintu a tým ho neustále přepisuje."
+        },
+        {
+          "text": "Gantt s milníky vydání (v1 ke spuštění) + seznam dodaných přírůstků",
+          "feedback": "Nový člen výboru dostal přehled ve formě, které rozumí, a tým může dál pracovat agilně."
+        },
+        {
+          "text": "Požadavek ignorovat",
+          "feedback": "Člen výboru začne projektu nedůvěřovat."
+        }
+      ]
+    },
+    {
+      "id": "drobnost",
+      "title": "„Jen jedna drobnost…“",
+      "text": "Sponzor projektu ({sponsor}) chodí každý týden přímo za členy týmu s „drobnými“ požadavky. Tým je plní bokem a cíle sprintů se rozpadají.",
+      "lesson": "Všechny požadavky na agilní část jdou přes Product Ownera a backlog. Práce „bokem“ ničí transparentnost i plánování.",
+      "choices": [
+        {
+          "text": "Slušně ho nasměrovat na Product Ownera – požadavky půjdou do backlogu",
+          "feedback": "Sponzor chvíli bručel, ale na review vidí, že jeho nápady jsou v backlogu seřazené podle hodnoty. Tým má zase jasný cíl sprintu."
+        },
+        {
+          "text": "Tým bude drobnosti dál plnit – je to přece sponzor",
+          "feedback": "Skrytá práce mimo backlog: plán sprintu neplatí a nikdo neví, kam mizí kapacita."
+        },
+        {
+          "text": "Zakázat sponzorovi mluvit s týmem",
+          "feedback": "Tým má klid, ale sponzor se cítí odstrčený. Komunikace má téct, jen přes správnou roli."
+        }
+      ]
+    },
+    {
+      "id": "dluh",
+      "title": "Technický dluh roste",
+      "text": "Tým upozorňuje, že kvůli spěchu dělal zkratky. Řešení je křehké a každá nová funkce trvá déle.",
+      "lesson": "Technický dluh je potřeba splácet průběžně. Je to investice do udržitelného tempa, ne „ztracený čas“.",
+      "choices": [
+        {
+          "text": "Vyhradit v každém sprintu kousek kapacity na splácení dluhu",
+          "feedback": "Příští sprint je o kousek menší, ale tempo se dlouhodobě stabilizuje."
+        },
+        {
+          "text": "Dluh řešit až po spuštění",
+          "feedback": "Dluh se úročí: chyby přibývají a po spuštění bude oprava dražší."
+        },
+        {
+          "text": "Celý příští sprint věnovat jen úklidu",
+          "feedback": "Řešení je čistší, ale stakeholdeři celý sprint neuvidí žádnou novou hodnotu."
+        }
+      ]
+    },
+    {
+      "id": "smlouva",
+      "title": "Smlouva s externím dodavatelem",
+      "text": "Část vývoje dělá externí firma. Nákupní oddělení chce smlouvu s pevnou cenou a detailně popsaným rozsahem na celý projekt.",
+      "lesson": "Agilní práci s externisty kryjí agilní kontrakty: pevný čas a rozpočet, proměnlivý rozsah (případně platba za sprint s možností ukončení).",
+      "choices": [
+        {
+          "text": "Pevná cena + pevný rozsah sepsaný hned teď",
+          "feedback": "Každá změna backlogu teď znamená dodatek ke smlouvě a vyjednávání. Agilita je svázaná."
+        },
+        {
+          "text": "Rámcová smlouva: pevný rozpočet a termín, rozsah se prioritizuje backlogem",
+          "feedback": "Nákupčí mají jistotu ceny, Product Owner volnost v prioritách. Klasický agilní kontrakt."
+        },
+        {
+          "text": "Platit za odpracované hodiny bez limitu",
+          "feedback": "Flexibilní, ale bez stropu riskuješ rozpočet."
+        }
+      ]
+    },
+    {
+      "id": "hodiny",
+      "title": "Odhady v hodinách",
+      "text": "Finanční ředitel chce u každé položky backlogu odhad v hodinách a bude kontrolovat, kdo kolik „přetáhl“.",
+      "lesson": "Story pointy a velocity dávají spolehlivější prognózu než detailní hodinové odhady. Měř tým, ne jednotlivce.",
+      "choices": [
+        {
+          "text": "Vysvětlit relativní odhady a ukázat prognózu z velocity týmu",
+          "feedback": "Prognóza z reálných dat je přesnější než sčítání hodin. Tým neztrácí čas vykazováním."
+        },
+        {
+          "text": "Rozepsat vše na hodiny a vykazovat odchylky",
+          "feedback": "Tým tráví hodiny odhadováním a vykazováním. A odhady jsou stejně nepřesné."
+        },
+        {
+          "text": "Požadavek ignorovat",
+          "feedback": "Finanční ředitel teď projekt považuje za černou díru na peníze."
+        }
+      ]
+    },
+    {
+      "id": "spor",
+      "title": "Spor o sdílené prostředí",
+      "text": "Vedoucí prediktivní části a Scrum Master se přou: oba potřebují ve stejném týdnu jediné testovací prostředí a stejné techniky.",
+      "lesson": "Hybridní PM řeší konflikty o sdílené zdroje transparentně – podle závislostí a dopadu na cíle, ne podle toho, kdo je hlasitější.",
+      "choices": [
+        {
+          "text": "Sejít se, ukázat si závislosti a domluvit pořadí podle dopadu na milníky",
+          "feedback": "Oba odešli s dohodou, které rozumí. Příště si to domluví už na synchronizaci."
+        },
+        {
+          "text": "Rozhodnout ve prospěch prediktivní části – má přece pevný plán",
+          "feedback": "Agilní tým má pocit, že je „druhá liga“. Testy se odkládají."
+        },
+        {
+          "text": "Eskalovat hned na řídicí výbor",
+          "feedback": "Výbor to vyřešil, ale za týden. A ptá se, proč to projekt nezvládl sám."
+        }
+      ]
+    },
+    {
+      "id": "nefunguje",
+      "title": "Hotovo, ale nefunguje",
+      "text": "Na sprint review se ukáže, že funkce označená jako „hotová“ v reálném prostředí nefunguje. Na počítači vývojáře šlapala.",
+      "lesson": "Jasná Definition of Done a „blameless“ přístup k chybám: hledáme příčinu v procesu, ne viníka.",
+      "choices": [
+        {
+          "text": "Zpřísnit Definition of Done: hotovo = otestováno v prostředí blízkém ostrému provozu",
+          "feedback": "Pár položek teď trvá o chlup déle, ale „hotovo“ zase znamená hotovo."
+        },
+        {
+          "text": "Najít, kdo to pokazil",
+          "feedback": "Tým začne chyby skrývat. Obviňování nikdy nepomáhá zlepšit proces."
+        },
+        {
+          "text": "Opravit a jet dál beze změny",
+          "feedback": "Tahle chyba je pryč, ale příčina zůstává – stane se to znovu."
+        }
+      ]
+    },
+    {
+      "id": "daily",
+      "title": "Sponzor na daily scrumu",
+      "text": "Sponzor ({sponsor}) začal chodit na každý daily scrum, vyptává se jednotlivců a rozděluje jim úkoly.",
+      "lesson": "Daily scrum je plánovací schůzka týmu, ne report nadřízenému. Stakeholdeři mají své místo na sprint review.",
+      "choices": [
+        {
+          "text": "Vysvětlit smysl daily a pozvat ho na sprint review, kde uvidí výsledky",
+          "feedback": "Sponzor na review nadšeně zkouší hotové funkce a daily patří zase týmu."
+        },
+        {
+          "text": "Nechat to být, je to šéf",
+          "feedback": "Tým přestal na daily mluvit o problémech. Hlásí jen „všechno v pořádku“."
+        },
+        {
+          "text": "Daily raději zrušit",
+          "feedback": "Problém zmizel, ale s ním i každodenní koordinace týmu."
+        }
+      ]
+    },
+    {
+      "id": "velocity",
+      "title": "Soutěž ve velocity",
+      "text": "Vedení navrhuje: tým s nejvyšší velocity dostane bonus. Velocity se bude porovnávat i s ostatními týmy.",
+      "lesson": "Velocity je plánovací nástroj týmu, ne výkonnostní metrika. Jakmile se z ní stane cíl, přestane fungovat (Goodhartův zákon).",
+      "choices": [
+        {
+          "text": "Odmítnout a navrhnout měřit dodanou hodnotu a spokojenost uživatelů",
+          "feedback": "Vedení přijalo jiné ukazatele. Tým se soustředí na výsledky, ne na čísla."
+        },
+        {
+          "text": "Souhlasit – motivace je dobrá",
+          "feedback": "Odhady začnou záhadně „růst“. Velocity vzroste, hodnota ne."
+        },
+        {
+          "text": "Souhlasit, ale porovnávat jen s vlastní minulostí",
+          "feedback": "Menší zlo, ale i tak tým začne odhady nafukovat."
+        }
+      ]
+    },
+    {
+      "id": "rizika",
+      "title": "Zaprášený registr rizik",
+      "text": "Zjistíš, že registr rizik od úvodní fáze nikdo neotevřel. Agilní část v něm vůbec není.",
+      "lesson": "Řízení rizik je průběžná činnost. V hybridu sleduj rizika obou částí i jejich rozhraní – nejlépe v rámci pravidelné synchronizace.",
+      "choices": [
+        {
+          "text": "Zařadit krátkou revizi rizik obou částí do týdenní synchronizace",
+          "feedback": "Hned při první revizi se objevila dvě nová rizika na rozhraní. Teď mají plán reakce."
+        },
+        {
+          "text": "Registr stejně nikdo nečte – zrušit ho",
+          "feedback": "Bez přehledu o rizicích tě další problém zaskočí nepřipraveného."
+        },
+        {
+          "text": "Jednou ho velkým workshopem aktualizovat a dál neřešit",
+          "feedback": "Na chvíli je aktuální, za měsíc bude zase zaprášený."
+        }
+      ]
+    },
+    {
+      "id": "pilot",
+      "title": "Pilotní provoz?",
+      "text": "Product Owner navrhuje pustit část hotových funkcí malé skupině uživatelů ještě před ostrým startem.",
+      "lesson": "Dodávat hodnotu brzy a v malých krocích snižuje riziko. Pilotní provoz je typický most mezi agilním vývojem a pevným datem spuštění.",
+      "choices": [
+        {
+          "text": "Ano – pilot s malou skupinou a pravidelný sběr zpětné vazby",
+          "feedback": "Pilotní uživatelé našli tři nejasnosti, které by jinak odhalily stovky lidí naráz."
+        },
+        {
+          "text": "Ne, všechno se ukáže najednou při spuštění",
+          "feedback": "Big bang: chyby a nepochopené funkce odhalí až všichni naráz."
+        },
+        {
+          "text": "Pilot ano, ale zpětnou vazbu zpracujeme až po spuštění",
+          "feedback": "Uživatelé jsou rádi, že něco vidí, ale jejich podněty zatím leží ladem."
+        }
+      ]
+    },
+    {
+      "id": "komise",
+      "title": "Jedna změnová komise pro všechno",
+      "text": "Manažer kvality navrhuje sjednotit pravidla: každá změna, i v backlogu agilní části, musí projít změnovou komisí, která zasedá jednou měsíčně.",
+      "lesson": "Hybridní governance má více rychlostí: formální změnové řízení tam, kde jsou změny drahé, a rychlá rozhodnutí PO tam, kde jsou levné.",
+      "choices": [
+        {
+          "text": "Dvě úrovně: komise pro změny prediktivní části, backlog řídí Product Owner",
+          "feedback": "Manažer kvality je spokojený, že má drahé změny pod kontrolou, a agilní tým zůstává rychlý."
+        },
+        {
+          "text": "Souhlasit – jednotná pravidla jsou fér",
+          "feedback": "Agilní tým teď na schválení drobné úpravy čeká měsíc. Agilita je pryč."
+        },
+        {
+          "text": "Zrušit změnové řízení úplně – ať je všude agilita",
+          "feedback": "V prediktivní části teď kdokoli mění zadání. Vícepráce a chaos."
+        }
+      ]
+    },
+    {
+      "id": "specialista",
+      "title": "Jeden specialista pro oba přístupy",
+      "text": "Jediný bezpečnostní specialista má pracovat současně pro prediktivní i agilní část a nestíhá.",
+      "lesson": "Sdílené zdroje jsou typické úzké hrdlo hybridních projektů. Plánuj je centrálně podle kritických milníků a předávej znalosti dál.",
+      "choices": [
+        {
+          "text": "Naplánovat jeho čas podle milníků a postupně předávat znalosti týmu",
+          "feedback": "Specialista ví, kdy je potřeba kde, a tým se od něj učí. Úzké hrdlo se zmenšuje."
+        },
+        {
+          "text": "Ať si o něj týmy řeknou – kdo dřív přijde, ten dřív mele",
+          "feedback": "Specialista lítá mezi týmy a nic nedokončí. Oba týmy čekají."
+        },
+        {
+          "text": "Najmout druhého specialistu na plný úvazek",
+          "feedback": "Pomůže to, ale je to drahé a nový člověk se teprve zaučuje."
+        }
+      ]
+    },
+    {
+      "id": "agile_hype",
+      "title": "Agilní horečka",
+      "text": "Nový ředitel inovací přesvědčil vedení, že „dnes se všechno dělá agilně“. Chce, aby i tento projekt běžel ve sprintech s backlogem a Product Ownerem.",
+      "lesson": "Agilní přístup není univerzálně lepší. Kde je zadání jasné a změna drahá, vyhrává plán. Z agility se dají převzít jednotlivé praktiky, pokud něco přinesou.",
+      "choices": [
+        {
+          "text": "Vysvětlit, proč tu sedí plán s kritickou cestou; převzít jen užitečné prvky (krátké denní porady, retrospektivy)",
+          "feedback": "Ředitel inovací pochopil, že agilita je nástroj, ne cíl. Denní porady u tabule se týmu líbí."
+        },
+        {
+          "text": "Přejít na sprinty a backlog",
+          "feedback": "Pevný postup montáže se teď „prioritizuje“ každé dva týdny. Návaznosti se rozpadají."
+        },
+        {
+          "text": "Vyhovět jen na papíře – přejmenovat etapy na sprinty",
+          "feedback": "Nic se nezměnilo kromě názvů. Tým se tomu směje, vedení je spokojené – zatím."
+        }
+      ]
+    },
+    {
+      "id": "plan_na_rok",
+      "title": "Plán funkcí na rok dopředu",
+      "text": "Potenciální investor chce detailní plán všech funkcí aplikace na rok dopředu, s termíny.",
+      "lesson": "V nejistém prostředí se plánují cíle a hypotézy, ne funkce. Plán funkcí na rok je odhad postavený na neověřených předpokladech.",
+      "choices": [
+        {
+          "text": "Ukázat roadmapu cílů a hypotéz, metriky trakce a jak rozhodujeme podle dat",
+          "feedback": "Investor ocenil, že tým ví, co měří a proč. Plán funkcí nepotřebuje."
+        },
+        {
+          "text": "Sepsat detailní plán funkcí na celý rok",
+          "feedback": "Psaní zabralo týden a plán byl zastaralý po prvním testu s uživateli."
+        },
+        {
+          "text": "Dát mu jen datum spuštění",
+          "feedback": "Investor je nejistý – neví, podle čeho tým rozhoduje."
+        }
+      ]
+    }
+  ],
+  "SKILLS": {
+    "lide": {
+      "label": "Lidé"
+    },
+    "obecne": {
+      "label": "Dělníci"
+    },
+    "svarec": {
+      "label": "Svářeči"
+    },
+    "jerab": {
+      "label": "Jeřáb"
+    }
+  },
+  "GLOSSARY": [
+    [
+      "Hybridní řízení projektů",
+      "Přístup k řízení projektů kombinující prvky tradičního a agilního řízení projektů s cílem získat výhody a potlačit nevýhody obou, a zvýšit tak úspěšnost projektu. Vyvažuje flexibilitu, efektivitu, produktivitu a kontrolu nad projektem. Schopnost přizpůsobit kombinaci konkrétním potřebám činí tento přístup vhodným pro řízení projektů v různých kontextech."
+    ],
+    [
+      "Kontinuum přístupů",
+      "Od čistě agilních přes upravené a kombinované agilní metodiky, hybridní řízení, kombinované a upravené tradiční metodiky až po čistě tradiční. Hybrid leží uprostřed: kombinuje prvky tradičního i agilního přístupu v jednom projektu."
+    ],
+    [
+      "Co hybridní řízení není",
+      "Není to přizpůsobení (tailoring) agilního nebo tradičního přístupu, není to kombinace praktik v rámci jednoho z nich a není to ani dočasná kombinace praktik během přechodu od jednoho přístupu k druhému."
+    ],
+    [
+      "Prediktivní přístup (vodopád)",
+      "Rozsah, čas a náklady se naplánují předem; fáze jdou po sobě. Vhodné pro jasné, stabilní požadavky (stavba, nákup)."
+    ],
+    [
+      "Agilní přístup",
+      "Práce v krátkých iteracích s častou zpětnou vazbou. Vhodné, když jsou požadavky nejisté nebo se vyvíjejí (software, design)."
+    ],
+    [
+      "Scrum",
+      "Agilní rámec: sprinty, role (Product Owner, Scrum Master, vývojáři) a události (plánování, daily, review, retrospektiva)."
+    ],
+    [
+      "Sprint",
+      "Časově ohraničená iterace (typicky 2 týdny), na jejímž konci je hotový, použitelný přírůstek produktu."
+    ],
+    [
+      "Daily scrum",
+      "Krátká denní schůzka týmu, na které plánuje práci na další den. Není to report nadřízenému."
+    ],
+    [
+      "Product backlog",
+      "Seřazený seznam všeho, co by produkt mohl obsahovat. Spravuje ho Product Owner."
+    ],
+    [
+      "Product Owner",
+      "Osoba odpovědná za maximalizaci hodnoty produktu; rozhoduje o pořadí položek v backlogu."
+    ],
+    [
+      "Story points (SP)",
+      "Relativní odhad pracnosti položky. Tým porovnává položky mezi sebou, ne v hodinách."
+    ],
+    [
+      "Kapacita / velocity",
+      "Kolik story pointů tým zvládne za sprint. Slouží k plánování, ne k hodnocení výkonu."
+    ],
+    [
+      "MoSCoW",
+      "Prioritizace: Must (musí), Should (mělo by), Could (mohlo by), Won't (tentokrát ne)."
+    ],
+    [
+      "MVP",
+      "Minimum Viable Product – nejmenší verze produktu, která už přináší hodnotu a umožní získat zpětnou vazbu."
+    ],
+    [
+      "Milník",
+      "Významný bod v čase (např. podpis smlouvy, předání budovy), často s pevným termínem."
+    ],
+    [
+      "Stage gate",
+      "Kontrolní bod mezi fázemi, kde řídicí výbor rozhoduje, zda projekt pokračuje."
+    ],
+    [
+      "Změnové řízení",
+      "Formální proces posouzení a schválení změn v prediktivní části (dopad na čas, náklady, rizika)."
+    ],
+    [
+      "Definition of Done",
+      "Společná dohoda, kdy je položka opravdu hotová (otestovaná, zdokumentovaná, v souladu s pravidly…)."
+    ],
+    [
+      "Burn-up graf",
+      "Graf dodané práce v čase vs. celkový rozsah. Ukazuje prognózu, co se stihne."
+    ],
+    [
+      "Registr rizik",
+      "Seznam identifikovaných rizik s pravděpodobností, dopadem a plánem reakce. Má se průběžně aktualizovat."
+    ],
+    [
+      "Technický dluh",
+      "Důsledky zkratek a rychlých řešení. Pokud se nesplácí, každá další změna je dražší."
+    ],
+    [
+      "Agilní kontrakt",
+      "Smlouva s pevným časem a rozpočtem, ale proměnlivým rozsahem řízeným backlogem."
+    ],
+    [
+      "Blameless přístup",
+      "Při chybách hledáme příčinu v procesu, ne viníka. Lidé pak chyby neskrývají."
+    ],
+    [
+      "Pilotní provoz",
+      "Nasazení části řešení malé skupině uživatelů před ostrým spuštěním, kvůli zpětné vazbě a snížení rizika."
+    ],
+    [
+      "Trojimperativ",
+      "Vztah rozsahu, času a nákladů. Změna jednoho ovlivní ostatní; kvalita by neměla být „obětí“."
+    ],
+    [
+      "Brooksův zákon",
+      "„Přidání lidí do zpožděného softwarového projektu ho ještě více zpozdí.“ Noví lidé se musí zaučit."
+    ],
+    [
+      "Projektifikace",
+      "Rostoucí podíl práce organizované formou projektů. Může přinášet flexibilitu i dysfunkce (přetížení, ztráta znalostí)."
+    ],
+    [
+      "Vzorec / antivzorec",
+      "Opakující se řešení, které v daném kontextu vytváří hodnotu (vzorec), nebo naopak dysfunkci (antivzorec). Ve hře ho popisuje řetězec kontext → forma → mechanismus → důsledek."
+    ],
+    [
+      "Režie řízení",
+      "Čas a energie, které stojí porady, reporty a schvalování. Každá praktika něco přináší, ale také něco stojí."
+    ],
+    [
+      "WIP limit",
+      "Kanbanové omezení počtu rozpracovaných úkolů. Brání přetížení a urychluje dokončování."
+    ],
+    [
+      "Water-Scrum-Fall",
+      "Hybridní model se vzorem TAT: tradiční fáze na začátku (požadavky, plán, smlouva), agilní sprinty uprostřed a tradiční fáze na konci (testy, převzetí). Patří mezi nejznámější hybridní modely."
+    ],
+    [
+      "Sprinty v betonu",
+      "Antivzorec: sprinty uvnitř plánu, kde má každá funkce předem pevný termín. Rituály zůstanou, přínosy agility zmizí. Neplést s Water-Scrum-Fall – ten fázuje celý životní cyklus, ale agilní vývoj uvnitř nechává pružný."
+    ],
+    [
+      "Ganttův diagram",
+      "Časový plán úkolů jako pruhy na ose dní, včetně závislostí mezi nimi. Základní nástroj prediktivního plánování."
+    ],
+    [
+      "Člověkoden (MD)",
+      "Jednotka pracnosti: práce jednoho člověka po jeden den. Úkol na 3 dny pro 2 lidi = 6 MD. V prediktivních projektech nahrazuje story pointy."
+    ],
+    [
+      "Plánování po vlnách",
+      "Rolling wave planning: nejbližší etapa se plánuje podrobně, vzdálenější jen nahrubo (milníky, odhad pracnosti) a zpřesňují se postupně."
+    ],
+    [
+      "Vyrovnání zdrojů",
+      "Úprava harmonogramu tak, aby v žádný den nebylo potřeba víc lidí, než tým má."
+    ],
+    [
+      "Kritická cesta (CPM)",
+      "Nejdelší řetězec navazujících činností. Zpoždění kterékoli z nich posune konec projektu; ostatní činnosti mají vůli."
+    ],
+    [
+      "Rezerva projektu",
+      "Společná časová rezerva na konci projektu, ze které se kryjí zpoždění na kritické cestě."
+    ],
+    [
+      "Earned Value Management",
+      "Metoda měření stavu projektu: porovnává plánovanou, skutečně odvedenou práci a náklady (SPI, CPI)."
+    ],
+    [
+      "Build–Measure–Learn",
+      "Cyklus Lean Startupu: postav co nejmenší experiment, změř reakci uživatelů a pouč se dřív, než investuješ víc."
+    ],
+    [
+      "Pivot",
+      "Zásadní změna strategie produktu na základě ověřeného učení."
+    ],
+    [
+      "Big Design Up Front",
+      "Snaha vše detailně navrhnout a naplánovat předem. Vhodné při jasném zadání, škodlivé při velké nejistotě."
+    ],
+    [
+      "Goodhartův zákon",
+      "„Když se z ukazatele stane cíl, přestane být dobrým ukazatelem.“ Typicky velocity jako bonusová metrika."
+    ]
+  ]
+}

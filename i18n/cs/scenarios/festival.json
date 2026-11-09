@@ -1,0 +1,312 @@
+{
+  "id": "festival",
+  "stars": {
+    "ko": [
+      {
+        "text": "Festival začne se všemi Must položkami"
+      },
+      {
+        "text": "Kvalita aspoň 30 – bezpečnost návštěvníků nejde ošidit"
+      }
+    ],
+    "top": [
+      {
+        "text": "Všechny milníky splněné"
+      }
+    ]
+  },
+  "name": "Festival Soutok",
+  "tagline": "Pódia a povolení + aplikace a kampaň",
+  "scope": "Povolení a stavba areálu, smlouvy s kapelami, bezpečnost, festivalová aplikace, vstupenky a kampaň.",
+  "intro": "Pořádáš první ročník hudebního festivalu Soutok. Za 12 týdnů se otevírají brány pro 15 000 návštěvníků.",
+  "predWorld": "Povolení od úřadů, stavba pódií, smlouvy s kapelami, bezpečnostní plán. Pevné termíny a úřední schválení.",
+  "agileWorld": "Festivalová aplikace, vstupenky, web a kampaň na sociálních sítích. Testuje se, měří a přizpůsobuje.",
+  "terms": {
+    "launch": "zahájení festivalu",
+    "predShort": "povolení, pódia, booking",
+    "agileShort": "aplikace a kampaň",
+    "users": "návštěvníci",
+    "usersGen": "návštěvníků",
+    "sponsor": "ředitel festivalu",
+    "poGood": "vedoucí návštěvnického servisu",
+    "committee": "partneři festivalu"
+  },
+  "dependency": {
+    "lock": "Čeká na schválený layout areálu (prediktivní milník)",
+    "hint": "<b>Mapa areálu</b> čeká na prediktivní milník – schválení povolení a rozmístění areálu."
+  },
+  "workstreams": [
+    {
+      "id": "povoleni",
+      "name": "Povolení od úřadů, hygieny a hasičů",
+      "why": "Úřední procesy mají dané lhůty a požadavky. Nedají se iterovat – je třeba je včas a úplně naplánovat."
+    },
+    {
+      "id": "podium",
+      "name": "Stavba pódií a zvuková technika",
+      "why": "Fyzická stavba s pevným termínem a dodavateli. Změna na poslední chvíli je drahá a nebezpečná."
+    },
+    {
+      "id": "booking",
+      "name": "Smlouvy s kapelami (booking)",
+      "why": "Smlouvy s umělci se uzavírají měsíce dopředu s pevnými podmínkami a termíny."
+    },
+    {
+      "id": "bezpecnost",
+      "name": "Bezpečnostní plán a pořadatelská služba",
+      "why": "Plán musí schválit policie a hasiči. Jasné požadavky, pevné schválení."
+    },
+    {
+      "id": "app",
+      "name": "Festivalová aplikace (program, vstupenky)",
+      "why": "Funkce se dají dodávat postupně a ladit podle zpětné vazby testerů."
+    },
+    {
+      "id": "kampan",
+      "name": "Kampaň na sociálních sítích",
+      "why": "Co zabere, ukážou až data. Krátké experimenty, měření a přizpůsobení."
+    },
+    {
+      "id": "web",
+      "name": "Web festivalu",
+      "why": "Obsah i funkce se průběžně doplňují; první verze může jít ven brzy a pak se zlepšovat."
+    },
+    {
+      "id": "program",
+      "name": "Doprovodný program podle hlasování fanoušků",
+      "why": "Program se tvoří postupně podle toho, co fanoušci chtějí – typicky iterativní práce."
+    }
+  ],
+  "backlog": [
+    {
+      "id": "program",
+      "name": "Program festivalu"
+    },
+    {
+      "id": "tickets",
+      "name": "Nákup vstupenek online"
+    },
+    {
+      "id": "qr",
+      "name": "Vstupenka v mobilu (QR)"
+    },
+    {
+      "id": "map",
+      "name": "Mapa areálu"
+    },
+    {
+      "id": "push",
+      "name": "Notifikace o změnách programu"
+    },
+    {
+      "id": "scan",
+      "name": "Odbavení u vstupu (skenování QR)"
+    },
+    {
+      "id": "fav",
+      "name": "Můj program (oblíbené koncerty)"
+    },
+    {
+      "id": "cashless",
+      "name": "Bezhotovostní platby v areálu"
+    },
+    {
+      "id": "a11y",
+      "name": "Přístupnost (WCAG)"
+    },
+    {
+      "id": "transport",
+      "name": "Doprava a parkování"
+    },
+    {
+      "id": "carpool",
+      "name": "Spolujízda na festival"
+    },
+    {
+      "id": "vote",
+      "name": "Hlasování o přídavku"
+    },
+    {
+      "id": "dark",
+      "name": "Tmavý režim"
+    },
+    {
+      "id": "ar",
+      "name": "AR navigace po areálu"
+    },
+    {
+      "id": "game",
+      "name": "Festivalová hra o ceny"
+    },
+    {
+      "id": "stream",
+      "name": "Livestream koncertů"
+    }
+  ],
+  "milestones": [
+    {
+      "id": "m1",
+      "name": "Povolení a layout",
+      "okText": "Úřady schválily povolení i rozmístění areálu. Digitální tým může od sprintu 3 dělat mapu.",
+      "lateText": "Schvalování se protáhlo. Finální layout – a tedy mapa – bude až ve sprintu 4."
+    },
+    {
+      "id": "m2",
+      "name": "Pódia a technika",
+      "okText": "Pódia stojí a technika je nazvučená. Generálka může přijít.",
+      "lateText": "Stavba pódií nabrala zpoždění. Penále a nervózní partneři."
+    },
+    {
+      "id": "m3",
+      "name": "Zahájení festivalu",
+      "okText": "Brány se otevírají! Vstupenky v mobilu fungují, program i mapa také.",
+      "lateText": "Festival začal, ale chybí klíčové funkce:"
+    }
+  ],
+  "events": [
+    {
+      "id": "bourka",
+      "title": "Předpověď: bouřky",
+      "text": "Dlouhodobá předpověď hlásí na festivalový víkend vysokou pravděpodobnost bouřek. Riziko je v registru rizik.",
+      "lesson": "Rizika s plánem reakce a rezervou nezaskočí. Prediktivní a agilní část mohou na riziko reagovat každá po svém – a doplňovat se.",
+      "choices": [
+        {
+          "text": "Aktivovat plán reakce: zastřešení z rizikové rezervy + digitální tým přidá do backlogu výstrahy o počasí",
+          "feedback": "Partneři oceňují připravenost a návštěvníci budou o počasí vědět včas."
+        },
+        {
+          "text": "Doufat, že se předpověď splete",
+          "feedback": "Partneři se ptají, jaký je plán. Žádný není."
+        },
+        {
+          "text": "Přesunout festival o týden",
+          "feedback": "Všechny smlouvy (kapely, pódia, povolení) se musí přepracovat. Velmi drahé."
+        },
+        {
+          "text": "Narychlo sehnat a zaplatit zastřešení mimo rozpočet",
+          "feedback": "Bez rezervy jsou peníze navíc a dodavatelé si na poslední chvíli řeknou o víc."
+        }
+      ]
+    },
+    {
+      "id": "headliner",
+      "title": "Hlavní hvězda ruší koncert",
+      "text": "Pět týdnů před festivalem hlavní hvězda ruší vystoupení kvůli nemoci.",
+      "lesson": "Prediktivní část (smlouvy) a agilní část (komunikace, aplikace) musí na krizi reagovat koordinovaně. Agilní tým umí změnu dostat k lidem během hodin.",
+      "choices": [
+        {
+          "text": "Booking zajistí náhradu podle smlouvy, digitální tým rychle upraví program a kampaň",
+          "feedback": "Fanoušci se o změně dozvěděli od vás, rovnou i s náhradou. Vlna nevole rychle opadla."
+        },
+        {
+          "text": "Mlčet, dokud nebude náhrada podepsaná",
+          "feedback": "Zpráva unikla na sociální sítě dřív než od vás. Fanoušci zuří."
+        },
+        {
+          "text": "Nabídnout všem vrácení vstupného",
+          "feedback": "Fér vůči fanouškům, ale rozpočet dostal těžkou ránu."
+        }
+      ]
+    },
+    {
+      "id": "hasici",
+      "title": "Hasiči chtějí další únikovou cestu",
+      "text": "Při kontrole hasiči požadují další únikovou cestu. Rozmístění stánků i pódia se musí upravit.",
+      "lesson": "Povinné (regulatorní) změny se v prediktivní části zapracují přes změnové řízení – a jejich dopady se musí propsat i do agilní části.",
+      "choices": [
+        {
+          "text": "Změnové řízení: upravit layout, aktualizovat povolení a předat novou mapu digitálnímu týmu",
+          "feedback": "Úprava stála pár dní, ale vše je schválené a mapa v aplikaci odpovídá realitě."
+        },
+        {
+          "text": "Podat odvolání a nic neměnit",
+          "feedback": "Odvolání neuspělo a ztratili jste dva týdny."
+        },
+        {
+          "text": "Upravit layout potichu bez nového schválení",
+          "feedback": "Při kolaudaci areálu se to provalilo. Hrozí zákaz akce."
+        }
+      ]
+    },
+    {
+      "id": "viral",
+      "title": "Video se stalo virálním",
+      "text": "Krátké video z příprav pódia nasbíralo milion zhlédnutí. Ostatní plánované příspěvky kampaně mají mizerné výsledky.",
+      "lesson": "Agilní marketing: měř, uč se a přizpůsobuj. Plán je hypotéza, data z reality mají přednost.",
+      "choices": [
+        {
+          "text": "Přizpůsobit kampaň: víc obsahu ze zákulisí, méně plánovaných reklam",
+          "feedback": "Prodej vstupenek vyskočil a kampaň je levnější než podle plánu."
+        },
+        {
+          "text": "Držet se původního plánu kampaně schváleného v lednu",
+          "feedback": "Plán je dodržen, ale příležitost uletěla."
+        },
+        {
+          "text": "Utratit celý zbytek rozpočtu kampaně na propagaci jednoho videa",
+          "feedback": "Dosah je obří, ale na zbytek kampaně nezbyly peníze."
+        }
+      ]
+    },
+    {
+      "id": "predprodej",
+      "title": "Předprodej spadl",
+      "text": "Při startu předprodeje vstupenek e-shop pod náporem spadl na dvě hodiny. Fanoušci jsou naštvaní.",
+      "lesson": "Incident je příležitost zlepšit proces. Nefunkční požadavky (výkon, bezpečnost) patří do Definition of Done.",
+      "choices": [
+        {
+          "text": "Retrospektiva bez hledání viníka + zátěžové testy do Definition of Done",
+          "feedback": "Příčina nalezena, testy zavedeny. Druhá vlna předprodeje proběhla hladce."
+        },
+        {
+          "text": "Vyměnit vývojáře, který e-shop programoval",
+          "feedback": "Tým je vystrašený a nový člověk systém nezná. Příčina zůstala."
+        },
+        {
+          "text": "Koupit silnější servery a dál to neřešit",
+          "feedback": "Tentokrát to pomohlo, ale nikdo neví, kde je skutečná hranice."
+        }
+      ]
+    },
+    {
+      "id": "partner",
+      "title": "Partner chce stan uprostřed",
+      "text": "Hlavní partner chce svůj velký stan přímo uprostřed areálu. Layout už je ale schválený úřady.",
+      "lesson": "Změny schválené baseline řeš změnovým řízením. Hybrid umožňuje hledat kompenzaci v agilní části, kde jsou změny levné.",
+      "choices": [
+        {
+          "text": "Změnové řízení: posoudit dopad na povolení a nabídnout partnerovi alternativu (zviditelnění v aplikaci)",
+          "feedback": "Stan zůstal na okraji, ale partner má v aplikaci vlastní sekci. Je spokojený."
+        },
+        {
+          "text": "Okamžitě vyhovět – partner platí",
+          "feedback": "Nové schvalování layoutu a přestavba areálu. Drahá radost."
+        },
+        {
+          "text": "Odmítnout bez diskuse",
+          "feedback": "Layout je ochráněn, ale partner zvažuje, jestli přijde i příští rok."
+        }
+      ]
+    },
+    {
+      "id": "dobrovolnici",
+      "title": "Chybí dobrovolníci",
+      "text": "Tři týdny před festivalem chybí polovina dobrovolníků pro pořadatelskou službu.",
+      "lesson": "Rychlé experimenty v agilní části mohou pomoci vyřešit problém prediktivní části – s plánem B pro jistotu.",
+      "choices": [
+        {
+          "text": "Digitální tým spustí náborovou kampaň, produkce paralelně osloví agenturu jako zálohu",
+          "feedback": "Kampaň přivedla 80 % chybějících lidí. Agentura dodá jen zbytek."
+        },
+        {
+          "text": "Počkat, ono se to vyřeší",
+          "feedback": "Nevyřešilo. Bezpečnostní plán teď neodpovídá realitě."
+        },
+        {
+          "text": "Rovnou najmout drahou agenturu na všechno",
+          "feedback": "Spolehlivé, ale drahé řešení."
+        }
+      ]
+    }
+  ]
+}

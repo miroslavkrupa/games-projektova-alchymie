@@ -1,0 +1,393 @@
+{
+  "id": "elektrarna",
+  "stars": {
+    "ko": [
+      {
+        "text": "The outage overruns by no more than 3 days – the grid is counting on the plant"
+      }
+    ],
+    "top": [
+      {
+        "text": "The project buffer doesn't end up in the red"
+      }
+    ]
+  },
+  "name": "Power Plant Outage",
+  "tagline": "A unit overhaul in a fixed window",
+  "scope": "Preparation and orders, unit shutdown, turbine inspection, pipe replacement, control system update, pressure tests and restart. Procedures are prescribed by standards and equipment manufacturers.",
+  "approachText": "Clear and stable requirements, prescribed procedures, a fixed window and a high price for every change. The whole project is best managed predictively: a stage-by-stage plan, a detailed Gantt with a critical path, change and risk management. Agile practices would mostly be overhead here.",
+  "intro": "You're managing the planned overhaul of a power plant unit. From preparation to restart you have 46 working days – and every extra day costs millions.",
+  "terms": {
+    "launch": "the unit restart",
+    "predShort": "the whole project",
+    "users": "operations technicians",
+    "usersGen": "operations technicians",
+    "sponsor": "plant director",
+    "poGood": "head of operations",
+    "committee": "plant management"
+  },
+  "workstreams": [
+    {
+      "id": "plan",
+      "name": "Outage schedule and contractor coordination",
+      "why": "Dozens of contractors must take turns in an exact order. Without an upfront plan they'd trip over each other and the window wouldn't be enough."
+    },
+    {
+      "id": "turbina",
+      "name": "Turbine inspection per the manufacturer's procedure",
+      "why": "The manufacturer prescribes the inspection step by step. Nothing \"emerges\" here – you follow the plan."
+    },
+    {
+      "id": "potrubi",
+      "name": "Replacement of worn piping",
+      "why": "The scope is known from measurements and parts are ordered months ahead. Classic planned work."
+    },
+    {
+      "id": "ridici",
+      "name": "Control system software update",
+      "why": "Careful – even though it's software, it's a certified vendor release deployed and tested by an approved procedure. You don't iterate, you plan."
+    },
+    {
+      "id": "bozp",
+      "name": "Workplace safety and work permits",
+      "why": "The rules come from regulations and every permit is formally issued in advance."
+    },
+    {
+      "id": "logistika",
+      "name": "Parts, tools and scaffolding logistics",
+      "why": "What must arrive, when and where follows directly from the work schedule."
+    },
+    {
+      "id": "skoleni",
+      "name": "Operator training on new equipment",
+      "why": "The content is set by the equipment changes and the deadline is fixed – operators must be ready before the restart."
+    },
+    {
+      "id": "zkousky",
+      "name": "Pressure tests and unit restart",
+      "why": "Tests follow a procedure and criteria set by standards. No room for experiments."
+    }
+  ],
+  "phases": [
+    {
+      "id": "p1",
+      "name": "Preparation",
+      "goal": "Plan, orders, contractor agreements, scaffolding and training.",
+      "milestone": {
+        "name": "Ready for the outage"
+      },
+      "tasks": [
+        {
+          "id": "A",
+          "name": "Detailed schedule and permits",
+          "note": "Without an approved plan nothing can be ordered or contracted."
+        },
+        {
+          "id": "B",
+          "name": "Parts order",
+          "note": "What exactly to order comes out of the detailed plan."
+        },
+        {
+          "id": "C",
+          "name": "Contracts with work contractors",
+          "note": "The plan defines the contractors' scope of work."
+        },
+        {
+          "id": "D",
+          "name": "Scaffolding erection",
+          "note": "Built by the in-house crew from a standard design."
+        },
+        {
+          "id": "E",
+          "name": "Contractor safety training",
+          "note": "Contractor staff get trained – so their contracts must already be signed."
+        },
+        {
+          "id": "F",
+          "name": "Parts and tools staging",
+          "note": "Getting ready what was ordered."
+        }
+      ]
+    },
+    {
+      "id": "p2",
+      "name": "Shutdown and disassembly",
+      "goal": "Safely shut down the unit, let it cool and open up the equipment.",
+      "milestone": {
+        "name": "Unit disassembled"
+      },
+      "tasks": [
+        {
+          "id": "A",
+          "name": "Unit shutdown",
+          "note": "The very first step of the outage."
+        },
+        {
+          "id": "B",
+          "name": "Equipment cooldown",
+          "note": "Only a shut-down unit can cool off."
+        },
+        {
+          "id": "C",
+          "name": "Insulation removal",
+          "note": "Hands off hot pipes."
+        },
+        {
+          "id": "D",
+          "name": "Weld inspection",
+          "note": "Welds are only accessible once the insulation is off."
+        },
+        {
+          "id": "E",
+          "name": "Turbine casing removal",
+          "note": "The turbine has to cool down first, too."
+        }
+      ]
+    },
+    {
+      "id": "p3",
+      "name": "Repairs and replacements",
+      "goal": "Turbine inspection, new piping, boiler and control system repairs.",
+      "milestone": {
+        "name": "Repairs done"
+      },
+      "tasks": [
+        {
+          "id": "A",
+          "name": "Turbine inspection",
+          "note": "The longest job of the stage; the turbine was opened in the last one."
+        },
+        {
+          "id": "B",
+          "name": "Pipe replacement",
+          "note": "The old piping is stripped of insulation and ready to go."
+        },
+        {
+          "id": "C",
+          "name": "Boiler repair",
+          "note": "The boiler has been accessible since the last stage."
+        },
+        {
+          "id": "D",
+          "name": "Control system update",
+          "note": "Vendor software, deployed on the shut-down unit."
+        },
+        {
+          "id": "E",
+          "name": "Welding and testing new joints",
+          "note": "Welding the newly fitted pipe sections."
+        },
+        {
+          "id": "F",
+          "name": "New insulation installation",
+          "note": "Insulation goes on the finished piping and the repaired boiler."
+        }
+      ]
+    },
+    {
+      "id": "p4",
+      "name": "Tests and restart",
+      "goal": "Verify everything is tight and working, and put the unit back on the grid.",
+      "milestone": {
+        "name": "Unit restart"
+      },
+      "tasks": [
+        {
+          "id": "A",
+          "name": "Pressure tests",
+          "note": "Verify that the new piping and boiler don't leak."
+        },
+        {
+          "id": "B",
+          "name": "Control system test",
+          "note": "Simulating operating states on the new software."
+        },
+        {
+          "id": "C",
+          "name": "Unit restart",
+          "note": "Restart only with verified tightness and tested controls."
+        },
+        {
+          "id": "D",
+          "name": "Trial operation",
+          "note": "Monitoring the running unit."
+        },
+        {
+          "id": "E",
+          "name": "Handover documentation",
+          "note": "Written continuously from test reports, doesn't wait for the equipment."
+        }
+      ]
+    }
+  ],
+  "gate": {
+    "id": "gate",
+    "title": "Checkpoint review: outage halfway",
+    "text": "Plant management is checking whether the outage is on plan and whether the unit will restart on time. How do you prepare?",
+    "lesson": "A checkpoint in a predictive project is about the exact status against the plan: critical path, buffer burn, risks and truly finished work.",
+    "choices": [
+      {
+        "text": "Critical path status, buffer burn and top risks + an on-site tour of finished work",
+        "feedback": "Management sees the exact status and approved a stronger night shift where slippage looms."
+      },
+      {
+        "text": "A presentation saying everything is \"green\"",
+        "feedback": "The director asked about one specific job and the answer didn't match the slides. Trust is gone."
+      },
+      {
+        "text": "Cancel the checkpoint review, we don't have time",
+        "feedback": "Management started finding out the status on its own – by touring the foremen on site."
+      }
+    ]
+  },
+  "events": [
+    {
+      "id": "trhlina",
+      "title": "Crack in a pipe",
+      "text": "Non-destructive testing found a crack in one pipe that nobody expected. Fixing it means extra work.",
+      "lesson": "Even a predictive project hits surprises. New work gets in through change control, with its impact on the critical path assessed.",
+      "choices": [
+        {
+          "text": "Change control: add the repair to the plan and assess the critical path impact",
+          "feedback": "The repair was scheduled off the critical path. The stage stretches by a day at most."
+        },
+        {
+          "text": "Keep quiet, the pipe will last a few more years",
+          "feedback": "The inspector found the crack in the test report. Now there's a special audit of the whole project."
+        },
+        {
+          "text": "Fix it now and pull people off other work",
+          "feedback": "The repair is underway, but other work has stalled – including work on the critical path."
+        }
+      ]
+    },
+    {
+      "id": "svarec",
+      "title": "No certified welder",
+      "text": "The contractor moved its only welder certified for high-pressure piping to another job.",
+      "lesson": "A risk register with prepared responses (e.g. backup contractors) turns a crisis into routine.",
+      "choices": [
+        {
+          "text": "Call in the backup contractor from the risk register",
+          "feedback": "The backup contractor was vetted in advance. A welder showed up the next day."
+        },
+        {
+          "text": "Poach a welder from a competitor at triple the rate",
+          "feedback": "It works, but it's expensive and shaky."
+        },
+        {
+          "text": "Let an uncertified worker do the welding",
+          "feedback": "The welds failed inspection and must be redone. And a fine is looming."
+        },
+        {
+          "text": "Wait for the welder to come back",
+          "feedback": "Pipe work is stalled, and everything that follows with it."
+        }
+      ]
+    },
+    {
+      "id": "dily",
+      "title": "Turbine blades arrive late",
+      "text": "The manufacturer reports the replacement turbine blades will arrive a week late.",
+      "lesson": "If you know the critical path, you know what can be reshuffled and what can't – and one late delivery doesn't have to move the project end.",
+      "choices": [
+        {
+          "text": "Reshuffle work off the critical path so the float absorbs the delay",
+          "feedback": "The team pulled work with float forward. The project end didn't budge."
+        },
+        {
+          "text": "Pay for air freight",
+          "feedback": "The blades arrived on time – for the price of a small car."
+        },
+        {
+          "text": "Wait for the blades",
+          "feedback": "The turbine inspection is on the critical path – a week of waiting pushes the whole project."
+        },
+        {
+          "text": "Use the old blades and replace them \"some other time\"",
+          "feedback": "The manufacturer refused to warranty the turbine."
+        }
+      ]
+    },
+    {
+      "id": "navic",
+      "title": "\"While we have it all apart…\"",
+      "text": "Management wants to use the outage to also replace the lighting in the whole hall and the camera system.",
+      "lesson": "In a predictive project the scope is fixed. Every extra request goes through change control – even the one that \"costs nothing\".",
+      "choices": [
+        {
+          "text": "Change control: assess the impact and add only what fits off the critical path",
+          "feedback": "Lighting will be done next outage; the cameras fit into the float."
+        },
+        {
+          "text": "Add everything to the plan",
+          "feedback": "Management is happy, but a big chunk of work just landed in an already tight plan."
+        },
+        {
+          "text": "Refuse without assessment",
+          "feedback": "The plan is protected, but management feels brushed off."
+        }
+      ]
+    },
+    {
+      "id": "unava",
+      "title": "Fatigue on the shifts",
+      "text": "Shifts have been running 12 hours a day for weeks on end. Small mistakes are piling up.",
+      "lesson": "Fatigue is a safety risk. Even in a fixed window it pays to respect shift limits and keep spare capacity.",
+      "choices": [
+        {
+          "text": "Respect shift limits and reinforce the night shift",
+          "feedback": "Mistakes dropped and people have the energy for the final push."
+        },
+        {
+          "text": "Add even more overtime",
+          "feedback": "The next week: two injuries and one serious assembly error."
+        },
+        {
+          "text": "Give time off only after the unit restart",
+          "feedback": "People will hang in there, but the mistakes aren't going away."
+        }
+      ]
+    },
+    {
+      "id": "skoronehoda",
+      "title": "Near miss on the scaffolding",
+      "text": "A wrench fell off the scaffolding and missed a fitter by a meter. Nobody got hurt.",
+      "lesson": "Near misses are free warnings. Investigate without blame and adjust the procedure.",
+      "choices": [
+        {
+          "text": "Stop scaffolding work, investigate the cause blamelessly and adjust the procedure",
+          "feedback": "The scaffolding got nets and tool boxes. People see that safety is taken seriously."
+        },
+        {
+          "text": "Carry on, nothing happened",
+          "feedback": "A week later, something heavier fell."
+        },
+        {
+          "text": "Punish the fitter who dropped the wrench",
+          "feedback": "Nobody reports near misses anymore."
+        }
+      ]
+    },
+    {
+      "id": "sit",
+      "title": "The grid wants the unit sooner",
+      "text": "The transmission system operator asks to restart the unit two days early because of an expected cold-snap peak.",
+      "lesson": "Shortening a deadline is assessed on the critical path. Cutting tests and inspections for speed doesn't pay off.",
+      "choices": [
+        {
+          "text": "Check the critical path and offer a partial-load restart without cutting tests",
+          "feedback": "The grid operator got partial output early and full output on time."
+        },
+        {
+          "text": "Promise an earlier restart and shorten the tests",
+          "feedback": "The tests were rushed and a valve burst during the restart."
+        },
+        {
+          "text": "Refuse",
+          "feedback": "The plan holds, but the relationship with the grid operator took a hit."
+        }
+      ]
+    }
+  ]
+}
