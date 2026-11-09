@@ -149,6 +149,7 @@ na úvodu stačí kliknout na *Pokračovat*.
   (vzorec vzniklý z jedné praktiky sdílí její ikonu). Při načtení přepíšou pole `icon` v datech;
   když ikona chybí, zůstane emoji. Emoji u událostí, milníků, oblastí práce a lidí se nevykreslují.
 - `js/fx.js` – oživení rozhraní: živé ukazatele, kotel s mixem praktik, graf průběhu projektu
+- `js/career.js` – kariéra a odznaky: hodnosti (`RANKS`), odznaky (`BADGES`), historie her a Životopis
 - `js/game.js` – herní logika, vykreslování a ukládání rozehrané hry
 
 ### Jak přidat obsah
@@ -204,6 +205,21 @@ Každá volba má `rating` (`best` / `ok` / `bad`), `effects` na ukazatele a vol
 
 ## Postup hráče
 
-Rekordy, hvězdy, objevené vzorce v atlasu a rozehraná hra se ukládají do `localStorage` prohlížeče.
+Rekordy, hvězdy, objevené vzorce v atlasu, historie her, získané odznaky a rozehraná hra se ukládají
+do `localStorage` prohlížeče.
 Tlačítko **Smazat veškerý postup** dole na úvodní obrazovce (po potvrzení) smaže všechny tyto klíče,
 takže se znovu zamknou i vyšší úrovně. Jiná data v prohlížeči nechá být.
+
+## Kariéra a odznaky
+
+Tlačítko **Kariéra** otevře Životopis: současnou pozici, co hráči chybí do povýšení, odehrané projekty
+a vitrínu odznaků. Na konci hry se ukáže povýšení a nově získané odznaky.
+
+- **Hodnosti** (Praktikant → Junior PM → Projektový manažer → Senior PM → Programový manažer →
+  Ředitel PMO → Mistr alchymie) se počítají z uložených hvězd, odemčených úrovní a atlasu, takže se
+  dopočítají i dřívějšímu postupu. Každá hodnost vyžaduje i všechny předchozí.
+- **Odznaky** (20 v pěti kategoriích) odměňují dobré řízení: mistrovství, poznání, styl řízení, lidé
+  a udržitelnost a tři skryté. Odznaky s `global: true` se ověří kdykoli z uloženého postupu,
+  ostatní na konci hry ze stavu hry. Každý má nápovědu, jak ho získat, a poučení.
+- **Historie** ukládá posledních 50 her (projekt, skóre, hvězdy a příznaky pro odznaky napříč hrami).
+

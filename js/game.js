@@ -188,6 +188,8 @@ function startScenario(id) {
     selected: [],
     verified: [],
     experiments: 0,
+    expTotal: 0,
+    career: null,
     valueDelivered: 0,
     buffer: 0,
     initialBuffer: 0,
@@ -1233,6 +1235,7 @@ const ACTIONS = {
     const it = S.backlog.find(b => b.id === id);
     if (!has('lean') || !it || valueKnown(it) || S.experiments >= expPerSprint()) return;
     S.experiments++;
+    S.expTotal = (S.expTotal || 0) + 1;
     S.verified.push(id);
   },
 
@@ -1371,6 +1374,7 @@ const ACTIONS = {
 
   glossary() { S.modal = S.modal === 'glossary' ? null : 'glossary'; },
   atlas() { S.modal = S.modal === 'atlas' ? null : 'atlas'; },
+  career() { S.modal = S.modal === 'career' ? null : 'career'; },
   closeModal() { S.modal = null; },
   replay() { startScenario(S.sc.id); },
   restart() { newGame(); },
@@ -1422,6 +1426,7 @@ function render() {
     <main class="screen screen-${S.screen}">${screens[S.screen]()}</main>
     ${S.modal === 'glossary' ? glossaryModal() : ''}
     ${S.modal === 'atlas' ? atlasModal() : ''}
+    ${S.modal === 'career' ? careerModal() : ''}
   `;
   animateHud();
   saveGame();
@@ -1433,6 +1438,7 @@ function header() {
       <div class="brand"><span class="logo">${S.sc ? S.sc.icon : ic('logo')}</span> Projektová alchymie
         <small>${S.sc ? S.sc.name : 'namíchej správné řízení pro každý projekt'}</small></div>
       <div class="top-btns">
+        <button class="btn ghost" data-action="career">${ic('medaile')} Kariéra</button>
         <button class="btn ghost" data-action="atlas">${ic('mapa')} Atlas</button>
         <button class="btn ghost" data-action="glossary">${ic('kniha')} Slovníček</button>
       </div>
@@ -1551,6 +1557,7 @@ function timeline() {
 
 function intro() {
   const atlas = getAtlas();
+  const car = careerSummary();
   const unlocked = hardUnlocked();
   const insaneOpen = insaneUnlocked();
   const row = sc => {
@@ -1583,8 +1590,9 @@ function intro() {
     <div class="tile-grid">
       ${steps.map(([t, d], i) => `<div class="tile"><span class="tile-num">${i + 1}</span><b>${t}</b><p>${d}</p></div>`).join('')}
     </div>
-    <div class="tile-grid two">
+    <div class="tile-grid three">
       <div class="tile soft"><b>${ic('kostka')} Pokaždé jinak</b><p>Každá hra vylosuje jiné události a odpovědi jsou pokaždé v jiném pořadí.</p></div>
+      <button class="tile soft tile-btn" data-action="career"><b>${ic('medaile')} Kariéra: ${car.rank}</b><p>Celkem ${car.total} ★ z ${SCENARIOS.length * 3} · odznaky ${car.badges} z ${BADGES.length}.</p></button>
       <button class="tile soft tile-btn" data-action="atlas"><b>${ic('mapa')} Atlas vzorců</b><p>Objeveno ${atlas.length} z ${PATTERNS.length} vzorců a antivzorců.</p></button>
     </div>
     <h2 class="section-title">Vyber si projekt</h2>
@@ -1606,7 +1614,7 @@ function intro() {
 const PROGRESS_PREFIXES = [RECORD_KEY, STARS_KEY];
 const progressKeys = () => {
   try {
-    return Object.keys(localStorage).filter(k => k === ATLAS_KEY || k === SAVE_KEY || PROGRESS_PREFIXES.some(p => k.startsWith(p)));
+    return Object.keys(localStorage).filter(k => [ATLAS_KEY, SAVE_KEY, HISTORY_KEY, BADGES_KEY].includes(k) || PROGRESS_PREFIXES.some(p => k.startsWith(p)));
   } catch { return []; }
 };
 function progressReset() {
@@ -1614,7 +1622,7 @@ function progressReset() {
   if (!progressKeys().length) return '';
   if (S.confirmReset) return `
     <div class="reset-box confirm" role="alertdialog" aria-label="Potvrzení smazání postupu">
-      <p>${ic('ok')} <b>Opravdu smazat veškerý postup?</b> Zmizí rekordy a hvězdy ve všech projektech, objevené vzorce v atlasu, rozehraná hra a odemčené úrovně. Vrátit to nejde.</p>
+      <p>${ic('ok')} <b>Opravdu smazat veškerý postup?</b> Zmizí rekordy a hvězdy ve všech projektech, kariéra a odznaky, objevené vzorce v atlasu, rozehraná hra a odemčené úrovně. Vrátit to nejde.</p>
       <div class="actions"><button class="btn danger" data-action="resetProgress">Ano, smazat vše</button><button class="btn" data-action="cancelReset">Zrušit</button></div>
     </div>`;
   return `<div class="reset-box"><button class="btn ghost" data-action="askReset">${ic('znovu')} Smazat veškerý postup</button></div>`;
@@ -2496,6 +2504,9 @@ function starGoals(res) {
 
 function end() {
   const f = finalScore();
+  // Kariéra se zapíše jednou za hru; hodnost před hrou se počítá ještě před uložením rekordu a hvězd.
+  const firstEnd = !S.career;
+  const rankBefore = firstEnd ? rankIndex() : 0;
   // Rekord se porovná jen jednou, aby překreslení (např. slovníček) nezměnilo „nový rekord“.
   if (S.prevRecord === null) {
     S.prevRecord = getRecord(S.sc.id);
@@ -2506,6 +2517,7 @@ function end() {
     S.prevStars = getStars(S.sc.id) ?? -1;
     if (res.stars > S.prevStars) setStars(S.sc.id, res.stars);
   }
+  if (firstEnd) S.career = recordCareer(f, res, rankBefore);
   const newRecord = f.score > S.prevRecord;
   const newStars = res.stars > S.prevStars && S.prevStars >= 0;
   const [icon, title, text] = grade(res);
@@ -2537,6 +2549,7 @@ function end() {
         ${f.sustain !== null ? `<div><span>Rok poté</span><b>${f.sustain}%</b><small>udržitelnost výsledku</small></div>` : ''}
       </div>
     </div>
+    ${careerNews()}
     ${progressChart()}
     ${insaneReveal()}
     ${S.aftermath.length ? `

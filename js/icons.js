@@ -68,6 +68,11 @@ const ICON_SPRITE = `<svg xmlns="http://www.w3.org/2000/svg" style="display:none
   <circle cx="12" cy="12" r="9" style="fill:var(--bad)"/>
   <path d="m8.8 8.8 6.4 6.4M15.2 8.8l-6.4 6.4" style="stroke:#fff;stroke-width:2.6"/>
 </symbol>
+<symbol id="i-nasivka" viewBox="0 0 48 52">
+  <path d="M24 2 45 14v24L24 50 3 38V14z" style="fill:var(--patch);stroke:#2b2118;stroke-width:3"/>
+  <path d="M24 5.6 42 15.9v20.2L24 46.4 6 36.1V15.9z" style="fill:none;stroke:#fbf6ea;stroke-width:1.3;stroke-dasharray:2.2 2;opacity:.85"/>
+  <path d="M24 10 38 18v16l-14 8-14-8V18z" style="fill:var(--surface);stroke:#2b2118;stroke-width:2"/>
+</symbol>
 <symbol id="i-box" viewBox="0 0 24 24">
   <rect x="4" y="4" width="16" height="16" rx="3" style="fill:var(--surface)"/>
 </symbol>

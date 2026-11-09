@@ -162,6 +162,7 @@ p, li, small { text-wrap: pretty; }
 .section-title { margin: 26px 0 10px; }
 .tile-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 12px; }
 .tile-grid.two { grid-template-columns: repeat(2, 1fr); }
+.tile-grid.three { grid-template-columns: repeat(3, 1fr); }
 .tile {
   position: relative; text-align: left; font: inherit; color: var(--ink);
   background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
@@ -880,6 +881,39 @@ h1 { font-size: 2.5rem; }
 .reset-box .actions { justify-content: flex-start; margin: 14px 0 0; }
 .btn.danger { background: var(--bad); border-color: var(--bad); color: #fff; font-weight: 600; }
 
+/* ---------- Kariéra a odznaky ---------- */
+.cv-head { display: grid; grid-template-columns: 1fr 220px; gap: 16px; align-items: start; margin-bottom: 12px; }
+.cv-label { display: block; font-size: .72rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--primary); }
+.cv-rank { font-size: 1.6rem; margin: 2px 0 6px; }
+.cv-head p { margin: 0; }
+.cv-ladder { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column-reverse; gap: 3px; font-size: .82rem; }
+.cv-ladder li { padding: 3px 10px; border: 2px solid var(--line); border-radius: 4px; color: var(--muted); }
+.cv-ladder li.past { color: var(--ink); border-color: var(--edge); }
+.cv-ladder li.now { background: var(--caution); color: var(--caution-ink); border-color: var(--edge); font-weight: 700; box-shadow: var(--shadow-sm); }
+.cv-next { padding: 12px 14px; border: 2px dashed var(--edge); border-radius: var(--radius); margin-bottom: 18px; }
+.cv-next .checklist { margin-top: 6px; }
+.cv-count { font-family: var(--font); font-weight: 400; font-size: .85rem; color: var(--muted); margin-left: 6px; }
+.cv-list { list-style: none; padding: 0; margin: 0 0 18px; display: grid; gap: 6px; }
+.cv-list li { display: grid; grid-template-columns: 34px 1fr auto; gap: 10px; align-items: center; padding: 6px 10px; border: 2px solid var(--line); border-radius: var(--radius); background: var(--surface); }
+.cv-list small { display: block; color: var(--muted); font-size: .8rem; }
+.cv-icon .ic { width: 28px; height: 28px; }
+.cv-res { text-align: right; }
+.badge-cat { margin: 16px 0 8px; font-size: .78rem; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.badge-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }
+.badge { display: grid; grid-template-columns: 48px 1fr; gap: 10px; align-items: center; padding: 8px 10px; border: 2px solid var(--line); border-radius: var(--radius); background: var(--surface); }
+.badge.earned { border-color: var(--edge); box-shadow: var(--shadow-sm); }
+.badge small { display: block; font-size: .8rem; color: var(--muted); line-height: 1.35; }
+.badge.locked b { color: var(--muted); }
+.badge-prog { font-size: .75rem; font-weight: 700; color: var(--primary); }
+.patch { position: relative; display: inline-grid; place-items: center; width: 48px; height: 52px; flex: none; }
+.patch .patch-bg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+.patch > .ic { position: relative; width: 22px; height: 22px; }
+.patch.locked { filter: grayscale(1); opacity: .45; }
+.career-news { border-left: 8px solid var(--caution); }
+.career-news .promo { margin-bottom: 12px; }
+.career-news .promo h3 { font-size: 1.35rem; margin: 2px 0 4px; }
+.career-news .actions { justify-content: flex-start; margin-bottom: 0; }
+
 /* ---------- Mobil ---------- */
 @media (max-width: 760px) {
   h1 { font-size: 1.7rem; }
@@ -900,6 +934,10 @@ h1 { font-size: 2.5rem; }
   .top-btns .btn { padding: 8px 10px; font-size: .9rem; }
   .bl-row { flex-direction: column; gap: 4px; }
   .tile-grid, .tile-grid.two { grid-template-columns: 1fr 1fr; }
+  .tile-grid.three { grid-template-columns: 1fr; }
+  .cv-head { grid-template-columns: 1fr; }
+  .badge-grid { grid-template-columns: 1fr; }
+  .top-btns .btn .ic { display: none; }
   .intro-hero { padding: 20px 16px; }
   .project-row { grid-template-columns: 40px 1fr; gap: 4px 12px; padding: 12px 14px; }
   .pr-icon { grid-row: span 2; font-size: 1.7rem; }
