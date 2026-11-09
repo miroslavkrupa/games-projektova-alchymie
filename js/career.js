@@ -53,7 +53,7 @@ const RANKS = [
   { name: 'Ředitel PMO', skill: 'Myslíš na lidi, stakeholdery i na to, co z projektu zbude po roce.',
     need: [c => ({ ok: c.total >= 28, text: 'Celkem 28 ★', have: `${Math.min(c.total, 28)}/28` }),
       c => ({ ok: c.ofLevel('insane').some(sc => c.st(sc.id) >= 2), text: 'Aspoň jeden velmi obtížný projekt za ★★' })] },
-  { name: 'Mistr alchymie', skill: 'Pro každý projekt namícháš řízení přesně podle jeho povahy.',
+  { name: 'Mistr projektové alchymie', skill: 'Pro každý projekt namícháš řízení přesně podle jeho povahy.',
     need: [c => ({ ok: c.total >= 33, text: 'Celkem 33 ★', have: `${Math.min(c.total, 33)}/33` }),
       c => ({ ok: c.atlas >= 24, text: `Aspoň 24 z ${PATTERNS.length} vzorců v atlasu`, have: `${Math.min(c.atlas, 24)}/24` })] },
 ];
@@ -244,7 +244,7 @@ function careerModal() {
     </div>
     ${next ? `<div class="cv-next"><b>Na povýšení na ${next.name} chybí:</b>
       <ul class="checklist">${nextChecks.map(x => `<li>${okIc(x.ok)} ${x.text}${x.have ? ` <small>(${x.have})</small>` : ''}</li>`).join('')}</ul></div>`
-      : '<div class="cv-next"><b>Dosáhl(a) jsi nejvyšší pozice.</b> Gratulujeme, mistře alchymie.</div>'}
+      : '<div class="cv-next"><b>Dosáhl(a) jsi nejvyšší pozice.</b> Gratulujeme, mistře projektové alchymie.</div>'}
     <h3>${ic('kniha')} Praxe <small class="cv-count">${c.total} ★ z ${SCENARIOS.length * 3} · odehráno her: ${c.hist.length}</small></h3>
     ${praxe}
     <h3>${ic('medaile')} Odznaky <small class="cv-count">${Object.keys(earned).length} z ${BADGES.length}</small></h3>

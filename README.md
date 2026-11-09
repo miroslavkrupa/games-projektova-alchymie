@@ -216,7 +216,7 @@ Tlačítko **Kariéra** otevře Životopis: současnou pozici, co hráči chybí
 a vitrínu odznaků. Na konci hry se ukáže povýšení a nově získané odznaky.
 
 - **Hodnosti** (Praktikant → Junior PM → Projektový manažer → Senior PM → Programový manažer →
-  Ředitel PMO → Mistr alchymie) se počítají z uložených hvězd, odemčených úrovní a atlasu, takže se
+  Ředitel PMO → Mistr projektové alchymie) se počítají z uložených hvězd, odemčených úrovní a atlasu, takže se
   dopočítají i dřívějšímu postupu. Každá hodnost vyžaduje i všechny předchozí.
 - **Odznaky** (20 v pěti kategoriích) odměňují dobré řízení: mistrovství, poznání, styl řízení, lidé
   a udržitelnost a tři skryté. Odznaky s `global: true` se ověří kdykoli z uloženého postupu,
