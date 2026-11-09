@@ -13,8 +13,7 @@ content.SCENARIOS = readdirSync(path.join(dir, 'scenarios')).filter(f => f.endsW
 const ui = existsSync(path.join(dir, 'ui.json')) ? read('ui.json') : {};
 mkdirSync(path.join(ROOT, 'js/lang'), { recursive: true });
 const out = `// Vygenerováno z i18n/${lang}/ skriptem tools/i18n-build.mjs – neupravovat ručně.
-I18N.ui = ${JSON.stringify(ui)};
-applyContent(${JSON.stringify(content)});
+registerLanguage('${lang}', ${JSON.stringify(ui)}, ${JSON.stringify(content)});
 `;
 writeFileSync(path.join(ROOT, `js/lang/${lang}.js`), out);
 console.log(`js/lang/${lang}.js: ${Object.keys(ui).length} textů rozhraní, ${content.SCENARIOS.length} projektů, ${Math.round(out.length / 1024)} kB`);

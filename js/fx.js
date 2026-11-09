@@ -177,7 +177,7 @@ function progressChart() {
     marks.push(`<span class="pc-mark" style="left:${mid}%">${icons.join('<br>')}</span>`);
     const rows = METRICS.map((m, idx) => {
       const d = hist[k][m.id] - hist[k - 1][m.id];
-      return `<li><i style="background:var(--s${idx + 1})"></i>${m.icon} ${m.label}<b>${hist[k][m.id]}</b><small>${d > 0 ? `+${d}` : d < 0 ? `−${-d}` : '±0'}</small></li>`;
+      return `<li><i style="background:var(--s${idx + 1})"></i><span>${m.icon} ${m.label}</span><b>${hist[k][m.id]}</b><small>${d > 0 ? `+${d}` : d < 0 ? `−${-d}` : '±0'}</small></li>`;
     }).join('');
     const failedHere = S.failed && k === n;
     chartTips.push(`

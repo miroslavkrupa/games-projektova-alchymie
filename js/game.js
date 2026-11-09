@@ -44,14 +44,17 @@ const STARS_KEY = 'projektova-alchymie-hvezdy-';
 const ATLAS_KEY = 'hybridni-projekt-atlas';
 
 // Tvary slov pro období projektu (sprint v agilním a hybridním, etapa v prediktivním).
-const PERIODS = {
-  Sprint: LANG === 'cs'
-    ? { nom: 'Sprint', gen: 'sprintu', acc: 'sprint', few: 'sprinty', many: 'sprintů', next: 'příštího sprintu', review: 'Sprint review', toReview: 'sprint review' }
-    : { nom: 'Sprint', gen: 'sprint', acc: 'sprint', few: 'sprints', many: 'sprints', next: 'next sprint', review: 'Sprint review', toReview: 'sprint review' },
-  Etapa: LANG === 'cs'
-    ? { nom: 'Etapa', gen: 'etapy', acc: 'etapu', few: 'etapy', many: 'etap', next: 'příští etapy', review: 'Kontrola etapy', toReview: 'kontrolu etapy' }
-    : { nom: 'Stage', gen: 'stage', acc: 'stage', few: 'stages', many: 'stages', next: 'next stage', review: 'Stage review', toReview: 'stage review' },
+const PERIOD_FORMS = {
+  cs: {
+    Sprint: { nom: 'Sprint', gen: 'sprintu', acc: 'sprint', few: 'sprinty', many: 'sprintů', next: 'příštího sprintu', review: 'Sprint review', toReview: 'sprint review' },
+    Etapa: { nom: 'Etapa', gen: 'etapy', acc: 'etapu', few: 'etapy', many: 'etap', next: 'příští etapy', review: 'Kontrola etapy', toReview: 'kontrolu etapy' },
+  },
+  en: {
+    Sprint: { nom: 'Sprint', gen: 'sprint', acc: 'sprint', few: 'sprints', many: 'sprints', next: 'next sprint', review: 'Sprint review', toReview: 'sprint review' },
+    Etapa: { nom: 'Stage', gen: 'stage', acc: 'stage', few: 'stages', many: 'stages', next: 'next stage', review: 'Stage review', toReview: 'stage review' },
+  },
 };
+const PERIODS = PERIOD_FORMS[LANG] || PERIOD_FORMS.cs;
 
 const TIMELINE_LABELS = {
   hybrid: [[`${ic('pred')} ${tr('Prediktivní prvky')}`, tr('fáze a milníky')], [`${ic('agile')} ${tr('Agilní prvky')}`, tr('sprinty')]],
@@ -1087,7 +1090,7 @@ function saveGame() {
   if (!S.sc || S.screen === 'brief') return;
   if (S.screen === 'end') { clearSave(); return; }
   const { sc, modal, ...rest } = S;
-  try { localStorage.setItem(SAVE_KEY, JSON.stringify({ v: SAVE_VERSION, sc: sc.id, at: Date.now(), S: rest })); } catch { /* bez úložiště se hra neuloží */ }
+  try { localStorage.setItem(SAVE_KEY, JSON.stringify({ v: SAVE_VERSION, lang: LANG, sc: sc.id, at: Date.now(), S: rest })); } catch { /* bez úložiště se hra neuloží */ }
 }
 
 function loadSave() {
@@ -1387,6 +1390,8 @@ const ACTIONS = {
     const d = loadSave();
     if (!d) return;
     S = { ...d.S, sc: d.sc, modal: null };
+    // Hra rozehraná v jiném jazyce: texty uložené ve stavu se převedou do aktuálního jazyka.
+    try { relocalizeState(S, d.lang || 'cs', d.sc); } catch (err) { console.error('Převod jazyka rozehrané hry selhal', err); }
     try { render(); } catch (err) { console.error('Uloženou hru nelze obnovit', err); clearSave(); newGame(); }
   },
   discardSave() { clearSave(); },

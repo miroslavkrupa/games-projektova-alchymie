@@ -552,7 +552,8 @@ h4 { margin: 14px 0 6px; font-size: 1rem; }
 .pattern-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; align-items: start; }
 .pattern-grid .pattern { margin: 0; }
 .pattern-grid + h3 { margin-top: 28px; }
-.card.result > .btn, .card.result > .actions { margin-top: 18px; }
+.card.result > .btn, .card.result > .actions,
+.card.mix-result > .btn, .card.mix-result > .actions { margin-top: 18px; }
 .pattern-grid .kfmd li { grid-template-columns: 1fr; gap: 0; }
 .modal { max-width: 900px; }
 
@@ -722,7 +723,8 @@ h4 { margin: 14px 0 6px; font-size: 1rem; }
 .pc-key.fail i { background: repeating-linear-gradient(90deg, var(--bad) 0 4px, transparent 4px 7px); }
 .pc-frame { padding-left: 30px; }
 .pc-plot { position: relative; height: 220px; }
-.pc-plot svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+/* Jen samotná plocha grafu – ne ikony v bublině s detailem. */
+.pc-plot > svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
 .pc-grid { stroke: var(--line); stroke-width: 1; }
 .pc-fail { stroke: var(--bad); stroke-width: 1.5; stroke-dasharray: 5 4; opacity: .7; }
 .pc-line { fill: none; stroke-width: 2.5; stroke-linejoin: round; stroke-linecap: round; transition: opacity .2s; }
