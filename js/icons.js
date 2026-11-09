@@ -184,6 +184,10 @@ const ICON_SPRITE = `<svg xmlns="http://www.w3.org/2000/svg" style="display:none
   <path d="M5.5 4h13.5l-2.6 4.5L19 13H5.5z" style="fill:var(--primary)"/>
   <path d="M5.5 21.5V3"/>
 </symbol>
+<symbol id="i-stahnout" viewBox="0 0 24 24">
+  <path d="M12 3.5v11M7 10l5 5 5-5" style="stroke-width:2.6"/>
+  <path d="M4 16.5v3.5h16v-3.5"/>
+</symbol>
 <symbol id="i-znovu" viewBox="0 0 24 24">
   <path d="M19.5 12A7.5 7.5 0 1 1 16.9 6.3" style="stroke-width:2.6"/>
   <path d="M18 2.6v4.4h-4.4"/>

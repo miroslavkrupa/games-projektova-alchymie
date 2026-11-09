@@ -875,6 +875,13 @@ h1 { font-size: 2.5rem; }
 .owner .mono { margin-right: 2px; }
 
 /* ---------- Smazání postupu ---------- */
+/* ---------- Hraní bez internetu ---------- */
+.offline-box { margin: 36px auto 0; max-width: 680px; background: var(--surface); border: 2px dashed var(--line); border-radius: var(--radius); padding: 16px 20px; }
+.offline-box h3 { margin: 0 0 6px; }
+.offline-box p { margin: 6px 0; }
+.offline-box .btn { margin: 6px 0; }
+.offline-box a { color: var(--primary); font-weight: 600; text-underline-offset: 2px; }
+.offline-box + .reset-box { margin-top: 20px; }
 .reset-box { margin: 36px auto 8px; max-width: 680px; text-align: center; }
 .reset-box .btn.ghost { color: var(--muted); font-size: .9rem; }
 .reset-box.confirm, .reset-box.done { background: var(--surface); border: 2px solid var(--bad); border-radius: var(--radius); padding: 16px 20px; text-align: left; }

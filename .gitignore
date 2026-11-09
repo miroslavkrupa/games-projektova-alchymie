@@ -8,3 +8,6 @@
 
 # Lokální nastavení Claude Code (launch.json se verzuje)
 .claude/settings.local.json
+
+# Sestavený ZIP pro hraní bez internetu (tools/build-zip.sh)
+dist/

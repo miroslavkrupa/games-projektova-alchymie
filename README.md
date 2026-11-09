@@ -10,6 +10,9 @@ praktiky. Univerzální recept neexistuje.
 
 ▶ **[Hrát online](https://miroslavkrupa.github.io/games-projektova-alchymie/)**
 
+Hru jde i nainstalovat jako aplikaci, nebo si ji [stáhnout jako ZIP](https://github.com/miroslavkrupa/games-projektova-alchymie/releases/latest)
+a hrát bez internetu (viz [Hraní bez internetu](#hraní-bez-internetu)).
+
 ## Co je hybridní řízení projektů
 
 Hybridní řízení projektů je přístup k řízení projektů kombinující prvky tradičního a agilního řízení
@@ -138,8 +141,11 @@ na úvodu stačí kliknout na *Pokračovat*.
 - `img/` – úvodní ilustrace, ikona hry (`favicon.svg`, baňka na výstražně žlutém štítku) a náhled
   pro sdílení odkazu (`og.jpg`, 1200 × 630, odkazovaný z meta značek `og:` v `index.html`)
 - `css/style.css` – vzhled „Stavební deník“ (teplý papír, okr, rez, tyrkysová a výstražná žlutá, obrysy
-  a tvrdé stíny jako komiksová políčka; tmavý režim „soumrak termínu“, mobil). Písma Zilla Slab
-  a Source Sans 3 z Google Fonts.
+  a tvrdé stíny jako komiksová políčka; tmavý režim „soumrak termínu“, mobil)
+- `css/fonts.css`, `fonts/` – písma Zilla Slab a Source Sans 3 uložená u hry (licence SIL OFL 1.1),
+  aby hra fungovala i bez internetu
+- `manifest.webmanifest`, `manifest-en.webmanifest`, `sw.js` – instalace jako aplikace a offline režim
+  (ikony aplikace `img/icon-*.png` a `img/apple-touch-icon.png`)
 - `js/data.js` – veškerý obsah hry: `SCENARIOS`, `PRACTICES`, `PRACTICE_PAIRS`, `ESSENTIALS`,
   `APPROACHES`, `PATTERNS`, `CONTEXT_TAGS`, `GENERIC_EVENTS`, `GATE_EVENT`, `GLOSSARY`
 - `js/data-insane.js` – projekty velmi obtížné úrovně (přidávají se do `SCENARIOS`)
@@ -243,4 +249,20 @@ vynutit parametrem `?lang=en`.
   3. `node tools/i18n-check.mjs en` a `node tools/i18n-ui-check.mjs` ověří úplnost.
   4. `node tools/i18n-build.mjs en` sestaví `js/lang/en.js`.
 - Chybí-li překlad, zobrazí se český text, takže hra nikdy nespadne.
+
+## Hraní bez internetu
+
+- **Instalace jako aplikace (PWA):** v Chromu a Edge ikonou instalace v adresním řádku nebo tlačítkem
+  **Nainstalovat aplikaci** na úvodní obrazovce, na Androidu z nabídky prohlížeče, na iPhonu a iPadu
+  v Safari přes Sdílet → Přidat na plochu, v Safari na Macu přes Soubor → Přidat do Docku. Hra se pak
+  otevírá ve vlastním okně a běží i offline.
+- **Jak offline režim funguje:** `sw.js` při první návštěvě uloží všechny soubory hry do mezipaměti.
+  Online se vždy načítá nejnovější verze ze sítě, bez sítě (nebo když síť neodpoví do 4 s) se použije
+  uložená kopie. Po přidání nebo odebrání souboru hry je potřeba upravit seznam `OFFLINE_FILES`
+  a zvýšit `VERSION` v `sw.js`.
+- **ZIP ke stažení:** `tools/build-zip.sh` sestaví `dist/projektova-alchymie.zip` jen se soubory hry
+  a krátkým návodem `CTI-ME.txt`. Skript zároveň ověří, že `OFFLINE_FILES` v `sw.js` odpovídá
+  souborům hry. ZIP se přikládá k vydání na GitHubu, odkaz ve hře vede na poslední vydání.
+  Rozbalená hra se spouští otevřením `index.html` (anglicky `en/index.html`), postup se ukládá
+  v prohlížeči, ve kterém se hraje.
 

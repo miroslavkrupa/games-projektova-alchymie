@@ -1130,6 +1130,13 @@ function resumeCard() {
 const ACTIONS = {
   askReset() { S.confirmReset = true; S.resetDone = false; },
   cancelReset() { S.confirmReset = false; },
+  install() {
+    const p = installPrompt;
+    if (!p) return;
+    installPrompt = null;
+    p.prompt();
+    p.userChoice.finally(() => render());
+  },
   resetProgress() {
     for (const k of progressKeys()) { try { localStorage.removeItem(k); } catch { /* nic */ } }
     S.confirmReset = false;
@@ -1618,7 +1625,42 @@ function intro() {
       ? tr('Žádné nápovědy, mlha v reportech, stakeholdeři, kteří chtějí každý něco jiného, konkrétní lidé, kteří se unaví nebo odejdou, rutina převlečená za projekt – a na konci se ukáže, co z projektu zbylo po roce.')
       : tr('Odemkne se, až v kterémkoli projektu náročné úrovně dosáhneš alespoň {n} bodů. Bez nápověd, s mlhou v reportech, se stakeholdery, lidmi a tím, co z projektu zbude po roce.', { n: INSANE_UNLOCK_SCORE }))}
     <div class="project-list">${SCENARIOS.filter(sc => sc.level === 'insane').map(row).join('')}</div>
+    ${offlineBox()}
     ${progressReset()}`;
+}
+
+// ---------- Hraní bez internetu: instalace jako aplikace, nebo ZIP ke stažení ----------
+const OFFLINE_ZIP_URL = 'https://github.com/miroslavkrupa/games-projektova-alchymie/releases/latest';
+let installPrompt = null; // nabídka instalace od prohlížeče (Chrome, Edge, Android)
+const runsInstalled = () => matchMedia('(display-mode: standalone)').matches || navigator.standalone === true;
+const isIos = () => /iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+
+function offlineBox() {
+  if (location.protocol === 'file:') return `<div class="offline-box"><p class="hint">${ic('stahnout')} ${tr('Hraješ staženou verzi z počítače. Postup se ukládá jen v tomto prohlížeči.')}</p></div>`;
+  if (runsInstalled()) return '';
+  const install = installPrompt
+    ? `<button class="btn" data-action="install">${ic('stahnout')} ${tr('Nainstalovat aplikaci')}</button>`
+    : `<p class="hint">${isIos()
+      ? tr('Na iPhonu a iPadu ji nainstaluješ v Safari: Sdílet → Přidat na plochu.')
+      : tr('Nainstaluješ ji ikonou instalace v adresním řádku Chromu nebo Edge, v Safari na Macu přes Soubor → Přidat do Docku.')}</p>`;
+  return `
+    <div class="offline-box">
+      <h3>${ic('stahnout')} ${tr('Hraj i bez internetu')}</h3>
+      <p class="hint">${tr('Hra se dá nainstalovat jako aplikace a pak běží i offline.')}</p>
+      ${install}
+      <p class="hint">${tr('Nebo si stáhni <a href="{url}" target="_blank" rel="noopener">ZIP s hrou</a>, rozbal ho a otevři soubor index.html.', { url: OFFLINE_ZIP_URL })}</p>
+    </div>`;
+}
+
+addEventListener('beforeinstallprompt', e => {
+  e.preventDefault();
+  installPrompt = e;
+  if (S && !S.sc) render();
+});
+addEventListener('appinstalled', () => { installPrompt = null; if (S && !S.sc) render(); });
+// Offline režim: service worker uloží hru do mezipaměti (jen na webu, ne ve stažené verzi ze souboru).
+if ('serviceWorker' in navigator && location.protocol.startsWith('http')) {
+  addEventListener('load', () => navigator.serviceWorker.register(new URL('sw.js', document.baseURI)).catch(err => console.warn('Offline režim není k dispozici', err)));
 }
 
 // ---------- Smazání veškerého postupu (rekordy, hvězdy, atlas, rozehraná hra) ----------

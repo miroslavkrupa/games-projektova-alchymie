@@ -184,7 +184,9 @@ function relocalizeState(state, from, sc) {
 function setLanguage(lang) {
   try { localStorage.setItem(LANG_KEY, lang); } catch { /* nic */ }
   // Každý jazyk má vlastní adresu: čeština v kořeni, ostatní v podsložce (en/).
-  location.href = new URL(lang === 'cs' ? './' : `${lang}/`, document.baseURI).toString();
+  // Ve stažené verzi (otevřené ze souboru) se musí jít přímo na index.html, adresář by se jen vypsal.
+  const page = location.protocol === 'file:' ? 'index.html' : '';
+  location.href = new URL(lang === 'cs' ? `./${page}` : `${lang}/${page}`, document.baseURI).toString();
 }
 
 // Jazyk rozehrané hry (uložená hra bez údaje je z doby, kdy hra byla jen česky).
